@@ -1,0 +1,8 @@
+C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.csproj.AssemblyReference.cache
+C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.AssemblyInfoInputs.cache
+C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.AssemblyInfo.cs
+C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.csproj.CoreCompileInputs.cache
+C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.RazorAssemblyInfo.cache
+C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.RazorAssemblyInfo.cs

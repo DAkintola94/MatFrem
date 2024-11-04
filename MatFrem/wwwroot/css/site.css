@@ -1,0 +1,163 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.login-stylefront {
+    color: white;
+    background-image: url('../images/loginbackground.jpg');
+}
+
+.login-formstyle {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-formstyle input[type="text"],
+.login-formstyle input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-container label {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        color: black;
+}
+
+#rememberId {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#forgotId {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#forgotId:hover {
+        text-decoration: underline;
+}
+
+#loginBtn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#loginBtn:hover {
+        background-color: #0056b3;
+}
+
+.box a .fa-solid {
+    color: #1daf;
+    font-size: 18px;
+}
+
+.box {
+    height: 30px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+.box:hover input {
+    width: 400px;
+}
+
+.box input {
+        border: none;
+        background: transparent;
+        outline: none;
+        font-weight: 500;
+        width: 0;
+        transition: 0.8s;
+}
+
+.box a .fa-solid {
+        color: #1daf;
+        font-size: 18px;
+}
+
+.table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.table-sortable th {
+    cursor: pointer;
+}
+
+.table-sortable th:hover {
+    background-color: #009879;
+    color: white;
+
+}
+
+.table-sortable .sorted-asc::after {
+    content: "\25b4";
+}
+
+.table-sortable .sorted-desc::after {
+    content: "\25be";
+}
+
+.table-sortable .sorted-asc::after,
+.table-sortable .sorted-desc::after {
+    margin-left: 5px;
+}
+
+.table-sortable .sorted-asc
+.table-sortable .sorted-desc {
+    background: rgba(0, 0, 0, 0.1);
+}

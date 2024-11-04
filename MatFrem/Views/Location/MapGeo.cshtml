@@ -1,0 +1,31 @@
+﻿
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+
+    <!-- Custom CSS -->
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="map" style="height: 400px;"></div> <!-- Set a height for the map -->
+
+    <form method="post" asp-controller="Location">
+        <div>
+            <input type="hidden" id="geoId" name="geoJson" class="form-control" />
+            <input type="text" id="description" name="description" placeholder="Beskrivelse av kampen" class="form-control" asp-for="Description" required />
+            <button type="submit">Send</button>
+        </div>
+    </form>
+
+</body>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+<script src="~/js/geoJsonInput.js"></script>
