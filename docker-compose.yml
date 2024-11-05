@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   matfrem:
-    image: ${DOCKER_REGISTRY-}matFrem
+    image: ${DOCKER_REGISTRY-}matfrem
     build:
       context: .
       dockerfile: MatFrem/Dockerfile

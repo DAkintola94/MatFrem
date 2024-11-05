@@ -12,13 +12,14 @@ namespace MatFrem
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<IShoppingRepository, ShoppingRepository>(); // this line adds the ShoppingRepository to the services collection
+            builder.Services.AddScoped<IProductRepository, ProductRepository>(); // this line adds the ShoppingRepository to the services collection
 
 
             builder.Services.AddDbContext<AppDBContext>(options =>
                 options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
                 new MySqlServerVersion(new Version(11, 5, 2))));
 
+            builder.Services.AddRazorPages();
 
             var app = builder.Build();
 

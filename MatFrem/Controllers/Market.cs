@@ -6,9 +6,9 @@ namespace MatFrem.Controllers
 {
     public class Market : Controller
     {
-        private readonly ShoppingRepository _shoppingRepository;
+        private readonly ProductRepository _shoppingRepository;
 
-        public Market(ShoppingRepository shoppingRepo)
+        public Market(ProductRepository shoppingRepo)
         {
             _shoppingRepository = shoppingRepo;
         }

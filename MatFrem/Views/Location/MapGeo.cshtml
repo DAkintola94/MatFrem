@@ -1,4 +1,4 @@
-﻿
+﻿@model MatFrem.Models.DomainModel.LocationModel
 
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
     <form method="post" asp-controller="Location">
         <div>
             <input type="hidden" id="geoId" name="geoJson" class="form-control" />
-            <input type="text" id="description" name="description" placeholder="Beskrivelse av kampen" class="form-control" asp-for="Description" required />
+            <input type="text" id="description" name="description" placeholder="Melding" class="form-control" asp-for="LocationMessage" required />
             <button type="submit">Send</button>
         </div>
     </form>

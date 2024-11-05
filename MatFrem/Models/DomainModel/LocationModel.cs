@@ -11,6 +11,8 @@ namespace MatFrem.Models.DomainModel
         public string Address { get; set; }
         public string GeoLocation { get; set; }
 
+        public string LocationMessage { get; set; }
+
         public int CustomerID { get; set; } //foreign key for CustomerModel
         public CustomerModel Customer { get; set; } //navigation property for CustomerModel
 

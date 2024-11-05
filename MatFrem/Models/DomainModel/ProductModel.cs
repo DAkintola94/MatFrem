@@ -6,7 +6,7 @@ namespace MatFrem.Models.DomainModel
     public class ProductModel
     {
         
-        public Guid ProductID { get; set; }
+        public int ProductID { get; set; }
 
         [Required]
         public string ProductName { get; set; }
