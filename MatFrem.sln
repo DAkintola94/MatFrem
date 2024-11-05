@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatFrem", "MatFrem\MatFrem.csproj", "{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A78D710C-5428-4EEC-9287-ED1A45903AAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A78D710C-5428-4EEC-9287-ED1A45903AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A78D710C-5428-4EEC-9287-ED1A45903AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A78D710C-5428-4EEC-9287-ED1A45903AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A78D710C-5428-4EEC-9287-ED1A45903AAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

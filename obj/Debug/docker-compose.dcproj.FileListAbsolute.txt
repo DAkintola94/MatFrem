@@ -1,0 +1,2 @@
+C:\Users\black\source\repos\MatFrem\bin\Debug\MatFrem.dll
+C:\Users\black\source\repos\MatFrem\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache

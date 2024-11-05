@@ -9,67 +9,69 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MatFrem
 build_property.RootNamespace = MatFrem
-build_property.ProjectDir = C:\Users\Eier\source\repos\MatFrem\MatFrem\
+build_property.ProjectDir = C:\Users\black\source\repos\MatFrem\MatFrem\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Eier\source\repos\MatFrem\MatFrem
+build_property.MSBuildProjectDirectory = C:\Users\black\source\repos\MatFrem\MatFrem
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/Home/Advice.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/Home/Advice.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZHZpY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/Home/Index.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/Location/LocationTable.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/Location/LocationTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cTG9jYXRpb25UYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/Location/MapGeo.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/Location/MapGeo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cTWFwR2VvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/Market/Cart.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/Market/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2V0XENhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/Market/Shopping.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/Market/Shopping.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2V0XFNob3BwaW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/ProfileManagement/CreateProfile.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/ProfileManagement/CreateProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZU1hbmFnZW1lbnRcQ3JlYXRlUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/ProfileManagement/Login.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/ProfileManagement/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZU1hbmFnZW1lbnRcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/ProfileManagement/LogOut.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/ProfileManagement/LogOut.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZU1hbmFnZW1lbnRcTG9nT3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/Shared/Error.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/_ViewImports.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/_ViewStart.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eier/source/repos/MatFrem/MatFrem/Views/Shared/_Layout.cshtml]
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-0al9ksmckc

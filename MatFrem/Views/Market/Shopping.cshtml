@@ -1,6 +1,6 @@
-﻿@    using MatFrem.Models.ShopM
+﻿@using MatFrem.Models.DomainModel
 
-@model List<ShopModel>
+@model List<ProductModel>
 
 <head>
     <link rel="stylesheet" href="~/css/site.css" />
@@ -22,27 +22,27 @@
             <table class="table table-sortable" id="firstTableId">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Dato</th>
-                        <th>Beskrivelse</th>
-                        <th>GeoJson</th>
-                        <th>Kartlag</th>
+                        <th>Produkt ID</th>
+                        <th>Navn</th>
+                        <th>Produkt beskrivelse</th>
+                        <th>Kategori</th>
+                        <th>Pris</th>
+                        
                     </tr>
                 </thead>
                 <tbody id="myTable">
-                    @foreach (var mapReport in Model)
+                    @foreach (var productModel in Model)
                     {
                         <tr>
-                            <td>@mapReport.MapReportId</td>
-                            <td>@mapReport.SubmissionDate</td>
-                            <td>@mapReport.Description</td>
-                            <td>@mapReport.GeoJsonString</td>
-                            <td>@mapReport.MapLayer.MapLayerType</td> <!-- NB! since the model is nested, you can do that to get a specific value -->
+                            <td>@productModel.ProductID</td>
+                            <td>@productModel.ProductName</td>
+                            <td>@productModel.ProductDescription</td>
+                            <td>@productModel.ProductPrice</td>
+                            <td>@productModel.ProductCategory</td>
                             <td>
-                                <a asp-area=""
-                                   asp-controller="MapReport"
-                                   asp-action="ViewReport"
-                                   asp-route-id="@mapReport.MapReportId">
+                                <a asp-controller="Market"
+                                   asp-action="Shopping"
+                                   asp-route-id="@productModel.ProductID">
                                     <img src="~/images/green-arrow.svg" alt="Gå til" style="height: 40px;" />
                                 </a>
                             </td>
@@ -53,9 +53,8 @@
         }
         else
         {
-            <p>Ingen innmeldinger funnet!</p>
+            <p>Ingen produkt funnet!</p>
         }
-
 
     </div>
 </div>

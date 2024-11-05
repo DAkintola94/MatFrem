@@ -6,3 +6,12 @@ C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.csproj.CoreC
 C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.RazorAssemblyInfo.cache
 C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.RazorAssemblyInfo.cs
+C:\Users\black\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.csproj.AssemblyReference.cache
+C:\Users\black\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\black\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.AssemblyInfoInputs.cache
+C:\Users\black\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.AssemblyInfo.cs
+C:\Users\black\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.csproj.CoreCompileInputs.cache
+C:\Users\black\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\black\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.RazorAssemblyInfo.cache
+C:\Users\black\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.RazorAssemblyInfo.cs
+C:\Users\black\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.sourcelink.json
