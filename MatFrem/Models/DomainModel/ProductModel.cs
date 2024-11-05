@@ -11,7 +11,7 @@ namespace MatFrem.Models.DomainModel
         [Required]
         public string ProductName { get; set; }
 
-        public string ProductDescription { get; set; } = "No description available";
+        public string ProductDescription { get; set; } 
         [Required]
         public double ProductPrice { get; set; }
         [Required]

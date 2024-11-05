@@ -1,5 +1,7 @@
 using MatFrem.DataContext;
+using MatFrem.Models.DomainModel;
 using MatFrem.Repository;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace MatFrem
@@ -18,6 +20,10 @@ namespace MatFrem
             builder.Services.AddDbContext<AppDBContext>(options =>
                 options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
                 new MySqlServerVersion(new Version(11, 5, 2))));
+
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>() //AddIdentity is a method that adds the Identity framework to the services collection
+                .AddEntityFrameworkStores<AppDBContext>();
+
 
             builder.Services.AddRazorPages();
 
