@@ -14,9 +14,10 @@ namespace MatFrem.Controllers
         }
 
         [HttpGet]
-        public IActionResult MapGeo()
+        public async Task<ActionResult> MapGeo()
         {
-            return View();
+            var getLocations = await _locationRepository.ShowEntireLocation(new LocationModel());
+            return View(getLocations);
         }
     
 

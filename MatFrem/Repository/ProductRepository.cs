@@ -20,7 +20,7 @@ namespace MatFrem.Repository
             return items;
         }
 
-        public async Task<ProductModel> DeleteItem(int id)
+        public async Task<ProductModel?> DeleteItem(int id)
         {
             var itemId = await _context.Product_detail.FindAsync(id); //remember, Product_detail is the object created in the AppDBContext
             if (itemId != null)

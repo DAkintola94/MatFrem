@@ -26,23 +26,28 @@ namespace MatFrem.Repository
             return locationModel;
         }
 
-        public async Task<LocationModel> DeleteLocation(int id)
+        public async Task<LocationModel?> DeleteLocation(Guid id)
         {
             var locationDelete = await _context.Locations.FindAsync(id); //remember, Locations is the object created in the AppDBContext
             if (locationDelete != null)
             {
                 _context.Locations.Remove(locationDelete);
                 await _context.SaveChangesAsync();
+                return locationDelete;
             }
 
             return null; 
         }
 
-        public async Task<LocationModel> UpdateLocation(LocationModel locationModel)
+        public async Task<LocationModel?> UpdateLocation(LocationModel locationModel)
         {
-            _context.Locations.Update(locationModel);
-            await _context.SaveChangesAsync();
-            return locationModel;
+            if(locationModel != null)
+            {
+                _context.Locations.Update(locationModel);
+                await _context.SaveChangesAsync();
+                return locationModel;
+            }
+            return null;
         }
 
 
