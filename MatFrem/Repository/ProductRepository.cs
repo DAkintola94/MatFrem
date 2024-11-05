@@ -16,13 +16,13 @@ namespace MatFrem.Repository
 
         public async Task<IEnumerable<ProductModel?>> GetAllItems()
         {
-            var items = await _context.Product_detail.Take(50).ToListAsync();
+            var items = await _context.Product_detail.Take(50).ToListAsync(); //remember, Product_detail is the object created in the AppDBContext
             return items;
         }
 
         public async Task<ProductModel> DeleteItem(int id)
         {
-            var itemId = await _context.Product_detail.FindAsync(id);
+            var itemId = await _context.Product_detail.FindAsync(id); //remember, Product_detail is the object created in the AppDBContext
             if (itemId != null)
             {
                 _context.Product_detail.Remove(itemId);

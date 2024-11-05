@@ -16,7 +16,8 @@ namespace MatFrem.DataContext
         public DbSet<ShopModel> Shop_detail { get; set; }
         public DbSet<ProductModel> Product_detail { get; set; }
         public DbSet<CreateAccountModel> Account_creation { get; set; }
-        public DbSet<Location> Locations { get; set; }
+        public DbSet<LocationModel> Locations { get; set; }
+        public DbSet<OrderModel> Orders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -42,17 +43,17 @@ namespace MatFrem.DataContext
             modelBuilder.Entity<OrderModel>()
                 .HasOne(o => o.Customer) //Table OrderModel has one Customer
                 .WithMany(c => c.Orders) //A Customer can have many orders
-                .HasForeignKey(c => c.CustomerID); //Foreign key for CustomerID in OrderModel, primary key for CustomerModel
+                .HasForeignKey(o => o.CustomerID); //Foreign key for CustomerID in OrderModel, primary key for CustomerModel
 
             modelBuilder.Entity<OrderModel>()
                 .HasOne(o => o.Driver) //Table OrderModel has one Driver
                 .WithMany() //A driver can have many Order
-                .HasForeignKey(d => d.DriverID); //Foreign key for DriverID in OrderModel ...
+                .HasForeignKey(o => o.DriverID); //Foreign key for DriverID in OrderModel ...
 
             modelBuilder.Entity<CustomerModel>()
                 .HasOne(c => c.Driver) //CustomerModel has one Driver
                 .WithOne() //Driver can have one Customer
-                .HasForeignKey<CustomerModel>(d => d.DriverID); //need <CustomerModel> because of how one -to-one relationships work in EF Core
+                .HasForeignKey<CustomerModel>(c => c.DriverID); //need <CustomerModel> because of how one -to-one relationships work in EF Core
             //since we are targeting a specific entity, we need to specify the entity type in the lambda expression
 
             modelBuilder.Entity<ShopModel>()

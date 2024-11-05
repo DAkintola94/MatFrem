@@ -17,7 +17,7 @@ namespace MatFrem.Models.DomainModel
 
         public int DriverID { get; set; }
 
-        public DriverModel Driver { get; set; }
+        public DriverModel Driver { get; set; } //Navigaiton property to get all of Driver properties/info
 
     }
 }

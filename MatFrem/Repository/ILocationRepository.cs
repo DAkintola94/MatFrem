@@ -1,10 +1,14 @@
 ﻿using MatFrem.Controllers;
+using MatFrem.Models.DomainModel;
 
 namespace MatFrem.Repository
 {
     public interface ILocationRepository
     {
-        Task<Location> AddLocationToBase(Location location);
+        Task<IEnumerable<LocationModel>> ShowEntireLocation(LocationModel locationModel);
+        Task<LocationModel> GetLocationByID(Guid id);
+        Task<LocationModel> UpdateLocation(LocationModel locationModel);
+        Task<LocationModel> DeleteLocation(int id);
 
     }
 }

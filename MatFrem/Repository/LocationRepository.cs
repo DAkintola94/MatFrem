@@ -1,5 +1,7 @@
 ﻿using MatFrem.Controllers;
 using MatFrem.DataContext;
+using MatFrem.Models.DomainModel;
+using Microsoft.EntityFrameworkCore;
 
 namespace MatFrem.Repository
 {
@@ -11,12 +13,42 @@ namespace MatFrem.Repository
             _context = context;
         }
 
-        public async Task<Location> AddLocationToBase(Location location)
+        public async Task<IEnumerable<LocationModel>> ShowEntireLocation(LocationModel locationModel)
         {
-            await _context.Locations.AddAsync(location);
-            await _context.SaveChangesAsync();
-            return location;
+            var showAll = await _context.Locations.Take(50).ToListAsync();
+            return showAll;
+        }
 
+        public async Task<LocationModel> AddLocation(LocationModel locationModel)
+        {
+            await _context.Locations.AddAsync(locationModel); //remember, Locations is the object created in the AppDBContext
+            await _context.SaveChangesAsync();
+            return locationModel;
+        }
+
+        public async Task<LocationModel> DeleteLocation(int id)
+        {
+            var locationDelete = await _context.Locations.FindAsync(id); //remember, Locations is the object created in the AppDBContext
+            if (locationDelete != null)
+            {
+                _context.Locations.Remove(locationDelete);
+                await _context.SaveChangesAsync();
+            }
+
+            return null; 
+        }
+
+        public async Task<LocationModel> UpdateLocation(LocationModel locationModel)
+        {
+            _context.Locations.Update(locationModel);
+            await _context.SaveChangesAsync();
+            return locationModel;
+        }
+
+
+        public async Task<LocationModel?> GetLocationByID(Guid id)
+        {
+            return await _context.Locations.Where(x => x.LocationID == id).FirstOrDefaultAsync();
         }
 
     }

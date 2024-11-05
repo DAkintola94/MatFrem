@@ -6,18 +6,15 @@ namespace MatFrem.Models.DomainModel
 {
     public class LocationModel
     {
-        
-        public string LocationID { get; set; }
-        public string Address { get; set; }
-        public string GeoLocation { get; set; }
 
+        public Guid LocationID { get; set; } = new Guid();
+        public string GeoJson { get; set; }
         public string LocationMessage { get; set; }
 
-        public int CustomerID { get; set; } //foreign key for CustomerModel
-        public CustomerModel Customer { get; set; } //navigation property for CustomerModel
+        public DateOnly Date { get; set; } = DateOnly.FromDateTime(DateTime.Now);
 
-        public int ShopID { get; set; }
-        public ShopModel Shop { get; set; }
+        public int CustomerID { get; set; } //foreign key for CustomerModel
+        public CustomerModel Customer { get; set; } //navigation property for CustomerModel, Also, LocationModel have a Customer
 
     }
 }
