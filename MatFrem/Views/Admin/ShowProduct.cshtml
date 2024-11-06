@@ -1,0 +1,71 @@
+﻿@using MatFrem.Models.DomainModel
+
+@model IEnumerable<ProductModel>
+
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://kit.fontawesome.com/5eea027e19.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<div class="box">
+    <input type="text" id="searchTable" placeholder="Søk..." />
+    <a href="#">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+</div>
+
+<div id="portexe-search-root">
+    <div id="portexe-table-container">
+        @if (Model != null && Model.Any())
+        {
+            <table class="table table-sortable" id="firstTableId">
+                <thead>
+                    <tr>
+                        <th>Produkt ID</th>
+                        <th>Navn</th>
+                        <th>Pris</th>
+                        <th>Kategori</th>
+                        <th>Kalori Innhold</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    @foreach (var productModel in Model)
+                    {
+                        <tr>
+                            <td>@productModel.ProductID</td>
+                            <td>@productModel.ProductName</td>
+                            <td>@productModel.ProductCalories</td>
+                            <td>@productModel.ProductPrice</td>
+                            <td>@productModel.ProductCategory</td>
+                            <td>
+                                <a asp-controller="Admin"
+                                   asp-action="EditProduct"
+                                   asp-route-id="@productModel.ProductID">
+                                    <img src="~/images/green-arrow.svg" alt="Gå til" style="height: 40px;" />
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>Ingen produkt funnet!</p>
+        }
+
+    </div>
+</div>
+
+<div>
+    <button class="buttonClass"
+            type="submit"
+            asp-controller="Market" asp-action="Delete">
+        Slett
+    </button>
+</div>
+
+<script>var modelData = @Html.Raw(Json.Serialize(Model)); </script>
+
+<script src="~/js/sortSearch.jsjs"></script>

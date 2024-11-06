@@ -21,6 +21,13 @@ namespace MatFrem.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public async Task<ActionResult> Delete(int id)
+        {
+           var deleteItem = await _shoppingRepository.DeleteItem(id);
+            return View();
+        }
     }
 }
 
