@@ -15,6 +15,8 @@ namespace MatFrem
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IProductRepository, ProductRepository>(); // this line adds the ShoppingRepository to the services collection
+            builder.Services.AddScoped<ILocationRepository, LocationRepository>(); // this line adds the LocationRepository to the services collection
+            builder.Services.AddScoped<ICustomerRepository, CustomerRepository>(); // this line adds the CustomerRepository to the services collection
 
 
             builder.Services.AddDbContext<AppDBContext>(options =>

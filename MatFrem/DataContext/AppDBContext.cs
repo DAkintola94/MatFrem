@@ -25,8 +25,6 @@ namespace MatFrem.DataContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-
             base.OnModelCreating(modelBuilder);
 
             var sysAdminRoleId = "1";
@@ -172,7 +170,7 @@ namespace MatFrem.DataContext
             modelBuilder.Entity<CustomerModel>()
                 .HasKey(c => c.CustomerID); //Primary key for CustomerModel
             modelBuilder.Entity<LocationModel>()
-                .HasKey(l => l.LocationID); //Primary key for LocationModel
+                .HasKey(l => l.LocationReportID); //Primary key for LocationModel
             modelBuilder.Entity<ProductModel>()
                 .HasKey(p => p.ProductID); //Primary key for ProductModel
             modelBuilder.Entity<ShopModel>()
@@ -202,7 +200,7 @@ namespace MatFrem.DataContext
             modelBuilder.Entity<ShopModel>()
                 .HasOne(s => s.Location)
                 .WithOne()
-                .HasForeignKey<ShopModel>(s => s.LocationID);
+                .HasForeignKey<ShopModel>(s => s.LocationID); //This is the foreign key for LocationID in ShopModel, primary key for LocationModel
 
         }
 

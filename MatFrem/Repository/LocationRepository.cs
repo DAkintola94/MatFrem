@@ -13,7 +13,7 @@ namespace MatFrem.Repository
             _context = context;
         }
 
-        public async Task<IEnumerable<LocationModel>> ShowEntireLocation(LocationModel locationModel)
+        public async Task<IEnumerable<LocationModel>> ShowEntireLocation()
         {
             var showAll = await _context.Locations.Take(50).ToListAsync();
             return showAll;
@@ -53,7 +53,7 @@ namespace MatFrem.Repository
 
         public async Task<LocationModel?> GetLocationByID(Guid id)
         {
-            return await _context.Locations.Where(x => x.LocationID == id).FirstOrDefaultAsync();
+            return await _context.Locations.Where(x => x.LocationReportID == id).FirstOrDefaultAsync();
         }
 
     }

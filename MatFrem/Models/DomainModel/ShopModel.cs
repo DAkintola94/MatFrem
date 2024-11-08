@@ -13,7 +13,7 @@ namespace MatFrem.Models.DomainModel
         [DataType(DataType.PhoneNumber)]
         public string PhoneNr { get; set; }
         
-        public string LocationID { get; set; } //foreign key for LocationModel
+        public Guid LocationID { get; set; } //foreign key for LocationModel
         public LocationModel Location { get; set; } //Navigation property for LocationModel, ShopModel have a Location, this helps to get all of Location properties/info
 
     }

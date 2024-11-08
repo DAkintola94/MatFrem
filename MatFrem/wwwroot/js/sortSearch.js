@@ -120,3 +120,26 @@ document.querySelectorAll(".table-sortable th").forEach((header, index) => { // 
         sortTableByColumn(currentSortColumn, currentSortAscending);
     });
 });
+
+
+document.getElementById('FilterCategory').addEventListener('change', function () {
+    filterTableByCategory(this.value);
+});
+
+function filterTableByCategory(selectedCategory) {
+    const table = document.getElementById('firstTableId');
+    const rows = table.querySelectorAll('tbody tr');
+    const categoryColumnIndex = 3; // Index for "Kartlag" column
+
+    rows.forEach(row => {
+        const categoryCell = row.children[categoryColumnIndex];
+        const cellCategoryValue = categoryCell ? categoryCell.textContent.trim() : '';
+
+        // Show row if it matches the selected Kartlag or if "Show All" is selected
+        if (selectedCategory === 'All' || cellCategoryValue === selectedCategory) {
+            row.style.display = ''; // Show row
+        } else {
+            row.style.display = 'none'; // Hide row
+        }
+    });
+}

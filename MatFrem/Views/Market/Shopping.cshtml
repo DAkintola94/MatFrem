@@ -15,6 +15,25 @@
     </a>
 </div>
 
+<body>
+    <div class="container mt-3">
+        <div class="filter-box">
+            <label for="FilterCategory" class="me-2 text-dark">Filter by Category:</label>
+            <select id="FilterCategory" class="form-select">
+                <option value="Meleri & Egg">Meleri & Egg</option>
+                <option value="Frukt & Grønt">Frukt & Grønt</option>
+                <option value="Vegetar">Vegetar</option>
+                <option value="Sjømat">Sjømat</option>
+                <option value="Tørrvare">Tørrvare</option>
+                <option value="Frokostblanding">Frokostblanding</option>
+                <option value="Frosne varer">Frosne varer</option>
+                <option value="Bakeri">Bakeri</option>
+                <option value="All">All</option>
+            </select>
+        </div>
+    </div>
+</body>
+
 <div id="portexe-search-root">
     <div id="portexe-table-container">
         @if (Model != null && Model.Any())
@@ -24,10 +43,9 @@
                     <tr>
                         <th>Produkt ID</th>
                         <th>Navn</th>
-                        <th>Produkt beskrivelse</th>
+                        <th>Kalori</th>
                         <th>Kategori</th>
                         <th>Pris</th>
-                        
                     </tr>
                 </thead>
                 <tbody id="myTable">
@@ -37,8 +55,8 @@
                             <td>@productModel.ProductID</td>
                             <td>@productModel.ProductName</td>
                             <td>@productModel.ProductCalories</td>
-                            <td>@productModel.ProductPrice</td>
                             <td>@productModel.ProductCategory</td>
+                            <td>@productModel.ProductPrice</td>
                             <td>
                                 <a asp-controller="Market"
                                    asp-action="Shopping"
@@ -67,4 +85,4 @@
 
 <script>var modelData = @Html.Raw(Json.Serialize(Model)); </script>
 
-<script src="~/js/sortSearch.jsjs"></script>
+<script src="~/js/sortSearch.js"></script>

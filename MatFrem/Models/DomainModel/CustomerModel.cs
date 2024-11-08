@@ -14,7 +14,6 @@ namespace MatFrem.Models.DomainModel
 
         public ICollection<OrderModel> Orders { get; set; }
 
-
         public int DriverID { get; set; }
 
         public DriverModel Driver { get; set; } //Navigaiton property to get all of Driver properties/info

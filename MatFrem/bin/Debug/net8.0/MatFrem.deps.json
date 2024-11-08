@@ -15,12 +15,14 @@
           "Microsoft.EntityFrameworkCore.Tools": "8.0.10",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.21.0",
           "Newtonsoft.Json": "13.0.3",
-          "Pomelo.EntityFrameworkCore.MySql": "8.0.2"
+          "Pomelo.EntityFrameworkCore.MySql": "8.0.2",
+          "bootstrap": "5.3.3"
         },
         "runtime": {
           "MatFrem.dll": {}
         }
       },
+      "bootstrap/5.3.3": {},
       "Humanizer.Core/2.14.1": {
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
@@ -606,6 +608,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "bootstrap/5.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iQohLXwneNPDyW4x24mKQ90qGwT5WTtNl3KybL0koTluJPjKYxFCU/NTLHsJiWR2n7VmnwcpAgr8TR42KNmPOg==",
+      "path": "bootstrap/5.3.3",
+      "hashPath": "bootstrap.5.3.3.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MatFrem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+422cd591a4dfbd2cc9f948bccc5c517aa6901347")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e76511f9e2f24831ded6d5b3cc3532576296215d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MatFrem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MatFrem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
