@@ -1,0 +1,64 @@
+﻿@using MatFrem.Models.ViewModel
+@model IEnumerable<OrderViewModel>
+
+<head>
+    <link href="~/css/sortTableStyle.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5eea027e19.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<div class="box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="searchTable" placeholder="Søk..." />
+</div>
+<div id="portexe-search-root">
+    <div id="portexe-table-container">
+        @if (Model != null && Model.Any())
+        {
+            <table class="table table-sortable" id="firstTableId">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Dato</th>
+                        <th>Kunde</th>
+                        <th>Produkt navn</th>
+                        <th>Pris</th>
+                        <th>Leveringsadresse</th>
+                        <th>Order status</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    @foreach (var orderModel in Model)
+                    {
+                        <tr>
+                            <td>@orderModel.OrderID</td>
+                            <td>@orderModel.OrderCreatedDate</td>
+                            <td>@orderModel.Customer.CustomerName</td> <!-- NB! since the model is nested/propergated, you can do that to get a specific value -->
+                            <td>@orderModel.Product.ProductName</td> <!-- NB! since the model is nested/propergated, you can do that to get a specific value -->
+                            <td>@orderModel.Product.ProductPrice</td> <!-- NB! since the model is nested/propergated, you can do that to get a specific value -->
+                            <td>@orderModel.Location.GeoJson</td> <!--google api for this? or Rania's geo lab-->
+                            <td>@orderModel.OrderStatus.Order_Status</td>
+                            <td>
+                                <a asp-area=""
+                                   asp-controller="Order"
+                                   asp-action="OrderDetails"
+                                   asp-route-id="@orderModel.OrderID">
+                                    <img src="~/images/green-arrow.svg" alt="Gå til" style="height: 40px;" />
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>Ingen innmeldinger funnet!</p>
+        }
+
+    </div>
+</div>
+
+<script>var modelData = @Html.Raw(Json.Serialize(Model));</script>
+
+<script src="~/js/sortSearch.js"> </script>

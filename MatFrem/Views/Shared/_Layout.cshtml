@@ -41,6 +41,44 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle"
+                               href="#"
+                               id="navbarDropdown"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                Sjåfør
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Driver" asp-action="Index">
+                                       Order liste
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Driver" asp-action="Index">
+                                        Order status
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Driver" asp-action="Index">
+                                       Min side
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Driver" asp-action="Index">
+                                        Historikk
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+
+
                         <li class="nav-item dropdown">
                             <a class="nav-link text-dark dropdown-toggle"
                                href="#"
@@ -79,17 +117,13 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" asp-controller="Location" asp-action="MapGeo">
-                                        Finn nærmeste sjåfør
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" asp-controller="Location" asp-action="MapGeo">
-                                        Bestiling Oversikt
+                                    <a class="dropdown-item" asp-controller="Location" asp-action="LocationTable">
+                                        Bestilling oversikt
                                     </a>
                                 </li>
                             </ul>
                         </li>
+
                         <!-- Profile Dropdown -->
                         <li class="nav-item dropdown ms-auto">
                             <a class="nav-link text-dark dropdown-toggle"
@@ -100,7 +134,7 @@
                                aria-expanded="false">
                                 <img src="~/Images/account.svg" alt="Account" style="width: 30px; height: 30px;" />
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: auto; max-width: 200px;">
                                 <li>
                                     <a class="dropdown-item" asp-controller="ProfileManagement" asp-action="CreateProfile">
                                         Lag bruker

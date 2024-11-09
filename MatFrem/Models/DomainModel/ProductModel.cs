@@ -5,7 +5,6 @@ namespace MatFrem.Models.DomainModel
 {
     public class ProductModel
     {
-        
         public int ProductID { get; set; }
 
         [Required]
@@ -19,8 +18,6 @@ namespace MatFrem.Models.DomainModel
 
         [NotMapped]
         public string ProductImage { get; set; }
-
-
 
     }
 }

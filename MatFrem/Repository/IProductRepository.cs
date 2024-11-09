@@ -11,7 +11,6 @@ namespace MatFrem.Repository
         Task<ProductModel> InsertProduct(ProductModel model);
         Task<ProductModel?> GetItemById(int id);
         Task<ProductModel?> DeleteItem(int id);
-
         Task<ProductModel?> UpdateItems(ProductModel productModel);
         Task<ProductModel> Save();
 

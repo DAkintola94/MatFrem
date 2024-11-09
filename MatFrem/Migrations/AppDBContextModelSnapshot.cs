@@ -98,7 +98,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "acaebc41-1be7-4f4d-bddc-ee22b10246dd",
+                            ConcurrencyStamp = "d4e4a272-8bbd-4759-8ae3-e650fad51b5b",
                             Email = "sysadmin@test.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -106,9 +106,9 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SYSADMIN@TEST.COM",
                             NormalizedUserName = "SYSADMIN@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGlc2XYzNY5NCnPILCJ61NiDANFHHUKU7NxKF2+824oihuvTqupTgEx70E2F9w5mMw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHru02r5fnJ9XQXhO8zCWpDSbtMQW7eIkDDDxdTK1Jg1rWFhg6bK301JZOQ3/jw1CQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3f82d5a4-0b9f-424c-8e4a-f25a67149f3c",
+                            SecurityStamp = "3c1f2aaf-ddd4-4c8e-ba3e-c6d8a5a7da28",
                             TwoFactorEnabled = false,
                             UserName = "sysadmin@test.com"
                         },
@@ -116,7 +116,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "73e61370-d5de-447a-8255-d07047d70361",
+                            ConcurrencyStamp = "9b8fa94d-381d-42e5-b4da-2383c2b26640",
                             Email = "driver@test.com",
                             EmailConfirmed = false,
                             FirstName = "Test",
@@ -124,9 +124,9 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "DRIVER@TEST.COM",
                             NormalizedUserName = "DRIVER@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGt4iM8M7NLgWO4tj9/aUq5coPPNNWhZ3R/t4k35WJe95N3oHHQ6UgR2/+A+l2BJJQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMLyb2eWcAVr1bHFB2fnNnfIk+82BiE7ZNcxC+oQfBHHwyAkxMQO9y/6m/UoVOfIAQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a696f47d-aec5-4997-aa76-56da7a141129",
+                            SecurityStamp = "4c6f046e-a089-4ff7-aa59-edee8dccca64",
                             TwoFactorEnabled = false,
                             UserName = "driver@test.com"
                         },
@@ -134,7 +134,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "eeaadcfe-e56b-4f49-b2d5-3889a4cae69c",
+                            ConcurrencyStamp = "ec8667ac-1805-4d0e-b5a2-d7dbeabe04ed",
                             Email = "customer@test.com",
                             EmailConfirmed = false,
                             FirstName = "Test",
@@ -142,9 +142,9 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CUSTOMER@TEST.COM",
                             NormalizedUserName = "CUSTOMER@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIlVWUxsDJFgr5UyoyXFO0k++ksq3h9+XoqnMY1jAsllsd2aIstriOYz6awJ0rdoqQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEqNtlIPlpqmyz5Iap8HwkdtIyOXjMavaYrT1vgB9I8TkVCS+KNW6HX3s7US1xGXgg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c77136ab-a522-4dc1-90fc-1567ff926fef",
+                            SecurityStamp = "6dddb57b-9151-4364-94cc-9bb23d94b641",
                             TwoFactorEnabled = false,
                             UserName = "customer@test.com"
                         });

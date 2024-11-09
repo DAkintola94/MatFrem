@@ -8,11 +8,10 @@ namespace MatFrem.Controllers
     public class Location : Controller
     {
         private readonly ILocationRepository _locationRepository;
-        private readonly ICustomerRepository _customerRepository;
-        public Location(ILocationRepository locationRepo, ICustomerRepository customerRepository)
+       
+        public Location(ILocationRepository locationRepo)
         {
             _locationRepository = locationRepo;
-            _customerRepository = customerRepository;
         }
 
         [HttpGet]

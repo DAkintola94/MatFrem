@@ -1,0 +1,35 @@
+﻿@model MatFrem.Models.ViewModel.OrderViewModel
+
+<head>
+    <title> Rapport oversikt </title>
+    <link href="~/css/formscheme.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="contact-container">
+        <form method="post" class="contact-left" asp-controller="Location" asp-action="ViewIndexTable">
+            <div class="contact-left-title">
+                <h2> Oppdater skjerma </h2>
+                <hr>
+            </div>
+
+            <input type="text" class="contact-inputs" placeholder="Order ID" asp-for="OrderID" readonly />
+
+            <input type="text" class="contact-inputs form-control" placeholder="Addresse" asp-for="Location.GeoJson" readonly />
+
+            <input type="text" class="contact-inputs form-control" placeholder="Dato" asp-for="OrderCreatedDate" readonly />
+
+            <input type="text" class="contact-inputs form-control" placeholder="Kunde navn" asp-for="Customer.CustomerName" readonly />
+
+            <input type="text" class="contact-inputs form-control" placeholder="Order status" asp-for="OrderStatus" readonly/>
+
+            <button type="submit" class="btn btn-dark">
+                <img src="~/Images/arrow_icon.png" alt="arrow icon"> Velg order
+            </button>
+
+        </form>
+        <div class="contact-right">
+            <img src="~/Images/right_img.png" alt="Image">
+        </div>
+    </div>
+</body>

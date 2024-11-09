@@ -6,11 +6,11 @@ namespace MatFrem.Controllers
 {
     public class Market : Controller
     {
-        private readonly ProductRepository _shoppingRepository;
+        private readonly IProductRepository _productRepository;
 
-        public Market(ProductRepository shoppingRepo)
+        public Market(IProductRepository productRepo)
         {
-            _shoppingRepository = shoppingRepo;
+            _productRepository = productRepo;
         }
         public IActionResult Shopping()
         {
@@ -25,7 +25,7 @@ namespace MatFrem.Controllers
         [HttpPost]
         public async Task<ActionResult> Delete(int id)
         {
-           var deleteItem = await _shoppingRepository.DeleteItem(id);
+           var deleteItem = await _productRepository.DeleteItem(id);
             return View();
         }
     }

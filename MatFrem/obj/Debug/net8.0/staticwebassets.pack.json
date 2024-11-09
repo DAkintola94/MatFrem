@@ -185,6 +185,10 @@
       "PackagePath": "staticwebassets\\Images\\account.svg"
     },
     {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\arrow_icon.png",
+      "PackagePath": "staticwebassets\\Images\\arrow_icon.png"
+    },
+    {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\backgroundImageLogin.jpg",
       "PackagePath": "staticwebassets\\Images\\backgroundImageLogin.jpg"
     },
@@ -205,12 +209,20 @@
       "PackagePath": "staticwebassets\\Images\\logout.svg"
     },
     {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\right_img.png",
+      "PackagePath": "staticwebassets\\Images\\right_img.png"
+    },
+    {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\shopping_bag.svg",
       "PackagePath": "staticwebassets\\Images\\shopping_bag.svg"
     },
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\RegsLoginStyle.css",
       "PackagePath": "staticwebassets\\css\\RegsLoginStyle.css"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\formscheme.css",
+      "PackagePath": "staticwebassets\\css\\formscheme.css"
     },
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\homeStyle.css",

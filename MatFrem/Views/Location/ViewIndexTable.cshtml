@@ -1,37 +1,46 @@
 ﻿@model MatFrem.Models.ViewModel.EditViewTable
+<head>
+    <title> Rapport oversikt </title>
+    <link href="~/css/formscheme.css" rel="stylesheet" />
+</head>
 
-<link href="~/css/homeStyle.css" rel="stylesheet" />
+<body>
+    <div class="contact-container">
+        <form method="post" class="contact-left" asp-controller="Location" asp-action="ViewIndexTable">
+        <div class="contact-left-title">
+            <h2> Oppdater skjerma </h2>
+                    <hr>
+                </div>
 
-<h1> Kart rapport oversikt </h1>
-<div class="container py-5">
-	<form method="post" asp-controller="Location" asp-action="ViewIndexTable">
-		<div class="mb-3">
-			<label class="form-label"> Rapport ID </label>
-			<input type="text" class="form-control" asp-for="LocationReportID" readonly /> <!-- the value in name must match the model's property -->
-		</div>
+            <input type="text" class="contact-inputs" placeholder="Rapport ID" asp-for="LocationReportID" readonly />
 
-		<div class="mb-3">
-			<label class="form-label"> Geo json </label>
-			<input type="text" class="form-control" asp-for="GeoJson" readonly /> <!-- the value in name must match the model's property -->
-		</div>
+           <input type="text" class="contact-inputs form-control" placeholder="Geo Json" asp-for="GeoJson" readonly />
+           
+            <input type="text" class="contact-inputs form-control" placeholder="Dato" asp-for="Date" />
 
-		<div class="mb-3">
-			<label class="form-label"> Dato </label>
-			<input type="text" class="form-control" asp-for="Date" /> <!-- the value in name must match the model's property -->
-		</div>
+           <textarea class="contact-inputs" placeholder="Din melding" cols="30" rows="10" asp-for="LocationMessage"></textarea>
 
-		<div class="mb-3">
-			<label class="form-label"> Melding </label>
-			<input type="text" class="form-control" asp-for="LocationMessage" /> <!-- the value in name must match the model's property -->
-		</div>
+                <button type="submit" class="btn btn-dark">
+                    <img src="~/Images/arrow_icon.png" alt="arrow icon"> Oppdater
+                </button>
 
-		<div class="mb-3">
-			<div class="d-flex">
-				<button type="submit" class="btn btn-dark">
-					Update
-				</button>
-			</div>
-		</div>
+                </form>
+            
+            <div class="contact-right">
+                <img src="~/Images/right_img.png" alt="Image">
+            </div>
+        </div>
+</body>
 
-	</form>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+		
