@@ -29,7 +29,6 @@ namespace MatFrem.Controllers
             var getOrderById = await _orderRepository.GetOrderByID(id);
             if (getOrderById != null)
             {
-
                 OrderViewModel orderViewModel = new OrderViewModel
                 {
                     OrderID = getOrderById.OrderID,

@@ -5,9 +5,9 @@ namespace MatFrem.Controllers
 {
     public class Driver : Controller
     {
-        private readonly ProductRepository _productRepository;
+        private readonly IProductRepository _productRepository;
 
-        public Driver(ProductRepository productRepo)
+        public Driver(IProductRepository productRepo)
         {
             _productRepository = productRepo;
         }

@@ -19,5 +19,9 @@ namespace MatFrem.Models.DomainModel
         [NotMapped]
         public string ProductImage { get; set; }
 
+        public OrderModel? Order { get; set; }
+        public LocationModel? Location { get; set; }
+        public ShopModel? Shop { get; set; }
+
     }
 }

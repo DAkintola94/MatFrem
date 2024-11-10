@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YkVkqZUB5M2gMn4Kn5i+8P4zgRd6cg8pbrUIEyucTE4=",
+  "Hash": "7gxmdx/h9mgjwBwfKs525Z4IoTOEO0oNVg/HEr9GdUc=",
   "Source": "MatFrem",
   "BasePath": "_content/MatFrem",
   "Mode": "Default",
@@ -965,6 +965,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\smallmap.css",
+      "SourceId": "MatFrem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\",
+      "BasePath": "_content/MatFrem",
+      "RelativePath": "css/smallmap.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\smallmap.css"
     },
     {
       "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\favicon.ico",

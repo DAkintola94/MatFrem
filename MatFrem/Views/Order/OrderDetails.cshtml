@@ -3,11 +3,14 @@
 <head>
     <title> Rapport oversikt </title>
     <link href="~/css/formscheme.css" rel="stylesheet" />
+    <link href="~/css/smallmap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
 </head>
 
 <body>
     <div class="contact-container">
-        <form method="post" class="contact-left" asp-controller="Location" asp-action="ViewIndexTable">
+        <form method="post" class="contact-left">
             <div class="contact-left-title">
                 <h2> Oppdater skjerma </h2>
                 <hr>
@@ -15,7 +18,7 @@
 
             <input type="text" class="contact-inputs" placeholder="Order ID" asp-for="OrderID" readonly />
 
-            <input type="text" class="contact-inputs form-control" placeholder="Addresse" asp-for="Location.GeoJson" readonly />
+            <input type="text" class="contact-inputs form-control" placeholder="Addresse" asp-for="LocationID" readonly />
 
             <input type="text" class="contact-inputs form-control" placeholder="Dato" asp-for="OrderCreatedDate" readonly />
 
@@ -32,4 +35,8 @@
             <img src="~/Images/right_img.png" alt="Image">
         </div>
     </div>
+    <div id="map"></div>
 </body>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>

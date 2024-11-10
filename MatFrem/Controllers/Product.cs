@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MatFrem.Controllers
 {
-    public class Admin : Controller
+    public class Product : Controller
     {
-        private readonly ProductRepository _productRepository;
+        private readonly IProductRepository _productRepository;
 
-        public Admin(ProductRepository productRepo)
+        public Product(IProductRepository productRepo)
         {
             _productRepository = productRepo;
         }
@@ -19,13 +19,12 @@ namespace MatFrem.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddProduct(ProductModel pModel) //no need for a get method, you have directed the html form in Index here
+        public async Task<ActionResult> Index(ProductModel pModel) //no need for a get method, you have directed the html form in Index here
         {
             var name = pModel.ProductName; 
             var price = pModel.ProductPrice;
             var calories = pModel.ProductCalories;
             var category = pModel.ProductCategory;
-            var productID = pModel.ProductID;
             var addItem = await _productRepository.InsertProduct(pModel); //using Insert because Save does not take a parameter
             return RedirectToAction("ShowProduct");
         }
@@ -51,7 +50,7 @@ namespace MatFrem.Controllers
                     ProductCalories = editItem.ProductCalories,
                     ProductCategory = editItem.ProductCategory
                 };
-                return View(editItem);
+                return View(editProduct); //its this "new" model we want to return, editItem is attached to another type of model that is not seeded here
             }
             return View(null);
         }

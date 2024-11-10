@@ -1,0 +1,12 @@
+﻿body {
+}
+
+#map {
+    position: center;
+    top: 100px; /* Distance from the top of the screen */
+    left: 70%; /* Distance from the left of the screen (you can change this value) */
+    transform: translateX(-40%);
+    width: 620px; /* Define a specific width for your map */
+    height: 500px; /* Define a specific height for your map */
+    background-color: #f0f0f0; /* Optional: for visibility */
+}

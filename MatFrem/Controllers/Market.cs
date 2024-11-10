@@ -12,9 +12,12 @@ namespace MatFrem.Controllers
         {
             _productRepository = productRepo;
         }
-        public IActionResult Shopping()
+
+        [HttpGet]
+        public async Task<IActionResult> Shopping()
         {
-            return View();
+            var listAllProducts = await _productRepository.GetAllItems();
+            return View(listAllProducts);
         }
 
         public IActionResult Cart()

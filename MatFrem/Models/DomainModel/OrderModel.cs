@@ -5,12 +5,11 @@ namespace MatFrem.Models.DomainModel
 {
     public class OrderModel
     {
-        
         public int OrderID { get; set; }
         public DateOnly OrderCreatedDate { get; set; } = DateOnly.FromDateTime(DateTime.Now);
         public int DriverID { get; set; } //foreign key for DriverModel, this is the primary key for DriverMode
         public int CustomerID { get; set; }
-        public int LocationID { get; set; }
+        public Guid LocationID { get; set; }
         public int ShopID { get; set; }
         public int OrderStatusID { get; set; }
 

@@ -13,9 +13,9 @@
     <link href="~/css/site.css" rel="stylesheet" />
 </head>
 
-<body>
-    <div id="map" style="height: 400px;"></div> <!-- Set a height for the map -->
+<div id="map" style="height: 400px;"> </div>
 
+<body>
     <form method="post" asp-controller="Location">
         <div>
             <input type="hidden" id="geoId" name="geoJson" class="form-control" />
@@ -28,3 +28,4 @@
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
 <script src="~/js/geoLocation.js"></script>
+<script src="~/js/site.js"></script>

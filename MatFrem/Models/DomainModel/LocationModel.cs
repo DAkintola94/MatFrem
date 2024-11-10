@@ -11,7 +11,6 @@ namespace MatFrem.Models.DomainModel
         public string GeoJson { get; set; }
         public string LocationMessage { get; set; }
         public DateOnly Date { get; set; } = DateOnly.FromDateTime(DateTime.Now);
-
         public ICollection<OrderModel> OrderModels { get; set; } = new List<OrderModel>();
         public ICollection<ShopModel> ShopsModel { get; set; } = new List<ShopModel>();
 

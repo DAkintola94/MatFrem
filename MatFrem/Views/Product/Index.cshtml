@@ -1,0 +1,48 @@
+﻿@model MatFrem.Models.DomainModel.ProductModel
+
+<link href="~/css/homeStyle.css" rel="stylesheet" />
+
+<h1> Opprett produkt </h1>
+<div class="container py-5">
+	<form method="post" >
+
+			<input type="hidden" class="form-control" asp-for="ProductID" /> <!-- the value in name must match the model's property -->
+		
+
+		<div class="mb-3">
+			<label class="form-label"> Produkt navn </label>
+			<input type="text" class="form-control" asp-for="ProductName"/> <!-- the value in name must match the model's property -->
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label"> Produkt pris </label>
+			<input type="text" class="form-control" asp-for="ProductPrice"/> <!-- the value in name must match the model's property -->
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label"> Produkt Kategory </label>
+			<select class="form-control" asp-for="ProductCategory">
+				<option value="Meleri & Egg">Meleri & Egg</option>
+				<option value="Frukt & Grønt">Frukt & Grønt</option>
+				<option value="Vegetar">Vegetar</option>
+				<option value="Sjømat">Sjømat</option>
+				<option value="Tørrvare">Tørrvare</option>
+				<option value="Frokostblanding">Frokostblanding</option>
+				<option value="Frosne varer">Frosne varer</option>
+				<option value="Bakeri">Bakeri</option>
+				<</select>
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label"> Kalori innhold per 100g </label>
+			<input type="text" class="form-control" asp-for="ProductCalories"/> <!-- the value in name must match the model's property -->
+		</div>
+
+		<div class="mb-3">
+			<button type="submit" class="btn btn-dark">
+				Opprett Produkt
+			</button>
+		</div>
+
+	</form>
+</div>
