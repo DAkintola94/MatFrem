@@ -30,9 +30,18 @@ namespace MatFrem.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> ShowProduct(ProductModel productModel)
+        public async Task<ActionResult> ShowProduct(int pageSize = 8, int pageNumber = 1)
         {
-            var showAll = await _productRepository.GetAllItems();
+            var totalRecords = await _productRepository.CountPage();
+            var totalPages = (int)Math.Ceiling((decimal)totalRecords / pageSize);
+
+            pageNumber = Math.Clamp(pageNumber, 1, totalPages);
+
+            ViewBag.TotalPages = totalPages;
+            ViewBag.CurrentPage = pageNumber;
+            ViewBag.PageSize = pageSize;
+
+            var showAll = await _productRepository.GetAllItems(pageNumber, pageSize);
             return View(showAll); //need to return a list, its IEnumerable in the html
         }
 

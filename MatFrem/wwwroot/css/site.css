@@ -18,12 +18,13 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: url('../images/deliverybackground.jpg');
+    background-size: cover;
 }
 
 .login-stylefront {
     color: white;
-    background-image: url('../images/loginbackground.jpg');
 }
 
 .login-formstyle {

@@ -181,6 +181,10 @@
       "PackagePath": "staticwebassets\\MatFrem.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\BGprofileBlack.svg",
+      "PackagePath": "staticwebassets\\Images\\BGprofileBlack.svg"
+    },
+    {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\account.svg",
       "PackagePath": "staticwebassets\\Images\\account.svg"
     },
@@ -191,6 +195,14 @@
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\backgroundImageLogin.jpg",
       "PackagePath": "staticwebassets\\Images\\backgroundImageLogin.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\bg.jpg",
+      "PackagePath": "staticwebassets\\Images\\bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\create.png",
+      "PackagePath": "staticwebassets\\Images\\create.png"
     },
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\deliverybackground.jpg",
@@ -205,8 +217,16 @@
       "PackagePath": "staticwebassets\\Images\\green-arrow.svg"
     },
     {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\login.png",
+      "PackagePath": "staticwebassets\\Images\\login.png"
+    },
+    {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\logout.svg",
       "PackagePath": "staticwebassets\\Images\\logout.svg"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\profilepagepic.jpg",
+      "PackagePath": "staticwebassets\\Images\\profilepagepic.jpg"
     },
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\right_img.png",

@@ -19,7 +19,6 @@ namespace MatFrem.DataContext
         public DbSet<CustomerModel> Customers { get; set; }
         public DbSet<ShopModel> Shop_detail { get; set; }
         public DbSet<ProductModel> Product_detail { get; set; }
-        public DbSet<CreateAccountModel> Account_creation { get; set; }
         public DbSet<LocationModel> Locations { get; set; }
         public DbSet<OrderModel> Orders { get; set; }
 
@@ -27,11 +26,15 @@ namespace MatFrem.DataContext
         {
             base.OnModelCreating(modelBuilder);
 
+
+
             var sysAdminRoleId = "1";
             var driverRoleId = "2";
             var customerRoleId = "3";
 
-            //Seed data
+            //Seed roles for (User, Admin Superadmin)
+            // Seed superAdmin
+            // Add all the role to the superadmin
 
             var roles = new List<IdentityRole> //List of roles, stacked in IdenityRole list
             {
@@ -75,13 +78,15 @@ namespace MatFrem.DataContext
                 Email = "sysadmin@test.com",
                 NormalizedEmail = "sysadmin@test.com".ToUpper(),
                 FirstName = "System",
-                LastName = "Administrator"
+                LastName = "Administrator",
+                PhoneNumber = "40748608"
             };
 
             sysAdminUser.PasswordHash = new PasswordHasher<ApplicationUser> //Hashing password for sysAdminUser
                 ().HashPassword(sysAdminUser, "Testingtesting1234");
 
-            modelBuilder.Entity<ApplicationUser>().HasData(sysAdminUser); //Seed data for sysAdminUser
+            modelBuilder.Entity<ApplicationUser>().HasData(sysAdminUser); //using applicationuser because its custom model than add more, 
+            //its possible because it inherits from IdentityUser, the is the default
 
             var sysadminRoles = new List<IdentityUserRole<string>> //List of roles for sysAdminUser
             {
@@ -119,7 +124,8 @@ namespace MatFrem.DataContext
                 Email = "driver@test.com", //All this is possible because of IdentityUser
                 NormalizedEmail = "DRIVER@TEST.COM",
                 FirstName = "Test",
-                LastName = "Driver"
+                LastName = "Driver",
+                PhoneNumber = "95534356"
             };
 
             driverUser.PasswordHash = new PasswordHasher<ApplicationUser> //Hashing password for driverUser, linked to ApplicationUser
@@ -147,7 +153,9 @@ namespace MatFrem.DataContext
                 Email = "customer@test.com",
                 NormalizedEmail = "CUSTOMER@TEST.COM",
                 FirstName = "Test",
-                LastName = "Customer"
+                LastName = "Customer",
+                PhoneNumber = "43342364"
+                
             };
 
             customerUser.PasswordHash = new PasswordHasher<ApplicationUser> //Hashing password for customerUser, linked to ApplicationUser

@@ -1,4 +1,4 @@
-﻿@model MatFrem.Models.DomainModel.CreateAccountModel
+﻿@model MatFrem.Models.ViewModel.LoginViewModel
 
 ﻿
 <head>
@@ -7,16 +7,17 @@
 </head>
 
 <div class="wrapper">
-    <form asp-controller="ProfileManagement" asp-action="Authenticate" method="post">
+    <form method="post">
         <h1>Innlogging </h1>
         <div class="input-box">
-            <input type="email" placeholder="E-post" required>
+            <input type="text" placeholder="Brukernavn" asp-for="Username" required>
             <i class='bx bxs-user'></i>
         </div>
         <div class="input-box">
-            <input type="password" placeholder="Passord" required>
+            <input type="password" placeholder="Passord" asp-for="Password" required>
             <i class='bx bxs-lock-alt'></i>
         </div>
+
         <div class="remember-forgot">
             <label>
                 <input type="checkbox"> Husk meg

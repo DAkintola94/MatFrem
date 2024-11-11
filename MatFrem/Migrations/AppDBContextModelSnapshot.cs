@@ -98,7 +98,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2d52e169-a370-4a94-b571-92a30abace1f",
+                            ConcurrencyStamp = "820889af-1481-405f-8a47-b4622941d07a",
                             Email = "sysadmin@test.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -106,9 +106,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SYSADMIN@TEST.COM",
                             NormalizedUserName = "SYSADMIN@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEP1Is7fBM6nyneDU9Mg4bqT2lCbehBbwSxLQioM9eObepBWuK5SU5tpNVHowl2CrTA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHCkPV4fSzxTQCHizKTg/7KTN1DMe2Ua0f9qVtz6HxJHcnojgOXIX9bLN2LA3iWhhQ==",
+                            PhoneNumber = "40748608",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "14dc72a8-d375-4128-badc-b371e03ee176",
+                            SecurityStamp = "af0d371c-a6d3-496c-899a-db5df154b11f",
                             TwoFactorEnabled = false,
                             UserName = "sysadmin@test.com"
                         },
@@ -116,7 +117,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "049330b5-5b05-440b-a90e-0ee6f22187e0",
+                            ConcurrencyStamp = "6879228e-df0b-42f9-bd56-9badb112b52f",
                             Email = "driver@test.com",
                             EmailConfirmed = false,
                             FirstName = "Test",
@@ -124,9 +125,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "DRIVER@TEST.COM",
                             NormalizedUserName = "DRIVER@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAECPZ0SzjEN52N0RRgdSCFSyNSWTGYQeWnnESco407wTYzLDZaJU14XZJ9zeuWFsM9w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGLdoFg712MM9kWP5vPhxhyELXSymAHm3DBtPzeOWgkA/xW+pe/z72d682xJfm4vcQ==",
+                            PhoneNumber = "95534356",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "cdfb4bf3-7b9d-496c-9183-85d311622356",
+                            SecurityStamp = "fdc4afe8-7948-4d24-8dd7-e97608d5e057",
                             TwoFactorEnabled = false,
                             UserName = "driver@test.com"
                         },
@@ -134,7 +136,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f44e49f3-b3d7-420f-8ebb-859f03ee861b",
+                            ConcurrencyStamp = "0819310a-45fb-46ac-ab20-3ac0aca91327",
                             Email = "customer@test.com",
                             EmailConfirmed = false,
                             FirstName = "Test",
@@ -142,9 +144,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CUSTOMER@TEST.COM",
                             NormalizedUserName = "CUSTOMER@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMA19ecpWXyLyGQXfSqWVaGB6uj5YBtHhvyzilfWJyr7FgIhTmRLUH9lllvmzJvIzA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECW63POMUQcJy9gL6Rs1AXE9uXp4jqofxotEBhIL63maTK2J3ilcLBxvzdWQo6rckQ==",
+                            PhoneNumber = "43342364",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d815523b-119a-41bc-b71c-b0bb3675636b",
+                            SecurityStamp = "16181e79-cd6a-49e4-a0fa-1a010c178cef",
                             TwoFactorEnabled = false,
                             UserName = "customer@test.com"
                         });

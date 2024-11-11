@@ -14,10 +14,16 @@ namespace MatFrem.Repository
             _context = context;
         }
 
-        public async Task<IEnumerable<ProductModel?>> GetAllItems()
+        public async Task<IEnumerable<ProductModel?>> GetAllItems(int pageNumber = 1, int pageSize = 100)
         {
-            var items = await _context.Product_detail.Take(50).ToListAsync(); //remember, Product_detail is the object created in the AppDBContext
-            return items;
+            var query = _context.Product_detail.AsQueryable(); 
+            //pagination - a formula of skipping a certain number of items and taking a certain number of items
+            var skipResult = (pageNumber - 1) * pageSize;
+            query = query.Skip(skipResult).Take(pageSize);
+
+            return await query.ToListAsync(); // We take data from the database, and split them into how the pagination is setup above.
+
+
         }
 
         public async Task<ProductModel?> DeleteItem(int id)
@@ -57,6 +63,11 @@ namespace MatFrem.Repository
              _context.Product_detail.Update(productModel);
             await _context.SaveChangesAsync();
             return productModel;
+        }
+
+        public async Task<int> CountPage()
+        {
+            return await _context.Product_detail.CountAsync();
         }
 
 

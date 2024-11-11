@@ -14,9 +14,20 @@ namespace MatFrem.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Shopping()
+        public async Task<IActionResult> Shopping(int pageSize = 8, int pageNumber = 1)
         {
-            var listAllProducts = await _productRepository.GetAllItems();
+            
+            var totalRecords = await _productRepository.CountPage();
+            var totalPages = (int)Math.Ceiling((decimal)totalRecords / pageSize);
+
+            pageNumber = Math.Clamp(pageNumber, 1, totalPages);
+
+            ViewBag.TotalPages = totalPages;
+            ViewBag.CurrentPage = pageNumber;
+            ViewBag.PageSize = pageSize;
+
+            var listAllProducts = await _productRepository.GetAllItems(pageNumber, pageSize);
+
             return View(listAllProducts);
         }
 
