@@ -315,6 +315,34 @@ namespace MatFrem.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "Product_detail",
+                columns: table => new
+                {
+                    ProductID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ProductName = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ProductCalories = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ProductPrice = table.Column<double>(type: "double", nullable: false),
+                    ProductCategory = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ProductLocation = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ShopModelShopID = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Product_detail", x => x.ProductID);
+                    table.ForeignKey(
+                        name: "FK_Product_detail_Shop_detail_ShopModelShopID",
+                        column: x => x.ShopModelShopID,
+                        principalTable: "Shop_detail",
+                        principalColumn: "ShopID");
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
                 {
@@ -356,47 +384,13 @@ namespace MatFrem.Migrations
                         principalColumn: "OrderStatusID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
+                        name: "FK_Orders_Product_detail_ProductID",
+                        column: x => x.ProductID,
+                        principalTable: "Product_detail",
+                        principalColumn: "ProductID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Orders_Shop_detail_ShopID",
-                        column: x => x.ShopID,
-                        principalTable: "Shop_detail",
-                        principalColumn: "ShopID",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Product_detail",
-                columns: table => new
-                {
-                    ProductID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ProductName = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    ProductCalories = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    ProductPrice = table.Column<double>(type: "double", nullable: false),
-                    ProductCategory = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    ShopID = table.Column<int>(type: "int", nullable: false),
-                    OrderID = table.Column<int>(type: "int", nullable: true),
-                    LocationID = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Product_detail", x => x.ProductID);
-                    table.ForeignKey(
-                        name: "FK_Product_detail_Locations_LocationID",
-                        column: x => x.LocationID,
-                        principalTable: "Locations",
-                        principalColumn: "LocationReportID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Product_detail_Orders_OrderID",
-                        column: x => x.OrderID,
-                        principalTable: "Orders",
-                        principalColumn: "OrderID");
-                    table.ForeignKey(
-                        name: "FK_Product_detail_Shop_detail_ShopID",
                         column: x => x.ShopID,
                         principalTable: "Shop_detail",
                         principalColumn: "ShopID",
@@ -419,9 +413,9 @@ namespace MatFrem.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "1", 0, "b7e02231-cd83-46bb-ae75-fcaa5bc05d68", "sysadmin@test.com", false, "System", "Administrator", false, null, "SYSADMIN@TEST.COM", "SYSADMIN@TEST.COM", "AQAAAAIAAYagAAAAEIXk0J9gU8GU1/F+1k2+l0SAk2sJTntFYyAMYPGVVKYDI+SYFuyRgq+BsXCxZE6KsQ==", "40748608", false, "4d25c1d5-4e50-442a-b7f9-c74ec6237243", false, "sysadmin@test.com" },
-                    { "2", 0, "12d329de-bb7b-4956-828a-9ae303ccd38d", "driver@test.com", false, "Test", "Driver", false, null, "DRIVER@TEST.COM", "DRIVER@TEST.COM", "AQAAAAIAAYagAAAAEOOXyzpE+Y+fMiqw7yizrk3Rghuqgu3dZFRvOhuvB+P1C+arbjzVSAKK9dmvlSL9qA==", "95534356", false, "bbd51bbe-6150-469b-851c-078605aede7f", false, "driver@test.com" },
-                    { "3", 0, "710dcf5a-0311-459a-ab6e-469ed581306e", "customer@test.com", false, "Test", "Customer", false, null, "CUSTOMER@TEST.COM", "CUSTOMER@TEST.COM", "AQAAAAIAAYagAAAAEA5HgV+NLCiTGCOSH6uwwYP9dG59WUmfeW0potrfXhaAW+EQ2bH/daSi18SG50HlBw==", "43342364", false, "7578b562-e32c-47b3-83bc-a9dead8cc332", false, "customer@test.com" }
+                    { "1", 0, "18e0a565-a96f-43f2-8132-9297aff9d815", "sysadmin@test.com", false, "System", "Administrator", false, null, "SYSADMIN@TEST.COM", "SYSADMIN@TEST.COM", "AQAAAAIAAYagAAAAEC0uGjT067pr0QrmPPvGxkQP3U2udcRmsDTeMC2tpTa2BzB5XD8QGVt1qPI9kc0Szw==", "40748608", false, "27cd94f4-e293-4a72-b9dc-b6d7acc3c3db", false, "sysadmin@test.com" },
+                    { "2", 0, "9963f9c8-2a75-42e3-b609-4fa0aa797f84", "driver@test.com", false, "Test", "Driver", false, null, "DRIVER@TEST.COM", "DRIVER@TEST.COM", "AQAAAAIAAYagAAAAECFRTfdNoOAgTHHu5phUOPm5ekMen/zhiHGFpuEcnwwcqXXieJqjHrxVT1gpHFJsVw==", "95534356", false, "2f6de3f5-5d49-4186-b4f5-2f99171efa9e", false, "driver@test.com" },
+                    { "3", 0, "d9294c65-5035-4ccf-9edb-2ae4f738f97c", "customer@test.com", false, "Test", "Customer", false, null, "CUSTOMER@TEST.COM", "CUSTOMER@TEST.COM", "AQAAAAIAAYagAAAAEEEvN3pSnysseTcpOrAvUiG8fegjVb9IzOPKEI46zLOQSUQ8WZJI9Qp/8ngLPQ0pzg==", "43342364", false, "5079475b-cda3-4ddc-a3fd-8b9756282e07", false, "customer@test.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -541,19 +535,9 @@ namespace MatFrem.Migrations
                 column: "ShopID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Product_detail_LocationID",
+                name: "IX_Product_detail_ShopModelShopID",
                 table: "Product_detail",
-                column: "LocationID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Product_detail_OrderID",
-                table: "Product_detail",
-                column: "OrderID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Product_detail_ShopID",
-                table: "Product_detail",
-                column: "ShopID");
+                column: "ShopModelShopID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Shop_detail_LocationID",
@@ -607,14 +591,6 @@ namespace MatFrem.Migrations
                 principalTable: "Orders",
                 principalColumn: "OrderID",
                 onDelete: ReferentialAction.Cascade);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Orders_Product_detail_ProductID",
-                table: "Orders",
-                column: "ProductID",
-                principalTable: "Product_detail",
-                principalColumn: "ProductID",
-                onDelete: ReferentialAction.Cascade);
         }
 
         /// <inheritdoc />
@@ -635,10 +611,6 @@ namespace MatFrem.Migrations
             migrationBuilder.DropForeignKey(
                 name: "FK_Locations_Orders_OrderModelsOrderID",
                 table: "Locations");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Product_detail_Orders_OrderID",
-                table: "Product_detail");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");

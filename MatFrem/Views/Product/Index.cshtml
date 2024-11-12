@@ -1,4 +1,4 @@
-﻿@model MatFrem.Models.DomainModel.ProductModel
+﻿@model MatFrem.Models.ViewModel.EditProductModel
 
 <head>
 	<link href="~/css/site.css" rel="stylesheet" />
@@ -12,8 +12,6 @@
 	<!-- Form Column -->
 	<div class="form-column" style="flex: 1; padding-right: 20px;">
 		<form method="post">
-
-			<input type="hidden" class="form-control" asp-for="ProductID" />
 
 			<div class="mb-3">
 				<label class="form-label">Produkt navn</label>
@@ -45,20 +43,11 @@
 			</div>
 
 			<div class="mb-3">
-				<input type="hidden" class="form-control" asp-for="LocationM.GeoJson" id="geoJsonInput" /> 
+				<input type="hidden" class="form-control" asp-for="ProductLocation" id="geoJsonInput" /> 
 				<!-- the id in this input stores GeoJSON data generated from drawn map shapes (set by JavaScript) -->
 			</div>
 
-			<div class="mb-3">
-				<label class="form-label">Butikknavn</label>
-				<input type="text" class="form-control" asp-for="ShopM.ShopName" />
-			</div>
-
-			<div class="mb-3">
-				<label class="form-label">Butikk ID</label>
-				<input type="guid" class="form-control" asp-for="ShopM.ShopID" />
-			</div>
-
+				
 			<div class="mb-3">
 				<button type="submit" class="btn btn-dark">
 					Opprett Produkt

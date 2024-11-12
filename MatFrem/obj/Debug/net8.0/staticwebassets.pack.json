@@ -209,6 +209,10 @@
       "PackagePath": "staticwebassets\\Images\\deliverybackground.jpg"
     },
     {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\generalbg.jpg",
+      "PackagePath": "staticwebassets\\Images\\generalbg.jpg"
+    },
+    {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\geoMap.svg",
       "PackagePath": "staticwebassets\\Images\\geoMap.svg"
     },
@@ -255,6 +259,10 @@
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\homeStyle.css",
       "PackagePath": "staticwebassets\\css\\homeStyle.css"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\mainbgpicture.css",
+      "PackagePath": "staticwebassets\\css\\mainbgpicture.css"
     },
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\marketstyle.css",

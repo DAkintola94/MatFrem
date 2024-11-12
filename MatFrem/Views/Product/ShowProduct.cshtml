@@ -28,6 +28,7 @@
                 <thead>
                     <tr>
                         <th>Produkt ID</th>
+                        <th>Produkt Lokasjon</th>
                         <th>Navn</th>
                         <th>Pris</th>
                         <th>Kategori</th>
@@ -39,6 +40,7 @@
                     {
                         <tr>
                             <td>@productModel.ProductID</td>
+                            <td>@productModel.ProductLocation</td>
                             <td>@productModel.ProductName</td>
                             <td>@productModel.ProductCalories</td>
                             <td>@productModel.ProductPrice</td>
@@ -85,8 +87,6 @@
             </nav>
 
 
-            
-
         }
         else
         {
@@ -99,11 +99,11 @@
 <div>
     <button class="buttonClass"
             type="submit"
-            asp-controller="Market" asp-action="Delete">
+            asp-controller="Market" asp-action="DeleteProduct">
         Slett
     </button>
 </div>
 
 <script>var modelData = @Html.Raw(Json.Serialize(Model)); </script>
 
-<script src="~/js/sortSearch.jsjs"></script>
+<script src="~/js/sortSearch.js"></script>

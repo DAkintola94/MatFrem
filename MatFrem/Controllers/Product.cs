@@ -19,13 +19,21 @@ namespace MatFrem.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Index(ProductModel pModel) //no need for a get method, you have directed the html form in Index here
+        public async Task<ActionResult> Index(EditProductModel pModel) //no need for a get method, you have directed the html form in Index here
         {
 
+			ProductModel productView = new ProductModel
+			{
+				ProductName = pModel.ProductName,
+				ProductPrice = pModel.ProductPrice,
+				ProductCalories = pModel.ProductCalories,
+				ProductCategory = pModel.ProductCategory,
+				ProductLocation = pModel.ProductLocation,
+			}; //so we can save the productmodel to the database, but formatted into the viewmodel
 
-            if (ModelState.IsValid)
-            {
-                var addItems = await _productRepository.InsertProduct(pModel); //using Insert because Save does not take a parameter
+			if (ModelState.IsValid)
+            {    
+                var addItems = await _productRepository.InsertProduct(productView); //using Insert because Save does not take a parameter
 			}
             return RedirectToAction("ShowProduct");
         }
@@ -35,6 +43,8 @@ namespace MatFrem.Controllers
         {
             var totalRecords = await _productRepository.CountPage();
             var totalPages = (int)Math.Ceiling((decimal)totalRecords / pageSize);
+
+            totalPages = Math.Max(totalPages, 1);
 
             pageNumber = Math.Clamp(pageNumber, 1, totalPages);
 
@@ -58,9 +68,10 @@ namespace MatFrem.Controllers
                     ProductName = editItem.ProductName,
                     ProductPrice = editItem.ProductPrice,
                     ProductCalories = editItem.ProductCalories,
-                    ProductCategory = editItem.ProductCategory
+                    ProductCategory = editItem.ProductCategory,
+                    ProductLocation = editItem.ProductLocation
                 };
-                return View(editProduct); //its this "new" model we want to return, editItem is attached to another type of model that is not seeded here
+				return View(editProduct); //its this "new" model we want to return, editItem is attached to another type of model that is not seeded here
             }
             return View(null);
         }
@@ -78,17 +89,15 @@ namespace MatFrem.Controllers
                 existingItem.ProductPrice = editProduct.ProductPrice;
                 existingItem.ProductCalories = editProduct.ProductCalories;
                 existingItem.ProductCategory = editProduct.ProductCategory;
+				existingItem.ProductLocation = editProduct.ProductLocation;
 
-                // Save the changes to the repository
-                await _productRepository.UpdateItems(existingItem);
+				// Save the changes to the repository
+				await _productRepository.UpdateItems(existingItem);
 
-                return RedirectToAction("Edit", new { id = editProduct.ProductID });
+                return RedirectToAction("ShowProduct", new { id = editProduct.ProductID });
             }
-            
-            
-                return NotFound();
-            
 
+                return NotFound();
         }
 
         [HttpPost]

@@ -1,8 +1,13 @@
 ﻿@model MatFrem.Models.ViewModel.EditProductModel
 
+<head>
 <link href="~/css/site.css" rel="stylesheet" />
+</head>
 
-<h1> Opprett produkt </h1>
+@if(Model != null)
+{
+
+<h1> Rediger produkt </h1>
 <div class="container py-5">
 	<form method="post" asp-controller="Product" asp-action="EditProduct">
 		<div class="mb-3">
@@ -20,10 +25,19 @@
 			<input type="text" class="form-control" asp-for="ProductPrice" /> <!-- the value in name must match the model's property -->
 		</div>
 
-		<div class="mb-3">
-			<label class="form-label"> Produkt beskrivelse </label>
-			<input type="text" class="form-control" asp-for="ProductCategory" /> <!-- the value in name must match the model's property -->
-		</div>
+			<div class="mb-3">
+				<label class="form-label">Produkt Kategori</label>
+				<select class="form-control" asp-for="ProductCategory">
+					<option value="Meleri & Egg">Meleri & Egg</option>
+					<option value="Frukt & Grønt">Frukt & Grønt</option>
+					<option value="Vegetar">Vegetar</option>
+					<option value="Sjømat">Sjømat</option>
+					<option value="Tørrvare">Tørrvare</option>
+					<option value="Frokostblanding">Frokostblanding</option>
+					<option value="Frosne varer">Frosne varer</option>
+					<option value="Bakeri">Bakeri</option>
+				</select>
+			</div>
 
 		<div class="mb-3">
 			<label class="form-label"> Kalori innhold </label>
@@ -31,17 +45,25 @@
 		</div>
 
 		<div class="mb-3">
-
-			<div class="d-flex">
-				<button type="submit" class="btn btn-dark">
-					Update
-				</button>
-			</div>
-			<button type="submit" class="btn btn-danger ms-2" asp-action="Delete">
-				Delete
-			</button>
+			<label class="form-label"> Produkt Lokasjon </label>
+			<input type="text" class="form-control" asp-for="ProductLocation" /> <!-- the value in name must match the model's property -->
 		</div>
 
+			<div class="mb-3 d-flex justify-content-between">
+				<button type="submit" class="btn btn-dark">
+					Oppdater
+				</button>
+
+				<button type="submit" class="btn btn-danger ms-2" asp-action="DeleteProduct">
+					Slett produkt
+				</button>
+			</div>
 	</form>
 </div>
+}
+
+else 
+{
+	<h1> Ingen produkt er funnet </h1>
+}
 

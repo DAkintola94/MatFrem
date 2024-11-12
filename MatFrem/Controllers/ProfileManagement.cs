@@ -39,11 +39,11 @@ namespace MatFrem.Controllers
             
             if(applicationResult.Succeeded) //assigning user role here, after creation
             {
-              var applicationIdentityResult = await _userManager.AddToRoleAsync(applicationUser, "User"); //assigning user role, "User" is in the appdbcontext
+              var applicationIdentityResult = await _userManager.AddToRoleAsync(applicationUser, "Customer"); //assigning user role, "User" is in the appdbcontext
                 
                 if(applicationIdentityResult.Succeeded)
                 {
-                    return RedirectToAction("ProfilePage");
+                    return RedirectToAction("Login");
                 }
             }
 

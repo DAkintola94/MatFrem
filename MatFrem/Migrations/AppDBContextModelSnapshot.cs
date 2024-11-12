@@ -98,7 +98,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b7e02231-cd83-46bb-ae75-fcaa5bc05d68",
+                            ConcurrencyStamp = "18e0a565-a96f-43f2-8132-9297aff9d815",
                             Email = "sysadmin@test.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -106,10 +106,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SYSADMIN@TEST.COM",
                             NormalizedUserName = "SYSADMIN@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIXk0J9gU8GU1/F+1k2+l0SAk2sJTntFYyAMYPGVVKYDI+SYFuyRgq+BsXCxZE6KsQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEC0uGjT067pr0QrmPPvGxkQP3U2udcRmsDTeMC2tpTa2BzB5XD8QGVt1qPI9kc0Szw==",
                             PhoneNumber = "40748608",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4d25c1d5-4e50-442a-b7f9-c74ec6237243",
+                            SecurityStamp = "27cd94f4-e293-4a72-b9dc-b6d7acc3c3db",
                             TwoFactorEnabled = false,
                             UserName = "sysadmin@test.com"
                         },
@@ -117,7 +117,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "12d329de-bb7b-4956-828a-9ae303ccd38d",
+                            ConcurrencyStamp = "9963f9c8-2a75-42e3-b609-4fa0aa797f84",
                             Email = "driver@test.com",
                             EmailConfirmed = false,
                             FirstName = "Test",
@@ -125,10 +125,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "DRIVER@TEST.COM",
                             NormalizedUserName = "DRIVER@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOOXyzpE+Y+fMiqw7yizrk3Rghuqgu3dZFRvOhuvB+P1C+arbjzVSAKK9dmvlSL9qA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECFRTfdNoOAgTHHu5phUOPm5ekMen/zhiHGFpuEcnwwcqXXieJqjHrxVT1gpHFJsVw==",
                             PhoneNumber = "95534356",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bbd51bbe-6150-469b-851c-078605aede7f",
+                            SecurityStamp = "2f6de3f5-5d49-4186-b4f5-2f99171efa9e",
                             TwoFactorEnabled = false,
                             UserName = "driver@test.com"
                         },
@@ -136,7 +136,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "710dcf5a-0311-459a-ab6e-469ed581306e",
+                            ConcurrencyStamp = "d9294c65-5035-4ccf-9edb-2ae4f738f97c",
                             Email = "customer@test.com",
                             EmailConfirmed = false,
                             FirstName = "Test",
@@ -144,10 +144,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CUSTOMER@TEST.COM",
                             NormalizedUserName = "CUSTOMER@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEA5HgV+NLCiTGCOSH6uwwYP9dG59WUmfeW0potrfXhaAW+EQ2bH/daSi18SG50HlBw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEEvN3pSnysseTcpOrAvUiG8fegjVb9IzOPKEI46zLOQSUQ8WZJI9Qp/8ngLPQ0pzg==",
                             PhoneNumber = "43342364",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7578b562-e32c-47b3-83bc-a9dead8cc332",
+                            SecurityStamp = "5079475b-cda3-4ddc-a3fd-8b9756282e07",
                             TwoFactorEnabled = false,
                             UserName = "customer@test.com"
                         });
@@ -347,18 +347,13 @@ namespace MatFrem.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ProductID"));
 
-                    b.Property<Guid>("LocationID")
-                        .HasColumnType("char(36)");
-
-                    b.Property<int?>("OrderID")
-                        .HasColumnType("int");
-
                     b.Property<string>("ProductCalories")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("ProductCategory")
-                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ProductLocation")
                         .HasColumnType("longtext");
 
                     b.Property<string>("ProductName")
@@ -368,16 +363,12 @@ namespace MatFrem.Migrations
                     b.Property<double>("ProductPrice")
                         .HasColumnType("double");
 
-                    b.Property<int>("ShopID")
+                    b.Property<int?>("ShopModelShopID")
                         .HasColumnType("int");
 
                     b.HasKey("ProductID");
 
-                    b.HasIndex("LocationID");
-
-                    b.HasIndex("OrderID");
-
-                    b.HasIndex("ShopID");
+                    b.HasIndex("ShopModelShopID");
 
                     b.ToTable("Product_detail");
                 });
@@ -703,27 +694,9 @@ namespace MatFrem.Migrations
 
             modelBuilder.Entity("MatFrem.Models.DomainModel.ProductModel", b =>
                 {
-                    b.HasOne("MatFrem.Models.DomainModel.LocationModel", "LocationM")
-                        .WithMany("ProductModels")
-                        .HasForeignKey("LocationID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MatFrem.Models.DomainModel.OrderModel", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderID");
-
-                    b.HasOne("MatFrem.Models.DomainModel.ShopModel", "ShopM")
+                    b.HasOne("MatFrem.Models.DomainModel.ShopModel", null)
                         .WithMany("ProductsModel")
-                        .HasForeignKey("ShopID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("LocationM");
-
-                    b.Navigation("Order");
-
-                    b.Navigation("ShopM");
+                        .HasForeignKey("ShopModelShopID");
                 });
 
             modelBuilder.Entity("MatFrem.Models.DomainModel.ShopModel", b =>
@@ -796,8 +769,6 @@ namespace MatFrem.Migrations
 
             modelBuilder.Entity("MatFrem.Models.DomainModel.LocationModel", b =>
                 {
-                    b.Navigation("ProductModels");
-
                     b.Navigation("ShopsModel");
                 });
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nSr9ur/7p8SLv62jFqBBN6bHkJjv82LNA6kZy2hr9nI=",
+  "Hash": "oSjL1QdBfEWHdeWCd789voKs2pBMGKcIfPOu+Mj0GO0=",
   "Source": "MatFrem",
   "BasePath": "_content/MatFrem",
   "Mode": "Default",
@@ -929,6 +929,25 @@
       "OriginalItemSpec": "wwwroot\\css\\homeStyle.css"
     },
     {
+      "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\mainbgpicture.css",
+      "SourceId": "MatFrem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\",
+      "BasePath": "_content/MatFrem",
+      "RelativePath": "css/mainbgpicture.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\mainbgpicture.css"
+    },
+    {
       "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\marketstyle.css",
       "SourceId": "MatFrem",
       "SourceType": "Discovered",
@@ -1155,6 +1174,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\deliverybackground.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\generalbg.jpg",
+      "SourceId": "MatFrem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\",
+      "BasePath": "_content/MatFrem",
+      "RelativePath": "Images/generalbg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\generalbg.jpg"
     },
     {
       "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\geoMap.svg",

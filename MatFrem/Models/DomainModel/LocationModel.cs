@@ -13,7 +13,7 @@ namespace MatFrem.Models.DomainModel
         public Guid ShopLocationID { get; set; }
         public OrderModel OrderModels { get; set; } 
         public ICollection<ShopModel> ShopsModel { get; set; } 
-        public ICollection<ProductModel> ProductModels { get; set; } 
+        
 
 
 	}

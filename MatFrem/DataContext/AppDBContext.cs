@@ -179,8 +179,11 @@ namespace MatFrem.DataContext
                 .HasKey(c => c.CustomerID); //Primary key for CustomerModel
             modelBuilder.Entity<LocationModel>()
                 .HasKey(l => l.LocationReportID); //Primary key for LocationModel
+
             modelBuilder.Entity<ProductModel>()
                 .HasKey(p => p.ProductID); //Primary key for ProductModel
+        
+
             modelBuilder.Entity<ShopModel>()
                 .HasKey(s => s.ShopID); //Primary key for ShopModel
             modelBuilder.Entity<OrderModel>()
@@ -234,20 +237,6 @@ namespace MatFrem.DataContext
                 .WithMany(l => l.ShopsModel)
                 .HasForeignKey(s => s.LocationID);
 
-            modelBuilder.Entity<ProductModel>()
-              .HasOne(p => p.LocationM)
-                .WithMany(l => l.ProductModels)
-				.HasForeignKey(p => p.LocationID);
-
-			modelBuilder.Entity<ProductModel>()
-				.HasOne(p => p.ShopM)
-				.WithMany(s => s.ProductsModel) //since its with many, we use <List> have to be defined in the model
-				.HasForeignKey(p => p.ShopID);
-
-            modelBuilder.Entity<ShopModel>()
-				.HasMany(s => s.ProductsModel)
-				.WithOne(p => p.ShopM)
-				.HasForeignKey(s => s.ShopID);
 
             modelBuilder.Entity<ShopModel>()
                 .HasMany(s => s.OrderModels)
