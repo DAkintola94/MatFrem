@@ -12,15 +12,13 @@ namespace MatFrem.Models.DomainModel
         public Guid LocationID { get; set; }
         public int ShopID { get; set; }
         public int OrderStatusID { get; set; }
-
         public int ProductID { get; set; }
-
         public CustomerModel Customer { get; set; } //navigation property for CustomerModel, namely, OrderModel has a Customer
         public DriverModel Driver { get; set; } //navigation property for DriverModel, namely, OrderModel has a Driver. To get all of Driver properties/inf
         public LocationModel Location { get; set; } 
-        public ShopModel ShopModel { get; set; } //all the properties is so the driver page model can be used to retreive those info
-        public OrderStatus OrderStatus { get; set; }
-        public ProductModel Product { get; set; }
+        public ShopModel ShopM { get; set; } //all the properties is so the driver page model can be used to retreive those info
+        public ICollection<OrderStatus> OrderStatusModel { get; set; } = new List<OrderStatus>();
+        public ICollection<ProductModel> ProductsM { get; set; } = new List<ProductModel>();
 
     }
 }

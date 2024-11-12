@@ -200,43 +200,53 @@ namespace MatFrem.DataContext
             modelBuilder.Entity<OrderModel>()
                 .HasOne(o => o.Driver) //Table OrderModel has one Driver
                 .WithMany() //A driver can have many Order
-                .HasForeignKey(o => o.DriverID); //Foreign key for DriverID in OrderModel ...
-
-
-            modelBuilder.Entity<LocationModel>()
-                .HasMany(o => o.OrderModels)
-                .WithOne(o => o.Location)
-                .HasForeignKey(o => o.LocationID);
-
+                .HasForeignKey(o => o.DriverID); //Foreign key for DriverID in OrderModel 
 
             modelBuilder.Entity<OrderModel>()
-                .HasOne(o => o.ShopModel)
-                .WithOne()
-                .HasForeignKey<OrderModel>(o => o.ShopID);
+                .HasOne(o => o.ShopM)
+                .WithMany(s => s.OrderModels)
+                .HasForeignKey(o => o.ShopID);
 
             modelBuilder.Entity<OrderModel>()
-                .HasOne(o => o.Product)
+                .HasOne(o => o.ProductsM)
                 .WithMany()
                 .HasForeignKey(o => o.ProductID);
 
-            modelBuilder.Entity<CustomerModel>()
-                .HasOne(c => c.Driver) //CustomerModel has one Driver
-                .WithOne() //Driver can have one Customer
+			modelBuilder.Entity<OrderModel>()
+				.HasMany(o => o.OrderStatusModel)
+				.WithOne()
+				.HasForeignKey(o => o.OrderStatusID); //since its with one, we use <> when defining foreign key,
+													  //if its with many, <List> have to be defined in the model
+
+			modelBuilder.Entity<LocationModel>()
+			  .HasMany(o => o.OrderModels)
+			  .WithOne(o => o.Location)
+			  .HasForeignKey(o => o.LocationID);
+
+			modelBuilder.Entity<CustomerModel>()
+                .HasOne(c => c.DriverM) //CustomerModel has one Driver
+                .WithOne(d => d.CustomerM) //Driver can have one Customer
                 .HasForeignKey<CustomerModel>(c => c.DriverID); //need <CustomerModel> because of how one -to-one relationships work in EF Core
                                                                 //since we are targeting a specific entity, we need to specify the entity type in the lambda expression
-
-
 
             modelBuilder.Entity<LocationModel>() //relationship where Location has can have many shops, but a shop can only have one location
                  .HasMany(l => l.ShopsModel)
                  .WithOne(s => s.Location)
-                 .HasForeignKey(l => l.LocationID);
-            
-            modelBuilder.Entity<OrderModel>()
-                .HasOne(o => o.OrderStatus)
-                .WithOne()
-                .HasForeignKey<OrderModel>(o => o.OrderStatusID);
-        }
+                 .HasForeignKey(l => l.ShopLocationID);
+
+            modelBuilder.Entity<ProductModel>()
+                .HasOne(p => p.LocationM)
+                .WithMany(l => l.ProductModels)
+				.HasForeignKey(p => p.LocationID);
+
+			modelBuilder.Entity<ProductModel>()
+				.HasOne(p => p.ShopM)
+				.WithMany(s => s.ProductsModel) //since its with many, we use <List> have to be defined in the model
+				.HasForeignKey(p => p.ShopID);
+
+
+
+		}
 
     }
 }

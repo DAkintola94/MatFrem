@@ -21,11 +21,17 @@ namespace MatFrem.Controllers
         [HttpPost]
         public async Task<ActionResult> Index(ProductModel pModel) //no need for a get method, you have directed the html form in Index here
         {
+            
+
             var name = pModel.ProductName; 
             var price = pModel.ProductPrice;
             var calories = pModel.ProductCalories;
             var category = pModel.ProductCategory;
-            var addItem = await _productRepository.InsertProduct(pModel); //using Insert because Save does not take a parameter
+            var location = pModel.ShopM.ShopName;
+			var shopLocationId = pModel.ShopM.ShopID;
+            var LocationGeo = pModel.LocationM.GeoJson;
+            var LocationID = pModel.LocationID;
+			var addItem = await _productRepository.InsertProduct(pModel); //using Insert because Save does not take a parameter
             return RedirectToAction("ShowProduct");
         }
 

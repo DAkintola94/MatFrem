@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cPJsp7XCtdbxWV9rK+LWlWRs9LSB482VpuXZMtcIGi8=",
+  "Hash": "nSr9ur/7p8SLv62jFqBBN6bHkJjv82LNA6kZy2hr9nI=",
   "Source": "MatFrem",
   "BasePath": "_content/MatFrem",
   "Mode": "Default",
@@ -929,6 +929,25 @@
       "OriginalItemSpec": "wwwroot\\css\\homeStyle.css"
     },
     {
+      "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\marketstyle.css",
+      "SourceId": "MatFrem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\",
+      "BasePath": "_content/MatFrem",
+      "RelativePath": "css/marketstyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\marketstyle.css"
+    },
+    {
       "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\RegsLoginStyle.css",
       "SourceId": "MatFrem",
       "SourceType": "Discovered",
@@ -1214,6 +1233,25 @@
       "OriginalItemSpec": "wwwroot\\Images\\logout.svg"
     },
     {
+      "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\marketBG.jpg",
+      "SourceId": "MatFrem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\",
+      "BasePath": "_content/MatFrem",
+      "RelativePath": "Images/marketBG.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\marketBG.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\profilepagepic.jpg",
       "SourceId": "MatFrem",
       "SourceType": "Discovered",
@@ -1231,6 +1269,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\profilepagepic.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\profilepagepicFirst.jpg",
+      "SourceId": "MatFrem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\",
+      "BasePath": "_content/MatFrem",
+      "RelativePath": "Images/profilepagepicFirst.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\profilepagepicFirst.jpg"
     },
     {
       "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\right_img.png",
@@ -1288,6 +1345,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\geoLocation.js"
+    },
+    {
+      "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geoLocationProductIndex.js",
+      "SourceId": "MatFrem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\",
+      "BasePath": "_content/MatFrem",
+      "RelativePath": "js/geoLocationProductIndex.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\geoLocationProductIndex.js"
     },
     {
       "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\site.js",

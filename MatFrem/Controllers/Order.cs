@@ -33,11 +33,10 @@ namespace MatFrem.Controllers
                 {
                     OrderID = getOrderById.OrderID,
                     OrderCreatedDate = getOrderById.OrderCreatedDate,
-                    CustomerID = getOrderById.CustomerID,
-                    ProductID = getOrderById.ProductID,
-                    Product = getOrderById.Product,
-                    Location = getOrderById.Location,
-                    OrderStatus = getOrderById.OrderStatus
+					DriverID = getOrderById.DriverID,
+					CustomerID = getOrderById.CustomerID,
+					ShopID = getOrderById.ShopID,
+					OrderStatusID = getOrderById.OrderStatusID
                 };
 
                 return View(orderViewModel);

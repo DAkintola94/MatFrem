@@ -1,48 +1,82 @@
 ﻿@model MatFrem.Models.DomainModel.ProductModel
 
-<link href="~/css/homeStyle.css" rel="stylesheet" />
+<head>
+	<link href="~/css/site.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+</head>
 
-<h1> Opprett produkt </h1>
-<div class="container py-5">
-	<form method="post" >
+<h1>Opprett produkt</h1>
+<div class="container py-5 d-flex">
 
-			<input type="hidden" class="form-control" asp-for="ProductID" /> <!-- the value in name must match the model's property -->
-		
+	<!-- Form Column -->
+	<div class="form-column" style="flex: 1; padding-right: 20px;">
+		<form method="post">
 
-		<div class="mb-3">
-			<label class="form-label"> Produkt navn </label>
-			<input type="text" class="form-control" asp-for="ProductName"/> <!-- the value in name must match the model's property -->
-		</div>
+			<input type="hidden" class="form-control" asp-for="ProductID" />
 
-		<div class="mb-3">
-			<label class="form-label"> Produkt pris </label>
-			<input type="text" class="form-control" asp-for="ProductPrice"/> <!-- the value in name must match the model's property -->
-		</div>
+			<div class="mb-3">
+				<label class="form-label">Produkt navn</label>
+				<input type="text" class="form-control" asp-for="ProductName" />
+			</div>
 
-		<div class="mb-3">
-			<label class="form-label"> Produkt Kategory </label>
-			<select class="form-control" asp-for="ProductCategory">
-				<option value="Meleri & Egg">Meleri & Egg</option>
-				<option value="Frukt & Grønt">Frukt & Grønt</option>
-				<option value="Vegetar">Vegetar</option>
-				<option value="Sjømat">Sjømat</option>
-				<option value="Tørrvare">Tørrvare</option>
-				<option value="Frokostblanding">Frokostblanding</option>
-				<option value="Frosne varer">Frosne varer</option>
-				<option value="Bakeri">Bakeri</option>
-				<</select>
-		</div>
+			<div class="mb-3">
+				<label class="form-label">Produkt pris</label>
+				<input type="number" class="form-control" asp-for="ProductPrice" />
+			</div>
 
-		<div class="mb-3">
-			<label class="form-label"> Kalori innhold per 100g </label>
-			<input type="text" class="form-control" asp-for="ProductCalories"/> <!-- the value in name must match the model's property -->
-		</div>
+			<div class="mb-3">
+				<label class="form-label">Produkt Kategori</label>
+				<select class="form-control" asp-for="ProductCategory">
+					<option value="Meleri & Egg">Meleri & Egg</option>
+					<option value="Frukt & Grønt">Frukt & Grønt</option>
+					<option value="Vegetar">Vegetar</option>
+					<option value="Sjømat">Sjømat</option>
+					<option value="Tørrvare">Tørrvare</option>
+					<option value="Frokostblanding">Frokostblanding</option>
+					<option value="Frosne varer">Frosne varer</option>
+					<option value="Bakeri">Bakeri</option>
+				</select>
+			</div>
 
-		<div class="mb-3">
-			<button type="submit" class="btn btn-dark">
-				Opprett Produkt
-			</button>
-		</div>
+			<div class="mb-3">
+				<label class="form-label">Kalori innhold per 100g</label>
+				<input type="number" class="form-control" asp-for="ProductCalories" />
+			</div>
 
-	</form>
+			<div class="mb-3">
+				<input type="hidden" class="form-control" asp-for="ShopM.Location" id="geoJsonInput" /> 
+				<!-- the id in this input stores GeoJSON data generated from drawn map shapes (set by JavaScript) -->
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Butikknavn</label>
+				<input type="text" class="form-control" asp-for="ShopM.ShopName" />
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Butikk ID</label>
+				<input type="guid" class="form-control" asp-for="ShopM.ShopID" />
+			</div>
+
+			<div class="mb-3">
+				<button type="submit" class="btn btn-dark">
+					Opprett Produkt
+				</button>
+			</div>
+
+		</form>
+	</div>
+
+	<!-- Map Column -->
+	<div class="map-column" style="flex: 1;">
+		<div id="map" style="height: 400px; width: 115%;"></div>
+	</div>
+
 </div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+
+<script src="~/js/geoLocationProductIndex.js"> </script>

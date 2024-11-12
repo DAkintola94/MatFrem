@@ -225,8 +225,16 @@
       "PackagePath": "staticwebassets\\Images\\logout.svg"
     },
     {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\marketBG.jpg",
+      "PackagePath": "staticwebassets\\Images\\marketBG.jpg"
+    },
+    {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\profilepagepic.jpg",
       "PackagePath": "staticwebassets\\Images\\profilepagepic.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\profilepagepicFirst.jpg",
+      "PackagePath": "staticwebassets\\Images\\profilepagepicFirst.jpg"
     },
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\right_img.png",
@@ -249,6 +257,10 @@
       "PackagePath": "staticwebassets\\css\\homeStyle.css"
     },
     {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\marketstyle.css",
+      "PackagePath": "staticwebassets\\css\\marketstyle.css"
+    },
+    {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -263,6 +275,10 @@
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geoLocation.js",
       "PackagePath": "staticwebassets\\js\\geoLocation.js"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geoLocationProductIndex.js",
+      "PackagePath": "staticwebassets\\js\\geoLocationProductIndex.js"
     },
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\site.js",

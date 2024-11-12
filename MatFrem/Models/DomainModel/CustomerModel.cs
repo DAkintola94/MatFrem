@@ -12,11 +12,11 @@ namespace MatFrem.Models.DomainModel
         [DataType(DataType.PhoneNumber)]
         public string PhoneNr { get; set; }
 
-        public ICollection<OrderModel> Orders { get; set; }
+        public ICollection<OrderModel> Orders { get; set; } = new List<OrderModel>(); //Navigation property to get all of Order properties/info
 
-        public int DriverID { get; set; }
+		public int DriverID { get; set; }
 
-        public DriverModel Driver { get; set; } //Navigaiton property to get all of Driver properties/info
+        public DriverModel DriverM { get; set; } //Navigaiton property to get all of Driver properties/info
 
     }
 }
