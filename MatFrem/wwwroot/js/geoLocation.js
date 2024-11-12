@@ -1,5 +1,4 @@
 ﻿var map = L.map('map').setView([60.145, 10.25], 15);
-console.log(map);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -31,5 +30,10 @@ map.on(L.Draw.Event.CREATED, function (e) { // On draw event
     var geoJsonData = layer.toGeoJSON(); // Convert layer to GeoJSON
     var geoJsonString = JSON.stringify(geoJsonData); // Convert GeoJSON to string!! since we sending it to server
 
-    document.getElementById('geoId').value = geoJsonString; // Set value of hidden input field to GeoJSON string variable created
+    document.getElementById('geoId').value = geoJsonString;
+    // Set value of hidden input field to GeoJSON string variable created
+
+    console.log(geoJsonString); //_lastcenter shows the lat lon value 
+
+    // Set value of hidden input field to GeoJSON string variable created
 });

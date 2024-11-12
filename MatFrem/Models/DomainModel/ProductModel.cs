@@ -1,27 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace MatFrem.Models.DomainModel
+﻿namespace MatFrem.Models.DomainModel
 {
-    public class ProductModel
-    {
-        public int ProductID { get; set; }
+	public class ProductModel
+	{
 
-        [Required]
-        public string ProductName { get; set; }
+		public int ProductID { get; set; }
 
-        public string ProductCalories { get; set; } 
-        [Required]
-        public double ProductPrice { get; set; }
-        [Required]
-        public string ProductCategory { get; set; }
+		public string ProductName { get; set; }
 
-        [NotMapped]
-        public string ProductImage { get; set; }
+		public string ProductCalories { get; set; }
 
-        public OrderModel? Order { get; set; }
-        public LocationModel? Location { get; set; }
-        public ShopModel? Shop { get; set; }
+		public double ProductPrice { get; set; }
 
-    }
+		public string ProductCategory { get; set; }
+		public int ShopID { get; set; }
+		public OrderModel? Order { get; set; }
+		public ShopModel? ShopM { get; set; }
+		public Guid LocationID { get; set; }
+		public LocationModel? LocationM { get; set; }
+	}
 }

@@ -1,4 +1,5 @@
-﻿using MatFrem.Repository;
+﻿using MatFrem.Models.DomainModel;
+using MatFrem.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
 
@@ -29,6 +30,25 @@ namespace MatFrem.Controllers
             var listAllProducts = await _productRepository.GetAllItems(pageNumber, pageSize);
 
             return View(listAllProducts);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Cart(int id)
+        {
+
+            var getById = await _productRepository.GetItemById(id);
+            if(getById != null)
+            {
+                var editProductView = new ProductModel
+                {
+                    ProductID = getById.ProductID,
+                    ProductName = getById.ProductName,
+                    ProductPrice = getById.ProductPrice,
+                    ProductCalories = getById.ProductCalories,
+                };
+
+            }
+            return View();
         }
 
         public IActionResult Cart()
