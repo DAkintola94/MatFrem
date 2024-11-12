@@ -17,8 +17,8 @@ namespace MatFrem.Models.DomainModel
         public DriverModel Driver { get; set; } //navigation property for DriverModel, namely, OrderModel has a Driver. To get all of Driver properties/inf
         public LocationModel Location { get; set; } 
         public ShopModel ShopM { get; set; } //all the properties is so the driver page model can be used to retreive those info
-        public ICollection<OrderStatus> OrderStatusModel { get; set; } = new List<OrderStatus>();
-        public ICollection<ProductModel> ProductsM { get; set; } = new List<ProductModel>();
+        public OrderStatus OrderStatusModel { get; set; } 
+        public ProductModel ProductsM { get; set; } 
 
     }
 }

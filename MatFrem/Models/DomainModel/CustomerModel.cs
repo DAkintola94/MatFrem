@@ -11,8 +11,7 @@ namespace MatFrem.Models.DomainModel
 
         [DataType(DataType.PhoneNumber)]
         public string PhoneNr { get; set; }
-
-        public ICollection<OrderModel> Orders { get; set; } = new List<OrderModel>(); //Navigation property to get all of Order properties/info
+        public OrderModel Orders { get; set; }  //Navigation property to get all of Order properties/info
 
 		public int DriverID { get; set; }
 

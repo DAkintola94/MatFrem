@@ -10,10 +10,11 @@ namespace MatFrem.Models.DomainModel
         public string GeoJson { get; set; }
         public string? LocationMessage { get; set; }
         public DateOnly Date { get; set; } = DateOnly.FromDateTime(DateTime.Now);
-        public ICollection<OrderModel> OrderModels { get; set; } = new List<OrderModel>();
-        public ICollection<ShopModel> ShopsModel { get; set; } = new List<ShopModel>();
-        public ICollection<ProductModel> ProductModels { get; set; } = new List<ProductModel>(); // We use icollection when dealing with many to many relationships
+        public Guid ShopLocationID { get; set; }
+        public OrderModel OrderModels { get; set; } 
+        public ICollection<ShopModel> ShopsModel { get; set; } 
+        public ICollection<ProductModel> ProductModels { get; set; } 
 
-		// We use icollection when dealing with many to many relationships
+
 	}
 }

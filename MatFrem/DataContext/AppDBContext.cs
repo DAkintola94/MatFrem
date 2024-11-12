@@ -194,18 +194,18 @@ namespace MatFrem.DataContext
 
             modelBuilder.Entity<OrderModel>()
                 .HasOne(o => o.Customer) //Table OrderModel has one Customer
-                .WithMany(c => c.Orders) //A Customer can have many orders
+                .WithMany() //This line means with many OrderModel
                 .HasForeignKey(o => o.CustomerID); //Foreign key for CustomerID in OrderModel, primary key for CustomerModel
 
             modelBuilder.Entity<OrderModel>()
                 .HasOne(o => o.Driver) //Table OrderModel has one Driver
-                .WithMany() //A driver can have many Order
+                .WithMany() //This line means with many OrderModel
                 .HasForeignKey(o => o.DriverID); //Foreign key for DriverID in OrderModel 
 
             modelBuilder.Entity<OrderModel>()
                 .HasOne(o => o.ShopM)
-                .WithMany(s => s.OrderModels)
-                .HasForeignKey(o => o.ShopID);
+                .WithMany() //When nothing is specified like this, the line means with many OrderModel(the class attached above)
+				.HasForeignKey(o => o.ShopID);
 
             modelBuilder.Entity<OrderModel>()
                 .HasOne(o => o.ProductsM)
@@ -213,15 +213,15 @@ namespace MatFrem.DataContext
                 .HasForeignKey(o => o.ProductID);
 
 			modelBuilder.Entity<OrderModel>()
-				.HasMany(o => o.OrderStatusModel)
+				.HasOne(o => o.OrderStatusModel)
 				.WithOne()
-				.HasForeignKey(o => o.OrderStatusID); //since its with one, we use <> when defining foreign key,
+				.HasForeignKey<OrderModel>(o => o.OrderStatusID); //since its with one, we use <> when defining foreign key,
 													  //if its with many, <List> have to be defined in the model
 
-			modelBuilder.Entity<LocationModel>()
-			  .HasMany(o => o.OrderModels)
-			  .WithOne(o => o.Location)
-			  .HasForeignKey(o => o.LocationID);
+            modelBuilder.Entity<OrderModel>()
+                .HasOne(l => l.Location)
+                .WithMany()
+				.HasForeignKey(o => o.LocationID);
 
 			modelBuilder.Entity<CustomerModel>()
                 .HasOne(c => c.DriverM) //CustomerModel has one Driver
@@ -229,13 +229,13 @@ namespace MatFrem.DataContext
                 .HasForeignKey<CustomerModel>(c => c.DriverID); //need <CustomerModel> because of how one -to-one relationships work in EF Core
                                                                 //since we are targeting a specific entity, we need to specify the entity type in the lambda expression
 
-            modelBuilder.Entity<LocationModel>() //relationship where Location has can have many shops, but a shop can only have one location
-                 .HasMany(l => l.ShopsModel)
-                 .WithOne(s => s.Location)
-                 .HasForeignKey(l => l.ShopLocationID);
+            modelBuilder.Entity<ShopModel>()
+                .HasOne(s => s.Location)
+                .WithMany(l => l.ShopsModel)
+                .HasForeignKey(s => s.LocationID);
 
             modelBuilder.Entity<ProductModel>()
-                .HasOne(p => p.LocationM)
+              .HasOne(p => p.LocationM)
                 .WithMany(l => l.ProductModels)
 				.HasForeignKey(p => p.LocationID);
 
@@ -244,8 +244,15 @@ namespace MatFrem.DataContext
 				.WithMany(s => s.ProductsModel) //since its with many, we use <List> have to be defined in the model
 				.HasForeignKey(p => p.ShopID);
 
+            modelBuilder.Entity<ShopModel>()
+				.HasMany(s => s.ProductsModel)
+				.WithOne(p => p.ShopM)
+				.HasForeignKey(s => s.ShopID);
 
-
+            modelBuilder.Entity<ShopModel>()
+                .HasMany(s => s.OrderModels)
+				.WithOne(o => o.ShopM)
+				.HasForeignKey(s => s.ShopID);
 		}
 
     }
