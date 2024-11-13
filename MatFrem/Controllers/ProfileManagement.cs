@@ -58,9 +58,14 @@ namespace MatFrem.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult Login(string ReturnUrl)
         {
-            return View();
+            var model = new LoginViewModel
+            {
+                ReturnUrl = ReturnUrl
+            };
+
+            return View(model);
         }
 
 		/// <summary>
@@ -75,6 +80,11 @@ namespace MatFrem.Controllers
             var signInResult = await _signInManager.PasswordSignInAsync(loginViewModel.Username, loginViewModel.Password, false, false);
             if(signInResult != null && signInResult.Succeeded)
             {
+                if(!string.IsNullOrEmpty(loginViewModel.ReturnUrl))
+                {
+                    return Redirect(loginViewModel.ReturnUrl);
+                }
+
                 return RedirectToAction("ProfilePage");
             }
             return View();

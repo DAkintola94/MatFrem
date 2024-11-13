@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MatFrem.Controllers
 {
-    public class Driver : Controller
+	//[Authorize(Roles = "Driver")] //instead of using the [Authorize] attribute on every method, you can use it on the class.
+	                                //Every method need to be authorized to be accessed
+	public class Driver : Controller
     {
         private readonly IProductRepository _productRepository;
 

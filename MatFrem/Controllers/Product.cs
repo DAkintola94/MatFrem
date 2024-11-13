@@ -6,7 +6,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace MatFrem.Controllers
 {
-    public class Product : Controller
+	//[Authorize(Roles = "System Administrator")] //instead of using the [Authorize] attribute on every method, you can use it on the class.
+                                                //Every method need to be authorized to be accessed
+	public class Product : Controller
     {
         private readonly IProductRepository _productRepository;
 
@@ -15,13 +17,12 @@ namespace MatFrem.Controllers
             _productRepository = productRepo;
         }
 
-        public IActionResult Index()
+		public IActionResult Index()
         {
             return View();
         }
 
-
-        //[Authorize(Roles = "System Administrator")]
+        
         [HttpPost]
         public async Task<ActionResult> Index(EditProductModel pModel) //no need for a get method, you have directed the html form in Index here
         {
@@ -42,7 +43,7 @@ namespace MatFrem.Controllers
             return RedirectToAction("ShowProduct");
         }
 
-		//[Authorize(Roles = "System Administrator")]
+		
 		[HttpGet]
         public async Task<ActionResult> ShowProduct(int pageSize = 8, int pageNumber = 1)
         {
@@ -61,7 +62,7 @@ namespace MatFrem.Controllers
             return View(showAll); //need to return a list, its IEnumerable in the html
         }
 
-		//[Authorize(Roles = "System Administrator")]
+		
 		[HttpGet]
         public async Task<ActionResult> EditProduct(int id)
         {
@@ -81,7 +82,8 @@ namespace MatFrem.Controllers
             }
             return View(null);
         }
-		//[Authorize(Roles = "System Administrator")]
+
+		
 		[HttpPost]
         public async Task<ActionResult> EditProduct(EditProductModel editProduct)
         {
@@ -105,7 +107,8 @@ namespace MatFrem.Controllers
 
                 return NotFound();
         }
-		//[Authorize(Roles = "System Administrator")]
+		
+
 		[HttpPost]
         public async Task<ActionResult> DeleteProduct(EditProductModel editProduct)
         {
