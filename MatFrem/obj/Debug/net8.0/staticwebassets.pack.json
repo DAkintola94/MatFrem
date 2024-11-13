@@ -209,6 +209,10 @@
       "PackagePath": "staticwebassets\\Images\\deliverybackground.jpg"
     },
     {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\error404.jpg",
+      "PackagePath": "staticwebassets\\Images\\error404.jpg"
+    },
+    {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\generalbg.jpg",
       "PackagePath": "staticwebassets\\Images\\generalbg.jpg"
     },

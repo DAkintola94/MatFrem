@@ -24,7 +24,14 @@ namespace MatFrem.Controllers
             return View();
         }
 
-        [HttpPost]
+
+		/// <summary>
+		/// Creates a new user profile based on registration form input and assigns the "Customer" role if successful.
+		/// </summary>
+		/// <param name="createProfile">The view model containing user registration details, such as username, first name, last name, email, phone number, and password.</param>
+		/// <returns>Redirects to the Login page if successful; otherwise, reloads the Create Profile view.</returns>
+
+		[HttpPost]
         public async Task<ActionResult> CreateProfile(CreateProfileViewModel createProfile)
         {
             var applicationUser = new ApplicationUser //creating a new instance of ApplicationUser from registration form + model
@@ -56,7 +63,13 @@ namespace MatFrem.Controllers
             return View();
         }
 
-        [HttpPost]
+		/// <summary>
+		/// Authenticates a user with the provided username and password and redirects to the ProfilePage if successful.
+		/// </summary>
+		/// <param name="loginViewModel">The view model containing the user's login credentials, including username and password.</param>
+		/// <returns>Redirects to the ProfilePage upon successful login; otherwise, reloads the Login view.</returns>
+
+		[HttpPost]
         public async Task<ActionResult> Login(LoginViewModel loginViewModel)
         {
             var signInResult = await _signInManager.PasswordSignInAsync(loginViewModel.Username, loginViewModel.Password, false, false);
@@ -66,8 +79,14 @@ namespace MatFrem.Controllers
             }
             return View();
         }
-      
-        [HttpGet]
+
+		/// <summary>
+		/// Retrieves and displays the profile details of the currently logged-in user. 
+		/// If no user is logged in, redirects to the Login page.
+		/// </summary>
+		/// <returns>Renders the ProfilePage view with user details if authenticated; otherwise, redirects to the Login page.</returns>
+
+		[HttpGet]
         public async Task<IActionResult> ProfilePage()
         {
             var currentUser = await _userManager.GetUserAsync(User);
@@ -91,17 +110,17 @@ namespace MatFrem.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home"); //redirecting to index in the home controller
         }
-        public IActionResult Authenticate()
-        {
-            return View();
-        }
 
-        public IActionResult ProcessRegistration()
-        {
-            return View();
-        }
 
-        
+        [HttpGet]
+
+		//no need for logic statement since user is redirected to /AccessDenied if not authorized by the Authorize attribute
+		public IActionResult AccessDenied() 
+		{
+
+			return View();
+        }
+     
        
     }
 }

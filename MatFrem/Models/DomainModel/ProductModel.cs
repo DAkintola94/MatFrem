@@ -12,7 +12,7 @@
 		public double ProductPrice { get; set; }
 		public string? ProductCategory { get; set; }
 
-		public string? ProductLocation { get; set; }
+		public string ProductLocation { get; set; }
 
 		
 	}

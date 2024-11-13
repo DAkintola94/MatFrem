@@ -2,6 +2,7 @@
 using MatFrem.Models.ViewModel;
 using MatFrem.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MatFrem.Controllers
 {
@@ -13,11 +14,14 @@ namespace MatFrem.Controllers
         {
             _productRepository = productRepo;
         }
+
         public IActionResult Index()
         {
             return View();
         }
 
+
+        //[Authorize(Roles = "System Administrator")]
         [HttpPost]
         public async Task<ActionResult> Index(EditProductModel pModel) //no need for a get method, you have directed the html form in Index here
         {
@@ -38,7 +42,8 @@ namespace MatFrem.Controllers
             return RedirectToAction("ShowProduct");
         }
 
-        [HttpGet]
+		//[Authorize(Roles = "System Administrator")]
+		[HttpGet]
         public async Task<ActionResult> ShowProduct(int pageSize = 8, int pageNumber = 1)
         {
             var totalRecords = await _productRepository.CountPage();
@@ -56,7 +61,8 @@ namespace MatFrem.Controllers
             return View(showAll); //need to return a list, its IEnumerable in the html
         }
 
-        [HttpGet]
+		//[Authorize(Roles = "System Administrator")]
+		[HttpGet]
         public async Task<ActionResult> EditProduct(int id)
         {
             var editItem = await _productRepository.GetItemById(id); //this repository have not saved anything, only found the id
@@ -75,8 +81,8 @@ namespace MatFrem.Controllers
             }
             return View(null);
         }
-
-        [HttpPost]
+		//[Authorize(Roles = "System Administrator")]
+		[HttpPost]
         public async Task<ActionResult> EditProduct(EditProductModel editProduct)
         {
             // Retrieve the existing product from the database by ID, from table Product_detail.
@@ -99,8 +105,8 @@ namespace MatFrem.Controllers
 
                 return NotFound();
         }
-
-        [HttpPost]
+		//[Authorize(Roles = "System Administrator")]
+		[HttpPost]
         public async Task<ActionResult> DeleteProduct(EditProductModel editProduct)
         {
             var findItem = await _productRepository.GetItemById(editProduct.ProductID);
