@@ -8,21 +8,49 @@ namespace MatFrem.Controllers
 	public class Driver : Controller
     {
         private readonly IProductRepository _productRepository;
+        private readonly ILocationRepository _locationRepository;
 
-        public Driver(IProductRepository productRepo)
+		public Driver(IProductRepository productRepo, ILocationRepository locationRepo)
         {
             _productRepository = productRepo;
-        }
-        public IActionResult Index()
+			_locationRepository = locationRepo;
+		}
+        [HttpGet]
+        public IActionResult DriverPage()
         {
             return View();
         }
 
-        public async Task<ActionResult> Delete(int id)
-        {
-            var deleteItem = await _productRepository.DeleteItem(id);
-            return View();
-        }
+		public IActionResult CheckOrders()
+		{
+			return View();
+		}
 
-    }
+        public IActionResult ActiveDeliveries()
+		{
+			return View();
+		}
+
+        public IActionResult UpdateStatus()
+		{
+			return View();
+		}
+
+        public IActionResult DeliveryHistory()
+		{
+			return View();
+		}
+
+		public IActionResult DeliveryDetails()
+		{
+			return View();
+		}
+
+		public IActionResult ReportLocation()
+		{
+			return View();
+		}
+
+
+	}
 }
