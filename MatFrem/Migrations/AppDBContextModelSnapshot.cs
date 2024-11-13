@@ -22,6 +22,34 @@ namespace MatFrem.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("MatFrem.Models.DomainModel.AdviceModel", b =>
+                {
+                    b.Property<int>("PostId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("PostId"));
+
+                    b.Property<string>("AdviceMessage")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Author")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("PostId");
+
+                    b.ToTable("Advice");
+                });
+
             modelBuilder.Entity("MatFrem.Models.DomainModel.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -98,7 +126,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "18e0a565-a96f-43f2-8132-9297aff9d815",
+                            ConcurrencyStamp = "110483ca-2b92-4af0-a6db-217585cb86a4",
                             Email = "sysadmin@test.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -106,10 +134,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SYSADMIN@TEST.COM",
                             NormalizedUserName = "SYSADMIN@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEC0uGjT067pr0QrmPPvGxkQP3U2udcRmsDTeMC2tpTa2BzB5XD8QGVt1qPI9kc0Szw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEK2kN0ESAXPEjOHLxNTvLAaQA6GKwu+YFnMaiz+QnMMmfu4lhFsUujJ6Y8hrdlSD8w==",
                             PhoneNumber = "40748608",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "27cd94f4-e293-4a72-b9dc-b6d7acc3c3db",
+                            SecurityStamp = "adb46b11-6784-47af-8039-454add60c31a",
                             TwoFactorEnabled = false,
                             UserName = "sysadmin@test.com"
                         },
@@ -117,7 +145,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9963f9c8-2a75-42e3-b609-4fa0aa797f84",
+                            ConcurrencyStamp = "51ba9810-acd8-4ec4-b69d-0e98fbe6d2c0",
                             Email = "driver@test.com",
                             EmailConfirmed = false,
                             FirstName = "Test",
@@ -125,10 +153,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "DRIVER@TEST.COM",
                             NormalizedUserName = "DRIVER@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAECFRTfdNoOAgTHHu5phUOPm5ekMen/zhiHGFpuEcnwwcqXXieJqjHrxVT1gpHFJsVw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHqaERrosf/h3Bwa4OEUpQD5+2lsxykv8dOE6d2fzYQY20+svjxE+kcHdg3A625zuA==",
                             PhoneNumber = "95534356",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2f6de3f5-5d49-4186-b4f5-2f99171efa9e",
+                            SecurityStamp = "1cadc1ff-5a3d-4e8b-bb51-ec80f97def91",
                             TwoFactorEnabled = false,
                             UserName = "driver@test.com"
                         },
@@ -136,7 +164,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d9294c65-5035-4ccf-9edb-2ae4f738f97c",
+                            ConcurrencyStamp = "f8ae4a25-2848-4ce6-ba5b-e3c840af5467",
                             Email = "customer@test.com",
                             EmailConfirmed = false,
                             FirstName = "Test",
@@ -144,10 +172,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CUSTOMER@TEST.COM",
                             NormalizedUserName = "CUSTOMER@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEEvN3pSnysseTcpOrAvUiG8fegjVb9IzOPKEI46zLOQSUQ8WZJI9Qp/8ngLPQ0pzg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFEo/PuNF7j9LSqbCam9Jfu1W35s59cxKJqpeOROcr4d/v+FrqZ1Rlj/2XQv+ziETg==",
                             PhoneNumber = "43342364",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5079475b-cda3-4ddc-a3fd-8b9756282e07",
+                            SecurityStamp = "ecc65010-31ff-462a-9ab8-567fd90d9738",
                             TwoFactorEnabled = false,
                             UserName = "customer@test.com"
                         });
@@ -354,6 +382,7 @@ namespace MatFrem.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("ProductLocation")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("ProductName")

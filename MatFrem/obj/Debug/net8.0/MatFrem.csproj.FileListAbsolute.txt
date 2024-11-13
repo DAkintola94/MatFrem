@@ -237,3 +237,4 @@ C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\refint\MatFrem.dll
 C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.pdb
 C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\MatFrem.genruntimeconfig.cache
 C:\Users\Eier\source\repos\MatFrem\MatFrem\obj\Debug\net8.0\ref\MatFrem.dll
+C:\Users\black\source\repos\MatFrem\MatFrem\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll

@@ -21,6 +21,7 @@ namespace MatFrem.DataContext
         public DbSet<ProductModel> Product_detail { get; set; }
         public DbSet<LocationModel> Locations { get; set; }
         public DbSet<OrderModel> Orders { get; set; }
+        public DbSet<AdviceModel> Advice { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -175,27 +176,33 @@ namespace MatFrem.DataContext
 
             modelBuilder.Entity<DriverModel>()
                 .HasKey(d => d.DriverID); //Primary key for DriverModel
+
             modelBuilder.Entity<CustomerModel>()
                 .HasKey(c => c.CustomerID); //Primary key for CustomerModel
+
             modelBuilder.Entity<LocationModel>()
                 .HasKey(l => l.LocationReportID); //Primary key for LocationModel
 
             modelBuilder.Entity<ProductModel>()
                 .HasKey(p => p.ProductID); //Primary key for ProductModel
-        
 
             modelBuilder.Entity<ShopModel>()
                 .HasKey(s => s.ShopID); //Primary key for ShopModel
+
             modelBuilder.Entity<OrderModel>()
                 .HasKey(o => o.OrderID); //Primary key for OrderModel
+
             modelBuilder.Entity<OrderStatus>()
                 .HasKey(os => os.OrderStatusID);
 
+            modelBuilder.Entity<AdviceModel>()
+                .HasKey(a => a.PostId);
 
-            //Relationships, remember to think of .Entity as THIS => table in the database
-            //we are defining the relationships between the tables here, by foreign keys
 
-            modelBuilder.Entity<OrderModel>()
+			//Relationships, remember to think of .Entity as THIS => table in the database
+			//we are defining the relationships between the tables here, by foreign keys
+
+			modelBuilder.Entity<OrderModel>()
                 .HasOne(o => o.Customer) //Table OrderModel has one Customer
                 .WithMany() //This line means with many OrderModel
                 .HasForeignKey(o => o.CustomerID); //Foreign key for CustomerID in OrderModel, primary key for CustomerModel

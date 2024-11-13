@@ -1,5 +1,35 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model MatFrem.Models.ViewModel.AdviceViewModel
+
+<form method="post" class="p-4 border rounded shadow-sm bg-light">
+    <h3 class="mb-4">Hjelp oss bli bedre</h3>
+
+    <!-- Author Field -->
+    <div class="mb-3">
+        <label class="form-label">Navn</label>
+        <input type="text" class="form-control" id="author" placeholder="Ola nordmann" asp-for="Author" required>
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+
+    <!-- Advice Message -->
+    <div class="mb-3">
+        <label class="form-label">Hva kan vi forbedre?</label>
+        <textarea class="form-control" rows="3" placeholder="Ditt forslag..." asp-for="AdviceMessage" required></textarea>
+        <span asp-validation-for="AdviceMessage" class="text-danger"></span>
+    </div>
+
+
+    <!-- Email -->
+    <div class="mb-3">
+        <label  class="form-label">E-post</label>
+        <input type="email" class="form-control" placeholder="example@domain.no" asp-for="Email" required>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-end">
+        <button type="submit" class="btn btn-primary">Send forslag</button>
+    </div>
+</form>
+
+
+
