@@ -13,9 +13,7 @@ namespace MatFrem.Repository
         Task<ProductModel?> GetItemById(int id);
         Task<ProductModel?> DeleteItem(int id);
         Task<ProductModel?> UpdateItems(ProductModel productModel);
-
         Task<int> CountPage();
- 
         Task<ProductModel> Save();
 
     }

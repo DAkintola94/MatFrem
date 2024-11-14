@@ -1,4 +1,5 @@
 ﻿using MatFrem.Models.DomainModel;
+using MatFrem.Models.ViewModel;
 using MatFrem.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
@@ -28,35 +29,42 @@ namespace MatFrem.Controllers
             ViewBag.PageSize = pageSize;
 
             var listAllProducts = await _productRepository.GetAllItems(pageNumber, pageSize);
-
-            return View(listAllProducts);
+            
+			return View(listAllProducts);
         }
 
-        [HttpPost]
+        [HttpGet]
         public async Task<ActionResult> Cart(int id)
         {
-
-            var getById = await _productRepository.GetItemById(id);
-            if(getById != null)
+            var listById = await _productRepository.GetItemById(id); //We are getting data from database by its id (primary key)
+			if (listById != null)
             {
-                var editProductView = new ProductModel
-                {
-                    ProductID = getById.ProductID,
-                    ProductName = getById.ProductName,
-                    ProductPrice = getById.ProductPrice,
-                    ProductCalories = getById.ProductCalories,
+                var editProductView = new EditProductModel //this way, we attach the data model from db into the view model
+				{
+                    ProductID = listById.ProductID, //by doing this
+                    ProductName = listById.ProductName,
+                    ProductPrice = listById.ProductPrice,
+                    ProductCalories = listById.ProductCalories,
+                    ProductLocation = listById.ProductLocation
                 };
 
-            }
-            return View();
-        }
-
-        public IActionResult Cart()
-        {
+				return View(editProductView); //we are returning the view model to the view
+			}
             return View();
         }
 
         [HttpPost]
+		public IActionResult Cart()
+		{
+			return View();
+		}
+
+        public async Task<ActionResult> Buy(int id)
+        {
+            return View();
+        }
+
+		[HttpPost]
         public async Task<ActionResult> Delete(int id)
         {
            var deleteItem = await _productRepository.DeleteItem(id);

@@ -263,11 +263,35 @@
             },
             "Patterns": null
           },
+          "formscheme.css": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "css/formscheme.css"
+            },
+            "Patterns": null
+          },
           "homeStyle.css": {
             "Children": null,
             "Asset": {
               "ContentRootIndex": 0,
               "SubPath": "css/homeStyle.css"
+            },
+            "Patterns": null
+          },
+          "mainbgpicture.css": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "css/mainbgpicture.css"
+            },
+            "Patterns": null
+          },
+          "marketstyle.css": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "css/marketstyle.css"
             },
             "Patterns": null
           },
@@ -284,6 +308,14 @@
             "Asset": {
               "ContentRootIndex": 0,
               "SubPath": "css/site.css"
+            },
+            "Patterns": null
+          },
+          "smallmap.css": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "css/smallmap.css"
             },
             "Patterns": null
           }
@@ -397,6 +429,14 @@
             },
             "Patterns": null
           },
+          "geoLocationProductIndex.js": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "js/geoLocationProductIndex.js"
+            },
+            "Patterns": null
+          },
           "site.js": {
             "Children": null,
             "Asset": {
@@ -435,6 +475,14 @@
             },
             "Patterns": null
           },
+          "arrow_icon.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/arrow_icon.png"
+            },
+            "Patterns": null
+          },
           "backgroundImageLogin.jpg": {
             "Children": null,
             "Asset": {
@@ -443,11 +491,59 @@
             },
             "Patterns": null
           },
+          "bg.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/bg.jpg"
+            },
+            "Patterns": null
+          },
+          "BGprofileBlack.svg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/BGprofileBlack.svg"
+            },
+            "Patterns": null
+          },
+          "create.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/create.png"
+            },
+            "Patterns": null
+          },
           "deliverybackground.jpg": {
             "Children": null,
             "Asset": {
               "ContentRootIndex": 0,
               "SubPath": "Images/deliverybackground.jpg"
+            },
+            "Patterns": null
+          },
+          "error404.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/error404.jpg"
+            },
+            "Patterns": null
+          },
+          "foodsmiley.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/foodsmiley.jpg"
+            },
+            "Patterns": null
+          },
+          "generalbg.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/generalbg.jpg"
             },
             "Patterns": null
           },
@@ -467,11 +563,51 @@
             },
             "Patterns": null
           },
+          "login.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/login.png"
+            },
+            "Patterns": null
+          },
           "logout.svg": {
             "Children": null,
             "Asset": {
               "ContentRootIndex": 0,
               "SubPath": "Images/logout.svg"
+            },
+            "Patterns": null
+          },
+          "marketBG.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/marketBG.jpg"
+            },
+            "Patterns": null
+          },
+          "profilepagepic.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/profilepagepic.jpg"
+            },
+            "Patterns": null
+          },
+          "profilepagepicFirst.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/profilepagepicFirst.jpg"
+            },
+            "Patterns": null
+          },
+          "right_img.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/right_img.png"
             },
             "Patterns": null
           },

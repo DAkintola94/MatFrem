@@ -65,6 +65,7 @@ namespace MatFrem.Repository
             return productModel;
         }
 
+
         public async Task<int> CountPage()
         {
             return await _context.Product_detail.CountAsync();
