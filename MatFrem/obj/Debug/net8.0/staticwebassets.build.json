@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NE+2NMLXn+dt8Vj4LOWrK3lBznem1G1uY2wdeVmIDUo=",
+  "Hash": "YqmPEMPgzuWq0RxGh5unEO87hHyOMKBoioH+jZYg30w=",
   "Source": "MatFrem",
   "BasePath": "_content/MatFrem",
   "Mode": "Default",
@@ -1421,6 +1421,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\shopping_bag.svg"
+    },
+    {
+      "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\cartGeo.js",
+      "SourceId": "MatFrem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\",
+      "BasePath": "_content/MatFrem",
+      "RelativePath": "js/cartGeo.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\cartGeo.js"
     },
     {
       "Identity": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geoLocation.js",

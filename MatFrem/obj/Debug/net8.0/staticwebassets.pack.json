@@ -293,6 +293,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\cartGeo.js",
+      "PackagePath": "staticwebassets\\js\\cartGeo.js"
+    },
+    {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geoLocation.js",
       "PackagePath": "staticwebassets\\js\\geoLocation.js"
     },
