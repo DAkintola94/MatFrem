@@ -11,15 +11,14 @@ namespace MatFrem.Controllers
 	public class Driver : Controller
 	{
 		private readonly IProductRepository _productRepository;
-		private readonly ILocationRepository _locationRepository;
+
 		private readonly IOrderRepository _orderRepository;
 		private readonly UserManager<ApplicationUser> _userManager;
 
-		public Driver(IProductRepository productRepo, ILocationRepository locationRepo,
+		public Driver(IProductRepository productRepo,
 			IOrderRepository orderRepository, UserManager<ApplicationUser> userManager)
 		{
 			_productRepository = productRepo;
-			_locationRepository = locationRepo;
 			_orderRepository = orderRepository;
 			_userManager = userManager;
 		}

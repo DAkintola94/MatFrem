@@ -19,7 +19,6 @@ namespace MatFrem.DataContext
         public DbSet<CustomerModel> Customers { get; set; }
         public DbSet<ShopModel> Shop_detail { get; set; }
         public DbSet<ProductModel> Product_detail { get; set; }
-        public DbSet<LocationModel> Locations { get; set; }
         public DbSet<OrderModel> Orders { get; set; }
         public DbSet<AdviceModel> Advice { get; set; }
         public DbSet<ShoppingCartModel> ShoppingCart { get; set; }
@@ -158,7 +157,6 @@ namespace MatFrem.DataContext
                 FirstName = "Test",
                 LastName = "Customer",
                 PhoneNumber = "43342364"
-                
             };
 
             customerUser.PasswordHash = new PasswordHasher<ApplicationUser> //Hashing password for customerUser, linked to ApplicationUser
@@ -181,9 +179,6 @@ namespace MatFrem.DataContext
 
             modelBuilder.Entity<CustomerModel>()
                 .HasKey(c => c.CustomerID); //Primary key for CustomerModel
-
-            modelBuilder.Entity<LocationModel>()
-                .HasKey(l => l.LocationReportID); //Primary key for LocationModel
 
             modelBuilder.Entity<ProductModel>()
                 .HasKey(p => p.ProductID); //Primary key for ProductModel
@@ -235,17 +230,11 @@ namespace MatFrem.DataContext
 				.HasForeignKey<OrderStatus>(o => o.OrderStatusID); //since its with one, we use <> when defining foreign key,
 													  //if its with many, <List> have to be defined in the model
 
-
 			//modelBuilder.Entity<CustomerModel>()
                 //.HasOne(c => c.DriverM) //CustomerModel has one Driver
                 //.WithOne(d => d) //Driver can have one Customer
                 //.HasForeignKey<CustomerModel>(c => c.DriverID); //need <CustomerModel> because of how one -to-one relationships work in EF Core
                                                                 //since we are targeting a specific entity, we need to specify the entity type in the lambda expression
-
-            modelBuilder.Entity<ShopModel>()
-                .HasOne(s => s.Location)
-                .WithMany(l => l.ShopsModel)
-                .HasForeignKey(s => s.LocationID);
 
             //modelBuilder.Entity<ShoppingCartModel>()
                 //.HasMany(sc => sc.Product)

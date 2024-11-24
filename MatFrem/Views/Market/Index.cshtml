@@ -1,132 +1,131 @@
-﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@model MatFrem.Models.ViewModel.ShoppingCartViewModel
+﻿@model MatFrem.Models.ViewModel.ShoppingCartViewModel
+@using MatFrem.Models.DomainModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> signInManager
 
-<div class="row border rounded-3">
-	<div class="col-md-8 p-3">
-		<h4> Handlekurv</h4>
-		<hr />
-
-		<table class="table align-middle">
-			<tbody>
-				@foreach(var items in Model.CartItems)
-				{
-                    <tr>
-                        <td>
-                            <img src="~/Images/products/@items.Product.ImageUrl" width="100" class="rounded" alt="...">
-                        </td>
-                        <td>
-                            <h4>@items.Product.ProductName</h4>
-                            <p>
-                                Kategori: @items.Product.Category<br>
-                                Kalori: @items.Product.ProductCalories<br>
-                                Sted: @items.Product.ProductLocation<br>
-                                Pris: @(items.Product.ProductPrice)kr
-                            </p>
-                        </td>
-                        <td style="white-space:nowrap">
-                            <button type="button" class="btn btn-outline-secondary btn-sm"
-                                    onclick="decrease(@items.Product.ProductID)">
-                                -
-                            </button>
-                            <span class="border rounded-3 p-2 m-1">@items.Quantity</span>
-                            <button type="button" class="btn btn-outline-secondary btn-sm"
-                                    onclick="increase(@items.Product.ProductID)">
-                                +
-                            </button>
-                        </td>
-                        <td>@(items.UnitPrice * items.Quantity)$</td>
-                        <td>
-                            <i class="bi bi-trash text-danger h4" style="cursor: pointer" onclick="remove(@items.Product.ProductID)"></i>
-                        </td>
-                    </tr>
-				}
-
-			</tbody>
-		</table>
-	</div>
-
-	<div class="col-md-4">
-        <div class="text-white rounded my-2 p-3" style="background-color: #08618d;" >
-            <h4>
-                Sum av order
-            </h4>
-
+<body>
+    
+    <div class="row border rounded-3 p-4 bg-light">
+        <div class="col-md-8 p-3 bg-white shadow-sm rounded">
+            <h4> Handlekurv</h4>
             <hr />
 
-            @if (!SignInManager.IsSignedIn(User))
-            {
-                <div class="row">
-                    <div class="col">
-                        <p>Subtotal:</p>
-                    </div>
-                    <div class="col">
-                        <p class="text-end">@(Model.Subtotal)$</p>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col d-grid">
-                        <a class="btn btn-light" asp-controller="ProfileManagement" asp-action="Register">Registrer deg</a>
-                    </div>
-                    <div class="col d-grid">
-                        <a class="btn btn-outline-light" asp-controller="ProfileManagement" asp-action="Login">Logg inn</a>
-                    </div>
-                </div>
-
-            }
-
-            else { 
-            <form method="post">
-                <div class="mb-3">
-                    <label class="form-label">Leverings Addresse</label>
-                    <input type="text" class="form-control" asp-for="DeliveryAddress">
-                    <span asp-validation-for="DeliveryAddress" class="text-warning"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Betalings metode</label>
-                    <select class="form-select" asp-for="PaymentMethod">
-                        <option value="cash">Betal ved levering</option>
-                        <option value="credit_card">Kreditt kort</option>
-                        <option value="paypal">Paypal</option>
-                    </select>
-                </div>
-
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        <p>Subtotal:</p>
-                    </div>
-                    <div class="col">
-                        <p class="text-end">@(Model.Subtotal)$</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <p>Leverings tillegg:</p>
-                    </div>
-                    <div class="col">
-                        <p class="text-end">@(Model.DeliveryFee)$</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <p>Total:</p>
-                    </div>
-                    <div class="col">
-                        <p class="text-end">@(Model.Total)$</p>
-                    </div>
-                </div>
-
-                <div class="d-grid">
-                    <button class="btn btn-outline-light" type="submit">Fullfør betaling </button>
-                </div>
-            </form>
-            }
+            <table class="table align-middle table-striped">
+                <tbody>
+                    @foreach (var items in Model.CartItems)
+                    {
+                        <tr>
+                            <td>
+                                <img src="@Url.Content(items.Product.ImageUrl)" width="100" class="rounded" alt="...">
+                            </td>
+                            <td>
+                                <h4>@items.Product.ProductName</h4>
+                                <p>
+                                    Kategori: @items.Product.Category<br>
+                                    Kalori: @items.Product.ProductCalories<br>
+                                    Sted: @items.Product.ProductLocation<br>
+                                    Pris: @(items.Product.ProductPrice)kr
+                                </p>
+                            </td>
+                            <td style="white-space:nowrap">
+                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                        onclick="decrease(@items.Product.ProductID)">
+                                    -
+                                </button>
+                                <span class="border rounded-3 p-2 m-1">@items.Quantity</span>
+                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                        onclick="increase(@items.Product.ProductID)">
+                                    +
+                                </button>
+                            </td>
+                            <td>@(items.UnitPrice * items.Quantity)kr</td>
+                            <td>
+                                <i class="bi bi-trash text-danger h4" style="cursor: pointer" onclick="remove(@items.Product.ProductID)"></i>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
-	</div>
-</div>
+
+        <div class="col-md-4">
+            <div class="bg-white rounded my-2 p-4 shadow-sm">
+                <h4>Sum av ordre</h4>
+                <hr />
+
+                @if (!signInManager.IsSignedIn(User))
+                {
+                    <div class="row">
+                        <div class="col">
+                            <p>Subtotal:</p>
+                        </div>
+                        <div class="col">
+                            <p class="text-end">@(Model.Subtotal)kr</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col d-grid">
+                            <a class="btn btn-light" asp-controller="ProfileManagement" asp-action="Register">Registrer deg</a>
+                        </div>
+                        <div class="col d-grid">
+                            <a class="btn btn-outline-light" asp-controller="ProfileManagement" asp-action="Login">Logg inn</a>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <form method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Leverings Addresse</label>
+                            <input type="text" class="form-control" asp-for="DeliveryAddress">
+                            <span asp-validation-for="DeliveryAddress" class="text-warning"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Betalings metode</label>
+                            <select class="form-select" asp-for="PaymentMethod">
+                                <option value="cash">Betal ved levering</option>
+                                <option value="credit_card">Kreditt kort</option>
+                                <option value="paypal">Paypal</option>
+                            </select>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col">
+                                <p>Subtotal:</p>
+                            </div>
+                            <div class="col">
+                                <p class="text-end">@(Model.Subtotal)kr</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <p>Leverings tillegg:</p>
+                            </div>
+                            <div class="col">
+                                <p class="text-end">@(Model.DeliveryFee)kr</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <p>Total:</p>
+                            </div>
+                            <div class="col">
+                                <p class="text-end">@(Model.Total)kr</p>
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-outline-primary" type="submit">Fullfør betaling </button>
+
+                        </div>
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,6 +1,6 @@
-﻿@using MatFrem.Models.DomainModel
+﻿@using MatFrem.Models.ViewModel
 
-@model IEnumerable<ProductModel>
+@model IEnumerable<ProductViewModel>
 
 @{
     int nextPage = Convert.ToInt32(ViewBag.PageNumber) + 1;
@@ -33,7 +33,7 @@
                         <th>Pris</th>
                         <th>Kalori Innhold</th>
                         <th>Kategori</th>
-                        <th>Bilde</th>
+                        
                     </tr>
                 </thead>
                 <tbody id="myTable">
@@ -46,7 +46,9 @@
                             <td>@(productModel.ProductPrice)kr</td>
                             <td>@productModel.ProductCalories</td>
                             <td>@productModel.Category</td>
-                            <td><img src="~/Images/product/@productModel.ImageUrl" width="100" /></td>
+
+                            
+
                             <td>
                                 <a asp-controller="Product"
                                    asp-action="EditProduct"

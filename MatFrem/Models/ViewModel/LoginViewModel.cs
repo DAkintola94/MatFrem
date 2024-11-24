@@ -1,4 +1,6 @@
-﻿namespace MatFrem.Models.ViewModel
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MatFrem.Models.ViewModel
 {
     public class LoginViewModel
     {
@@ -6,6 +8,8 @@
         public string Password { get; set; }
         public string? RememberMe { get; set; }
         public string? ReturnUrl { get; set; }
+
+        
 
     }
 }

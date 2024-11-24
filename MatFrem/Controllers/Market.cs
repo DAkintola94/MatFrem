@@ -15,14 +15,14 @@ namespace MatFrem.Controllers
         private readonly IProductRepository _productRepository;
         private readonly IOrderRepository _orderRepository;
         private readonly IShoppingCartRepository _shoppingCartRepository;
-        private readonly IConfiguration _configuration;
+        private readonly IConfiguration _configuration; //IConfiguration is a built-in interface in .NET Core that provides access to the appsettings.json file
         private readonly AppDBContext _context;
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager; //UserManager is a built-in class in .NET Core that provides all the functionality needed to manage users in the system
         private readonly decimal deliveryFee; 
 
         public Market(IProductRepository productRepo, 
             UserManager<ApplicationUser> userManager, IOrderRepository orderRepository,
-            IShoppingCartRepository shoppingCartRepository, IConfiguration configuration
+            IShoppingCartRepository shoppingCartRepository, IConfiguration configuration 
             , AppDBContext context)
         {
             _context = context;
@@ -31,11 +31,11 @@ namespace MatFrem.Controllers
             _userManager = userManager;
             _orderRepository = orderRepository;
             _shoppingCartRepository = shoppingCartRepository;
-            deliveryFee = configuration.GetValue<decimal>("CartSettings:DeliveryFee");
+            deliveryFee = configuration.GetValue<decimal>("CartSettings:DeliveryFee"); //get the delivery fee from the appsettings.json file
         }
 
 
-
+        [HttpGet]
         public IActionResult Index(string locationAddress)
         {
                List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context);
@@ -56,18 +56,17 @@ namespace MatFrem.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Index(ShoppingCartViewModel shoppingCartView, string locationAddress)
+        public IActionResult Index(ShoppingCartViewModel shoppingCartView)
         {
-            List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context);
+            List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
             decimal subtotal = CartHelper.GetSubTotal(cartItems);
 
             shoppingCartView.CartItems = cartItems;
             shoppingCartView.Subtotal = subtotal;
             shoppingCartView.DeliveryFee = deliveryFee;
-            shoppingCartView.DeliveryAddress = locationAddress;
             shoppingCartView.Total = subtotal + deliveryFee;
             
-
+            
             if (!ModelState.IsValid)
             {
                 return View(shoppingCartView);
@@ -78,7 +77,7 @@ namespace MatFrem.Controllers
                 ViewBag.ErrorMessage = "handlekurven er tom";
                 return View(shoppingCartView);
             }
-            return RedirectToAction("Buy", shoppingCartView);
+            return RedirectToAction("ConfirmPurchase", shoppingCartView); //redirecting and sending model data to ConfirmPurchase
         }
 
 
@@ -151,25 +150,11 @@ namespace MatFrem.Controllers
 
         }
 
+
         [HttpGet]
-        public async Task<ActionResult> Detail(int id)
+        public async Task<ActionResult> ConfirmPurchase(int id)
         {
-            var getById = await _productRepository.GetItemById(id);
-            if(getById!= null)
-            {
-                var viewProductModel = new ProductViewModel
-                {
-                    Description = getById.Description,
-                    ProductLocation = getById.ProductLocation
-                };
-                return View(viewProductModel);
-            }
-
-            return View();
-        }
-
-        public async Task<ActionResult> Buy(int id)
-        {
+            //no point retreving from database, we are getting model value from another view already
             return View();
         }
 

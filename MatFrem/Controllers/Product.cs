@@ -26,24 +26,7 @@ namespace MatFrem.Controllers
         [HttpGet]
         public async Task<ActionResult> Index()
         {
-            var getAllProducts = await _productRepository.GetAllItems();
-            if (getAllProducts != null)
-            {
-                var productViewModels = getAllProducts.Select(product => new ProductViewModel
-                {
-                    ProductID = product.ProductID,
-                    ProductName = product.ProductName,
-                    ProductPrice = product.ProductPrice,
-                    ProductCalories = product.ProductCalories,
-                    ProductLocation = product.ProductLocation,
-                    Category = product.Category,
-                    ImageUrl = product.ImageUrl
-                }).ToList();
-
-                return View(productViewModels);
-            }
-
-            return View(new List<ProductViewModel>());
+			return View();
         }
 
 
@@ -142,12 +125,27 @@ namespace MatFrem.Controllers
             ViewBag.CurrentPage = pageNumber;
             ViewBag.PageSize = pageSize;
 
-            var showAll = await _productRepository.GetAllItems(pageNumber, pageSize);
-            return View(showAll); //need to return a list, its IEnumerable in the html
+            var getAllProducts = await _productRepository.GetAllItems(pageNumber, pageSize);
+
+            if (getAllProducts != null)
+            {
+                var productViewModels = getAllProducts.Select(product => new ProductViewModel
+                {
+                    ProductID = product.ProductID,
+                    ProductName = product.ProductName,
+                    ProductPrice = product.ProductPrice,
+                    ProductCalories = product.ProductCalories,
+                    ProductLocation = product.ProductLocation,
+                    Category = product.Category,
+                    ImageUrl = product.ImageUrl
+                }).ToList();
+                return View(productViewModels);
+            }
+			return View();
         }
 
-		
-		[HttpGet]
+
+        [HttpGet]
         public async Task<ActionResult> EditProduct(int id)
         {
             var editItem = await _productRepository.GetItemById(id); //this repository have not saved anything, only found the id
@@ -170,9 +168,9 @@ namespace MatFrem.Controllers
 
 
 		[HttpPost]
-		public async Task<ActionResult> EditProduct(ProductViewModel editProduct, IFormFile? file)
+		public async Task<ActionResult> EditProduct(ProductViewModel editProduct, IFormFile? file, int id)
 		{
-			var existingItem = await _productRepository.GetItemById(editProduct.ProductID);
+			var existingItem = await _productRepository.GetItemById(id);
 			if (existingItem == null)
 			{
 				return NotFound();
@@ -233,5 +231,26 @@ namespace MatFrem.Controllers
 
 			return Json(new { success = false, message = "Delete failed" });
 		}
+
+		[HttpGet]
+		public async Task<ActionResult> Detail(int id)
+		{
+			var getById = await _productRepository.GetItemById(id);
+            if (getById != null)
+            {
+				ProductViewModel viewModel = new ProductViewModel
+				{
+                    ProductPrice = getById.ProductPrice,
+                    ProductName = getById.ProductName,
+					ProductCalories = getById.ProductCalories,
+					ProductLocation = getById.ProductLocation,
+					Description = getById.Description
+				};
+
+                return View(viewModel);
+            }
+			return View();
+        }
+
     }
 }

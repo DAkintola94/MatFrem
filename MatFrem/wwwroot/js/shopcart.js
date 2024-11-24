@@ -26,7 +26,7 @@
 }
 
 function saveCart(cart) {
-    let cartString = btoa(JSON.stringify)(cart);
+    let cartString = btoa(JSON.stringify(cart));
 
     //save cookie
     let d = new Date();
@@ -59,10 +59,5 @@ function addToCart(button, id) {
 
     }
 
-    document.getElementById("cartSize").innerHTML = cartSize;
+    document.getElementById("CartSize").innerHTML = cartSize;
 }
-
-
-getShoppingCart();
-saveCart();
-addToCart();
