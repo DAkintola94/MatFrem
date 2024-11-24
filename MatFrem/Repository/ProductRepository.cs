@@ -28,7 +28,7 @@ namespace MatFrem.Repository
         /// Null values are allowed for individual items in the list.
         /// </returns>
 
-        public async Task<IEnumerable<ProductModel?>> GetAllItems(int pageNumber = 1, int pageSize = 100)
+        public async Task<IEnumerable<ProductModel>> GetAllItems(int pageNumber = 1, int pageSize = 100)
         {
             var query = _context.Product_detail.AsQueryable(); 
             //pagination - a formula of skipping a certain number of items and taking a certain number of items
@@ -49,7 +49,7 @@ namespace MatFrem.Repository
         /// <returns>
         /// The <see cref="ProductModel"/> object that was deleted, or <c>null</c> if no product with the specified ID was found.
         /// </returns>
-        public async Task<ProductModel?> DeleteItem(int id)
+        public async Task<ProductModel> DeleteItem(int id)
         {
             var itemId = await _context.Product_detail.FindAsync(id); //remember, Product_detail is the object created in the AppDBContext
             if (itemId != null)
@@ -70,10 +70,10 @@ namespace MatFrem.Repository
         /// The <see cref="ProductModel"/> object corresponding to the specified ID, 
         /// or <c>null</c> if no product with the given ID exists in the database.
         /// </returns>
-        public async Task<ProductModel?> GetItemById(int elementId)
+        public async Task<ProductModel> GetItemById(int Id)
         {
 
-           return await _context.Product_detail.Where(x => x.ProductID == elementId).FirstOrDefaultAsync();
+           return await _context.Product_detail.Where(p => p.ProductID == Id).FirstOrDefaultAsync();
 
         }
 

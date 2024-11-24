@@ -1,4 +1,4 @@
-﻿@model MatFrem.Models.ViewModel.EditProductModel
+﻿@model MatFrem.Models.ViewModel.ProductViewModel
 
 <head>
 	<link href="~/css/site.css" rel="stylesheet" />
@@ -25,7 +25,7 @@
 
 			<div class="mb-3">
 				<label class="form-label">Produkt Kategori</label>
-				<select class="form-control" asp-for="ProductCategory">
+				<select class="form-control" asp-for="Category">
 					<option value="Meleri & Egg">Meleri & Egg</option>
 					<option value="Frukt & Grønt">Frukt & Grønt</option>
 					<option value="Vegetar">Vegetar</option>
@@ -43,11 +43,15 @@
 			</div>
 
 			<div class="mb-3">
-				<input type="hidden" class="form-control" asp-for="ProductLocation" id="geoJsonInput" /> 
+				<input type="hidden" class="form-control" asp-for="ProductLocation" id="geoJsonInput" />
 				<!-- the id in this input stores GeoJSON data generated from drawn map shapes (set by JavaScript) -->
 			</div>
+			
+			<div class="mb-3">
+				<label class="form-label">Product bilde</label>
+				<input type="file" class="form-control" asp-for="ImageUrl" />
+			</div>
 
-				
 			<div class="mb-3">
 				<button type="submit" class="btn btn-dark">
 					Opprett Produkt

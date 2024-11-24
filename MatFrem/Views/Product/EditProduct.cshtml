@@ -1,69 +1,93 @@
-﻿@model MatFrem.Models.ViewModel.EditProductModel
+﻿@model MatFrem.Models.ViewModel.ProductViewModel
 
 <head>
-<link href="~/css/site.css" rel="stylesheet" />
+	<link href="~/css/site.css" rel="stylesheet" />
 </head>
 
-@if(Model != null)
-{
+<h1>Rediger produkt</h1>
+<div class="row">
 
-<h1> Rediger produkt </h1>
-<div class="container py-5">
-	<form method="post" asp-controller="Product" asp-action="EditProduct">
-		<div class="mb-3">
-			<label class="form-label"> Produkt ID </label>
-			<input type="text" class="form-control" asp-for="ProductID" readonly/> <!-- the value in name must match the model's property -->
-		</div>
+	<!-- Form Column -->
+	<div class="col-md-8 mx-auto rounded border p-3">
+		<form method="post" enctype="multipart/form-data">
+			<div class="row mb-3">
+				<label class="col-sm-4 col-form-label">Produkt navn</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" asp-for="ProductName" />
+				</div>
+			</div>
 
-		<div class="mb-3">
-			<label class="form-label"> Produkt navn </label>
-			<input type="text" class="form-control" asp-for="ProductName" /> <!-- the value in name must match the model's property -->
-		</div>
+			<div class="row mb-3">
+				<label class="col-sm-4 col-form-label">Produkt pris</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" asp-for="ProductPrice" />
+				</div>
+			</div>
 
-		<div class="mb-3">
-			<label class="form-label"> Pris </label>
-			<input type="text" class="form-control" asp-for="ProductPrice" /> <!-- the value in name must match the model's property -->
-		</div>
+			<div class="row mb-3">
+				<label class="col-sm-4 col-form-label">Produkt Kategori</label>
+				<div class="col-sm-8">
+					<select class="form-control" asp-for="Category">
+						<option value="Meleri & Egg">Meleri & Egg</option>
+						<option value="Frukt & Grønt">Frukt & Grønt</option>
+						<option value="Vegetar">Vegetar</option>
+						<option value="Sjømat">Sjømat</option>
+						<option value="Tørrvare">Tørrvare</option>
+						<option value="Frokostblanding">Frokostblanding</option>
+						<option value="Frosne varer">Frosne varer</option>
+						<option value="Bakeri">Bakeri</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<label class="col-sm-4 col-form-label">Kalori per 100g</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" asp-for="ProductCalories" />
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<label class="col-sm-4 col-form-label">Beskrivelse</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" asp-for="Description" />
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="offset-sm-4 col-sm-8">
+					<img src="~/Images/product/@Model.ImageUrl" width="150" />
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<label class="col-sm-4 col-form-label">Bilde</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" asp-for="ImageUrl" />
+				</div>
+			</div>
+
 
 			<div class="mb-3">
-				<label class="form-label">Produkt Kategori</label>
-				<select class="form-control" asp-for="ProductCategory">
-					<option value="Meleri & Egg">Meleri & Egg</option>
-					<option value="Frukt & Grønt">Frukt & Grønt</option>
-					<option value="Vegetar">Vegetar</option>
-					<option value="Sjømat">Sjømat</option>
-					<option value="Tørrvare">Tørrvare</option>
-					<option value="Frokostblanding">Frokostblanding</option>
-					<option value="Frosne varer">Frosne varer</option>
-					<option value="Bakeri">Bakeri</option>
-				</select>
+				<input type="hidden" class="form-control" asp-for="ProductLocation" id="geoJsonInput" />
+				<!-- the id in this input stores GeoJSON data generated from drawn map shapes (set by JavaScript) -->
 			</div>
 
-		<div class="mb-3">
-			<label class="form-label"> Kalori innhold </label>
-			<input type="text" class="form-control" asp-for="ProductCalories" /> <!-- the value in name must match the model's property -->
-		</div>
-
-		<div class="mb-3">
-			<label class="form-label"> Produkt Lokasjon </label>
-			<input type="text" class="form-control" asp-for="ProductLocation" /> <!-- the value in name must match the model's property -->
-		</div>
-
-			<div class="mb-3 d-flex justify-content-between">
-				<button type="submit" class="btn btn-dark">
-					Oppdater
-				</button>
-
-				<button type="submit" class="btn btn-danger ms-2" asp-action="DeleteProduct">
-					Slett produkt
+			<div class="row">
+				<div class="offset-sm-4 col-sm-4 d-grid">
+					<button type="submit" class="btn btn-danger" asp-action="DeleteProduct" onclick="return confirm('Er du sikkert?')">
+						Slett produkt
+					</button>
+				</div>
+			<div class="col-sm-4 d-grid">
+				<button type="submit" class="btn btn-dark" asp-action="EditProduct">
+					Rediger produkt
 				</button>
 			</div>
-	</form>
+			</div>
+		</form>
+	</div>
+
 </div>
-}
 
-else 
-{
-	<h1> Ingen produkt er funnet </h1>
-}
-
+<script src="~/js/geoLocationProductIndex.js"> </script>

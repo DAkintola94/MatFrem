@@ -1,4 +1,4 @@
-﻿@model MatFrem.Models.ViewModel.EditProductModel
+﻿@model MatFrem.Models.ViewModel.ProductViewModel
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,7 @@
                         <label class="form-label">Pris</label>
                         <input type="text" asp-for="ProductPrice" class="form-control" readonly>
                     </div>
-                    
+
                     <div class="col-md-6">
                         <label class="form-label">Kalori innhold per 100g</label>
                         <input type="text" asp-for="ProductCalories" class="form-control" readonly>
@@ -47,5 +47,5 @@
 </body>
 </html>
 
-<script> var modelValues = @Html.Raw(Json.Serialize(Model.ProductLocation));</script>
+<script>var modelValues = @Html.Raw(Json.Serialize(Model.ProductLocation));</script>
 <script src="~/js/cartGeo.js"></script>

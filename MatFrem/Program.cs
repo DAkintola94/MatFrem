@@ -18,8 +18,10 @@ namespace MatFrem
             builder.Services.AddScoped<ILocationRepository, LocationRepository>(); // this line adds the LocationRepository to the services collection
             builder.Services.AddScoped<IOrderRepository, OrderRepository>(); // this line adds the OrderRepository to the services collection
 			builder.Services.AddScoped<IAdviceRepository, AdviceRepository>(); // this line adds the AdviceRepository to the services collection
+            builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
 
-			builder.Services.AddDbContext<AppDBContext>(options =>
+
+            builder.Services.AddDbContext<AppDBContext>(options =>
                 options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
                 new MySqlServerVersion(new Version(11, 5, 2))));
 

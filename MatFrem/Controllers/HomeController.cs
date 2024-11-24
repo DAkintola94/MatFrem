@@ -11,15 +11,34 @@ namespace MatFrem.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IAdviceRepository _adviceRepository;
+        private readonly IProductRepository _productRepository;
 
-		public HomeController(ILogger<HomeController> logger, IAdviceRepository adviceRepo)
+		public HomeController(ILogger<HomeController> logger, IAdviceRepository adviceRepo
+            ,IProductRepository productRepository)
         {
             _logger = logger;
             _adviceRepository = adviceRepo;
-		}
+            _productRepository = productRepository;
+        }
 
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<ActionResult> Index(ProductViewModel productViewModel)
         {
+            var getAllProducts = await _productRepository.GetAllItems();
+            if (getAllProducts != null)
+            {
+                var productViewModels = getAllProducts.Select(product => new ProductViewModel
+                {
+                    ProductID = product.ProductID,
+                    ProductName = product.ProductName,
+                    ProductPrice = product.ProductPrice,
+                    ProductCalories = product.ProductCalories,
+                    ProductLocation = product.ProductLocation,
+                    Category = product.Category,
+                    ImageUrl = product.ImageUrl
+                }).ToList();
+                return View(productViewModels);
+            }
             return View();
         }
 

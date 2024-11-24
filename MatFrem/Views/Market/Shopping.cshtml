@@ -60,7 +60,7 @@
                             <td>@productModel.ProductID</td>
                             <td>@productModel.ProductName</td>
                             <td>@productModel.ProductCalories</td>
-                            <td>@productModel.ProductCategory</td>
+                            <td>@productModel.Category</td>
                             <td>@productModel.ProductPrice</td>
                             <td>
                                 <a asp-controller="Market"
@@ -68,6 +68,11 @@
                                    asp-route-id="@productModel.ProductID">
                                     <img src="~/images/green-arrow.svg" alt="Gå til" style="height: 40px;" />
                                 </a>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-warning btn-sm mb2" onclick="addToCart(this, @productModel.ProductID)">
+                                    Legg til kurv <i class="bi bi-cart4"></i>
+                                </button>
                             </td>
                         </tr>
                     }
@@ -111,11 +116,7 @@
     </div>
 </div>
 
-<div>
-    <button class="buttonClass" 
-        type="submit" 
-        asp-controller="Market" asp-action="Delete"> Slett </button>
-</div>
+
 
 <script>var modelData = @Html.Raw(Json.Serialize(Model)); </script>
 

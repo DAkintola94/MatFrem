@@ -22,6 +22,43 @@ namespace MatFrem.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("DriverModel", b =>
+                {
+                    b.Property<int>("DriverID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("DriverID"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("CurrentLocation")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("DriverName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("LicenseNumber")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PhoneNr")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("DriverID");
+
+                    b.ToTable("DriverModel");
+                });
+
             modelBuilder.Entity("MatFrem.Models.DomainModel.AdviceModel", b =>
                 {
                     b.Property<int>("PostId")
@@ -32,7 +69,8 @@ namespace MatFrem.Migrations
 
                     b.Property<string>("AdviceMessage")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
 
                     b.Property<string>("Author")
                         .IsRequired()
@@ -126,7 +164,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "279c8d80-fe5b-46b8-a150-8b791e7ffa9f",
+                            ConcurrencyStamp = "7e344c7c-988e-4e86-a082-4ab11cf8b79c",
                             Email = "sysadmin@test.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -134,10 +172,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SYSADMIN@TEST.COM",
                             NormalizedUserName = "SYSADMIN@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEoKYMVW7dm7VD9QxGOeTdtl/PUw26eY76BNyRmpT0c8JOm7jGRx3wJ/PpoX2sDnGQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIeCJoKJUplFtQbu7qExOSNSq8CaDePl46u43JgMvzjCwdY1rBBywaJVnseyttPniw==",
                             PhoneNumber = "40748608",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "be74abcf-f701-47c3-a728-230ac8c023c3",
+                            SecurityStamp = "5d160196-2a79-42c9-bd79-32e037b9acf5",
                             TwoFactorEnabled = false,
                             UserName = "sysadmin@test.com"
                         },
@@ -145,7 +183,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7e10b1e2-eb20-4900-b598-525308659f11",
+                            ConcurrencyStamp = "a65c3ba1-3799-4b65-bca7-d599e90fa662",
                             Email = "driver@test.com",
                             EmailConfirmed = false,
                             FirstName = "Test",
@@ -153,10 +191,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "DRIVER@TEST.COM",
                             NormalizedUserName = "DRIVER@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEE1FIrxvOLMzG8iodZmyvOpQQGGcEjUdAFcJQI617LIwBQdQ1HN2gt8/jrusHccojw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMzOlGqYrCemnNfqt9w4dDnRfto2EGBI4CkdJ39o3zhX/6TtnvxGqynt+Pl850Ihvw==",
                             PhoneNumber = "95534356",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "19d63c36-d8ad-46c6-87c6-62b4f76b7531",
+                            SecurityStamp = "e5121931-f3ed-4191-aaea-b09b8bb48356",
                             TwoFactorEnabled = false,
                             UserName = "driver@test.com"
                         },
@@ -164,7 +202,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "89f57490-b2b9-4263-a144-a54ef837b631",
+                            ConcurrencyStamp = "5aea34a1-10aa-4298-b03e-ba7fb7d06cca",
                             Email = "customer@test.com",
                             EmailConfirmed = false,
                             FirstName = "Test",
@@ -172,10 +210,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CUSTOMER@TEST.COM",
                             NormalizedUserName = "CUSTOMER@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBfOzS+CVVmWon4ry7Pt5cix1P0rRrUrdvC2FgZeQ4FGe10mOuZ4dzq+vzkEoqVBrg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJRyBPxA9sEMexMsX3ARL9J7majoh6EI5/cD9tpA67UEiHwmBcOzrXPnSMHwbe6TgA==",
                             PhoneNumber = "43342364",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a83d2dd0-a106-439d-a780-41b5f6ab57d0",
+                            SecurityStamp = "889d2be7-f68c-4129-a403-83ea1528b777",
                             TwoFactorEnabled = false,
                             UserName = "customer@test.com"
                         });
@@ -200,6 +238,9 @@ namespace MatFrem.Migrations
                     b.Property<int>("DriverID")
                         .HasColumnType("int");
 
+                    b.Property<int>("DriverMDriverID")
+                        .HasColumnType("int");
+
                     b.Property<int>("OrdersOrderID")
                         .HasColumnType("int");
 
@@ -209,69 +250,11 @@ namespace MatFrem.Migrations
 
                     b.HasKey("CustomerID");
 
-                    b.HasIndex("DriverID")
-                        .IsUnique();
+                    b.HasIndex("DriverMDriverID");
 
                     b.HasIndex("OrdersOrderID");
 
                     b.ToTable("Customers");
-                });
-
-            modelBuilder.Entity("MatFrem.Models.DomainModel.DriverModel", b =>
-                {
-                    b.Property<int>("DriverID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("DriverID"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("CurrentLocation")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("DriverName")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("LicenseNumber")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<Guid>("LocationReportID")
-                        .HasColumnType("char(36)");
-
-                    b.Property<int>("OrderID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrderStatusID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PhoneNr")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("ShopModelShopID")
-                        .HasColumnType("int");
-
-                    b.HasKey("DriverID");
-
-                    b.HasIndex("LocationReportID");
-
-                    b.HasIndex("OrderID");
-
-                    b.HasIndex("OrderStatusID");
-
-                    b.HasIndex("ShopModelShopID");
-
-                    b.ToTable("DriverModel");
                 });
 
             modelBuilder.Entity("MatFrem.Models.DomainModel.LocationModel", b =>
@@ -303,6 +286,33 @@ namespace MatFrem.Migrations
                     b.ToTable("Locations");
                 });
 
+            modelBuilder.Entity("MatFrem.Models.DomainModel.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ShoppingCartModelShoppingCartID")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasPrecision(16, 2)
+                        .HasColumnType("decimal(16,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductID");
+
+                    b.HasIndex("ShoppingCartModelShoppingCartID");
+
+                    b.ToTable("OrderItems");
+                });
+
             modelBuilder.Entity("MatFrem.Models.DomainModel.OrderModel", b =>
                 {
                     b.Property<int>("OrderID")
@@ -311,17 +321,24 @@ namespace MatFrem.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("OrderID"));
 
-                    b.Property<int>("CustomerID")
-                        .HasColumnType("int");
+                    b.Property<string>("CustomerId")
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<int>("DriverID")
-                        .HasColumnType("int");
+                    b.Property<string>("CustomerName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
-                    b.Property<Guid>("LocationID")
-                        .HasColumnType("char(36)");
+                    b.Property<string>("DriverId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int?>("DriverModelDriverID")
+                        .HasColumnType("int");
 
                     b.Property<DateOnly>("OrderCreatedDate")
                         .HasColumnType("date");
+
+                    b.Property<int>("OrderItemID")
+                        .HasColumnType("int");
 
                     b.Property<int>("OrderStatusID")
                         .HasColumnType("int");
@@ -329,23 +346,18 @@ namespace MatFrem.Migrations
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
 
-                    b.Property<int>("ShopID")
+                    b.Property<int?>("ShopModelShopID")
                         .HasColumnType("int");
 
                     b.HasKey("OrderID");
 
-                    b.HasIndex("CustomerID");
+                    b.HasIndex("CustomerId");
 
-                    b.HasIndex("DriverID");
+                    b.HasIndex("DriverId");
 
-                    b.HasIndex("LocationID");
+                    b.HasIndex("DriverModelDriverID");
 
-                    b.HasIndex("OrderStatusID")
-                        .IsUnique();
-
-                    b.HasIndex("ProductID");
-
-                    b.HasIndex("ShopID");
+                    b.HasIndex("ShopModelShopID");
 
                     b.ToTable("Orders");
                 });
@@ -353,10 +365,7 @@ namespace MatFrem.Migrations
             modelBuilder.Entity("MatFrem.Models.DomainModel.OrderStatus", b =>
                 {
                     b.Property<int>("OrderStatusID")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("OrderStatusID"));
 
                     b.Property<string>("Order_Status")
                         .IsRequired()
@@ -364,7 +373,7 @@ namespace MatFrem.Migrations
 
                     b.HasKey("OrderStatusID");
 
-                    b.ToTable("OrderStatus");
+                    b.ToTable("OrderState");
                 });
 
             modelBuilder.Entity("MatFrem.Models.DomainModel.ProductModel", b =>
@@ -375,19 +384,37 @@ namespace MatFrem.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ProductID"));
 
-                    b.Property<string>("ProductCalories")
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("CustomerId")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Description")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("ProductCategory")
+                    b.Property<string>("DriverId")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("longtext");
+
+                    b.Property<string>("ProductCalories")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("ProductLocation")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("ProductName")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<double>("ProductPrice")
                         .HasColumnType("double");
@@ -395,9 +422,18 @@ namespace MatFrem.Migrations
                     b.Property<int?>("ShopModelShopID")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ShoppingCartModelShoppingCartID")
+                        .HasColumnType("int");
+
                     b.HasKey("ProductID");
 
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("DriverId");
+
                     b.HasIndex("ShopModelShopID");
+
+                    b.HasIndex("ShoppingCartModelShoppingCartID");
 
                     b.ToTable("Product_detail");
                 });
@@ -421,6 +457,56 @@ namespace MatFrem.Migrations
                     b.HasIndex("LocationID");
 
                     b.ToTable("Shop_detail");
+                });
+
+            modelBuilder.Entity("MatFrem.Models.DomainModel.ShoppingCartModel", b =>
+                {
+                    b.Property<int>("ShoppingCartID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ShoppingCartID"));
+
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("CustomerId")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("DeliveryAddress")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<decimal>("DeliveryFee")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<string>("DriverId")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PaymentMethod")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("ProductID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductModelProductID")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Subtotal")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.HasKey("ShoppingCartID");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("ProductModelProductID");
+
+                    b.ToTable("ShoppingCart");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -605,11 +691,26 @@ namespace MatFrem.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("OrderModelProductModel", b =>
+                {
+                    b.Property<int>("OrderModelOrderID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductID")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderModelOrderID", "ProductID");
+
+                    b.HasIndex("ProductID");
+
+                    b.ToTable("OrderModelProductModel");
+                });
+
             modelBuilder.Entity("MatFrem.Models.DomainModel.CustomerModel", b =>
                 {
-                    b.HasOne("MatFrem.Models.DomainModel.DriverModel", "DriverM")
-                        .WithOne("CustomerM")
-                        .HasForeignKey("MatFrem.Models.DomainModel.CustomerModel", "DriverID")
+                    b.HasOne("DriverModel", "DriverM")
+                        .WithMany()
+                        .HasForeignKey("DriverMDriverID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -624,41 +725,6 @@ namespace MatFrem.Migrations
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("MatFrem.Models.DomainModel.DriverModel", b =>
-                {
-                    b.HasOne("MatFrem.Models.DomainModel.LocationModel", "Location")
-                        .WithMany()
-                        .HasForeignKey("LocationReportID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MatFrem.Models.DomainModel.OrderModel", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MatFrem.Models.DomainModel.OrderStatus", "OrderStatus")
-                        .WithMany()
-                        .HasForeignKey("OrderStatusID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MatFrem.Models.DomainModel.ShopModel", "ShopModel")
-                        .WithMany()
-                        .HasForeignKey("ShopModelShopID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Location");
-
-                    b.Navigation("Order");
-
-                    b.Navigation("OrderStatus");
-
-                    b.Navigation("ShopModel");
-                });
-
             modelBuilder.Entity("MatFrem.Models.DomainModel.LocationModel", b =>
                 {
                     b.HasOne("MatFrem.Models.DomainModel.OrderModel", "OrderModels")
@@ -670,62 +736,80 @@ namespace MatFrem.Migrations
                     b.Navigation("OrderModels");
                 });
 
-            modelBuilder.Entity("MatFrem.Models.DomainModel.OrderModel", b =>
+            modelBuilder.Entity("MatFrem.Models.DomainModel.OrderItem", b =>
                 {
-                    b.HasOne("MatFrem.Models.DomainModel.CustomerModel", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerID")
+                    b.HasOne("MatFrem.Models.DomainModel.OrderModel", null)
+                        .WithMany("OrderItems")
+                        .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MatFrem.Models.DomainModel.DriverModel", "Driver")
-                        .WithMany()
-                        .HasForeignKey("DriverID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MatFrem.Models.DomainModel.LocationModel", "Location")
-                        .WithMany()
-                        .HasForeignKey("LocationID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MatFrem.Models.DomainModel.OrderStatus", "OrderStatusModel")
-                        .WithOne()
-                        .HasForeignKey("MatFrem.Models.DomainModel.OrderModel", "OrderStatusID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MatFrem.Models.DomainModel.ProductModel", "ProductsM")
+                    b.HasOne("MatFrem.Models.DomainModel.ProductModel", "Product")
                         .WithMany()
                         .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MatFrem.Models.DomainModel.ShopModel", "ShopM")
+                    b.HasOne("MatFrem.Models.DomainModel.ShoppingCartModel", null)
+                        .WithMany("CartItems")
+                        .HasForeignKey("ShoppingCartModelShoppingCartID");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("MatFrem.Models.DomainModel.OrderModel", b =>
+                {
+                    b.HasOne("MatFrem.Models.DomainModel.ApplicationUser", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId");
+
+                    b.HasOne("MatFrem.Models.DomainModel.ApplicationUser", "Driver")
+                        .WithMany()
+                        .HasForeignKey("DriverId");
+
+                    b.HasOne("DriverModel", null)
+                        .WithMany("ActiveDeliveries")
+                        .HasForeignKey("DriverModelDriverID");
+
+                    b.HasOne("MatFrem.Models.DomainModel.ShopModel", null)
                         .WithMany("OrderModels")
-                        .HasForeignKey("ShopID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ShopModelShopID");
 
                     b.Navigation("Customer");
 
                     b.Navigation("Driver");
+                });
 
-                    b.Navigation("Location");
-
-                    b.Navigation("OrderStatusModel");
-
-                    b.Navigation("ProductsM");
-
-                    b.Navigation("ShopM");
+            modelBuilder.Entity("MatFrem.Models.DomainModel.OrderStatus", b =>
+                {
+                    b.HasOne("MatFrem.Models.DomainModel.OrderModel", null)
+                        .WithOne("OrderStatusModel")
+                        .HasForeignKey("MatFrem.Models.DomainModel.OrderStatus", "OrderStatusID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MatFrem.Models.DomainModel.ProductModel", b =>
                 {
+                    b.HasOne("MatFrem.Models.DomainModel.ApplicationUser", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId");
+
+                    b.HasOne("MatFrem.Models.DomainModel.ApplicationUser", "Driver")
+                        .WithMany()
+                        .HasForeignKey("DriverId");
+
                     b.HasOne("MatFrem.Models.DomainModel.ShopModel", null)
                         .WithMany("ProductsModel")
                         .HasForeignKey("ShopModelShopID");
+
+                    b.HasOne("MatFrem.Models.DomainModel.ShoppingCartModel", null)
+                        .WithMany("Product")
+                        .HasForeignKey("ShoppingCartModelShoppingCartID");
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Driver");
                 });
 
             modelBuilder.Entity("MatFrem.Models.DomainModel.ShopModel", b =>
@@ -737,6 +821,21 @@ namespace MatFrem.Migrations
                         .IsRequired();
 
                     b.Navigation("Location");
+                });
+
+            modelBuilder.Entity("MatFrem.Models.DomainModel.ShoppingCartModel", b =>
+                {
+                    b.HasOne("MatFrem.Models.DomainModel.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("MatFrem.Models.DomainModel.ProductModel", "ProductModel")
+                        .WithMany()
+                        .HasForeignKey("ProductModelProductID");
+
+                    b.Navigation("ApplicationUser");
+
+                    b.Navigation("ProductModel");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -790,10 +889,24 @@ namespace MatFrem.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MatFrem.Models.DomainModel.DriverModel", b =>
+            modelBuilder.Entity("OrderModelProductModel", b =>
                 {
-                    b.Navigation("CustomerM")
+                    b.HasOne("MatFrem.Models.DomainModel.OrderModel", null)
+                        .WithMany()
+                        .HasForeignKey("OrderModelOrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("MatFrem.Models.DomainModel.ProductModel", null)
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DriverModel", b =>
+                {
+                    b.Navigation("ActiveDeliveries");
                 });
 
             modelBuilder.Entity("MatFrem.Models.DomainModel.LocationModel", b =>
@@ -801,11 +914,25 @@ namespace MatFrem.Migrations
                     b.Navigation("ShopsModel");
                 });
 
+            modelBuilder.Entity("MatFrem.Models.DomainModel.OrderModel", b =>
+                {
+                    b.Navigation("OrderItems");
+
+                    b.Navigation("OrderStatusModel");
+                });
+
             modelBuilder.Entity("MatFrem.Models.DomainModel.ShopModel", b =>
                 {
                     b.Navigation("OrderModels");
 
                     b.Navigation("ProductsModel");
+                });
+
+            modelBuilder.Entity("MatFrem.Models.DomainModel.ShoppingCartModel", b =>
+                {
+                    b.Navigation("CartItems");
+
+                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }

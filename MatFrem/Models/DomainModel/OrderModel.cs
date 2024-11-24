@@ -7,18 +7,20 @@ namespace MatFrem.Models.DomainModel
     {
         public int OrderID { get; set; }
         public DateOnly OrderCreatedDate { get; set; } = DateOnly.FromDateTime(DateTime.Now);
-        public int DriverID { get; set; } //foreign key for DriverModel, this is the primary key for DriverMode
-        public int CustomerID { get; set; }
-        public Guid LocationID { get; set; }
-        public int ShopID { get; set; }
+        public string? DriverId { get; set; } //foreign key for DriverModel, this is the primary key for DriverMode
+        public string? CustomerId { get; set; }
         public int OrderStatusID { get; set; }
         public int ProductID { get; set; }
-        public CustomerModel Customer { get; set; } //navigation property for CustomerModel, namely, OrderModel has a Customer
-        public DriverModel Driver { get; set; } //navigation property for DriverModel, namely, OrderModel has a Driver. To get all of Driver properties/inf
-        public LocationModel Location { get; set; } 
-        public ShopModel ShopM { get; set; } //all the properties is so the driver page model can be used to retreive those info
-        public OrderStatus OrderStatusModel { get; set; } 
-        public ProductModel ProductsM { get; set; } 
+        public string CustomerName { get; set; }
+        public int OrderItemID { get; set; }
+        public ApplicationUser Customer { get; set; } //navigation property for CustomerModel, namely, OrderModel has a Customer
+        public ApplicationUser Driver { get; set; } //navigation property for DriverModel, namely, OrderModel has a Driver. To get all of Driver properties/inf
+        public OrderStatus? OrderStatusModel { get; set; }
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>(); //indicates many to many relationship
+        public ICollection<ProductModel> Product { get; set; } = new List<ProductModel>(); //indicates many to many relationship
+
+        public ProductModel ProductM { get; set; } //navigation property for ProductModel, namely, OrderModel has a ProductModel
+        public OrderItem OrderItem { get; set; } //navigation property for OrderItem, namely, OrderModel has a OrderItem
 
     }
 }

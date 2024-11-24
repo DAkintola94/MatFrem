@@ -1,6 +1,7 @@
 ﻿using MatFrem.Models.DomainModel;
 using MatFrem.Models.ViewModel;
 using MatFrem.Repository;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MatFrem.Controllers
@@ -8,12 +9,16 @@ namespace MatFrem.Controllers
     public class Order : Controller
     {
         private readonly IOrderRepository _orderRepository;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public Order(IOrderRepository orderRepo)
+        public Order(IOrderRepository orderRepo, UserManager<ApplicationUser> userManager)
         {
             _orderRepository = orderRepo;
+            _userManager = userManager;
         }
-        public IActionResult OrderList()
+
+        [HttpGet]
+        public async Task<ActionResult> ActiveDeliveries()
         {
             return View();
         }
@@ -31,12 +36,7 @@ namespace MatFrem.Controllers
             {
                 OrderViewModel orderViewModel = new OrderViewModel
                 {
-                    OrderID = getOrderById.OrderID,
-                    OrderCreatedDate = getOrderById.OrderCreatedDate,
-					DriverID = getOrderById.DriverID,
-					CustomerID = getOrderById.CustomerID,
-					ShopID = getOrderById.ShopID,
-					OrderStatusID = getOrderById.OrderStatusID
+                   
                 };
 
                 return View(orderViewModel);

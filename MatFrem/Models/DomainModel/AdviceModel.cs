@@ -9,6 +9,8 @@ namespace MatFrem.Models.DomainModel
 		public string Author { get; set; }
 
 		[Required]
+		[MinLength(5)]
+		[MaxLength(200)]
 		public string AdviceMessage { get; set; }
 
 		[Required, EmailAddress]

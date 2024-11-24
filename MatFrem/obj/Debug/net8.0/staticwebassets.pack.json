@@ -229,6 +229,10 @@
       "PackagePath": "staticwebassets\\Images\\green-arrow.svg"
     },
     {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\hero.png",
+      "PackagePath": "staticwebassets\\Images\\hero.png"
+    },
+    {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\login.png",
       "PackagePath": "staticwebassets\\Images\\login.png"
     },
@@ -239,6 +243,38 @@
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\marketBG.jpg",
       "PackagePath": "staticwebassets\\Images\\marketBG.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\BreakfastCelery.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\BreakfastCelery.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\Egg.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\Egg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\FruitnVegs.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\FruitnVegs.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\drygood.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\drygood.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\frozengoods.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\frozengoods.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\pastry.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\pastry.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\seafood.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\seafood.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\vegetarian.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\vegetarian.jpg"
     },
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\profilepagepic.jpg",
@@ -311,6 +347,10 @@
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\sortSearch.js",
       "PackagePath": "staticwebassets\\js\\sortSearch.js"
+    },
+    {
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\tinymce.js",
+      "PackagePath": "staticwebassets\\js\\tinymce.js"
     },
     {
       "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\LICENSE",

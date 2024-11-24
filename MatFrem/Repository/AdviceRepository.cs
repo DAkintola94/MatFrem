@@ -34,7 +34,7 @@ namespace MatFrem.Repository
         /// An <see cref="AdviceModel"/> object representing the advice record, 
         /// or <c>null</c> if no record with the given ID exists in the database.
         /// </returns>
-        public async Task<AdviceModel?> GetAdviceById(int id)
+        public async Task<AdviceModel> GetAdviceById(int id)
 		{
 			return await _context.Advice.Where(x => x.PostId == id).FirstOrDefaultAsync();
 		}
@@ -49,7 +49,7 @@ namespace MatFrem.Repository
         /// The <see cref="AdviceModel"/> object representing the deleted advice record, 
         /// or <c>null</c> if no record with the given ID was found.
         /// </returns>
-        public async Task<AdviceModel?> DeleteAdvice(int id)
+        public async Task<AdviceModel> DeleteAdvice(int id)
 		{
 			var findIdAndDelete = await _context.Advice.FindAsync(id);
 			if(findIdAndDelete != null)
@@ -70,7 +70,7 @@ namespace MatFrem.Repository
         /// <returns>
         /// The <see cref="AdviceModel"/> object that was added, with updated information such as a generated ID.
         /// </returns>
-        public async Task<AdviceModel?> AddAdvice(AdviceModel adviceModel)
+        public async Task<AdviceModel> AddAdvice(AdviceModel adviceModel)
 		{
 			await _context.Advice.AddAsync(adviceModel);
 			await _context.SaveChangesAsync();

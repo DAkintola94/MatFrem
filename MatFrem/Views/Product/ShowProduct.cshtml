@@ -31,8 +31,9 @@
                         <th>Produkt Lokasjon</th>
                         <th>Navn</th>
                         <th>Pris</th>
-                        <th>Kategori</th>
                         <th>Kalori Innhold</th>
+                        <th>Kategori</th>
+                        <th>Bilde</th>
                     </tr>
                 </thead>
                 <tbody id="myTable">
@@ -42,9 +43,10 @@
                             <td>@productModel.ProductID</td>
                             <td>@productModel.ProductLocation</td>
                             <td>@productModel.ProductName</td>
+                            <td>@(productModel.ProductPrice)kr</td>
                             <td>@productModel.ProductCalories</td>
-                            <td>@productModel.ProductPrice</td>
-                            <td>@productModel.ProductCategory</td>
+                            <td>@productModel.Category</td>
+                            <td><img src="~/Images/product/@productModel.ImageUrl" width="100" /></td>
                             <td>
                                 <a asp-controller="Product"
                                    asp-action="EditProduct"

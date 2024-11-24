@@ -3,6 +3,7 @@ using MatFrem.Models.ViewModel;
 using MatFrem.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MatFrem.Controllers
 {
@@ -11,36 +12,119 @@ namespace MatFrem.Controllers
 	public class Product : Controller
     {
         private readonly IProductRepository _productRepository;
+        private readonly IWebHostEnvironment _webHostEnviroment;
+		private readonly string wwwRootPath;
 
-        public Product(IProductRepository productRepo)
+		public Product(IProductRepository productRepo, IWebHostEnvironment webHostEnviroment)
+		{
+			_productRepository = productRepo;
+			_webHostEnviroment = webHostEnviroment;
+			wwwRootPath = _webHostEnviroment.WebRootPath;
+		}
+
+
+        [HttpGet]
+        public async Task<ActionResult> Index()
         {
-            _productRepository = productRepo;
+            var getAllProducts = await _productRepository.GetAllItems();
+            if (getAllProducts != null)
+            {
+                var productViewModels = getAllProducts.Select(product => new ProductViewModel
+                {
+                    ProductID = product.ProductID,
+                    ProductName = product.ProductName,
+                    ProductPrice = product.ProductPrice,
+                    ProductCalories = product.ProductCalories,
+                    ProductLocation = product.ProductLocation,
+                    Category = product.Category,
+                    ImageUrl = product.ImageUrl
+                }).ToList();
+
+                return View(productViewModels);
+            }
+
+            return View(new List<ProductViewModel>());
         }
 
-		public IActionResult Index()
-        {
-            return View();
-        }
 
-        
+
         [HttpPost]
-        public async Task<ActionResult> Index(EditProductModel pModel) //no need for a get method, you have directed the html form in Index here
-        {
-
-			ProductModel productView = new ProductModel
+        public async Task<ActionResult> Index(ProductViewModel pModel, IFormFile? file, int? id) //file need to have a name ="" in the html, so it can be passed as a parameter
+																						 // when you are not using model in the controller parameter, you need to use the name of the input field in the html
+		{
+			if (id != null && id != 0)
 			{
-				ProductName = pModel.ProductName,
-				ProductPrice = pModel.ProductPrice,
-				ProductCalories = pModel.ProductCalories,
-				ProductCategory = pModel.ProductCategory,
-				ProductLocation = pModel.ProductLocation,
-			}; //so we can save the productmodel to the database, but formatted into the viewmodel
+				var getModelId = await _productRepository.GetItemById(id.Value);
+				if (getModelId != null)
+				{
+					ProductViewModel editProductModel = new ProductViewModel
+					{
+						ProductID = getModelId.ProductID,
+						ProductName = getModelId.ProductName,
+						ProductPrice = getModelId.ProductPrice,
+						ProductCalories = getModelId.ProductCalories,
+						ProductLocation = getModelId.ProductLocation,
+						Category = getModelId.Category,
+						ImageUrl = getModelId.ImageUrl
+					};
+
+                    var updateProduct = await _productRepository.UpdateItems(getModelId);
+					return RedirectToAction("ShowProduct");
+				}
+			}
+
 
 			if (ModelState.IsValid)
-            {    
-                var addItems = await _productRepository.InsertProduct(productView); //using Insert because Save does not take a parameter
+			{
+
+                if(file != null)
+                {
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                    string productPath = Path.Combine(wwwRootPath + @"Images\product");
+					
+					if(!string.IsNullOrEmpty(pModel.ImageUrl))
+					{
+						//delete the old image
+						var oldImagePath = Path.Combine(wwwRootPath, pModel.ImageUrl.TrimStart('\\'));
+						if (System.IO.File.Exists(oldImagePath))
+						{
+							System.IO.File.Delete(oldImagePath);
+						}
+
+
+					}
+
+					using (var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
+					{
+						await file.CopyToAsync(fileStream);
+					}
+
+					pModel.ImageUrl = @"Images\product" + fileName;
+				}
+
+				ProductModel productView = new ProductModel
+			    {
+                    ProductName = pModel.ProductName,
+				    ProductPrice = pModel.ProductPrice,
+				    ProductCalories = pModel.ProductCalories,
+				    ProductLocation = pModel.ProductLocation,
+					Category = pModel.Category,
+					ImageUrl = pModel.ImageUrl
+				}; //so we can save the productmodel to the database, but formatted into the viewmodel
+
+				if(pModel.ProductID == null)
+				{
+					var addItems = await _productRepository.InsertProduct(productView);
+					return RedirectToAction("ShowProduct");
+				}
+
+				var updateItems = await _productRepository.UpdateItems(productView);
+				return RedirectToAction("ShowProduct");
 			}
-            return RedirectToAction("ShowProduct");
+
+
+             return View(pModel);
+			
         }
 
 		
@@ -69,58 +153,85 @@ namespace MatFrem.Controllers
             var editItem = await _productRepository.GetItemById(id); //this repository have not saved anything, only found the id
             if (editItem != null)
             {
-                EditProductModel editProduct = new EditProductModel
+                ProductViewModel editProduct = new ProductViewModel
                 {
                     ProductID = editItem.ProductID,
                     ProductName = editItem.ProductName,
                     ProductPrice = editItem.ProductPrice,
                     ProductCalories = editItem.ProductCalories,
-                    ProductCategory = editItem.ProductCategory,
-                    ProductLocation = editItem.ProductLocation
-                };
+                    ProductLocation = editItem.ProductLocation,
+					Category = editItem.Category
+
+				};
 				return View(editProduct); //its this "new" model we want to return, editItem is attached to another type of model that is not seeded here
             }
             return View(null);
         }
 
-		
-		[HttpPost]
-        public async Task<ActionResult> EditProduct(EditProductModel editProduct)
-        {
-            // Retrieve the existing product from the database by ID, from table Product_detail.
-            var existingItem = await _productRepository.GetItemById(editProduct.ProductID);
-
-            if (existingItem != null) // Check if the item exists in the database
-            {
-                // Update the properties of the existing item
-                existingItem.ProductName = editProduct.ProductName;
-                existingItem.ProductPrice = editProduct.ProductPrice;
-                existingItem.ProductCalories = editProduct.ProductCalories;
-                existingItem.ProductCategory = editProduct.ProductCategory;
-				existingItem.ProductLocation = editProduct.ProductLocation;
-
-				// Save the changes to the repository
-				await _productRepository.UpdateItems(existingItem);
-
-                return RedirectToAction("ShowProduct", new { id = editProduct.ProductID });
-            }
-
-                return NotFound();
-        }
-		
 
 		[HttpPost]
-        public async Task<ActionResult> DeleteProduct(EditProductModel editProduct)
-        {
-            var findItem = await _productRepository.GetItemById(editProduct.ProductID);
+		public async Task<ActionResult> EditProduct(ProductViewModel editProduct, IFormFile? file)
+		{
+			var existingItem = await _productRepository.GetItemById(editProduct.ProductID);
+			if (existingItem == null)
+			{
+				return NotFound();
+			}
 
-            if(findItem != null)
+			if (file != null)
+			{
+				string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+				string productPath = Path.Combine(wwwRootPath, "Images", "product");
+
+				// Delete the old image if it exists
+				var oldImagePath = Path.Combine(_webHostEnviroment.WebRootPath, existingItem.ImageUrl.TrimStart('\\'));
+				if (System.IO.File.Exists(oldImagePath))
+				{
+					System.IO.File.Delete(oldImagePath);
+				}
+
+				// Save the new image
+				using (var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
+				{
+					await file.CopyToAsync(fileStream);
+				}
+				existingItem.ImageUrl = Path.Combine("Images", "product", fileName);
+			}
+
+			// Update the existing item with new values
+			existingItem.ProductName = editProduct.ProductName;
+			existingItem.ProductPrice = editProduct.ProductPrice;
+			existingItem.ProductCalories = editProduct.ProductCalories;
+			existingItem.ProductLocation = editProduct.ProductLocation;
+			existingItem.Description = editProduct.Description;
+			existingItem.Category = editProduct.Category;
+
+			// Save the changes to the repository
+			await _productRepository.UpdateItems(existingItem);
+
+			return RedirectToAction("ShowProduct", new { id = editProduct.ProductID });
+		}
+
+
+		[HttpDelete]
+        public async Task<ActionResult> DeleteProduct(int id)
+        {
+            var findItem = await _productRepository.GetItemById(id);
+			var oldImagePath =
+				Path.Combine(_webHostEnviroment.WebRootPath, findItem.ImageUrl.TrimStart('\\'));
+
+			if (findItem != null)
             {
-                var deleteItem = await _productRepository.DeleteItem(editProduct.ProductID); //this deletes the row since ProductID is the primary key!!
-                return RedirectToAction("ShowProduct");
+				if (System.IO.File.Exists(oldImagePath))
+				{
+					System.IO.File.Delete(oldImagePath);
+				}
+				var deleteItem = await _productRepository.DeleteItem(id); //this deletes the row since ProductID is the primary key!!
+				return Json(new { success = true, message = "Delete successful" });
+				
             }
 
-            return NotFound();
-        }
+			return Json(new { success = false, message = "Delete failed" });
+		}
     }
 }

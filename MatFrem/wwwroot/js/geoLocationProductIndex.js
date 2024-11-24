@@ -37,3 +37,30 @@ map.on(L.Draw.Event.CREATED, function (e) { // On draw event
 
     // Set value of hidden input field to GeoJSON string variable created
 });
+
+function Delete(url) {
+    Swal.fire({
+        title: "Er du sikkert på at du vil slette?",
+        text: "!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ja, slett!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: url,
+                type: 'DELETE',
+                success: function (result) {
+                    if (result.success) {
+                        toastr.success(result.message);
+                        dataTable.ajax.reload();
+                    } else {
+                        toastr.error(result.message);
+                    }
+                }
+            });
+        }
+    });
+}
