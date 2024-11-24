@@ -151,6 +151,23 @@ namespace MatFrem.Controllers
 
         }
 
+        [HttpGet]
+        public async Task<ActionResult> Detail(int id)
+        {
+            var getById = await _productRepository.GetItemById(id);
+            if(getById!= null)
+            {
+                var viewProductModel = new ProductViewModel
+                {
+                    Description = getById.Description,
+                    ProductLocation = getById.ProductLocation
+                };
+                return View(viewProductModel);
+            }
+
+            return View();
+        }
+
         public async Task<ActionResult> Buy(int id)
         {
             return View();
