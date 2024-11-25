@@ -11,6 +11,5 @@ namespace MatFrem.Models.DomainModel
 
         public ProductModel Product { get; set; } = new ProductModel();
 
-
     }
 }

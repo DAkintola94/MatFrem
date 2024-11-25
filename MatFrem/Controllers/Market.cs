@@ -48,8 +48,7 @@ namespace MatFrem.Controllers
                 DeliveryFee = deliveryFee,
                 DeliveryAddress = locationAddress,  //name="" in html, it then get sent to the parameter, which have the same name here
                 Total = subtotal + deliveryFee
-
-            };
+            }; //Creating  ShoppingCartViewModel and giving it the values from the cookie, and OrderItem list
 
             return View(scViewModel);
         }
@@ -152,10 +151,30 @@ namespace MatFrem.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult> ConfirmPurchase(int id)
+        public async Task<ActionResult> ConfirmPurchase(ShoppingCartViewModel scViewModel)
         {
-            //no point retreving from database, we are getting model value from another view already
-            return View();
+            List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
+            decimal total = CartHelper.GetSubTotal(cartItems) + deliveryFee;
+            int cartSize = 0;
+
+            foreach (var item in cartItems)
+            {
+                cartSize += item.Quantity;
+            }
+
+            
+
+            if(cartSize == 0 || string.IsNullOrEmpty(scViewModel.DeliveryAddress) || string.IsNullOrEmpty(scViewModel.PaymentMethod))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            scViewModel.CartItems = cartItems;
+            scViewModel.PaymentMethod = scViewModel.PaymentMethod;
+            scViewModel.Total = total;
+            scViewModel.Cartsize = cartSize;
+
+            return View(scViewModel);
         }
 
 		[HttpPost]

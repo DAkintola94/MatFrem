@@ -263,6 +263,14 @@
             },
             "Patterns": null
           },
+          "buystyle.css": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "css/buystyle.css"
+            },
+            "Patterns": null
+          },
           "formscheme.css": {
             "Children": null,
             "Asset": {
@@ -421,6 +429,14 @@
             },
             "Patterns": null
           },
+          "cartGeo.js": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "js/cartGeo.js"
+            },
+            "Patterns": null
+          },
           "geoLocation.js": {
             "Children": null,
             "Asset": {
@@ -437,6 +453,22 @@
             },
             "Patterns": null
           },
+          "geostringConvert.js": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "js/geostringConvert.js"
+            },
+            "Patterns": null
+          },
+          "shopcart.js": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "js/shopcart.js"
+            },
+            "Patterns": null
+          },
           "site.js": {
             "Children": null,
             "Asset": {
@@ -450,6 +482,14 @@
             "Asset": {
               "ContentRootIndex": 0,
               "SubPath": "js/sortSearch.js"
+            },
+            "Patterns": null
+          },
+          "tinymce.js": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "js/tinymce.js"
             },
             "Patterns": null
           }
@@ -563,6 +603,14 @@
             },
             "Patterns": null
           },
+          "hero.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/hero.png"
+            },
+            "Patterns": null
+          },
           "login.png": {
             "Children": null,
             "Asset": {
@@ -585,6 +633,76 @@
               "ContentRootIndex": 0,
               "SubPath": "Images/marketBG.jpg"
             },
+            "Patterns": null
+          },
+          "product": {
+            "Children": {
+              "BreakfastCelery.jpg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "Images/product/BreakfastCelery.jpg"
+                },
+                "Patterns": null
+              },
+              "drygood.jpg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "Images/product/drygood.jpg"
+                },
+                "Patterns": null
+              },
+              "Egg.jpg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "Images/product/Egg.jpg"
+                },
+                "Patterns": null
+              },
+              "frozengoods.jpg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "Images/product/frozengoods.jpg"
+                },
+                "Patterns": null
+              },
+              "FruitnVegs.jpg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "Images/product/FruitnVegs.jpg"
+                },
+                "Patterns": null
+              },
+              "pastry.jpg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "Images/product/pastry.jpg"
+                },
+                "Patterns": null
+              },
+              "seafood.jpg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "Images/product/seafood.jpg"
+                },
+                "Patterns": null
+              },
+              "vegetarian.jpg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "Images/product/vegetarian.jpg"
+                },
+                "Patterns": null
+              }
+            },
+            "Asset": null,
             "Patterns": null
           },
           "profilepagepic.jpg": {

@@ -2325,7 +2325,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 13 Nov 2024 13:12:03 GMT"
+          "Value": "Mon, 25 Nov 2024 09:57:25 GMT"
         }
       ],
       "EndpointProperties": [
@@ -2370,7 +2370,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 13 Nov 2024 13:12:03 GMT"
+          "Value": "Mon, 25 Nov 2024 09:57:25 GMT"
         }
       ],
       "EndpointProperties": [
@@ -6973,8 +6973,8 @@
       ]
     },
     {
-      "Route": "js/shopcart.5o2zl1hzis.js",
-      "AssetFile": "js/shopcart.js",
+      "Route": "js/geostringConvert.ev5vror3fs.js",
+      "AssetFile": "js/geostringConvert.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6987,7 +6987,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1800"
+          "Value": "2254"
         },
         {
           "Name": "Content-Type",
@@ -6995,25 +6995,62 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"RaGC4yZb1rcRyZfvHqGEFHcmGcU9+iFwGu2xyyTncX8=\""
+          "Value": "\"hgWWda7HykPNCmUIICCh8k2CkuPUOpFPA42s6ey60OY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 24 Nov 2024 15:07:23 GMT"
+          "Value": "Sun, 24 Nov 2024 20:51:41 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5o2zl1hzis"
+          "Value": "ev5vror3fs"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-RaGC4yZb1rcRyZfvHqGEFHcmGcU9+iFwGu2xyyTncX8="
+          "Value": "sha256-hgWWda7HykPNCmUIICCh8k2CkuPUOpFPA42s6ey60OY="
         },
         {
           "Name": "label",
-          "Value": "js/shopcart.js"
+          "Value": "js/geostringConvert.js"
+        }
+      ]
+    },
+    {
+      "Route": "js/geostringConvert.js",
+      "AssetFile": "js/geostringConvert.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2254"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hgWWda7HykPNCmUIICCh8k2CkuPUOpFPA42s6ey60OY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 20:51:41 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hgWWda7HykPNCmUIICCh8k2CkuPUOpFPA42s6ey60OY="
         }
       ]
     },
@@ -7032,7 +7069,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1800"
+          "Value": "1751"
         },
         {
           "Name": "Content-Type",
@@ -7040,17 +7077,62 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"RaGC4yZb1rcRyZfvHqGEFHcmGcU9+iFwGu2xyyTncX8=\""
+          "Value": "\"zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 24 Nov 2024 15:07:23 GMT"
+          "Value": "Sun, 24 Nov 2024 19:58:51 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-RaGC4yZb1rcRyZfvHqGEFHcmGcU9+iFwGu2xyyTncX8="
+          "Value": "sha256-zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c="
+        }
+      ]
+    },
+    {
+      "Route": "js/shopcart.sgj9xw26kk.js",
+      "AssetFile": "js/shopcart.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1751"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 19:58:51 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sgj9xw26kk"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c="
+        },
+        {
+          "Name": "label",
+          "Value": "js/shopcart.js"
         }
       ]
     },

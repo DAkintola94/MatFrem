@@ -12,7 +12,7 @@
 
             <table class="table align-middle table-striped">
                 <tbody>
-                    @foreach (var items in Model.CartItems)
+					@foreach (var items in Model.CartItems) // Model.CartItems is a list of ShoppingCartItem, as Orderitem collection
                     {
                         <tr>
                             <td>

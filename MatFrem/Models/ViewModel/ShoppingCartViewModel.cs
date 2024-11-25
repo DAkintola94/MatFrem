@@ -17,6 +17,8 @@ namespace MatFrem.Models.ViewModel
         public string DeliveryAddress { get; set; } = "";
 
         public string PaymentMethod { get; set; } = "";
+
+        public int Cartsize { get; set; } = "";
         public string? CustomerId { get; set; }
         public int? ProductID { get; set; } //foreign key for ProductModel
         public string? DriverId { get; set; }

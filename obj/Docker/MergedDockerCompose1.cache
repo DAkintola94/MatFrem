@@ -3,7 +3,7 @@ services:
   mariadb:
     environment:
       MYSQL_DATABASE: MatFremBase
-      MYSQL_ROOT_PASSWORD: Testingtesting123
+      MYSQL_ROOT_PASSWORD: is201
     image: mariadb:latest
     networks:
       default: null
@@ -14,10 +14,11 @@ services:
         protocol: tcp
     restart: always
     volumes:
-      - type: volume
-        source: mariadb_data
+      - type: bind
+        source: /c/Users/black/Documents/AkinPC-DB/MatFremBase
         target: /var/lib/mysql
-        volume: {}
+        bind:
+          create_host_path: true
   matfrem:
     build:
       context: C:\Users\black\source\repos\MatFrem
@@ -30,6 +31,10 @@ services:
         com.microsoft.visual-studio.project-name: MatFrem
       target: base
     container_name: MatFrem
+    depends_on:
+      mariadb:
+        condition: service_started
+        required: true
     entrypoint:
       - dotnet
       - --roll-forward
@@ -41,7 +46,7 @@ services:
       ASPNETCORE_HTTP_PORTS: "8080"
       ASPNETCORE_HTTPS_PORTS: "8081"
       ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
-      ConnectionStrings__DefaultConnection: Server=Server=localhost;Port=3306;Database=MatFrem;User=root;Password=Testingtesting1234
+      ConnectionStrings__DefaultConnection: Server=mariadb;Port=3306;Database=MatFremBase;User=root;Password=is201
       DOTNET_USE_POLLING_FILE_WATCHER: "1"
       NUGET_FALLBACK_PACKAGES: /.nuget/fallbackpackages
     image: matfrem:dev
@@ -131,6 +136,3 @@ services:
 networks:
   default:
     name: dockercompose17214803164236567967_default
-volumes:
-  mariadb_data:
-    name: dockercompose17214803164236567967_mariadb_data

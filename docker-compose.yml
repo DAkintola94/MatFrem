@@ -10,14 +10,16 @@ services:
       - "8080:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Server=Server=localhost;Port=3306;Database=MatFrem;User=root;Password=Testingtesting1234
+      - ConnectionStrings__DefaultConnection=Server=mariadb;Port=3306;Database=MatFremBase;User=root;Password=is201
+    depends_on:
+        - mariadb
       
 
   mariadb:
     image: mariadb:latest
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Testingtesting123
+      MYSQL_ROOT_PASSWORD: is201
       MYSQL_DATABASE: MatFremBase
     ports:
       - "3306:3306"
