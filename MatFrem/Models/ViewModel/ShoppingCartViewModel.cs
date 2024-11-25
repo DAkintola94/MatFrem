@@ -6,6 +6,7 @@ namespace MatFrem.Models.ViewModel
 {
     public class ShoppingCartViewModel
     {
+        
         public int ShoppingCartID { get; set; }
         public decimal Subtotal { get; set; }
         public decimal DeliveryFee { get; set; }
@@ -18,7 +19,7 @@ namespace MatFrem.Models.ViewModel
 
         public string PaymentMethod { get; set; } = "";
 
-        public int Cartsize { get; set; } = "";
+        public int CartSize { get; set; } 
         public string? CustomerId { get; set; }
         public int? ProductID { get; set; } //foreign key for ProductModel
         public string? DriverId { get; set; }

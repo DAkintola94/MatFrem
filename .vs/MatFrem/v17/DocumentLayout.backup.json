@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\black\\source\\repos\\MatFrem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|c:\\users\\black\\source\\repos\\matfrem\\matfrem\\datacontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|solutionrelative:matfrem\\datacontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|c:\\users\\black\\source\\repos\\matfrem\\matfrem\\views\\market\\confirmpurchase.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|solutionrelative:matfrem\\views\\market\\confirmpurchase.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|c:\\users\\black\\source\\repos\\matfrem\\matfrem\\models\\domainmodel\\shoppingcartmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|solutionrelative:matfrem\\models\\domainmodel\\shoppingcartmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|c:\\users\\black\\source\\repos\\matfrem\\matfrem\\models\\domainmodel\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|solutionrelative:matfrem\\models\\domainmodel\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|c:\\users\\black\\source\\repos\\matfrem\\matfrem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|solutionrelative:matfrem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|c:\\users\\black\\source\\repos\\matfrem\\matfrem\\models\\domainmodel\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|solutionrelative:matfrem\\models\\domainmodel\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|c:\\users\\black\\source\\repos\\matfrem\\matfrem\\controllers\\market.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|solutionrelative:matfrem\\controllers\\market.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,12 +35,8 @@
       "RelativeMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|solutionrelative:matfrem\\models\\viewmodel\\shoppingcartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|c:\\users\\black\\source\\repos\\matfrem\\matfrem\\views\\market\\confirmpurchase.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|solutionrelative:matfrem\\views\\market\\confirmpurchase.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|c:\\users\\black\\source\\repos\\matfrem\\matfrem\\views\\market\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|solutionrelative:matfrem\\views\\market\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|c:\\users\\black\\source\\repos\\matfrem\\matfrem\\models\\viewmodel\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A347BF22-05D3-4EC6-AFA3-187B7CCEB0E1}|MatFrem\\MatFrem.csproj|solutionrelative:matfrem\\models\\viewmodel\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,54 +66,118 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Market.cs",
-              "DocumentMoniker": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Controllers\\Market.cs",
-              "RelativeDocumentMoniker": "MatFrem\\Controllers\\Market.cs",
-              "ToolTip": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Controllers\\Market.cs",
-              "RelativeToolTip": "MatFrem\\Controllers\\Market.cs",
-              "ViewState": "AgIAAJgAAAAAAAAAAAAqwKYAAACEAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MatFrem\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MatFrem\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T10:37:38.174Z",
+              "WhenOpened": "2024-11-25T17:31:07.936Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ShoppingCartViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Models\\ViewModel\\ShoppingCartViewModel.cs",
-              "RelativeDocumentMoniker": "MatFrem\\Models\\ViewModel\\ShoppingCartViewModel.cs",
-              "ToolTip": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Models\\ViewModel\\ShoppingCartViewModel.cs",
-              "RelativeToolTip": "MatFrem\\Models\\ViewModel\\ShoppingCartViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAASAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\DataContext\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "MatFrem\\DataContext\\AppDBContext.cs",
+              "ToolTip": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\DataContext\\AppDBContext.cs",
+              "RelativeToolTip": "MatFrem\\DataContext\\AppDBContext.cs",
+              "ViewState": "AgIAALoAAAAAAAAAAAAwwMsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T11:46:08.715Z",
+              "WhenOpened": "2024-11-25T17:28:49.104Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Models\\ViewModel\\OrderViewModel.cs",
+              "RelativeDocumentMoniker": "MatFrem\\Models\\ViewModel\\OrderViewModel.cs",
+              "ToolTip": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Models\\ViewModel\\OrderViewModel.cs",
+              "RelativeToolTip": "MatFrem\\Models\\ViewModel\\OrderViewModel.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T17:08:33.802Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Views\\Market\\Index.cshtml",
-              "RelativeDocumentMoniker": "MatFrem\\Views\\Market\\Index.cshtml",
-              "ToolTip": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Views\\Market\\Index.cshtml",
-              "RelativeToolTip": "MatFrem\\Views\\Market\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-25T10:40:08.375Z",
+              "Title": "OrderStatus.cs",
+              "DocumentMoniker": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Models\\DomainModel\\OrderStatus.cs",
+              "RelativeDocumentMoniker": "MatFrem\\Models\\DomainModel\\OrderStatus.cs",
+              "ToolTip": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Models\\DomainModel\\OrderStatus.cs",
+              "RelativeToolTip": "MatFrem\\Models\\DomainModel\\OrderStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T17:07:26.226Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ShoppingCartModel.cs",
+              "DocumentMoniker": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Models\\DomainModel\\ShoppingCartModel.cs",
+              "RelativeDocumentMoniker": "MatFrem\\Models\\DomainModel\\ShoppingCartModel.cs",
+              "ToolTip": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Models\\DomainModel\\ShoppingCartModel.cs",
+              "RelativeToolTip": "MatFrem\\Models\\DomainModel\\ShoppingCartModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T15:09:49.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ConfirmPurchase.cshtml",
               "DocumentMoniker": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Views\\Market\\ConfirmPurchase.cshtml",
               "RelativeDocumentMoniker": "MatFrem\\Views\\Market\\ConfirmPurchase.cshtml",
               "ToolTip": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Views\\Market\\ConfirmPurchase.cshtml",
               "RelativeToolTip": "MatFrem\\Views\\Market\\ConfirmPurchase.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-25T10:38:01.435Z",
+              "WhenOpened": "2024-11-25T15:38:21.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ShoppingCartViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Models\\ViewModel\\ShoppingCartViewModel.cs",
+              "RelativeDocumentMoniker": "MatFrem\\Models\\ViewModel\\ShoppingCartViewModel.cs",
+              "ToolTip": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Models\\ViewModel\\ShoppingCartViewModel.cs",
+              "RelativeToolTip": "MatFrem\\Models\\ViewModel\\ShoppingCartViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T15:09:36.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderModel.cs",
+              "DocumentMoniker": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Models\\DomainModel\\OrderModel.cs",
+              "RelativeDocumentMoniker": "MatFrem\\Models\\DomainModel\\OrderModel.cs",
+              "ToolTip": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Models\\DomainModel\\OrderModel.cs",
+              "RelativeToolTip": "MatFrem\\Models\\DomainModel\\OrderModel.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAywB8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T16:40:18.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Market.cs",
+              "DocumentMoniker": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Controllers\\Market.cs",
+              "RelativeDocumentMoniker": "MatFrem\\Controllers\\Market.cs",
+              "ToolTip": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\Controllers\\Market.cs",
+              "RelativeToolTip": "MatFrem\\Controllers\\Market.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAMwEEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T15:07:44.459Z",
               "EditorCaption": ""
             }
           ]

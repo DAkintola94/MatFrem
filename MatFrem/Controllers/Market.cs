@@ -36,7 +36,7 @@ namespace MatFrem.Controllers
 
 
         [HttpGet]
-        public IActionResult Index(string locationAddress)
+        public IActionResult Index()
         {
                List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context);
             decimal subtotal = CartHelper.GetSubTotal(cartItems);
@@ -45,8 +45,7 @@ namespace MatFrem.Controllers
             {
                 CartItems = cartItems,
                 Subtotal = subtotal,
-                DeliveryFee = deliveryFee,
-                DeliveryAddress = locationAddress,  //name="" in html, it then get sent to the parameter, which have the same name here
+                DeliveryFee = deliveryFee,  
                 Total = subtotal + deliveryFee
             }; //Creating  ShoppingCartViewModel and giving it the values from the cookie, and OrderItem list
 
@@ -55,28 +54,34 @@ namespace MatFrem.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Index(ShoppingCartViewModel shoppingCartView)
+        public IActionResult Index(string deliveryAddress, string paymentMethod)
         {
             List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
             decimal subtotal = CartHelper.GetSubTotal(cartItems);
 
-            shoppingCartView.CartItems = cartItems;
-            shoppingCartView.Subtotal = subtotal;
-            shoppingCartView.DeliveryFee = deliveryFee;
-            shoppingCartView.Total = subtotal + deliveryFee;
             
+            ShoppingCartViewModel scViewModel = new ShoppingCartViewModel
+            {
+                CartItems = cartItems,
+                Subtotal = subtotal,
+                DeliveryFee = deliveryFee,
+                Total = subtotal + deliveryFee,
+                DeliveryAddress = deliveryAddress, //attaching it to the name="" defined in html, getting data through the parameter here
+                PaymentMethod = paymentMethod //attaching it to the name="" defined in html, getting data through the parameter here
+            };
             
             if (!ModelState.IsValid)
             {
-                return View(shoppingCartView);
+                return View(scViewModel);
             }
 
             if(cartItems.Count == 0)
             {
                 ViewBag.ErrorMessage = "handlekurven er tom";
-                return View(shoppingCartView);
+                return View(scViewModel);
             }
-            return RedirectToAction("ConfirmPurchase", shoppingCartView); //redirecting and sending model data to ConfirmPurchase
+            return RedirectToAction("ConfirmPurchase", scViewModel); //redirecting and sending model data to ConfirmPurchase
+            
         }
 
 
@@ -101,10 +106,10 @@ namespace MatFrem.Controllers
         [HttpGet]
         public async Task<ActionResult> Cart(int id)
         {
-            var cartById = await _shoppingCartRepository.GetCartById(id); //We are getting data from database by its id (primary key)
+            var cartById = await _shoppingCartRepository.GetCartById(id); 
             if (cartById != null)
             {
-                var cartViewModel = new ShoppingCartViewModel //this way, we attach the data model from db into the view model
+                var cartViewModel = new ShoppingCartViewModel 
                 {
                     ShoppingCartID = cartById.ShoppingCartID,
                     CustomerId = cartById.CustomerId,
@@ -144,11 +149,11 @@ namespace MatFrem.Controllers
 
                 return RedirectToAction("ActiveDeliveries", "Driver", convertPModel);
             }
-
             return View();
-
         }
 
+
+       
 
         [HttpGet]
         public async Task<ActionResult> ConfirmPurchase(ShoppingCartViewModel scViewModel)
@@ -172,12 +177,53 @@ namespace MatFrem.Controllers
             scViewModel.CartItems = cartItems;
             scViewModel.PaymentMethod = scViewModel.PaymentMethod;
             scViewModel.Total = total;
-            scViewModel.Cartsize = cartSize;
+            scViewModel.CartSize = cartSize;
+            // scViewModel.DeliveryAddress is already passed to this method from Index[Post]
+            // scViewModel.PaymentMethod  is already passed to this method from Index[Post]
 
             return View(scViewModel);
         }
 
-		[HttpPost]
+
+        [HttpPost]
+        public async Task<ActionResult> ConfirmPurchase(ShoppingCartViewModel scViewModel, int any) //any does nothing, its just so our post method works
+        {
+            List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context);
+
+            if (cartItems.Count == 0 || string.IsNullOrEmpty(scViewModel.DeliveryAddress) || string.IsNullOrEmpty(scViewModel.PaymentMethod))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            var appUser = await _userManager.GetUserAsync(User);
+            if(appUser == null)
+            {
+                return RedirectToAction("Login", "ProfileManagement");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            OrderModel orderModel = new OrderModel
+            {
+                CustomerId = appUser.Id,
+                CustomerName = appUser.FirstName + " " + appUser.LastName,
+                OrderCreatedDate = DateOnly.FromDateTime(DateTime.Now),
+                OrderItems = cartItems,
+                Order_Status = "Pending",
+                DeliveryFee = deliveryFee,
+                PaymentMethod = scViewModel.PaymentMethod, //getting the value from shoppingcartviewmodel, and placing it into order model, which have the same string "PaymentMethod"
+                DeliveryAddress = scViewModel.DeliveryAddress, //getting the value from shoppingcartviewmodel, and placing it into order model which have the same string "DeliveryAddress"
+            };
+             
+            await _orderRepository.AddOrder(orderModel);
+            return View("Index", "Home");
+
+        }
+
+        [HttpPost]
         public async Task<ActionResult> Delete(int id)
         {
            var deleteItem = await _productRepository.DeleteItem(id);

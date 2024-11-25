@@ -4,6 +4,7 @@ using MatFrem.Models.DomainModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MatFrem.Models.ViewModel;
 
 namespace MatFrem.DataContext
 {
@@ -224,11 +225,7 @@ namespace MatFrem.DataContext
                 .HasMany(o => o.Product)
                 .WithMany();
 
-			modelBuilder.Entity<OrderModel>()
-				.HasOne(o => o.OrderStatusModel)
-				.WithOne()
-				.HasForeignKey<OrderStatus>(o => o.OrderStatusID); //since its with one, we use <> when defining foreign key,
-													  //if its with many, <List> have to be defined in the model
+
 
 			//modelBuilder.Entity<CustomerModel>()
                 //.HasOne(c => c.DriverM) //CustomerModel has one Driver

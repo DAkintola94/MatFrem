@@ -18,10 +18,12 @@ namespace MatFrem.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> ActiveDeliveries()
+        public async Task<ActionResult> ActiveDeliveries(OrderViewModel orderViewModel)
         {
             return View();
+
         }
+
         [HttpGet]
         public IActionResult OrderTableDetails()
         {
