@@ -4,7 +4,7 @@
 @inject SignInManager<ApplicationUser> signInManager
 
 
-<div class="mx-auto rounded border p-4" style="width: 420px">
+<div class="mx-auto rounded border p-4 shadow-sm bg-light" style="width: 420px">
     <h2 class="text-center mb-3">Order detaljer</h2>
     <hr />
 
@@ -32,7 +32,6 @@
             <div class="col-7">@(Model.CartSize)</div>
         </div>
 
-
         <form method="post">
             <div class="row">
                 <div class="col-sm-6 d-grid">
@@ -44,5 +43,5 @@
             </div>
         </form>
     }
-
 </div>
+

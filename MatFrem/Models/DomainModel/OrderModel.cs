@@ -27,10 +27,10 @@ namespace MatFrem.Models.DomainModel
         [ValidateNever]
         public ICollection<ProductModel> Product { get; set; } = new List<ProductModel>(); //indicates many to many relationship
 
-        public ProductModel? ProductM { get; set; } //navigation property for ProductModel, namely, OrderModel has a ProductModel
+        public ProductModel? ProductM { get; set; } = new ProductModel(); //navigation property for ProductModel, namely, OrderModel has a ProductModel
         public OrderItem? OrderItemModel { get; set; } //navigation property for OrderItem, namely, OrderModel has a OrderItem
         [NotMapped]
-        public ShoppingCartViewModel? ShoppingCartVM { get; set; }
+        public ShoppingCartViewModel? ShoppingCartVM { get; set; } = new ShoppingCartViewModel();
         [ValidateNever]
         public ICollection<OrderItem> CartItems { get; set; } = new List<OrderItem>();
 

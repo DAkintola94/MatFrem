@@ -219,7 +219,7 @@ namespace MatFrem.DataContext
             modelBuilder.Entity<OrderModel>()
                 .HasMany(o => o.OrderItems)
                 .WithOne() //When nothing is specified like this, the line means with many OrderModel(the class attached above)
-				.HasForeignKey(o => o.Id);
+				.HasForeignKey(oi => oi.OrderModelId);
 
             modelBuilder.Entity<OrderModel>()
                 .HasMany(o => o.Product)

@@ -9,6 +9,8 @@ namespace MatFrem.Models.DomainModel
         [Precision(16,2)]
         public decimal UnitPrice { get; set; }
 
+        public int OrderModelId { get; set; }
+
         public ProductModel Product { get; set; } = new ProductModel();
 
     }

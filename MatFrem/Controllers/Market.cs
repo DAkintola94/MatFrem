@@ -81,7 +81,6 @@ namespace MatFrem.Controllers
                 return View(scViewModel);
             }
             return RedirectToAction("ConfirmPurchase", scViewModel); //redirecting and sending model data to ConfirmPurchase
-            
         }
 
 
@@ -175,11 +174,11 @@ namespace MatFrem.Controllers
             }
 
             scViewModel.CartItems = cartItems;
-            scViewModel.PaymentMethod = scViewModel.PaymentMethod;
             scViewModel.Total = total;
             scViewModel.CartSize = cartSize;
-            // scViewModel.DeliveryAddress is already passed to this method from Index[Post]
-            // scViewModel.PaymentMethod  is already passed to this method from Index[Post]
+
+            // scViewModel.PaymentMethod is already passed and sent here from Index method above [Post], no need to assign it here
+            // scViewModel.DeliveryAddress is already passed and sent here from Index method above [Post], no need to assign it here
 
             return View(scViewModel);
         }
@@ -217,7 +216,11 @@ namespace MatFrem.Controllers
                 PaymentMethod = scViewModel.PaymentMethod, //getting the value from shoppingcartviewmodel, and placing it into order model, which have the same string "PaymentMethod"
                 DeliveryAddress = scViewModel.DeliveryAddress, //getting the value from shoppingcartviewmodel, and placing it into order model which have the same string "DeliveryAddress"
             };
-             
+
+             //now we save the data we get and merge from the view models into database
+             //When you want to get the order later, you simply get it by the order id from the database
+             //And you have all info on who is attached to the order, etc
+
             await _orderRepository.AddOrder(orderModel);
             return View("Index", "Home");
 
