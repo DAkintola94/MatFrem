@@ -1,4 +1,7 @@
-﻿@using MatFrem.Models.ViewModel
+﻿@using MatFrem.Models.DomainModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> signInManager
+@using MatFrem.Models.ViewModel
 @model IEnumerable<ProductViewModel>
 
 <link href="~/css/site.css" rel="stylesheet">
@@ -9,9 +12,19 @@
         <div class="row align-items-center g-5">
             <div class="col-md-6">
                 <h1 class="mb-5 display-2"><strong>MatFrem</strong></h1>
-                <p>
-                    Du finner, vi leverer!
-                </p>
+                @if(signInManager.IsSignedIn(User))
+                    {
+                        <p>
+                            Velkommen @User?.Identity?.Name
+                        </p>
+                    }
+                @if(!signInManager.IsSignedIn(User))
+                    {
+                        <p>
+                            Du finner, vi leverer!
+                        </p>
+                    }
+                    
             </div>
             <div class="col-md-6 text-center">
                 <img src="~/Images/hero.png" class="img-fluid" alt="hero" />

@@ -110,10 +110,17 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" asp-controller="Market" asp-action="Cart">
+                                        <a class="dropdown-item" asp-controller="Market" asp-action="Index">
                                             Handlekurv
                                         </a>
                                     </li>
+
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Home" asp-action="Advice">
+                                            Forbedring
+                                        </a>
+                                    </li>
+
                                 </ul>
                             </li>
                             }
@@ -134,9 +141,9 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown" style="width: auto; max-width: 200px;">
                                     <li>
-                                        @User?.Identity?.Name
+                                        
                                         <a class="dropdown-item" asp-controller="ProfileManagement" asp-action="ProfilePage">
-                                            Profile
+                                            @User?.Identity?.Name
                                         </a>
                                     </li>
                                     <li>
