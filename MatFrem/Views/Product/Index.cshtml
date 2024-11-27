@@ -1,7 +1,6 @@
 ﻿@model MatFrem.Models.ViewModel.ProductViewModel
 
 <head>
-	<link href="~/css/site.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
 </head>
@@ -11,7 +10,7 @@
 
 	<!-- Form Column -->
 	<div class="form-column" style="flex: 1; padding-right: 20px;">
-		<form method="post">
+		<form method="post" enctype="multipart/form-data">
 
 			<div class="mb-3">
 				<label class="form-label">Produkt navn</label>
@@ -43,17 +42,18 @@
 			</div>
 
 			<div class="mb-3">
-				<input type="hidden" class="form-control" asp-for="ProductLocation" id="geoJsonInput" />
+				<label class="form-label">Hentes ved</label>
+				<input type="text" class="form-control" asp-for="ProductLocation" id="geoJsonInput" />
 				<!-- the id in this input stores GeoJSON data generated from drawn map shapes (set by JavaScript) -->
 			</div>
 			
 			<div class="mb-3">
 				<label class="form-label">Bilde</label>
-				<input type="file" class="form-control" asp-for="ImageUrl" />
+				<input type="file" name="file" class="form-control" asp-for="ImageUrl" />
 			</div>
 
 			<div class="mb-3">
-				<button type="submit" class="btn btn-dark">
+				<button type="submit" class="btn btn-dark" onclick="return confirm('Er du sikkert?')">
 					Opprett Produkt
 				</button>
 			</div>

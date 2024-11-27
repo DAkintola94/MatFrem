@@ -19,9 +19,9 @@ var drawControl = new L.Control.Draw({
         featureGroup: drawItems,
     }
 });
-map.addControl(drawControl);
+map.addControl(drawControl); // Add control to map
 
-map.on(L.Draw.Event.CREATED, function (e) { // On draw event
+map.on(L.Draw.Event.CREATED, function (e) { 
     var type = e.layerType,
         layer = e.layer;
 
@@ -30,37 +30,39 @@ map.on(L.Draw.Event.CREATED, function (e) { // On draw event
     var geoJsonData = layer.toGeoJSON(); // Convert layer to GeoJSON
     var geoJsonString = JSON.stringify(geoJsonData); // Convert GeoJSON to string!! since we sending it to server
 
-    
-    document.getElementById('geoJsonInput').value = geoJsonString; // Set value of hidden input field to GeoJSON string variable created
 
-    console.log(geoJsonString); //_lastcenter shows the lat lon value 
+
+    // Fetches and displays the address of a location based on GeoJSON data.
+
+    var lat = geoJsonData.geometry.coordinates[1]; //Extracts the lat of the location from the GeoJSON data (not the JSON.Stringy!)
+    var lon = geoJsonData.geometry.coordinates[0]; //--
+
+    console.log("Latitude: " + lat);
+    console.log("Longitude: " + lon);
+
+    var nominatimUrl = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`;
+
+    fetch(nominatimUrl)
+        .then(response => response.json()) //Parse the JSON data from the response object to a JavaScript object
+        .then(data => {                    //Gets the data from the response object
+            var address = data.display_name || "Ingen addresse funnet"; //display_name is a string that contains addresses in the Nominatim json
+            //we are binding the data response to display_name, then to the address variable
+
+            
+            document.getElementById('geoJsonInput').value = address; // Set value of input field in the html to the address (the variable)
+
+        })
+
+        .catch(error => {
+            console.error("Error during reverse geocoding:", error);
+            document.getElementById('geoConvert').value = "Error fetching address";
+        });
+    
+  
+
+   
 
     // Set value of hidden input field to GeoJSON string variable created
 });
 
-function Delete(url) {
-    Swal.fire({
-        title: "Er du sikkert på at du vil slette?",
-        text: "!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Ja, slett!"
-    }).then((result) => {
-        if (result.isConfirmed) {
-            $.ajax({
-                url: url,
-                type: 'DELETE',
-                success: function (result) {
-                    if (result.success) {
-                        toastr.success(result.message);
-                        dataTable.ajax.reload();
-                    } else {
-                        toastr.error(result.message);
-                    }
-                }
-            });
-        }
-    });
-}
+

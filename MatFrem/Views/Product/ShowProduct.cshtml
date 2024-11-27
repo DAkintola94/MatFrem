@@ -24,7 +24,7 @@
     <div id="portexe-table-container">
         @if (Model != null && Model.Any())
         {
-            <table class="table table-sortable" id="firstTableId">
+            <table class="table table-sortable table-striped table-bordered bg-white" id="firstTableId">
                 <thead>
                     <tr>
                         <th>Produkt ID</th>
@@ -33,6 +33,8 @@
                         <th>Pris</th>
                         <th>Kalori Innhold</th>
                         <th>Kategori</th>
+                        <th>Fjern</th>
+                        <th>Rediger</th>
                         
                     </tr>
                 </thead>
@@ -46,8 +48,10 @@
                             <td>@(productModel.ProductPrice)kr</td>
                             <td>@productModel.ProductCalories</td>
                             <td>@productModel.Category</td>
-
-                            
+                            <td>
+                                <a class="btn btn-danger btn-sm" asp-controller="Product" asp-action="DeleteProduct"
+                                   asp-route-id="@productModel.ProductID" onclick="return confirm('Er du sikkert?')">Slett</a>
+                            </td>
 
                             <td>
                                 <a asp-controller="Product"
@@ -56,6 +60,7 @@
                                     <img src="~/images/green-arrow.svg" alt="Gå til" style="height: 40px;" />
                                 </a>
                             </td>
+                           
                         </tr>
                     }
                 </tbody>
@@ -73,8 +78,8 @@
                     {
                         <li class="page-item">
                             <a class="page-link"
-                               asp-controller="Market"
-                               asp-action="Shopping"
+                               
+                               
                                asp-route-pageNumber="@i"
                                asp-route-pageSize="@ViewBag.PageSize">
                                 @i
@@ -83,7 +88,7 @@
                     }
 
                     <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
-                        <a class="page-link" asp-controller="Market" asp-action="Shopping" asp-route-pageNumber="@(ViewBag.CurrentPage + 1)" asp-route-pageSize="@ViewBag.PageSize">
+                        <a class="page-link" asp-route-pageNumber="@(ViewBag.CurrentPage + 1)" asp-route-pageSize="@ViewBag.PageSize">
                             Neste side
                         </a>
                     </li>

@@ -19,7 +19,7 @@ services:
     image: mariadb:latest
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: is201
+      MYSQL_ROOT_PASSWORD: Testingtesting1234
       MYSQL_DATABASE: MatFremBase
     ports:
       - "3306:3306"

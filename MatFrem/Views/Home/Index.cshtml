@@ -37,7 +37,7 @@
                         </p>
                         <h4 class="mb-3">@(product.ProductPrice)kr</h4>
                         <a class="btn btn-primary btn-sm mb-2" asp-controller="Product"
-                           asp-action="Detail" asp-route-id="@product.ProductID" role="button">Details</a> <!-- asp-route-id="" this part is important to send the actual id to the controller -->
+                               asp-action="Detail" asp-route-id="@product.ProductID" role="button">Detaljer</a> <!-- asp-route-id="" this part is important to send the actual id to the controller -->
                         <button type="button" class="btn btn-warning btn-sm mb-2" onclick="addToCart(this, @product.ProductID)">
                             Legg til handlekurv <i class="bi bi-cart4"></i>
                         </button>
