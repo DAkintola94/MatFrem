@@ -64,6 +64,8 @@ namespace MatFrem.Controllers
             foreach (var items in cartItems) //this is to get product values that is already inside our shoppingcart, since its a collection, we need to get values inside like this.
             {
                 var productsElement = items.Product;
+                scViewModel.CartItems = cartItems;
+                scViewModel.CartSize += items.Quantity;
                 scViewModel.ProductName = productsElement.ProductName;
                 scViewModel.PickUpAddress = productsElement.ProductLocation;
                 scViewModel.ProductDescription = productsElement.Description;
@@ -78,8 +80,6 @@ namespace MatFrem.Controllers
             scViewModel.PaymentMethod = paymentMethod; //attaching it to the name="" defined in html, getting data through the parameter here
             scViewModel.CustomerName = appUser.FirstName + " " + appUser.LastName;
             scViewModel.CustomerPhoneNr = appUser.PhoneNumber;
-
-
 
 
             //scViewModel html already have a form that takes in productname, id, details etc, its being sent to confirmpurchase
@@ -207,7 +207,7 @@ namespace MatFrem.Controllers
 
 
 
-            return View(scViewModel);
+            return View(scViewModel); //returning the viewmodel to the view, which is sent from the index method
         }
 
 
