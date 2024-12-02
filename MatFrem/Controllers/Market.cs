@@ -54,23 +54,38 @@ namespace MatFrem.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Index(string deliveryAddress, string paymentMethod)
+        public IActionResult Index(string deliveryAddress, string paymentMethod, ShoppingCartViewModel scViewModel)
         {
             List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
             decimal subtotal = CartHelper.GetSubTotal(cartItems);
 
-            
-            ShoppingCartViewModel scViewModel = new ShoppingCartViewModel
+            var appUser = _userManager.GetUserAsync(User).Result;
+
+            foreach (var items in cartItems) //this is to get product values that is already inside our shoppingcart, since its a collection, we need to get values inside like this.
             {
-                CartItems = cartItems,
-                Subtotal = subtotal,
-                DeliveryFee = deliveryFee,
-                Total = subtotal + deliveryFee,
-                DeliveryAddress = deliveryAddress, //attaching it to the name="" defined in html, getting data through the parameter here
-                PaymentMethod = paymentMethod //attaching it to the name="" defined in html, getting data through the parameter here
-            };
-            
-            if (!ModelState.IsValid)
+                var productsElement = items.Product;
+                scViewModel.ProductName = productsElement.ProductName;
+                scViewModel.PickUpAddress = productsElement.ProductLocation;
+                scViewModel.ProductDescription = productsElement.Description;
+                scViewModel.ProductCategories = productsElement.Category;
+            }
+
+            scViewModel.CartItems = cartItems;
+            scViewModel.Subtotal = subtotal;
+            scViewModel.DeliveryFee = deliveryFee;
+            scViewModel.Total = subtotal + deliveryFee;
+            scViewModel.DeliveryAddress = deliveryAddress; //attaching it to the name="" defined in html, getting data through the parameter here
+            scViewModel.PaymentMethod = paymentMethod; //attaching it to the name="" defined in html, getting data through the parameter here
+            scViewModel.CustomerName = appUser.FirstName + " " + appUser.LastName;
+            scViewModel.CustomerPhoneNr = appUser.PhoneNumber;
+
+
+
+
+            //scViewModel html already have a form that takes in productname, id, details etc, its being sent to confirmpurchase
+
+
+            if (scViewModel == null)
             {
                 return View(scViewModel);
             }
@@ -167,64 +182,34 @@ namespace MatFrem.Controllers
             }
 
             
-
             if(cartSize == 0 || string.IsNullOrEmpty(scViewModel.DeliveryAddress) || string.IsNullOrEmpty(scViewModel.PaymentMethod))
             {
                 return RedirectToAction("Index", "Home");
             }
 
-            scViewModel.CartItems = cartItems;
-            scViewModel.Total = total;
-            scViewModel.CartSize = cartSize;
+            //since we have already gotten our model sent from other method, we can just attach the values to the order and add to the database. 
 
-            // scViewModel.PaymentMethod is already passed and sent here from Index method above [Post], no need to assign it here
-            // scViewModel.DeliveryAddress is already passed and sent here from Index method above [Post], no need to assign it here
+            OrderModel orderModel = new OrderModel
+            {
+                CustomerId = scViewModel.CustomerId,
+                CustomerPhoneNr = scViewModel.CustomerPhoneNr,
+                CustomerName = scViewModel.CustomerName,
+                OrderCreatedDate = DateOnly.FromDateTime(DateTime.Now),
+                PickUpAddress = scViewModel.PickUpAddress,
+                TotalPrice = scViewModel.Total,
+                PaymentMethod = scViewModel.PaymentMethod,
+                ProductCategory = scViewModel.ProductCategories,
+                DeliveryAddress = scViewModel.DeliveryAddress
+            };
+
+            //await _orderRepository.AddOrder(orderModel);  
+            //Response.Cookies.Delete("shopping_cart"); //delete the cookie after the order is placed
+
+
 
             return View(scViewModel);
         }
 
-
-        [HttpPost]
-        public async Task<ActionResult> ConfirmPurchase(ShoppingCartViewModel scViewModel, int any) //any does nothing, its just so our post method works
-        {
-            List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context);
-
-            if (cartItems.Count == 0 || string.IsNullOrEmpty(scViewModel.DeliveryAddress) || string.IsNullOrEmpty(scViewModel.PaymentMethod))
-            {
-                return RedirectToAction("Index", "Home");
-            }
-
-            var appUser = await _userManager.GetUserAsync(User);
-            if(appUser == null)
-            {
-                return RedirectToAction("Login", "ProfileManagement");
-            }
-
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
-            OrderModel orderModel = new OrderModel
-            {
-                CustomerId = appUser.Id,
-                CustomerName = appUser.FirstName + " " + appUser.LastName,
-                OrderCreatedDate = DateOnly.FromDateTime(DateTime.Now),
-                OrderItems = cartItems,
-                Order_Status = "Pending",
-                DeliveryFee = deliveryFee,
-                PaymentMethod = scViewModel.PaymentMethod, //getting the value from shoppingcartviewmodel, and placing it into order model, which have the same string "PaymentMethod"
-                DeliveryAddress = scViewModel.DeliveryAddress, //getting the value from shoppingcartviewmodel, and placing it into order model which have the same string "DeliveryAddress"
-            };
-
-             //now we save the data we get and merge from the view models into database
-             //When you want to get the order later, you simply get it by the order id from the database
-             //And you have all info on who is attached to the order, etc
-
-            await _orderRepository.AddOrder(orderModel);
-            return View("Index", "Home");
-
-        }
 
         [HttpPost]
         public async Task<ActionResult> Delete(int id)

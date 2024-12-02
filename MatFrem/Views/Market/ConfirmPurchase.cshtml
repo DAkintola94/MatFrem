@@ -15,22 +15,40 @@
     }
     else
     {
+        
         <div class="row mb-3">
-            <div class="col-5">Delivery Address</div>
-            <div class="col-7">@Model.DeliveryAddress</div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-5">Payment Method</div>
+            <div class="col-5">Betalingsmetode:</div>
             <div class="col-7">@Model.PaymentMethod</div>
         </div>
         <div class="row mb-3">
-            <div class="col-5">Total Amount</div>
+            <div class="col-5">Total beløp:</div>
             <div class="col-7">@(Model.Total)$</div>
         </div>
         <div class="row mb-3">
-            <div class="col-5">Quantity</div>
+            <div class="col-5">Mengde:</div>
             <div class="col-7">@(Model.CartSize)</div>
         </div>
+
+        <div class="row mb-3">
+            <div class="col-5">Kunde navn:</div>
+            <div class="col-7">@Model.CustomerName</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-5">Telefon nr:</div>
+            <div class="col-7">@Model.CustomerPhoneNr</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-5">Produkt beskrivelse:</div>
+            <div class="col-7">@Model.ProductDescription</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-5">Leveringsaddresse:</div>
+            <div class="col-7">@Model.DeliveryAddress</div>
+        </div>
+        
 
         <form method="post">
             <div class="row">

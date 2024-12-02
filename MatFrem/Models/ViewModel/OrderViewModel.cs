@@ -14,6 +14,8 @@ namespace MatFrem.Models.ViewModel
         public int ProductID { get; set; }
         public string? ProductName { get; set; }
         public double? ProductPrice { get; set; }
+
+        public string? CustomerPhoneNr { get; set; }
         public string? CustomerName { get; set; }
         public int OrderItemID { get; set; }
         public ApplicationUser? Customer { get; set; } //navigation property for CustomerModel, namely, OrderModel has a Customer

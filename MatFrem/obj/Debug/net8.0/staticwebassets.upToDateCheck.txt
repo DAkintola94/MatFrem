@@ -67,10 +67,12 @@ wwwroot\Images\hero.png
 wwwroot\Images\login.png
 wwwroot\Images\logout.svg
 wwwroot\Images\marketBG.jpg
+wwwroot\Images\product\4ad89ac2-31a5-46cc-92f9-0577878be528.png
+wwwroot\Images\product\a079c8de-8020-40a4-970b-e8cb4fc57aa3.jpg
+wwwroot\Images\product\bfa7ace8-b21a-4747-ac8b-f16a747cf253.jpg
 wwwroot\Images\product\BreakfastCelery.jpg
 wwwroot\Images\product\drygood.jpg
-wwwroot\Images\product\Egg.jpg
-wwwroot\Images\product\frozengoods.jpg
+wwwroot\Images\product\f834283e-f4c3-4620-8d08-9af41bf43d3b.jpg
 wwwroot\Images\product\FruitnVegs.jpg
 wwwroot\Images\product\pastry.jpg
 wwwroot\Images\product\seafood.jpg

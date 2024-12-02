@@ -16,12 +16,22 @@ namespace MatFrem.Models.ViewModel
         [Required(ErrorMessage = "Leveringsadresse må fylles ut")]
         [MaxLength(200)]
         public string DeliveryAddress { get; set; } = "";
-
         public string PaymentMethod { get; set; } = "";
-
         public int CartSize { get; set; } 
         public string? CustomerId { get; set; }
+        public string? CustomerName { get; set; }
+        public string? CustomerPhoneNr { get; set; }
+       
         public int? ProductID { get; set; } //foreign key for ProductModel
+
+        public string? ProductName { get; set; }
+
+        public string? PickUpAddress { get; set; }
+
+        public string? ProductDescription { get; set; }
+
+        public string? ProductCategories { get; set; }
+
         public string? DriverId { get; set; }
 
         [ValidateNever]
@@ -33,5 +43,8 @@ namespace MatFrem.Models.ViewModel
         [ValidateNever]
         public ProductModel? ProductModel { get; set; } //You can have two propergation of the same type in the same class
                                                         //This one is used for easier access in the view
+
+        public ApplicationUser? Customer { get; set; } //navigation property for CustomerModel, namely, ShoppingCartModel has a Customer
+        public ApplicationUser? Driver { get; set; } //navigation property for DriverModel, namely, ShoppingCartModel has a Driver
     }
 }

@@ -16,7 +16,13 @@ namespace MatFrem.Models.DomainModel
         [ValidateNever]
         public int ProductID { get; set; }
 
+        public string? CustomerPhoneNr { get; set; }
+
         public string? ProductName { get; set; }
+
+        public string? PickUpAddress { get; set; }
+
+        public string? ProductCategory { get; set; }
         public double? ProductPrice { get; set; }
         public string? CustomerName { get; set; }
         public int OrderItem { get; set; }
@@ -35,7 +41,7 @@ namespace MatFrem.Models.DomainModel
         public ICollection<OrderItem> CartItems { get; set; } = new List<OrderItem>();
 
         public decimal? DeliveryFee { get; set; }
-        public decimal? Total { get; set; }
+        public decimal? TotalPrice { get; set; }
 
         public string? PaymentMethod { get; set; } = "";
 
