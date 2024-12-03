@@ -3,22 +3,21 @@ services:
   mariadb:
     environment:
       MYSQL_DATABASE: MatFremBase
-      MYSQL_ROOT_PASSWORD: is201
+      MYSQL_ROOT_PASSWORD: Testingtesting1234
     image: mariadb:latest
     networks:
       default: null
     ports:
       - mode: ingress
         target: 3306
-        published: "3306"
+        published: "3307"
         protocol: tcp
     restart: always
     volumes:
-      - type: bind
-        source: /c/Users/black/Documents/AkinPC-DB/MatFremBase
+      - type: volume
+        source: mariadb_data
         target: /var/lib/mysql
-        bind:
-          create_host_path: true
+        volume: {}
   matfrem:
     build:
       context: C:\Users\black\source\repos\MatFrem
@@ -31,13 +30,14 @@ services:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTP_PORTS: "8080"
       ASPNETCORE_HTTPS_PORTS: "8081"
-      ConnectionStrings__DefaultConnection: Server=mariadb;Port=3306;Database=MatFremBase;User=root;Password=is201
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: Server=mariadb;Database=MatFremBase;User=root;Password=Testingtesting1234
     image: matfrem
     networks:
       default: null
     ports:
       - mode: ingress
-        target: 80
+        target: 8080
         published: "8080"
         protocol: tcp
       - mode: ingress
@@ -62,3 +62,6 @@ services:
 networks:
   default:
     name: dockercompose17214803164236567967_default
+volumes:
+  mariadb_data:
+    name: dockercompose17214803164236567967_mariadb_data

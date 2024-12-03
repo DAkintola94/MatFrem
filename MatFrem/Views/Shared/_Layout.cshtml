@@ -28,9 +28,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav me-2">
                         @if (signInManager.IsSignedIn(User) && User.IsInRole("System Administrator")){
-                            Console.WriteLine("Placeholder for now. Admin authorization will be here");
-                        }
-
+                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link text-dark dropdown-toggle"
                                    href="#"
@@ -53,11 +51,10 @@
                                     </li>
                                 </ul>
                             </li>
+                        }
 
                             @if(signInManager.IsSignedIn(User) && User.IsInRole("Driver")){
-							Console.WriteLine("Placeholder for now. Driver authorization will be here");
-                            }
-
+							
                             <li class="nav-item dropdown">
                                 <a class="nav-link text-dark dropdown-toggle"
                                    href="#"
@@ -90,6 +87,7 @@
                                     </li>
                                 </ul>
                             </li>
+                        }
 
                             @if(signInManager.IsSignedIn(User))
                             {

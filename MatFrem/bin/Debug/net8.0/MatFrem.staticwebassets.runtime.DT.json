@@ -637,6 +637,30 @@
           },
           "product": {
             "Children": {
+              "4ad89ac2-31a5-46cc-92f9-0577878be528.png": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "Images/product/4ad89ac2-31a5-46cc-92f9-0577878be528.png"
+                },
+                "Patterns": null
+              },
+              "a079c8de-8020-40a4-970b-e8cb4fc57aa3.jpg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "Images/product/a079c8de-8020-40a4-970b-e8cb4fc57aa3.jpg"
+                },
+                "Patterns": null
+              },
+              "bfa7ace8-b21a-4747-ac8b-f16a747cf253.jpg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "Images/product/bfa7ace8-b21a-4747-ac8b-f16a747cf253.jpg"
+                },
+                "Patterns": null
+              },
               "BreakfastCelery.jpg": {
                 "Children": null,
                 "Asset": {
@@ -653,19 +677,11 @@
                 },
                 "Patterns": null
               },
-              "Egg.jpg": {
+              "f834283e-f4c3-4620-8d08-9af41bf43d3b.jpg": {
                 "Children": null,
                 "Asset": {
                   "ContentRootIndex": 0,
-                  "SubPath": "Images/product/Egg.jpg"
-                },
-                "Patterns": null
-              },
-              "frozengoods.jpg": {
-                "Children": null,
-                "Asset": {
-                  "ContentRootIndex": 0,
-                  "SubPath": "Images/product/frozengoods.jpg"
+                  "SubPath": "Images/product/f834283e-f4c3-4620-8d08-9af41bf43d3b.jpg"
                 },
                 "Patterns": null
               },
