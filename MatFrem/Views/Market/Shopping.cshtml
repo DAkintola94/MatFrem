@@ -51,8 +51,8 @@
                         <th>Kalori</th>
                         <th>Kategori</th>
                         <th>Pris</th>
-                        <th></th>
-                        <th></th>
+                        <th>Kurv</th>
+                        <th>Detaljer</th>
                     </tr>
                 </thead>
                 <tbody id="myTable">
@@ -70,10 +70,10 @@
                                 </button>
                             </td>
                             <td>
-                                <a asp-controller="Market"
-                                   asp-action="Cart"
+                                <a asp-controller="Product"
+                                   asp-action="Detail"
                                    asp-route-id="@productModel.ProductID">
-                                    <img src="~/images/green-arrow.svg" alt="Gå til" style="height: 40px;" />
+                                    <img src="~/images/info.svg" alt="Gå til" style="height: 40px;" />
                                 </a>
                             </td>
                          

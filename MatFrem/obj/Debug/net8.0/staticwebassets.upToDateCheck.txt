@@ -58,12 +58,14 @@ wwwroot\Images\bg.jpg
 wwwroot\Images\BGprofileBlack.svg
 wwwroot\Images\create.png
 wwwroot\Images\deliverybackground.jpg
+wwwroot\Images\edit.svg
 wwwroot\Images\error404.jpg
 wwwroot\Images\foodsmiley.jpg
 wwwroot\Images\generalbg.jpg
 wwwroot\Images\geoMap.svg
 wwwroot\Images\green-arrow.svg
 wwwroot\Images\hero.png
+wwwroot\Images\info.svg
 wwwroot\Images\login.png
 wwwroot\Images\logout.svg
 wwwroot\Images\marketBG.jpg

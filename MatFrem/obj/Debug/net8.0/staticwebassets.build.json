@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vSCeUsRzuWSRKztcD4o+dYjixpMqu3yAYcGRgC/GFWk=",
+  "Hash": "xFZntLmFYT7TshClB3I8ggtisStA+h+JMG1WpURYaYA=",
   "Source": "MatFrem",
   "BasePath": "_content/MatFrem",
   "Mode": "Default",
@@ -1319,6 +1319,27 @@
       "OriginalItemSpec": "wwwroot\\Images\\deliverybackground.jpg"
     },
     {
+      "Identity": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\edit.svg",
+      "SourceId": "MatFrem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\",
+      "BasePath": "_content/MatFrem",
+      "RelativePath": "Images/edit#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ahnwsbtwmp",
+      "Integrity": "Ikn/EfdhaAPN830R+7F9daXk+lwPZ4uE9vdbyi5R0eo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\edit.svg"
+    },
+    {
       "Identity": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\error404.jpg",
       "SourceId": "MatFrem",
       "SourceType": "Discovered",
@@ -1443,6 +1464,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\hero.png"
+    },
+    {
+      "Identity": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\info.svg",
+      "SourceId": "MatFrem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\",
+      "BasePath": "_content/MatFrem",
+      "RelativePath": "Images/info#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "iw1n5781p3",
+      "Integrity": "njUJNzbPLrjh18l0/SLlrJR8GcCaidbJ37WMGZgpwXU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\info.svg"
     },
     {
       "Identity": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\login.png",
@@ -7105,6 +7147,88 @@
       ]
     },
     {
+      "Route": "Images/edit.ahnwsbtwmp.svg",
+      "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\edit.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "757"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ikn/EfdhaAPN830R+7F9daXk+lwPZ4uE9vdbyi5R0eo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Dec 2024 22:40:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ahnwsbtwmp"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/edit.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ikn/EfdhaAPN830R+7F9daXk+lwPZ4uE9vdbyi5R0eo="
+        }
+      ]
+    },
+    {
+      "Route": "Images/edit.svg",
+      "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\edit.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "757"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ikn/EfdhaAPN830R+7F9daXk+lwPZ4uE9vdbyi5R0eo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Dec 2024 22:40:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ikn/EfdhaAPN830R+7F9daXk+lwPZ4uE9vdbyi5R0eo="
+        }
+      ]
+    },
+    {
       "Route": "Images/error404.jpg",
       "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\error404.jpg",
       "Selectors": [],
@@ -7593,6 +7717,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-7TDVi8z58RGkgssu3IUoSGsOJUaduI7aEt920RGGQKI="
+        }
+      ]
+    },
+    {
+      "Route": "Images/info.iw1n5781p3.svg",
+      "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\info.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"njUJNzbPLrjh18l0/SLlrJR8GcCaidbJ37WMGZgpwXU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Dec 2024 22:45:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "iw1n5781p3"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/info.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-njUJNzbPLrjh18l0/SLlrJR8GcCaidbJ37WMGZgpwXU="
+        }
+      ]
+    },
+    {
+      "Route": "Images/info.svg",
+      "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\info.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"njUJNzbPLrjh18l0/SLlrJR8GcCaidbJ37WMGZgpwXU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Dec 2024 22:45:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-njUJNzbPLrjh18l0/SLlrJR8GcCaidbJ37WMGZgpwXU="
         }
       ]
     },

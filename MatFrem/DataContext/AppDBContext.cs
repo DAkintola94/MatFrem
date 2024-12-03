@@ -225,18 +225,22 @@ namespace MatFrem.DataContext
                 .HasMany(o => o.Product)
                 .WithMany();
 
+            modelBuilder.Entity<OrderModel>()
+                .HasOne(o => o.OrderStatus)
+                .WithMany()
+                .HasForeignKey(o => o.OrderStatusID)
+                .OnDelete(DeleteBehavior.Cascade);
 
 
-			//modelBuilder.Entity<CustomerModel>()
-                //.HasOne(c => c.DriverM) //CustomerModel has one Driver
-                //.WithOne(d => d) //Driver can have one Customer
-                //.HasForeignKey<CustomerModel>(c => c.DriverID); //need <CustomerModel> because of how one -to-one relationships work in EF Core
-                                                                //since we are targeting a specific entity, we need to specify the entity type in the lambda expression
 
-            //modelBuilder.Entity<ShoppingCartModel>()
-                //.HasMany(sc => sc.Product)
-                //.WithOne(p => p.ShoppingCart)
-                //.HasForeignKey(p => p.ProductID);
+
+            //Seeding data into OrderStatus table in the database
+            modelBuilder.Entity<OrderStatus>().HasData(
+               new OrderStatus { OrderStatusID = 1, StatusDescription = "Motatt" },
+               new OrderStatus { OrderStatusID = 2, StatusDescription = "Under behandling" },
+               new OrderStatus { OrderStatusID = 3, StatusDescription = "På vei" },
+               new OrderStatus { OrderStatusID = 4, StatusDescription = "Order avvist" }
+           );
 
         }
     }

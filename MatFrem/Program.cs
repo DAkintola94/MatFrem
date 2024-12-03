@@ -43,21 +43,7 @@ namespace MatFrem
 
             var app = builder.Build();
 
-            using (var scope = app.Services.CreateScope()) //this line creates a new scope for the services
-            {
-                var services = scope.ServiceProvider; //this line retrieves the service provider from the scope
-                try
-                {
-                    var context = services.GetRequiredService<AppDBContext>(); //This line retrieves the AppDBContext service from the service provider.
-                    context.Database.Migrate(); // Applies any pending migrations to the database when the application starts (e.g., in a Docker container)
-                                                //Use the entire code when working with docker compose. 
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Migration failed." + ex);
-                    Environment.Exit(1);
-                }
-            }
+         
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

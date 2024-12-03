@@ -10,9 +10,9 @@ namespace MatFrem.Models.DomainModel
 		public string? Description { get; set; }
 
 		[MaxLength(100)]
-		public string Category { get; set; }
+		public string? Category { get; set; }
 		[MaxLength(100)]
-		public string ProductName { get; set; }
+		public string? ProductName { get; set; }
 		[MaxLength(100)]
 		public string? ProductCalories { get; set; }
 		public double ProductPrice { get; set; }

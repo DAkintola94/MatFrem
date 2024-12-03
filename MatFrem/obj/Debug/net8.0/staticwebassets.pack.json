@@ -209,6 +209,10 @@
       "PackagePath": "staticwebassets\\Images\\deliverybackground.jpg"
     },
     {
+      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\edit.svg",
+      "PackagePath": "staticwebassets\\Images\\edit.svg"
+    },
+    {
       "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\error404.jpg",
       "PackagePath": "staticwebassets\\Images\\error404.jpg"
     },
@@ -231,6 +235,10 @@
     {
       "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\hero.png",
       "PackagePath": "staticwebassets\\Images\\hero.png"
+    },
+    {
+      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\info.svg",
+      "PackagePath": "staticwebassets\\Images\\info.svg"
     },
     {
       "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\login.png",

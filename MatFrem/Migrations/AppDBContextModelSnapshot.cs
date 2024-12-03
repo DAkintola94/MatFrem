@@ -164,7 +164,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b3873d29-8cb2-4247-b691-77df54f4db23",
+                            ConcurrencyStamp = "02fead36-978a-4073-a860-8dfc0863513d",
                             Email = "sysadmin@test.com",
                             EmailConfirmed = false,
                             FirstName = "System",
@@ -172,10 +172,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SYSADMIN@TEST.COM",
                             NormalizedUserName = "SYSADMIN@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEL4lXjC+TUuZiE7gjFcFdnRRnZnovv+W1giWgJYOOHhQSNlYTR6H+KVyYd+4oTpuQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMpzUeFUuVMKPPkouZ71oeJgIqBIoNQq4QOKg2LR/Ns8Lscq51s0VHY5BzLgoc4jcQ==",
                             PhoneNumber = "40748608",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "cdabeef2-8ffa-49a5-bbef-a5266e1187b0",
+                            SecurityStamp = "e6108782-f8f3-4976-9a4f-5409b9af4ca1",
                             TwoFactorEnabled = false,
                             UserName = "sysadmin@test.com"
                         },
@@ -183,7 +183,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2e8692cc-f8e0-4a3e-8480-af736946fc49",
+                            ConcurrencyStamp = "3e800f63-1e67-4680-bbcb-40c3a36734cd",
                             Email = "driver@test.com",
                             EmailConfirmed = false,
                             FirstName = "Test",
@@ -191,10 +191,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "DRIVER@TEST.COM",
                             NormalizedUserName = "DRIVER@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFDUhMAKytlNESoCIsFPSizft4/5weOOWY4pMisH5OTjAZe69IbWMarxnTIOFJtt2w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFqbRRSGNTD5ShhQUhLX1qT2SDLr1o526RL1dSNCfI+GRPRH7tOxE/hT02Zze4IfBQ==",
                             PhoneNumber = "95534356",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1f5879c0-6c0e-494d-8ff7-407affb26899",
+                            SecurityStamp = "75aab215-f7f1-4d73-810f-03b4df91b66b",
                             TwoFactorEnabled = false,
                             UserName = "driver@test.com"
                         },
@@ -202,7 +202,7 @@ namespace MatFrem.Migrations
                         {
                             Id = "3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f700af95-d4ee-45bc-9efe-eded6021db30",
+                            ConcurrencyStamp = "816e354c-f809-4c3b-9c88-da136acae029",
                             Email = "customer@test.com",
                             EmailConfirmed = false,
                             FirstName = "Test",
@@ -210,10 +210,10 @@ namespace MatFrem.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CUSTOMER@TEST.COM",
                             NormalizedUserName = "CUSTOMER@TEST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN7Wbg2r9TsjxUIihTGGG+mH9Dtx2DAcdNvYqK3icvNBOCcMvsohthv/d63RzakAaA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDons3q2Ls1fRjfNxewA2h6jwnRjJJK8FtnHDwSvBj/PGmxbRj7rfXycbV7mTUMuPg==",
                             PhoneNumber = "43342364",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ca9b068b-a698-4aec-be13-6e04f8980e59",
+                            SecurityStamp = "3c67d80b-d29e-4d76-8521-9dbcc4adbf88",
                             TwoFactorEnabled = false,
                             UserName = "customer@test.com"
                         });
@@ -271,9 +271,6 @@ namespace MatFrem.Migrations
                     b.Property<int?>("OrderModelOrderID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("OrderModelOrderID1")
-                        .HasColumnType("int");
-
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
 
@@ -291,9 +288,7 @@ namespace MatFrem.Migrations
 
                     b.HasIndex("OrderModelId");
 
-                    b.HasIndex("OrderModelOrderID");
-
-                    b.HasIndex("OrderModelOrderID1")
+                    b.HasIndex("OrderModelOrderID")
                         .IsUnique();
 
                     b.HasIndex("ProductID");
@@ -317,6 +312,9 @@ namespace MatFrem.Migrations
                     b.Property<string>("CustomerName")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("CustomerPhoneNr")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("DeliveryAddress")
                         .HasColumnType("longtext");
 
@@ -335,10 +333,16 @@ namespace MatFrem.Migrations
                     b.Property<int>("OrderItem")
                         .HasColumnType("int");
 
-                    b.Property<string>("Order_Status")
-                        .HasColumnType("longtext");
+                    b.Property<int>("OrderStatusID")
+                        .HasColumnType("int");
 
                     b.Property<string>("PaymentMethod")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PickUpAddress")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ProductCategory")
                         .HasColumnType("longtext");
 
                     b.Property<int>("ProductID")
@@ -350,13 +354,10 @@ namespace MatFrem.Migrations
                     b.Property<string>("ProductName")
                         .HasColumnType("longtext");
 
-                    b.Property<double?>("ProductPrice")
-                        .HasColumnType("double");
-
                     b.Property<int?>("ShopModelShopID")
                         .HasColumnType("int");
 
-                    b.Property<decimal?>("Total")
+                    b.Property<decimal?>("TotalPrice")
                         .HasColumnType("decimal(65,30)");
 
                     b.HasKey("OrderID");
@@ -366,6 +367,8 @@ namespace MatFrem.Migrations
                     b.HasIndex("DriverId");
 
                     b.HasIndex("DriverModelDriverID");
+
+                    b.HasIndex("OrderStatusID");
 
                     b.HasIndex("ProductMProductID");
 
@@ -382,13 +385,35 @@ namespace MatFrem.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("OrderStatusID"));
 
-                    b.Property<string>("Order_Status")
+                    b.Property<string>("StatusDescription")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("OrderStatusID");
 
                     b.ToTable("OrderState");
+
+                    b.HasData(
+                        new
+                        {
+                            OrderStatusID = 1,
+                            StatusDescription = "Motatt"
+                        },
+                        new
+                        {
+                            OrderStatusID = 2,
+                            StatusDescription = "Under behandling"
+                        },
+                        new
+                        {
+                            OrderStatusID = 3,
+                            StatusDescription = "På vei"
+                        },
+                        new
+                        {
+                            OrderStatusID = 4,
+                            StatusDescription = "Order avvist"
+                        });
                 });
 
             modelBuilder.Entity("MatFrem.Models.DomainModel.ProductModel", b =>
@@ -400,7 +425,6 @@ namespace MatFrem.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ProductID"));
 
                     b.Property<string>("Category")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
@@ -427,7 +451,6 @@ namespace MatFrem.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("ProductName")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
@@ -742,12 +765,8 @@ namespace MatFrem.Migrations
                         .IsRequired();
 
                     b.HasOne("MatFrem.Models.DomainModel.OrderModel", null)
-                        .WithMany("CartItems")
-                        .HasForeignKey("OrderModelOrderID");
-
-                    b.HasOne("MatFrem.Models.DomainModel.OrderModel", null)
                         .WithOne("OrderItemModel")
-                        .HasForeignKey("MatFrem.Models.DomainModel.OrderItem", "OrderModelOrderID1");
+                        .HasForeignKey("MatFrem.Models.DomainModel.OrderItem", "OrderModelOrderID");
 
                     b.HasOne("MatFrem.Models.DomainModel.ProductModel", "Product")
                         .WithMany()
@@ -776,6 +795,12 @@ namespace MatFrem.Migrations
                         .WithMany("ActiveDeliveries")
                         .HasForeignKey("DriverModelDriverID");
 
+                    b.HasOne("MatFrem.Models.DomainModel.OrderStatus", "OrderStatus")
+                        .WithMany()
+                        .HasForeignKey("OrderStatusID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("MatFrem.Models.DomainModel.ProductModel", "ProductM")
                         .WithMany()
                         .HasForeignKey("ProductMProductID");
@@ -787,6 +812,8 @@ namespace MatFrem.Migrations
                     b.Navigation("Customer");
 
                     b.Navigation("Driver");
+
+                    b.Navigation("OrderStatus");
 
                     b.Navigation("ProductM");
                 });
@@ -898,8 +925,6 @@ namespace MatFrem.Migrations
 
             modelBuilder.Entity("MatFrem.Models.DomainModel.OrderModel", b =>
                 {
-                    b.Navigation("CartItems");
-
                     b.Navigation("OrderItemModel");
 
                     b.Navigation("OrderItems");
