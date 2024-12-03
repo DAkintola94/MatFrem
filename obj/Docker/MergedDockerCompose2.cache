@@ -1,16 +1,16 @@
-name: dockercompose17214803164236567967
+name: dockercompose17268060715706425117
 services:
   mariadb:
     environment:
       MYSQL_DATABASE: MatFremBase
-      MYSQL_ROOT_PASSWORD: is201
+      MYSQL_ROOT_PASSWORD: Testingtesting1234
     image: mariadb:latest
     networks:
       default: null
     ports:
       - mode: ingress
         target: 3306
-        published: "3306"
+        published: "3307"
         protocol: tcp
     restart: always
     volumes:
@@ -20,7 +20,7 @@ services:
         volume: {}
   matfrem:
     build:
-      context: C:\Users\black\source\repos\MatFrem
+      context: C:\Users\Eier\source\repos\MatFrem
       dockerfile: MatFrem/Dockerfile
     depends_on:
       mariadb:
@@ -30,13 +30,14 @@ services:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTP_PORTS: "8080"
       ASPNETCORE_HTTPS_PORTS: "8081"
-      ConnectionStrings__DefaultConnection: Server=mariadb;Port=3306;Database=MatFremBase;User=root;Password=is201
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: Server=mariadb;Database=MatFremBase;User=root;Password=Testingtesting1234
     image: matfrem
     networks:
       default: null
     ports:
       - mode: ingress
-        target: 80
+        target: 8080
         published: "8080"
         protocol: tcp
       - mode: ingress
@@ -47,20 +48,20 @@ services:
         protocol: tcp
     volumes:
       - type: bind
-        source: C:\Users\black\AppData\Roaming/Microsoft/UserSecrets
+        source: C:\Users\Eier\AppData\Roaming/Microsoft/UserSecrets
         target: /home/app/.microsoft/usersecrets
         read_only: true
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\black\AppData\Roaming/ASP.NET/Https
+        source: C:\Users\Eier\AppData\Roaming/ASP.NET/Https
         target: /home/app/.aspnet/https
         read_only: true
         bind:
           create_host_path: true
 networks:
   default:
-    name: dockercompose17214803164236567967_default
+    name: dockercompose17268060715706425117_default
 volumes:
   mariadb_data:
-    name: dockercompose17214803164236567967_mariadb_data
+    name: dockercompose17268060715706425117_mariadb_data
