@@ -36,3 +36,11 @@
 /.vs/MatFrem/CopilotIndices/17.12.21.54468/CodeChunks.db-shm
 >>>>>>> 6993a6fcc41609edd3113499137c6b61af952b1d
 /.vs/MatFrem/CopilotIndices/17.12.21.54468/CodeChunks.db-shm
+/MatFrem/obj/Debug/net8.0/MatFrem.AssemblyInfo.cs
+/MatFrem/obj/Debug/net8.0/MatFrem.AssemblyInfoInputs.cache
+*.vsidx
+/.vs/MatFrem/CopilotIndices/0.2.1657.32929/CodeChunks.db
+/MatFrem/obj/Debug/net8.0/MatFrem.AssemblyInfoInputs.cache
+/MatFrem/obj/Debug/net8.0/MatFrem.AssemblyInfo.cs
+/.vs/MatFrem/v17/.suo
+/.gitignore
