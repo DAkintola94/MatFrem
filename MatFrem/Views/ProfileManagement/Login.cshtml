@@ -11,10 +11,15 @@
         <h1>Innlogging </h1>
         <div class="input-box">
             <input type="text" placeholder="Brukernavn" asp-for="Username" required>
+            <span asp-validation-for="@Model.Username" class="text-danger"></span>
             <i class='bx bxs-user'></i>
         </div>
         <div class="input-box">
             <input type="password" placeholder="Passord" asp-for="Password" required>
+            @if(Model.PasswordFailed){
+                <span class="text-danger"> Brukernavn eller passord er feil </span>
+            }
+            <span asp-validation-for="@Model.Username" class="text-warning"></span>
             <i class='bx bxs-lock-alt'></i>
         </div>
 

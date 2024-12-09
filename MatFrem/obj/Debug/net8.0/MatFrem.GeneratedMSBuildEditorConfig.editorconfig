@@ -44,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpdmVyXFJlcG9ydExvY2F0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/black/source/repos/MatFrem/MatFrem/Views/Driver/StartOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpdmVyXFN0YXJ0T3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/black/source/repos/MatFrem/MatFrem/Views/Driver/UpdateStatus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpdmVyXFVwZGF0ZVN0YXR1cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

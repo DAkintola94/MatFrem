@@ -36,8 +36,6 @@ namespace MatFrem.Repository
             query = query.Skip(skipResult).Take(pageSize);
 
             return await query.ToListAsync(); // We take data from the database, and split them into how the pagination is setup above.
-
-
         }
 
         /// <summary>

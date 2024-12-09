@@ -59,21 +59,23 @@ namespace MatFrem.Controllers
             List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
             decimal subtotal = CartHelper.GetSubTotal(cartItems);
 
+
+            int cartSize = CartHelper.GetCartSize(Request, Response);
+
             var appUser = _userManager.GetUserAsync(User).Result;
 
             foreach (var items in cartItems) //this is to get product values that is already inside our shoppingcart, since its a collection, we need to get values inside like this.
             {
                 var productsElement = items.Product;
-                scViewModel.CartItems = cartItems;
-                scViewModel.CartSize += items.Quantity;
+                //scViewModel.CartSize += items.Quantity;
                 scViewModel.ProductName = productsElement.ProductName;
                 scViewModel.PickUpAddress = productsElement.ProductLocation;
                 scViewModel.ProductDescription = productsElement.Description;
                 scViewModel.ProductCategories = productsElement.Category;
             }
-
-            scViewModel.CartItems = cartItems;
-            scViewModel.Subtotal = subtotal;
+            scViewModel.CartSize = cartSize; //this is to get and attach the values from the cartitems foreach loop above
+			scViewModel.CartItems = cartItems; //this is to get the objects in the cartItems service, in line 59
+			scViewModel.Subtotal = subtotal;
             scViewModel.DeliveryFee = deliveryFee;
             scViewModel.Total = subtotal + deliveryFee;
             scViewModel.DeliveryAddress = deliveryAddress; //attaching it to the name="" defined in html, getting data through the parameter here
@@ -188,12 +190,14 @@ namespace MatFrem.Controllers
 
             OrderModel orderModel = new OrderModel
             {
+
                 ProductName = scViewModel.ProductName,
                 CustomerPhoneNr = scViewModel.CustomerPhoneNr,
                 CustomerName = scViewModel.CustomerName,
                 OrderCreatedDate = DateOnly.FromDateTime(DateTime.Now),
                 PickUpAddress = scViewModel.PickUpAddress,
                 OrderStatusID = 1,
+                OrderItem = scViewModel.CartSize,
                 TotalPrice = scViewModel.Total,
                 PaymentMethod = scViewModel.PaymentMethod,
                 ProductCategory = scViewModel.ProductCategories,
@@ -205,7 +209,6 @@ namespace MatFrem.Controllers
 
             return View(scViewModel); //returning the viewmodel to the view, which is sent from the index method
         }
-
 
         [HttpPost]
         public async Task<ActionResult> Delete(int id)

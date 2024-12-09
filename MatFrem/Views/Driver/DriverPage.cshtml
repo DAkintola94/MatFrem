@@ -1,5 +1,106 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using MatFrem.Models.ViewModel
+@model IEnumerable<OrderViewModel>
+
 @{
+    int nextPage = Convert.ToInt32(ViewBag.PageNumber) + 1;
+    int previousPage = Convert.ToInt32(ViewBag.PageNumber) - 1;
 }
+
+<head>
+    <link rel="stylesheet" href="~/css/marketstyle.css" />
+    <script src="https://kit.fontawesome.com/5eea027e19.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<div class="box">
+    <input type="text" id="searchTable" placeholder="Søk..." />
+    <a href="#">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+</div>
+
+<div id="portexe-search-root">
+  
+    <div id="portexe-table-container">
+        @if (Model != null && Model.Any())
+        {
+            <table class="table table-sortable table-striped table-bordered bg-white" id="firstTableId">
+                <thead>
+                    <tr>
+                        <th>Kunde</th>
+                        <th>Kontakt info</th>
+                        <th>Antall varer</th>
+                        <th>Dato bestilt</th>
+                        <th>Hentested</th>
+                        <th>Leverings addresse</th>
+                        <th>Total pris</th>
+                        <th>Velg</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    @foreach (var orderData in Model)
+                    {
+                        <tr>
+                            <td>@orderData.CustomerName</td>
+                            <td>@orderData.CustomerPhoneNr</td>
+                            <td>@orderData.OrderQuantitySize</td>
+                            <td>@orderData.DateOrderCreate</td>
+                            <td>@orderData.PickUpAddress</td>
+                            <td>@orderData.DeliveryAddress</td>
+                            <td>@orderData.TotalAmount?.ToString("F2") kr</td>
+                            <td>
+
+                                <a class="btn btn-warning btn-sm mb2"
+                                asp-controller="Driver"
+                                asp-action="StartOrder"
+                                asp-route-id="@orderData.OrderID"
+                                >
+                                    Velg order <i class="bi bi-car-front-fill"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                
+            </table>
+            
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                        <a class="page-link" asp-controller="Market" asp-action="Shopping" asp-route-pageNumber="@(ViewBag.CurrentPage - 1)" asp-route-pageSize="@ViewBag.PageSize">
+                            Forrige side
+                        </a>
+                    </li>
+
+                    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                    {
+                        <li class="page-item">
+                            <a class="page-link"
+                               asp-route-pageNumber="@i"
+                               asp-route-pageSize="@ViewBag.PageSize">
+                                @i
+                            </a>
+                        </li>
+                    }
+
+                    <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+                        <a class="page-link" asp-route-pageNumber="@(ViewBag.CurrentPage + 1)" asp-route-pageSize="@ViewBag.PageSize">
+                            Neste side
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        }
+        else
+        {
+            <p>Ingen order funnet!</p>
+        }
+
+    </div>
+</div>
+
+
+
+<script>var modelData = @Html.Raw(Json.Serialize(Model)); </script>
+
+<script src="~/js/sortSearch.js"></script>

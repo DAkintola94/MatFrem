@@ -89,7 +89,7 @@
                             </li>
                         }
 
-                            @if(signInManager.IsSignedIn(User))
+                            @if(signInManager.IsSignedIn(User) && User.IsInRole("Customer"))
                             {
 
                             <li class="nav-item dropdown">
@@ -157,6 +157,7 @@
                                     </li>
                                 </ul>
                             </li>
+
                         }
                         else
                         {
@@ -175,6 +176,8 @@
 
                         </ul>
 
+                        @if(signInManager.IsSignedIn(User) && User.IsInRole("Customer"))
+                           {
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item ">
                             <a class="nav-link text-dark" asp-controller="Market" asp-action="Index">
@@ -185,6 +188,7 @@
                             </a>
                         </li>
                     </ul>
+                    }
 
                     </div>
                 </div>

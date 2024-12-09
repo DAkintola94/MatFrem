@@ -78,6 +78,15 @@ namespace MatFrem.Controllers
         public async Task<ActionResult> Login(LoginViewModel loginViewModel)
         {
             var signInResult = await _signInManager.PasswordSignInAsync(loginViewModel.Username, loginViewModel.Password, false, false);
+
+            if(!signInResult.Succeeded)
+            {
+               
+                loginViewModel.PasswordFailed = true;
+                return View(loginViewModel);
+            }
+
+
             if(signInResult != null && signInResult.Succeeded)
             {
                 if(!string.IsNullOrEmpty(loginViewModel.ReturnUrl))

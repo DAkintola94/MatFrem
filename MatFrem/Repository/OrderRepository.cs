@@ -12,11 +12,15 @@ namespace MatFrem.Repository
             _context = context;
         }
 
-        public async Task<IEnumerable<OrderModel>> GetAllOrder()
+        public async Task<IEnumerable<OrderModel>> GetAllOrder(int pageNumber = 1, int pageSize = 100)
         {
-            var getAllItem = await _context.Orders.Take(50).ToListAsync();
-            return getAllItem;
-        }
+			var query = _context.Orders.AsQueryable();
+			//pagination - a formula of skipping a certain number of items and taking a certain number of items
+			var skipResult = (pageNumber - 1) * pageSize;
+			query = query.Skip(skipResult).Take(pageSize);
+
+			return await query.ToListAsync();
+		}
 
         public async Task<OrderModel?> AddOrder(OrderModel orderModel)
         {
