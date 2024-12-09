@@ -1,0 +1,67 @@
+name: dockercompose17268060715706425117
+services:
+  mariadb:
+    environment:
+      MYSQL_DATABASE: MatFremBase
+      MYSQL_ROOT_PASSWORD: Testingtesting1234
+    image: mariadb:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 3306
+        published: "3307"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: volume
+        source: mariadb_data
+        target: /var/lib/mysql
+        volume: {}
+  matfrem:
+    build:
+      context: C:\Users\Eier\source\repos\MatFrem
+      dockerfile: MatFrem/Dockerfile
+    depends_on:
+      mariadb:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: Server=mariadb;Database=MatFremBase;User=root;Password=Testingtesting1234
+    image: matfrem
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "8080"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Eier\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Eier\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose17268060715706425117_default
+volumes:
+  mariadb_data:
+    name: dockercompose17268060715706425117_mariadb_data

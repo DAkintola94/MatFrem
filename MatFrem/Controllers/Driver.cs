@@ -41,7 +41,8 @@ namespace MatFrem.Controllers
 
 				//Here, we just attach our values in the viewmodel, to what is in the database, then send it to the view. 
 				//We are in the GET method, so we are just getting the data from the database, and sending it to the view. This happens when the page is loaded.
-				var orderViewModels = getOrders.Select(o => new OrderViewModel
+
+				var orderViewModels = getOrders.Select(o => new OrderViewModel //need to run through the list and select since its ienumerable in the repository
                 {
 					OrderID = o.OrderID, //need to pass and attach the ID from DB to the view model, remember that when working with view model
 					CustomerName = o.CustomerName ?? string.Empty,
@@ -63,10 +64,31 @@ namespace MatFrem.Controllers
 		[HttpGet]
 		public async Task<IActionResult> StartOrder(int id)
 		{
-			Console.WriteLine($"{id} is the primarykey in the database");
+			
 			var getOrders = await _orderRepository.GetOrderByID(id);
-			return View(getOrders);
-		}
+
+			if(getOrders != null)
+			{
+				OrderViewModel orderViewModel = new OrderViewModel //we can simply attach to view because GetORderById is not ienumerable (list) in the repository
+				{
+					OrderID = getOrders.OrderID, //need to pass and attach the ID from DB to the view model, remember that when working with view model
+					CustomerName = getOrders.CustomerName ?? string.Empty,
+					CustomerPhoneNr = getOrders.CustomerPhoneNr ?? string.Empty,
+					ProductName = getOrders.ProductName ?? string.Empty,
+					TotalAmount = getOrders.TotalPrice,
+					OrderQuantitySize = getOrders.OrderItem,
+					OrderStatusDescription = getOrders.OrderStatus?.StatusDescription ?? string.Empty,
+					PickUpAddress = getOrders.PickUpAddress ?? string.Empty,
+					ItemCategory = getOrders.ProductCategory ?? string.Empty,
+					DateOrderCreate = getOrders.OrderCreatedDate,
+					DeliveryAddress = getOrders.DeliveryAddress ?? string.Empty
+				};
+
+                return View(orderViewModel); //pass the model we have attached to values from the DB, and send it to view
+            }
+
+            return NotFound(); //if the order is not found, return not found
+        }
 
 		[HttpPost]
 		public async Task<IActionResult> StartOrder(int id, int? any)
@@ -80,11 +102,11 @@ namespace MatFrem.Controllers
                 return View();
             }
 
-			getOrders.OrderStatusID = 2;
-            getOrders.DriverId = currentUser.Id; //we attaching the "currentuser, aka driver" to the order
+            getOrders.OrderStatusID = 2;
+            getOrders.DriverId = currentUser.Id; //we attaching the "currentuser, aka driver" to the order, only driver can use this method anyway
             getOrders.Driver = currentUser;
 
-			await _orderRepository.UpdateOrder(getOrders);
+            await _orderRepository.UpdateOrder(getOrders);
             return RedirectToAction("YourOrder");
         }
 
