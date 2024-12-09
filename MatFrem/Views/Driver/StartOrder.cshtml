@@ -1,5 +1,193 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿﻿@using Microsoft.AspNetCore.Identity
+@using MatFrem.Models.DomainModel
+@inject SignInManager<ApplicationUser> signInManager
+@using System.Security.Claims
+@using MatFrem.Models.ViewModel
+@model OrderViewModel
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4">
+            <!--Outputs Model content if Model is not empty-->
+            @if (Model != null)
+            {
+                <div class="card" style="box-sizing: border-box; padding: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+                    <h7 class="card-header border-bottom-0">
+                        <div class="container">
+                            <small class="text-muted">
+                                Kunde bestilling
+                            </small>
+                            <span style="float: right;">
+                                <small class="text-muted">
+                                    Sjåfør
+                                </small>
+                            </span>
+                        </div>
+                        <div class="container">
+                            @Model.CustomerName
+                            <span style="float: right;">
+                                @if (!string.IsNullOrEmpty(@Model.Driver.FirstName) || (@Model.Driver.LastName) == null)
+                                {
+                                    <text>Ingen order tildelt</text>
+                                }
+                                else
+                                {
+									@Model.Driver.FirstName @Model.Driver.LastName
+                                }
+                            </span>
+                        </div>
+
+                    </h7>
+                    <div class="mb3">
+                        <p class="card-text" style="box-sizing: border-box; padding-left: 10px;">
+                            <small class="text-muted">
+                                Order #@Model.OrderID
+                                <span style="float: right;">
+                                    Lagt til @Model.DateOrderCreate
+                                </span>
+                            </small>
+                        </p>
+                    </div>
+                    <div class="mb3">
+                        <p class="card-text" style="box-sizing: border-box; padding-left: 10px;">
+                            <small class="text-muted">
+                                @Model.Municipality, @Model.County
+                            </small>
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <small class="text-muted">
+                            Tittel:
+                        </small>
+                        <br />
+                        <h5 class="card-title">
+							@Model.TotalAmount?.ToString("F2") kr
+                        </h5>
+                        <small class="text-muted">
+                            Beskrivelse:
+                        </small>
+                        <br />
+                        <p class="card-text overflow-auto" style="height:30vh;">
+                            @Model.
+                        </p>
+                    </div>
+                 
+                    <div class="card-footer border-top-0">
+                        <div class="container" style="text-align: center;">
+                            <h1>@Model.OrderStatusDescription</h1>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <form method="post">
+                            @Html.AntiForgeryToken()
+                            @{
+                                var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                            }
+
+                            <!--Displays case handling tools based on User role-->
+                            <div class="d-flex gap-2" style="align-items: center; padding-top: 8px;">
+                                @if (User.IsInRole("Case Handler"))
+                                {
+                                    @if (Model.OrderStatusID == 1)
+                                    {
+                                        <button type="submit" formaction="@Url.Action("StartOrder", "Driver", new { id = Model.OrderID })"
+                                                class="btn btn-primary flex-fill">
+                                            Start behandling
+                                        </button>
+                                    }
+                                    else if (Model.OrderStatusID == 2 && Model.DriverId == currentUserId)
+                                    {
+                                        <button type="submit" formaction="@Url.Action("FinishOrder", "Driver", new { id = Model.OrderID})"
+                                                class="btn btn-success flex-fill"
+                                                onclick="return confirm('Er du sikker på at du vil fullføre behandlingen av denne innmeldingen?')">
+                                            Fullfør behandling
+                                        </button>
+
+                                        @if (signInManager.IsSignedIn(User) && User.IsInRole("System Administrator"))
+                                        {
+                                        <button type="button" class="btn btn-warning flex-fill" data-bs-toggle="modal" data-bs-target="#reassignModal">
+                                            Tildel sak
+                                        </button>
+                                        }
+                                    }
+
+                                    @if (Model.DriverId == currentUserId || Model.OrderStatusID == 1)
+                                    {
+                                        <button type="submit" formaction="@Url.Action("DeleteMapReport", "MapReport", new { id = Model.OrderID })"
+                                                class="btn btn-danger flex-fill"
+                                                onclick="return confirm ('Er du sikker på at du vil slette denne innmeldingen?');">
+                                            Slett innmelding
+                                        </button>
+                                    }
+                                }
+                                else if (User.IsInRole("Customer") && Model.OrderStatusID == 1)
+                                {
+                                    <button type="submit" formaction="@Url.Action("DeleteMapReport", "MapReport", new { id = Model.OrderID })"
+                                            class="btn btn-danger flex-fill"
+                                            onclick="return confirm ('Er du sikker på at du vil slette denne innmeldingen?');">
+                                        Slett innmelding
+                                    </button>
+                                }
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <p>Ingen innmelding funnet!</p>
+            }
+        </div>
+
+        <div class="col-md-8">
+            <div id="map"></div>
+
+            @if (User.IsInRole("Driver"))
+            {
+                <div class="d-flex justify-content-center mt-3">
+                    <a href="" target="_blank" id="googleMapsLink" class="btn btn-info">
+                        Åpne i Google Maps satellittvisning
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Modal for reassigning case handler -->
+<div class="modal fade" id="reassignModal" tabindex="-1" aria-labelledby="reassignModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reassignModalLabel">Tildel til annen saksbehandler</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" asp-action="AssignCaseHandler">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="OrderID" />
+                    <div class="mb-3">
+                        <label for="newCaseHandler" class="form-label">Velg saksbehandler</label>
+                        <select id="newCaseHandler" class="form-select" asp-for="DriverId" asp-items="Model.AvailableCaseHandlers"></select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tildel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="@("https://unpkg.com/@turf/turf@7.0.0/turf.min.js")"></script>
+
+    <script>
+        
+        var geoJsonData = @Html.Raw(Model.PickUpAddress);
+    </script>
+    <script src="~/js/viewReportLeaflet.js"></script>
+
 }
+

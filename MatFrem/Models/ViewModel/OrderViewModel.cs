@@ -9,7 +9,6 @@ namespace MatFrem.Models.ViewModel
         public int OrderID { get; set; }
         public DateOnly DateOrderCreate { get; set; } = DateOnly.FromDateTime(DateTime.Now);
         public string? DriverId { get; set; } //foreign key for DriverModel, this is the primary key for DriverMode
-        public string? CustomerName { get; set; }
         public int OrderStatusID { get; set; }
 
         public int? OrderQuantitySize { get; set; }
@@ -22,7 +21,10 @@ namespace MatFrem.Models.ViewModel
 
 		[DisplayFormat(DataFormatString = "{0:F2}")]
 		public decimal? TotalAmount { get; set; }
-        public string? CustomerPhoneNr { get; set;}
+
+		public string? DriverName { get; set; }
+		public string? CustomerName { get; set; }
+		public string? CustomerPhoneNr { get; set;}
 
         public string? DeliveryAddress { get; set; } = "";
 
