@@ -20,6 +20,7 @@
 /.vs/MatFrem/FileContentIndex/bf299f3a-4972-465d-ab23-68ff6555ecce.vsidx
 /.vs/MatFrem/FileContentIndex/cf63927e-c42d-4cc3-b47f-6ad98327c91a.vsidx
 /.vs/MatFrem/FileContentIndex/e07dd3b3-03e1-4e14-b2e4-8b0ed3f50348.vsidx
+<<<<<<< HEAD
 /.vs/MatFrem/CopilotIndices/0.2.1657.32929/CodeChunks.db-shm
 /MatFrem/obj/Debug/net8.0/MatFrem.csproj.AssemblyReference.cache
 /.vs/MatFrem/FileContentIndex/df17945d-cf70-4845-b0c9-4ab56742d83e.vsidx
@@ -31,3 +32,7 @@
 /.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-shm
 /.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-wal
 /MatFrem/obj/Debug/net8.0/MatFrem.csproj.AssemblyReference.cache
+=======
+/.vs/MatFrem/CopilotIndices/17.12.21.54468/CodeChunks.db-shm
+>>>>>>> 6993a6fcc41609edd3113499137c6b61af952b1d
+/.vs/MatFrem/CopilotIndices/17.12.21.54468/CodeChunks.db-shm
