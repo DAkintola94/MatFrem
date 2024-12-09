@@ -23,33 +23,56 @@ namespace MatFrem.Controllers
 			_userManager = userManager;
 		}
 		[HttpGet]
-		public async Task<IActionResult> DriverPage()
+		public async Task<IActionResult> DriverPage(int pageSize = 8, int pageNumber = 1)
 		{
-            var getOrders = await _orderRepository.GetAllOrder();
+				var totalRecords = await _productRepository.CountPage();
+				var totalPages = (int)Math.Ceiling((decimal)totalRecords / pageSize);
+
+				pageNumber = Math.Clamp(pageNumber, 1, totalPages);
+
+				ViewBag.TotalPages = totalPages;
+				ViewBag.CurrentPage = pageNumber;
+				ViewBag.PageSize = pageSize;
+
+				var getOrders = await _orderRepository.GetAllOrder(pageNumber, pageSize);
+
             if (getOrders != null)
             {
-                var orderViewModels = getOrders.Select(o => new OrderViewModel
+
+				//Here, we just attach our values in the viewmodel, to what is in the database, then send it to the view. 
+				//We are in the GET method, so we are just getting the data from the database, and sending it to the view. This happens when the page is loaded.
+				var orderViewModels = getOrders.Select(o => new OrderViewModel
                 {
-                    CustomerName = o.CustomerName ?? string.Empty,
+					OrderID = o.OrderID, //need to pass and attach the ID from DB to the view model, remember that when working with view model
+					CustomerName = o.CustomerName ?? string.Empty,
 					CustomerPhoneNr = o.CustomerPhoneNr ?? string.Empty,
                     ProductName = o.ProductName ?? string.Empty,
 					TotalAmount = o.TotalPrice,
+					OrderQuantitySize = o.OrderItem,
 					OrderStatusDescription = o.OrderStatus?.StatusDescription ?? string.Empty,
                     PickUpAddress = o.PickUpAddress ?? string.Empty,
                     ItemCategory = o.ProductCategory ?? string.Empty,
 					DateOrderCreate = o.OrderCreatedDate,
 					DeliveryAddress = o.DeliveryAddress ?? string.Empty
-
                 }).ToList();
                 return View(orderViewModels);
             }
             return View();
         }
 
-		[HttpPost]
+		[HttpGet]
 		public async Task<IActionResult> StartOrder(int id)
 		{
-            var getOrders = await _orderRepository.GetOrderByID(id);
+			Console.WriteLine($"{id} is the primarykey in the database");
+			var getOrders = await _orderRepository.GetOrderByID(id);
+			return View(getOrders);
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> StartOrder(int id, int? any)
+		{
+            var getOrders = await _orderRepository.GetOrderByID(id); //worked now because we attached the id to the view in DriverPage method. 
+
             var currentUser = await _userManager.GetUserAsync(User); //we can just use this since its only driver than can use this controller/site
 
             if (getOrders == null)

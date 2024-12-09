@@ -20,7 +20,7 @@ namespace MatFrem.Models.DomainModel
         public string? ProductName { get; set; }
         public string? PickUpAddress { get; set; }
         public string? ProductCategory { get; set; }
-        public int OrderItem { get; set; }
+        public int? OrderItem { get; set; }
         public ApplicationUser? Customer { get; set; } //navigation property for CustomerModel, namely, OrderModel has a Customer
         public ApplicationUser? Driver { get; set; } //navigation property for DriverModel, namely, OrderModel has a Driver. To get all of Driver properties/inf
         [ValidateNever]

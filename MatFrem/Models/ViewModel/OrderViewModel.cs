@@ -1,4 +1,5 @@
 ﻿using MatFrem.Models.DomainModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace MatFrem.Models.ViewModel
 {
@@ -10,13 +11,17 @@ namespace MatFrem.Models.ViewModel
         public string? DriverId { get; set; } //foreign key for DriverModel, this is the primary key for DriverMode
         public string? CustomerName { get; set; }
         public int OrderStatusID { get; set; }
+
+        public int? OrderQuantitySize { get; set; }
         public string? OrderStatusDescription { get; set; }
 
         public string? PickUpAddress { get; set; }
         public int ProductID { get; set; }
         public string? ProductName { get; set; }
         public double? ProductPrice { get; set; }
-        public decimal? TotalAmount { get; set; }
+
+		[DisplayFormat(DataFormatString = "{0:F2}")]
+		public decimal? TotalAmount { get; set; }
         public string? CustomerPhoneNr { get; set;}
 
         public string? DeliveryAddress { get; set; } = "";
