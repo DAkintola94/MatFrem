@@ -563,6 +563,14 @@
             },
             "Patterns": null
           },
+          "edit.svg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/edit.svg"
+            },
+            "Patterns": null
+          },
           "error404.jpg": {
             "Children": null,
             "Asset": {
@@ -608,6 +616,14 @@
             "Asset": {
               "ContentRootIndex": 0,
               "SubPath": "Images/hero.png"
+            },
+            "Patterns": null
+          },
+          "info.svg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "Images/info.svg"
             },
             "Patterns": null
           },

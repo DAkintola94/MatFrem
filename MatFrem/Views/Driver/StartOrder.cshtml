@@ -51,7 +51,7 @@
                     <div class="mb3">
                         <p class="card-text" style="box-sizing: border-box; padding-left: 10px;">
                             <small class="text-muted">
-                                @Model.Municipality, @Model.County
+                                @Model.PickUpAddress, @Model.DeliveryAddress
                             </small>
                         </p>
                     </div>
@@ -86,7 +86,7 @@
 
                             <!--Displays case handling tools based on User role-->
                             <div class="d-flex gap-2" style="align-items: center; padding-top: 8px;">
-                                @if (User.IsInRole("Case Handler"))
+                                @if (User.IsInRole("System"))
                                 {
                                     @if (Model.OrderStatusID == 1)
                                     {
@@ -108,21 +108,21 @@
                                         <button type="button" class="btn btn-warning flex-fill" data-bs-toggle="modal" data-bs-target="#reassignModal">
                                             Tildel sak
                                         </button>
+
+                                            <button type="submit" formaction="@Url.Action("DeleteOrder", "Order", new { id = Model.OrderID })"
+                                                    class="btn btn-danger flex-fill"
+                                                    onclick="return confirm ('Er du sikker på at du vil slette denne orderen?');">
+                                                Slett order
+                                            </button>
+
                                         }
                                     }
 
-                                    @if (Model.DriverId == currentUserId || Model.OrderStatusID == 1)
-                                    {
-                                        <button type="submit" formaction="@Url.Action("DeleteMapReport", "MapReport", new { id = Model.OrderID })"
-                                                class="btn btn-danger flex-fill"
-                                                onclick="return confirm ('Er du sikker på at du vil slette denne innmeldingen?');">
-                                            Slett innmelding
-                                        </button>
-                                    }
+                                    
                                 }
-                                else if (User.IsInRole("Customer") && Model.OrderStatusID == 1)
+                                else if (User.IsInRole("System Administrator") && Model.OrderStatusID == 1)
                                 {
-                                    <button type="submit" formaction="@Url.Action("DeleteMapReport", "MapReport", new { id = Model.OrderID })"
+                                    <button type="submit" formaction="@Url.Action("DeleteOrder", "Order", new { id = Model.OrderID })"
                                             class="btn btn-danger flex-fill"
                                             onclick="return confirm ('Er du sikker på at du vil slette denne innmeldingen?');">
                                         Slett innmelding
@@ -168,7 +168,7 @@
                     <input type="hidden" asp-for="OrderID" />
                     <div class="mb-3">
                         <label for="newCaseHandler" class="form-label">Velg saksbehandler</label>
-                        <select id="newCaseHandler" class="form-select" asp-for="DriverId" asp-items="Model.AvailableCaseHandlers"></select>
+                        <select id="newCaseHandler" class="form-select" asp-for="DriverId" asp-items="Model.AvailableDrivers"></select>
                     </div>
                     <button type="submit" class="btn btn-primary">Tildel</button>
                 </form>
