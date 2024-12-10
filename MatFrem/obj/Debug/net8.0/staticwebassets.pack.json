@@ -1,612 +1,608 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\black\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\Eier\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MatFrem.bundle.scp.css",
-      "PackagePath": "staticwebassets\\MatFrem.hhmvmwysgk.bundle.scp.css"
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MatFrem.bundle.scp.css",
+      "PackagePath": "staticwebassets\\MatFrem.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\BGprofileBlack.svg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\BGprofileBlack.svg",
       "PackagePath": "staticwebassets\\Images\\BGprofileBlack.svg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\account.svg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\account.svg",
       "PackagePath": "staticwebassets\\Images\\account.svg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\arrow_icon.png",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\arrow_icon.png",
       "PackagePath": "staticwebassets\\Images\\arrow_icon.png"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\backgroundImageLogin.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\backgroundImageLogin.jpg",
       "PackagePath": "staticwebassets\\Images\\backgroundImageLogin.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\bg.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\bg.jpg",
       "PackagePath": "staticwebassets\\Images\\bg.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\create.png",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\create.png",
       "PackagePath": "staticwebassets\\Images\\create.png"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\deliverybackground.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\deliverybackground.jpg",
       "PackagePath": "staticwebassets\\Images\\deliverybackground.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\edit.svg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\edit.svg",
       "PackagePath": "staticwebassets\\Images\\edit.svg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\error404.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\error404.jpg",
       "PackagePath": "staticwebassets\\Images\\error404.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\foodsmiley.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\foodsmiley.jpg",
       "PackagePath": "staticwebassets\\Images\\foodsmiley.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\generalbg.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\generalbg.jpg",
       "PackagePath": "staticwebassets\\Images\\generalbg.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\geoMap.svg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\geoMap.svg",
       "PackagePath": "staticwebassets\\Images\\geoMap.svg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\green-arrow.svg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\green-arrow.svg",
       "PackagePath": "staticwebassets\\Images\\green-arrow.svg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\hero.png",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\hero.png",
       "PackagePath": "staticwebassets\\Images\\hero.png"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\info.svg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\info.svg",
       "PackagePath": "staticwebassets\\Images\\info.svg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\login.png",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\login.png",
       "PackagePath": "staticwebassets\\Images\\login.png"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\logout.svg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\logout.svg",
       "PackagePath": "staticwebassets\\Images\\logout.svg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\marketBG.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\marketBG.jpg",
       "PackagePath": "staticwebassets\\Images\\marketBG.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\4ad89ac2-31a5-46cc-92f9-0577878be528.png",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\4ad89ac2-31a5-46cc-92f9-0577878be528.png",
       "PackagePath": "staticwebassets\\Images\\product\\4ad89ac2-31a5-46cc-92f9-0577878be528.png"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\BreakfastCelery.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\BreakfastCelery.jpg",
       "PackagePath": "staticwebassets\\Images\\product\\BreakfastCelery.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\FruitnVegs.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\FruitnVegs.jpg",
       "PackagePath": "staticwebassets\\Images\\product\\FruitnVegs.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\a079c8de-8020-40a4-970b-e8cb4fc57aa3.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\a079c8de-8020-40a4-970b-e8cb4fc57aa3.jpg",
       "PackagePath": "staticwebassets\\Images\\product\\a079c8de-8020-40a4-970b-e8cb4fc57aa3.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\bfa7ace8-b21a-4747-ac8b-f16a747cf253.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\bfa7ace8-b21a-4747-ac8b-f16a747cf253.jpg",
       "PackagePath": "staticwebassets\\Images\\product\\bfa7ace8-b21a-4747-ac8b-f16a747cf253.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\drygood.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\drygood.jpg",
       "PackagePath": "staticwebassets\\Images\\product\\drygood.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\f834283e-f4c3-4620-8d08-9af41bf43d3b.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\f834283e-f4c3-4620-8d08-9af41bf43d3b.jpg",
       "PackagePath": "staticwebassets\\Images\\product\\f834283e-f4c3-4620-8d08-9af41bf43d3b.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\pastry.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\pastry.jpg",
       "PackagePath": "staticwebassets\\Images\\product\\pastry.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\seafood.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\seafood.jpg",
       "PackagePath": "staticwebassets\\Images\\product\\seafood.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\vegetarian.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\vegetarian.jpg",
       "PackagePath": "staticwebassets\\Images\\product\\vegetarian.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\profilepagepic.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\profilepagepic.jpg",
       "PackagePath": "staticwebassets\\Images\\profilepagepic.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\profilepagepicFirst.jpg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\profilepagepicFirst.jpg",
       "PackagePath": "staticwebassets\\Images\\profilepagepicFirst.jpg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\right_img.png",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\right_img.png",
       "PackagePath": "staticwebassets\\Images\\right_img.png"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\shopping_bag.svg",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\shopping_bag.svg",
       "PackagePath": "staticwebassets\\Images\\shopping_bag.svg"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\RegsLoginStyle.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\RegsLoginStyle.css",
       "PackagePath": "staticwebassets\\css\\RegsLoginStyle.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\buystyle.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\buystyle.css",
       "PackagePath": "staticwebassets\\css\\buystyle.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\formscheme.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\formscheme.css",
       "PackagePath": "staticwebassets\\css\\formscheme.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\homeStyle.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\homeStyle.css",
       "PackagePath": "staticwebassets\\css\\homeStyle.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\mainbgpicture.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\mainbgpicture.css",
       "PackagePath": "staticwebassets\\css\\mainbgpicture.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\marketstyle.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\marketstyle.css",
       "PackagePath": "staticwebassets\\css\\marketstyle.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\smallmap.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\smallmap.css",
       "PackagePath": "staticwebassets\\css\\smallmap.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\cartGeo.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\cartGeo.js",
       "PackagePath": "staticwebassets\\js\\cartGeo.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geoLocation.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geoLocation.js",
       "PackagePath": "staticwebassets\\js\\geoLocation.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geoLocationProductIndex.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geoLocationProductIndex.js",
       "PackagePath": "staticwebassets\\js\\geoLocationProductIndex.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geostringConvert.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geostringConvert.js",
       "PackagePath": "staticwebassets\\js\\geostringConvert.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\shopcart.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\shopcart.js",
       "PackagePath": "staticwebassets\\js\\shopcart.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\sortSearch.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\sortSearch.js",
       "PackagePath": "staticwebassets\\js\\sortSearch.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\tinymce.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\tinymce.js",
       "PackagePath": "staticwebassets\\js\\tinymce.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\Eier\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MatFrem.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MatFrem.Microsoft.AspNetCore.StaticWebAssets.props",

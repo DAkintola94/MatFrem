@@ -1,23 +1,39 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+﻿# Visual Studio files
+/.vs/
+/.vs/
 
-/.vs/MatFrem/FileContentIndex/30c75486-2402-4690-88d3-0848466fd66f.vsidx
-/.vs/MatFrem/FileContentIndex/45e17827-3763-4e72-9bd7-0dce055e9201.vsidx
-/.vs/MatFrem/FileContentIndex/539aa4d1-66bd-4b18-a715-ae0b0030059f.vsidx
-/.vs/MatFrem/FileContentIndex/569d102f-e21a-49af-a8f6-123af57922d7.vsidx
-/.vs/MatFrem/FileContentIndex/9438807d-b9d1-4e70-a67a-9ccb26550e8a.vsidx
-/.vs/MatFrem/FileContentIndex/30c75486-2402-4690-88d3-0848466fd66f.vsidx
-/.vs/MatFrem/FileContentIndex/45e17827-3763-4e72-9bd7-0dce055e9201.vsidx
-/.vs/MatFrem/FileContentIndex/539aa4d1-66bd-4b18-a715-ae0b0030059f.vsidx
-/.vs/MatFrem/FileContentIndex/569d102f-e21a-49af-a8f6-123af57922d7.vsidx
-/.vs/MatFrem/FileContentIndex/9438807d-b9d1-4e70-a67a-9ccb26550e8a.vsidx
-/.vs/MatFrem/copilot-chat/7601ba85/sessions/c87aea22-c1cd-4269-b449-c79a4c9a8109
-/.vs/MatFrem/copilot-chat/7601ba85/sessions/57b8fb3b-f4ca-42dd-8a48-bf9059ebdfb4
-/.vs/MatFrem/copilot-chat/7601ba85/sessions/290bda36-4c36-4358-ac1e-92d870c27495
-/.vs/MatFrem/FileContentIndex/387ff2ef-a6d9-4445-a2e7-0942ae21c7bf.vsidx
-/.vs/MatFrem/FileContentIndex/50a63125-b7b6-4916-ba62-b19a9edaba2a.vsidx
-/.vs/MatFrem/FileContentIndex/bf299f3a-4972-465d-ab23-68ff6555ecce.vsidx
-/.vs/MatFrem/FileContentIndex/cf63927e-c42d-4cc3-b47f-6ad98327c91a.vsidx
-/.vs/MatFrem/FileContentIndex/e07dd3b3-03e1-4e14-b2e4-8b0ed3f50348.vsidx
-/.vs/MatFrem/CopilotIndices/17.12.21.54468/CodeChunks.db-shm
+# Build directories
+/bin/
+/obj/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+
+# Temporary files and caches
+*.vsidx
+
+# MatFrem specific files and indexes
+/.vs/MatFrem/FileContentIndex/
+/.vs/MatFrem/copilot-chat/
+/.vs/MatFrem/CopilotIndices/
+
+# Cache files
+/.vs/MatFrem/CopilotIndices/0.2.1657.32929/CodeChunks.db-shm
+/.vs/MatFrem/CopilotIndices/0.2.1657.32929/CodeChunks.db-wal
+/.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db
+/.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-shm
+/.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-wal
+
+# Specific ignored files from MatFrem
+/MatFrem/obj/Debug/net8.0/MatFrem.csproj.AssemblyReference.cache
+/MatFrem/obj/Debug/net8.0/MatFrem.AssemblyInfo.cs
+/MatFrem/obj/Debug/net8.0/MatFrem.AssemblyInfoInputs.cache
+/.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-wal
+/.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-wal
+/.vs/MatFrem/v17/DocumentLayout.backup.json
+/.vs/MatFrem/v17/DocumentLayout.json
+/.vs/MatFrem/copilot-chat/7601ba85/sessions/318b1f89-d5ec-41c9-875f-00330766b8b7
+/.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-shm
+/.vs/MatFrem/copilot-chat/7601ba85/sessions/318b1f89-d5ec-41c9-875f-00330766b8b7
