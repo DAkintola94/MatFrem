@@ -129,8 +129,6 @@ namespace MatFrem.Controllers
             return RedirectToAction("YourOrder");
         }
 
-
-
 		[HttpGet]
 		public async Task<ActionResult> ActiveDeliveries(int id, OrderViewModel orderViewModel)
 		{
@@ -145,8 +143,6 @@ namespace MatFrem.Controllers
                 };
 
 				return View(orderModel);
-
-
 			}
 			return View();
 		}

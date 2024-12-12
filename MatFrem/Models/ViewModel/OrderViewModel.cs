@@ -22,7 +22,9 @@ namespace MatFrem.Models.ViewModel
 		[DisplayFormat(DataFormatString = "{0:F2}")]
 		public decimal? TotalAmount { get; set; }
 		public string? DriverName { get; set; }
-		public string? CustomerName { get; set; }
+
+        public string? CustomerId { get; set; } 
+        public string? CustomerName { get; set; }
 		public string? CustomerPhoneNr { get; set;}
         public string? DeliveryAddress { get; set; } = "";
         public string? ItemCategory { get; set; }

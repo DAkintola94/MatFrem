@@ -57,5 +57,36 @@ namespace MatFrem.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public async Task<ActionResult> OrderHistory()
+        {
+            var getOrders = await _orderRepository.GetAllOrder();
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (getOrders != null && currentUser != null)
+            {
+                    var orderViewModel = getOrders
+                    .Where(o => o.CustomerId == currentUser.Id) //this is linq to check if the customer id matches. 
+                                                                //also, linq or loop is needed to get properties in a list
+                    .Select(o => new OrderViewModel //getOrders is already taking from db OrderModel, now we simply map it to OrderViewModel
+                    {
+                        CustomerId = o.CustomerId,
+                        CustomerName = o.CustomerName,
+                        OrderID = o.OrderID,
+                        ProductName = o.ProductName,
+                        TotalAmount = o.TotalPrice,
+                        DateOrderCreate = o.OrderCreatedDate,
+                        OrderStatusDescription = o.OrderStatus?.StatusDescription,
+                        DeliveryAddress = o.DeliveryAddress
+                    }).ToList();
+
+                    if(orderViewModel.Any()) //you need to use a loop or LINQ to get properties in a list
+                    {
+                            return View(orderViewModel);
+                    }
+            }
+            return NotFound();
+        }
     }
 }
