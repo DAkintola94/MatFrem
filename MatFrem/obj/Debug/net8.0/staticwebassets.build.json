@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xFZntLmFYT7TshClB3I8ggtisStA+h+JMG1WpURYaYA=",
+  "Hash": "q/T/KBOY4fVqHFttGrkoJ3OOoAMm2bgwh1DCqBynmFk=",
   "Source": "MatFrem",
   "BasePath": "_content/MatFrem",
   "Mode": "Default",
@@ -1842,6 +1842,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\shopping_bag.svg"
+    },
+    {
+      "Identity": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\AddToMap.js",
+      "SourceId": "MatFrem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\",
+      "BasePath": "_content/MatFrem",
+      "RelativePath": "js/AddToMap#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "a91xryzmv5",
+      "Integrity": "YggvAc9M1CbJLIGytkybrtIcziEZJxH/rTkzdlVUH14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\AddToMap.js"
     },
     {
       "Identity": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\cartGeo.js",
@@ -9193,6 +9214,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-LoZS9vV/pJrg8RnQUFbue4qHH1yNSNj0NnZNgWHpzdA="
+        }
+      ]
+    },
+    {
+      "Route": "js/AddToMap.a91xryzmv5.js",
+      "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\AddToMap.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1296"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YggvAc9M1CbJLIGytkybrtIcziEZJxH/rTkzdlVUH14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Dec 2024 21:52:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a91xryzmv5"
+        },
+        {
+          "Name": "label",
+          "Value": "js/AddToMap.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YggvAc9M1CbJLIGytkybrtIcziEZJxH/rTkzdlVUH14="
+        }
+      ]
+    },
+    {
+      "Route": "js/AddToMap.js",
+      "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\AddToMap.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1296"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YggvAc9M1CbJLIGytkybrtIcziEZJxH/rTkzdlVUH14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Dec 2024 21:52:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YggvAc9M1CbJLIGytkybrtIcziEZJxH/rTkzdlVUH14="
         }
       ]
     },

@@ -18,6 +18,8 @@ namespace MatFrem.Models.ViewModel
         public string DeliveryAddress { get; set; } = "";
         public string PaymentMethod { get; set; } = "";
         public int CartSize { get; set; } 
+
+        public string? OrderStatus { get; set; }
         public string? CustomerId { get; set; }
         public string? CustomerName { get; set; }
         public string? CustomerPhoneNr { get; set; }

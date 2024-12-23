@@ -1,6 +1,9 @@
 ﻿@using System.Security.Claims
 @using MatFrem.Models.ViewModel
 @model OrderViewModel
+﻿@using Microsoft.AspNetCore.Identity
+@using MatFrem.Models.DomainModel
+@inject SignInManager<ApplicationUser> signInManager
 
 <div class="container py-5">
     <div class="row">
@@ -64,7 +67,7 @@
 
                     <div class="card-footer border-top-0">
                         <div class="container" style="text-align: center;">
-                            <h1>@Model.StatusDescription</h1>
+                            <h1>@Model.OrderStatusDescription</h1>
                         </div>
                     </div>
                     <div class="container">
@@ -76,44 +79,41 @@
 
                             <!--Displays case handling tools based on User role-->
                             <div class="d-flex gap-2" style="align-items: center; padding-top: 8px;">
-                                @if (User.IsInRole("Case Handler"))
+                                @if (User.IsInRole("Driver"))
                                 {
-                                    @if (Model.MapReportStatusId == 1)
+                                    @if (Model.OrderStatusID == 1)
                                     {
-                                        <button type="submit" formaction="@Url.Action("StartHandlingMapReport", "MapReport", new { id = Model.MapReportId })"
-                                                class="btn btn-primary flex-fill">
+                                        <button type="submit" formaction="@Url.Action("StartOrder", "Driver", new { id = Model.OrderID })"
+                                        class="btn btn-primary flex-fill">
                                             Start behandling
                                         </button>
                                     }
-                                    else if (Model.MapReportStatusId == 2 && Model.CaseHandlerId == currentUserId)
+                                    else if (Model.OrderStatusID == 2 && Model.DriverId == currentUserId)
                                     {
-                                        <button type="submit" formaction="@Url.Action("FinishHandlingMapReport", "MapReport", new { id = Model.MapReportId })"
-                                                class="btn btn-success flex-fill"
-                                                onclick="return confirm('Er du sikker på at du vil fullføre behandlingen av denne innmeldingen?')">
+                                        <button type="submit" formaction="@Url.Action("FinishOrder", "Driver", new { id = Model.OrderID })"
+                                        class="btn btn-success flex-fill"
+                                        onclick="return confirm('Er du sikker på at du vil fullføre behandlingen?')">
                                             Fullfør behandling
                                         </button>
-                                        <button type="button" class="btn btn-warning flex-fill" data-bs-toggle="modal" data-bs-target="#reassignModal">
-                                            Tildel sak
-                                        </button>
+
+                                        @if (signInManager.IsSignedIn(User) && User.IsInRole("System Administrator"))
+                                        {
+                                            <button type="button" class="btn btn-warning flex-fill" data-bs-toggle="modal" data-bs-target="#reassignModal">
+												Tildel order til annen sjåfør
+                                            </button>
+                                        }
                                     }
 
-                                    @if (Model.CaseHandlerId == currentUserId || Model.MapReportStatusId == 1)
+                                    @if (signInManager.IsSignedIn(User) && User.IsInRole("System Administrator"))
                                     {
-                                        <button type="submit" formaction="@Url.Action("DeleteMapReport", "MapReport", new { id = Model.MapReportId })"
+                                        <button type="submit" formaction="@Url.Action("DeleteOrder", "Driver", new { id = Model.OrderID })"
                                                 class="btn btn-danger flex-fill"
-                                                onclick="return confirm ('Er du sikker på at du vil slette denne innmeldingen?');">
-                                            Slett innmelding
+                                                onclick="return confirm ('Er du sikker på at du vil slette orderen?');">
+                                            Slett order
                                         </button>
                                     }
                                 }
-                                else if (User.IsInRole("Submitter") && Model.MapReportStatusId == 1)
-                                {
-                                    <button type="submit" formaction="@Url.Action("DeleteMapReport", "MapReport", new { id = Model.MapReportId })"
-                                            class="btn btn-danger flex-fill"
-                                            onclick="return confirm ('Er du sikker på at du vil slette denne innmeldingen?');">
-                                        Slett innmelding
-                                    </button>
-                                }
+                             
                             </div>
                         </form>
                     </div>
@@ -140,28 +140,6 @@
     </div>
 </div>
 
-<!-- Modal for reassigning case handler -->
-<div class="modal fade" id="reassignModal" tabindex="-1" aria-labelledby="reassignModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="reassignModalLabel">Tildel til annen saksbehandler</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form method="post" asp-action="AssignCaseHandler">
-                    @Html.AntiForgeryToken()
-                    <input type="hidden" asp-for="OrderID" />
-                    <div class="mb-3">
-                        <label for="newCaseHandler" class="form-label">Velg saksbehandler</label>
-                        <select id="newCaseHandler" class="form-select" asp-for="CaseHandlerId" asp-items="Model.AvailableCaseHandlers"></select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Tildel</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 @section Scripts
 {
@@ -172,6 +150,6 @@
     <script>
         var geoJsonData = @Html.Raw(Model.DeliveryAddress);
     </script>
-    <script src="~/js/placeholder.js"></script>
+    <script src="~/js/AddToMap.js"></script>
 
 }

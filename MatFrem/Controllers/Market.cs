@@ -187,6 +187,7 @@ namespace MatFrem.Controllers
             }
 
             //since we have already gotten our model sent from another method (index), we can just attach the values to the order and add to the database. 
+            
 
             OrderModel orderModel = new OrderModel
             {
@@ -196,7 +197,7 @@ namespace MatFrem.Controllers
                 CustomerName = scViewModel.CustomerName,
                 OrderCreatedDate = DateOnly.FromDateTime(DateTime.Now),
                 PickUpAddress = scViewModel.PickUpAddress,
-                OrderStatusID = 1,
+                OrderStatusID = 1, //Setting the order status to 1 (default, when the order is purchased), which is "Order received"
                 OrderItem = scViewModel.CartSize,
                 TotalPrice = scViewModel.Total,
                 PaymentMethod = scViewModel.PaymentMethod,

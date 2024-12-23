@@ -83,6 +83,7 @@ wwwroot\Images\profilepagepic.jpg
 wwwroot\Images\profilepagepicFirst.jpg
 wwwroot\Images\right_img.png
 wwwroot\Images\shopping_bag.svg
+wwwroot\js\AddToMap.js
 wwwroot\js\cartGeo.js
 wwwroot\js\geoLocation.js
 wwwroot\js\geoLocationProductIndex.js

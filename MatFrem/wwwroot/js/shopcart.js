@@ -47,7 +47,7 @@ function addToCart(button, id) {
         cart[id] = Number(quantity) + 1;
     }
     saveCart(cart);
-    button.innerHTML = "Added <i class='bi bi-check-lg'></i>";
+    button.innerHTML = "Lagt til <i class='bi bi-check-lg'></i>";
 
     let cartSize = 0;
     for (var cartItem of Object.entries(cart)) {
@@ -55,7 +55,6 @@ function addToCart(button, id) {
         if (isNaN(quantity)) continue;
 
         cartSize += Number(quantity);
-
 
     }
 
