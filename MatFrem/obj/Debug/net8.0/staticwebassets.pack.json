@@ -345,6 +345,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\AddToMap.js",
+      "PackagePath": "staticwebassets\\js\\AddToMap.js"
+    },
+    {
       "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\cartGeo.js",
       "PackagePath": "staticwebassets\\js\\cartGeo.js"
     },

@@ -876,6 +876,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"y8xmwe14so"},{"Name":"integrity","Value":"sha256-LoZS9vV/pJrg8RnQUFbue4qHH1yNSNj0NnZNgWHpzdA="},{"Name":"label","Value":"_content/MatFrem/Images/shopping_bag.svg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1697"},{"Name":"Content-Type","Value":"image/svg\u002Bxml"},{"Name":"ETag","Value":"\u0022LoZS9vV/pJrg8RnQUFbue4qHH1yNSNj0NnZNgWHpzdA=\u0022"},{"Name":"Last-Modified","Value":"Sat, 30 Nov 2024 00:16:25 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MatFrem/js/AddToMap.a91xryzmv5.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\AddToMap.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"a91xryzmv5"},{"Name":"integrity","Value":"sha256-YggvAc9M1CbJLIGytkybrtIcziEZJxH/rTkzdlVUH14="},{"Name":"label","Value":"_content/MatFrem/js/AddToMap.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1296"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022YggvAc9M1CbJLIGytkybrtIcziEZJxH/rTkzdlVUH14=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 21:52:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MatFrem/js/AddToMap.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\AddToMap.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-YggvAc9M1CbJLIGytkybrtIcziEZJxH/rTkzdlVUH14="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1296"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022YggvAc9M1CbJLIGytkybrtIcziEZJxH/rTkzdlVUH14=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 21:52:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MatFrem/js/bootstrap.bundle.6cfz1n2cew.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\bootstrap.bundle.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
