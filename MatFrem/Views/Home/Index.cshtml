@@ -15,7 +15,7 @@
                 @if(signInManager.IsSignedIn(User))
                     {
                         <p>
-                            Velkommen @User?.Identity?.Name
+                            Velkommen: @User?.Identity?.Name
                         </p>
                     }
                 @if(!signInManager.IsSignedIn(User))
