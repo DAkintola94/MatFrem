@@ -151,7 +151,7 @@
             <div class="modal-body">
                 <form method="post" asp-action="AssignCaseHandler">
                     @Html.AntiForgeryToken()
-                    <input type="hidden" asp-for="MapReportId" />
+                    <input type="hidden" asp-for="OrderID" />
                     <div class="mb-3">
                         <label for="newCaseHandler" class="form-label">Velg saksbehandler</label>
                         <select id="newCaseHandler" class="form-select" asp-for="CaseHandlerId" asp-items="Model.AvailableCaseHandlers"></select>
