@@ -1,45 +1,53 @@
-﻿# Visual Studio files
+﻿# Ignore Visual Studio files
 /.vs/
 /.vs/
 
-# Build directories
+# Ignore build directories
 /bin/
 /obj/
 
-# User-specific files
+# Ignore user-specific files
 *.user
 *.userosscache
 *.suo
 
-# Temporary files and caches
+# Ignore Visual Studio temporary files
 *.vsidx
 
-# MatFrem specific files and indexes
-/.vs/MatFrem/FileContentIndex/
-/.vs/MatFrem/copilot-chat/
-/.vs/MatFrem/CopilotIndices/
+# Ignore Visual Studio cache and other auto-generated files
+*.backup.json
+*.json
+*.v2
+*.bin
 
-# Cache files
-/.vs/MatFrem/CopilotIndices/0.2.1657.32929/CodeChunks.db-shm
-/.vs/MatFrem/CopilotIndices/0.2.1657.32929/CodeChunks.db-wal
-/.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db
-/.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-shm
-/.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-wal
+# Ignore Copilot auto-generated files
+/.vs/*/CopilotIndices/
+/.vs/*/copilot-chat/
+/.vs/*/FileContentIndex/
 
-# Specific ignored files from MatFrem
-/MatFrem/obj/Debug/net8.0/MatFrem.csproj.AssemblyReference.cache
-/MatFrem/obj/Debug/net8.0/MatFrem.AssemblyInfo.cs
-/MatFrem/obj/Debug/net8.0/MatFrem.AssemblyInfoInputs.cache
-/.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-wal
-/.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-wal
+# Ignore specific Copilot files
+/.vs/*/CopilotIndices/*/CodeChunks.db
+/.vs/*/CopilotIndices/*/CodeChunks.db-shm
+/.vs/*/CopilotIndices/*/CodeChunks.db-wal
+/.vs/*/CopilotIndices/*/SemanticSymbols.db
+/.vs/*/CopilotIndices/*/SemanticSymbols.db-shm
+/.vs/*/CopilotIndices/*/SemanticSymbols.db-wal
+
+# Ignore Visual Studio Document Layout backups
+/.vs/*/v*/DocumentLayout.backup.json
+/.vs/*/v*/DocumentLayout.json
+
+# Ignore MatFrem-specific generated files
+/MatFrem/obj/
+/MatFrem/bin/
+*.metadata.v9.bin
+*.projects.v9.bin
+*.strings.v9.bin
+/.vs/MatFrem/
+
+# Catch-all for Visual Studio and Copilot auto-generated files
+/.vs/**/*
+/.vs/MatFrem/v17/.futdcache.v2
+/.vs/MatFrem/v17/.suo
 /.vs/MatFrem/v17/DocumentLayout.backup.json
 /.vs/MatFrem/v17/DocumentLayout.json
-/.vs/MatFrem/copilot-chat/7601ba85/sessions/318b1f89-d5ec-41c9-875f-00330766b8b7
-/.vs/MatFrem/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-shm
-/.vs/MatFrem/copilot-chat/7601ba85/sessions/318b1f89-d5ec-41c9-875f-00330766b8b7
-/.vs/MatFrem/CopilotIndices/17.12.21.54468/CodeChunks.db
-/.vs/MatFrem/CopilotIndices/17.12.21.54468/CodeChunks.db-wal
-/.vs/MatFrem/CopilotIndices/17.12.21.54468/SemanticSymbols.db
-/.vs/MatFrem/CopilotIndices/17.12.21.54468/SemanticSymbols.db-shm
-/.vs/MatFrem/CopilotIndices/17.12.21.54468/SemanticSymbols.db-wal
-/.vs/MatFrem/DesignTimeBuild/.dtbcache.v2
