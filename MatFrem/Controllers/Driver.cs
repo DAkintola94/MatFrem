@@ -62,12 +62,13 @@ namespace MatFrem.Controllers
         }
 
 		[HttpGet]
-		public async Task<IActionResult> StartOrder(int id)
+		public async Task<IActionResult> OrderOverview(int id)
 		{
 			
 			var getOrders = await _orderRepository.GetOrderByID(id);
+			var currentUser = await _userManager.GetUserAsync(User); 
 
-			if(getOrders != null)
+            if (getOrders != null && currentUser!= null)
 			{
 				OrderViewModel orderViewModel = new OrderViewModel //we can simply attach to view because GetORderById is not ienumerable (list) in the repository
 				{
@@ -81,8 +82,9 @@ namespace MatFrem.Controllers
 					PickUpAddress = getOrders.PickUpAddress ?? string.Empty,
 					ItemCategory = getOrders.ProductCategory ?? string.Empty,
 					DateOrderCreate = getOrders.OrderCreatedDate,
-					DeliveryAddress = getOrders.DeliveryAddress ?? string.Empty
-				};
+					DeliveryAddress = getOrders.DeliveryAddress ?? string.Empty,
+                    DriverName = currentUser.FirstName + " " + currentUser.LastName //attaching the driver name to the current driver(user) logged in
+                };
 
                 return View(orderViewModel); //pass the model we have attached to values from the DB, and send it to view
             }
@@ -102,12 +104,12 @@ namespace MatFrem.Controllers
                 return View();
             }
 
-            getOrders.OrderStatusID = 2;
+            getOrders.OrderStatusID = 2; //we are changing the status of the order to 2, which is "On the way"
             getOrders.DriverId = currentUser.Id; //we attaching the "currentuser, aka driver" to the order, only driver can use this method anyway
-            getOrders.Driver = currentUser;
+            getOrders.Driver = currentUser; 
 
             await _orderRepository.UpdateOrder(getOrders);
-            return RedirectToAction("YourOrder");
+            return RedirectToAction("OrderOverview", new {id}); //redirect to the OrderOverview page, with the id of the order
         }
 
 		[HttpPost]

@@ -1,7 +1,4 @@
-﻿﻿@using Microsoft.AspNetCore.Identity
-@using MatFrem.Models.DomainModel
-@inject SignInManager<ApplicationUser> signInManager
-@using System.Security.Claims
+﻿@using System.Security.Claims
 @using MatFrem.Models.ViewModel
 @model OrderViewModel
 
@@ -15,7 +12,7 @@
                     <h7 class="card-header border-bottom-0">
                         <div class="container">
                             <small class="text-muted">
-                                Kunde bestilling
+                                Kjøper
                             </small>
                             <span style="float: right;">
                                 <small class="text-muted">
@@ -26,13 +23,13 @@
                         <div class="container">
                             @Model.CustomerName
                             <span style="float: right;">
-                                @if (!string.IsNullOrEmpty(@Model.Driver.FirstName) || (@Model.Driver.LastName) == null)
+                                @if (@Model.DriverName == null)
                                 {
-                                    <text>Ingen order tildelt</text>
+                                    <text>Ingen tildelt</text>
                                 }
                                 else
                                 {
-									@Model.Driver.FirstName @Model.Driver.LastName
+                                    @Model.DriverName
                                 }
                             </span>
                         </div>
@@ -41,17 +38,10 @@
                     <div class="mb3">
                         <p class="card-text" style="box-sizing: border-box; padding-left: 10px;">
                             <small class="text-muted">
-                                Order #@Model.OrderID
+                                Innmelding #@Model.OrderID
                                 <span style="float: right;">
                                     Lagt til @Model.DateOrderCreate
                                 </span>
-                            </small>
-                        </p>
-                    </div>
-                    <div class="mb3">
-                        <p class="card-text" style="box-sizing: border-box; padding-left: 10px;">
-                            <small class="text-muted">
-                                @Model.PickUpAddress, @Model.DeliveryAddress
                             </small>
                         </p>
                     </div>
@@ -61,20 +51,20 @@
                         </small>
                         <br />
                         <h5 class="card-title">
-							@Model.TotalAmount?.ToString("F2") kr
+                            @Model.OrderID
                         </h5>
                         <small class="text-muted">
                             Beskrivelse:
                         </small>
                         <br />
                         <p class="card-text overflow-auto" style="height:30vh;">
-                            @Model.
+                            @Model.CustomerName
                         </p>
                     </div>
-                 
+
                     <div class="card-footer border-top-0">
                         <div class="container" style="text-align: center;">
-                            <h1>@Model.OrderStatusDescription</h1>
+                            <h1>@Model.StatusDescription</h1>
                         </div>
                     </div>
                     <div class="container">
@@ -86,43 +76,39 @@
 
                             <!--Displays case handling tools based on User role-->
                             <div class="d-flex gap-2" style="align-items: center; padding-top: 8px;">
-                                @if (User.IsInRole("System"))
+                                @if (User.IsInRole("Case Handler"))
                                 {
-                                    @if (Model.OrderStatusID == 1)
+                                    @if (Model.MapReportStatusId == 1)
                                     {
-                                        <button type="submit" formaction="@Url.Action("StartOrder", "Driver", new { id = Model.OrderID })"
+                                        <button type="submit" formaction="@Url.Action("StartHandlingMapReport", "MapReport", new { id = Model.MapReportId })"
                                                 class="btn btn-primary flex-fill">
                                             Start behandling
                                         </button>
                                     }
-                                    else if (Model.OrderStatusID == 2 && Model.DriverId == currentUserId)
+                                    else if (Model.MapReportStatusId == 2 && Model.CaseHandlerId == currentUserId)
                                     {
-                                        <button type="submit" formaction="@Url.Action("FinishOrder", "Driver", new { id = Model.OrderID})"
+                                        <button type="submit" formaction="@Url.Action("FinishHandlingMapReport", "MapReport", new { id = Model.MapReportId })"
                                                 class="btn btn-success flex-fill"
                                                 onclick="return confirm('Er du sikker på at du vil fullføre behandlingen av denne innmeldingen?')">
                                             Fullfør behandling
                                         </button>
-
-                                        @if (signInManager.IsSignedIn(User) && User.IsInRole("System Administrator"))
-                                        {
                                         <button type="button" class="btn btn-warning flex-fill" data-bs-toggle="modal" data-bs-target="#reassignModal">
                                             Tildel sak
                                         </button>
-
-                                            <button type="submit" formaction="@Url.Action("DeleteOrder", "Order", new { id = Model.OrderID })"
-                                                    class="btn btn-danger flex-fill"
-                                                    onclick="return confirm ('Er du sikker på at du vil slette denne orderen?');">
-                                                Slett order
-                                            </button>
-
-                                        }
                                     }
 
-                                    
+                                    @if (Model.CaseHandlerId == currentUserId || Model.MapReportStatusId == 1)
+                                    {
+                                        <button type="submit" formaction="@Url.Action("DeleteMapReport", "MapReport", new { id = Model.MapReportId })"
+                                                class="btn btn-danger flex-fill"
+                                                onclick="return confirm ('Er du sikker på at du vil slette denne innmeldingen?');">
+                                            Slett innmelding
+                                        </button>
+                                    }
                                 }
-                                else if (User.IsInRole("System Administrator") && Model.OrderStatusID == 1)
+                                else if (User.IsInRole("Submitter") && Model.MapReportStatusId == 1)
                                 {
-                                    <button type="submit" formaction="@Url.Action("DeleteOrder", "Order", new { id = Model.OrderID })"
+                                    <button type="submit" formaction="@Url.Action("DeleteMapReport", "MapReport", new { id = Model.MapReportId })"
                                             class="btn btn-danger flex-fill"
                                             onclick="return confirm ('Er du sikker på at du vil slette denne innmeldingen?');">
                                         Slett innmelding
@@ -165,10 +151,10 @@
             <div class="modal-body">
                 <form method="post" asp-action="AssignCaseHandler">
                     @Html.AntiForgeryToken()
-                    <input type="hidden" asp-for="OrderID" />
+                    <input type="hidden" asp-for="MapReportId" />
                     <div class="mb-3">
                         <label for="newCaseHandler" class="form-label">Velg saksbehandler</label>
-                        <select id="newCaseHandler" class="form-select" asp-for="DriverId" asp-items="Model.AvailableDrivers"></select>
+                        <select id="newCaseHandler" class="form-select" asp-for="CaseHandlerId" asp-items="Model.AvailableCaseHandlers"></select>
                     </div>
                     <button type="submit" class="btn btn-primary">Tildel</button>
                 </form>
@@ -184,10 +170,8 @@
     <script src="@("https://unpkg.com/@turf/turf@7.0.0/turf.min.js")"></script>
 
     <script>
-        
-        var geoJsonData = @Html.Raw(Model.PickUpAddress);
+        var geoJsonData = @Html.Raw(Model.DeliveryAddress);
     </script>
-    <script src="~/js/viewReportLeaflet.js"></script>
+    <script src="~/js/placeholder.js"></script>
 
 }
-
