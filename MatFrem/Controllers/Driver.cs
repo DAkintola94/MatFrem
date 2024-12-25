@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace MatFrem.Controllers
 {
@@ -16,14 +17,17 @@ namespace MatFrem.Controllers
 
 		private readonly IOrderRepository _orderRepository;
 		private readonly UserManager<ApplicationUser> _userManager;
+		private readonly HttpClient _httpClient;
 
 		public Driver(IProductRepository productRepo,
-			IOrderRepository orderRepository, UserManager<ApplicationUser> userManager)
+			IOrderRepository orderRepository, UserManager<ApplicationUser> userManager,
+			HttpClient httpClient)
 		{
 			_productRepository = productRepo;
 			_orderRepository = orderRepository;
 			_userManager = userManager;
-		}
+            _httpClient = httpClient;
+        }
 		[HttpGet]
 		public async Task<IActionResult> DriverPage(int pageSize = 8, int pageNumber = 1)
 		{
@@ -73,7 +77,16 @@ namespace MatFrem.Controllers
 
             if (getOrders != null && currentUser!= null)
 			{
-				OrderViewModel orderViewModel = new OrderViewModel //we can simply attach to view because GetORderById is not ienumerable (list) in the repository
+				var response  = await _httpClient.GetAsync($"https://localhost:7156/api/location/GetLocation?address={getOrders.DeliveryAddress}");
+				if(response.IsSuccessStatusCode)
+				{
+					var geoJson = await response.Content.ReadAsStringAsync();
+					var geoData = JsonConvert.DeserializeObject<GeoJson>(geoJson);
+                    var deliveryAddress = geoData?.Properties?.Address ?? string.Empty;
+					Console.WriteLine(deliveryAddress);
+					Console.WriteLine(geoData);
+
+                    OrderViewModel orderViewModel = new OrderViewModel //we can simply attach to view because GetORderById is not ienumerable (list) in the repository
 				{
 					OrderID = getOrders.OrderID, //need to pass and attach the ID from DB to the view model so we can work with the primary key/id
 												 //Since this does not auto connect when dealing with view model							 
@@ -88,11 +101,15 @@ namespace MatFrem.Controllers
 					ItemCategory = getOrders.ProductCategory ?? string.Empty,
 					DateOrderCreate = getOrders.OrderCreatedDate,
 					DeliveryAddress = getOrders.DeliveryAddress ?? string.Empty,
+
+                    GeoJson = deliveryAddress, //attaching the converted address from api to this view model type
+
                     DriverName = currentUser.FirstName + " " + currentUser.LastName //attaching the driver name to the current driver(user) logged in
                 };
 
                 return View(orderViewModel); //pass the model we have attached to values from the DB, and send it to view
             }
+        }
 
             return NotFound(); //if the order is not found, return not found
         }
