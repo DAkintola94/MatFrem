@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "q/T/KBOY4fVqHFttGrkoJ3OOoAMm2bgwh1DCqBynmFk=",
+  "Hash": "XyFJw3umyfQctlEfCaPSEyKvD7DuMa5C4ABL9hHiNp0=",
   "Source": "MatFrem",
   "BasePath": "_content/MatFrem",
   "Mode": "Default",
@@ -1963,8 +1963,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "sgj9xw26kk",
-      "Integrity": "zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c=",
+      "Fingerprint": "n7hqjkygfx",
+      "Integrity": "XUOaUvkzEF2mZy9iH4qg+AZh+50N5hZGbZFC+vVJM3k=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\shopcart.js"
@@ -9240,7 +9240,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 21:52:43 GMT"
+          "Value": "Tue, 24 Dec 2024 19:08:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9285,7 +9285,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 21:52:43 GMT"
+          "Value": "Tue, 24 Dec 2024 19:08:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10622,7 +10622,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1751"
+          "Value": "1752"
         },
         {
           "Name": "Content-Type",
@@ -10630,11 +10630,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c=\""
+          "Value": "\"XUOaUvkzEF2mZy9iH4qg+AZh+50N5hZGbZFC+vVJM3k=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 00:16:25 GMT"
+          "Value": "Mon, 23 Dec 2024 22:47:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10644,12 +10644,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c="
+          "Value": "sha256-XUOaUvkzEF2mZy9iH4qg+AZh+50N5hZGbZFC+vVJM3k="
         }
       ]
     },
     {
-      "Route": "js/shopcart.sgj9xw26kk.js",
+      "Route": "js/shopcart.n7hqjkygfx.js",
       "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\shopcart.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -10659,7 +10659,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1751"
+          "Value": "1752"
         },
         {
           "Name": "Content-Type",
@@ -10667,11 +10667,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c=\""
+          "Value": "\"XUOaUvkzEF2mZy9iH4qg+AZh+50N5hZGbZFC+vVJM3k=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 00:16:25 GMT"
+          "Value": "Mon, 23 Dec 2024 22:47:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10681,7 +10681,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "sgj9xw26kk"
+          "Value": "n7hqjkygfx"
         },
         {
           "Name": "label",
@@ -10689,7 +10689,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c="
+          "Value": "sha256-XUOaUvkzEF2mZy9iH4qg+AZh+50N5hZGbZFC+vVJM3k="
         }
       ]
     },

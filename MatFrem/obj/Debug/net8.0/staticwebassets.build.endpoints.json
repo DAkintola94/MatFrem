@@ -6097,7 +6097,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 21:52:43 GMT"
+          "Value": "Tue, 24 Dec 2024 19:08:21 GMT"
         }
       ],
       "EndpointProperties": [
@@ -6142,7 +6142,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 21:52:43 GMT"
+          "Value": "Tue, 24 Dec 2024 19:08:21 GMT"
         }
       ],
       "EndpointProperties": [
@@ -7479,7 +7479,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1751"
+          "Value": "1752"
         },
         {
           "Name": "Content-Type",
@@ -7487,22 +7487,22 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c=\""
+          "Value": "\"XUOaUvkzEF2mZy9iH4qg+AZh+50N5hZGbZFC+vVJM3k=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 00:16:25 GMT"
+          "Value": "Mon, 23 Dec 2024 22:47:24 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c="
+          "Value": "sha256-XUOaUvkzEF2mZy9iH4qg+AZh+50N5hZGbZFC+vVJM3k="
         }
       ]
     },
     {
-      "Route": "js/shopcart.sgj9xw26kk.js",
+      "Route": "js/shopcart.n7hqjkygfx.js",
       "AssetFile": "js/shopcart.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -7516,7 +7516,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1751"
+          "Value": "1752"
         },
         {
           "Name": "Content-Type",
@@ -7524,21 +7524,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c=\""
+          "Value": "\"XUOaUvkzEF2mZy9iH4qg+AZh+50N5hZGbZFC+vVJM3k=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 00:16:25 GMT"
+          "Value": "Mon, 23 Dec 2024 22:47:24 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "sgj9xw26kk"
+          "Value": "n7hqjkygfx"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c="
+          "Value": "sha256-XUOaUvkzEF2mZy9iH4qg+AZh+50N5hZGbZFC+vVJM3k="
         },
         {
           "Name": "label",

@@ -217,6 +217,8 @@ namespace MatFrem.Controllers
            var deleteItem = await _productRepository.DeleteItem(id);
             return View();
         }
+
+     
     }
 }
 

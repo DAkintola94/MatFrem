@@ -17,18 +17,6 @@ namespace MatFrem.Controllers
             _userManager = userManager;
         }
 
-        [HttpGet]
-        public async Task<ActionResult> ActiveDeliveries(OrderViewModel orderViewModel)
-        {
-            return View();
-
-        }
-
-        [HttpGet]
-        public IActionResult OrderTableDetails()
-        {
-            return View();
-        }
 
         [HttpGet]
         public async Task<ActionResult> OrderDetails(int id)
@@ -59,25 +47,38 @@ namespace MatFrem.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> OrderHistory()
+        public async Task<ActionResult> OrderHistory(int pageSize = 8, int pageNumber = 1)
         {
-            var getOrders = await _orderRepository.GetAllOrder();
+
+            var totalRecords = await _orderRepository.CountPage();
+            var totalPages = (int)Math.Ceiling((decimal)totalRecords / pageSize);
+
+            pageNumber = Math.Clamp(pageNumber, 1, totalPages);
+
+            ViewBag.TotalPages = totalPages;
+            ViewBag.CurrentPage = pageNumber;
+            ViewBag.PageSize = pageSize;
+
+            var getOrders = await _orderRepository.GetAllOrder(pageNumber, pageSize);
             var currentUser = await _userManager.GetUserAsync(User);
 
             if (getOrders != null && currentUser != null)
             {
                     var orderViewModel = getOrders
-                    .Where(o => o.CustomerId == currentUser.Id) //this is linq to check if the customer id matches. 
-                                                                //also, linq or loop is needed to get properties in a list
+                    .Where(o => o.CustomerPhoneNr == currentUser.PhoneNumber) //this is linq to check if the customer phone nr matches. 
+                                                                              //If it does, we will return the order details that belongs to the customer
                     .Select(o => new OrderViewModel //getOrders is already taking from db OrderModel, now we simply map it to OrderViewModel
                     {
                         CustomerId = o.CustomerId,
-                        CustomerName = o.CustomerName,
+                        CustomerPhoneNr = o.CustomerPhoneNr,
+                        ItemCategory = o.ProductCategory,
+                        CustomerName = o.CustomerName, //should be from the order!
                         OrderID = o.OrderID,
                         ProductName = o.ProductName,
                         TotalAmount = o.TotalPrice,
+                        OrderQuantitySize = o.OrderItem,
+                        OrderStatusDescription = o.OrderStatus?.StatusDescription, //this works due to eager loading in the repository
                         DateOrderCreate = o.OrderCreatedDate,
-                        OrderStatusDescription = o.OrderStatus?.StatusDescription,
                         DeliveryAddress = o.DeliveryAddress
                     }).ToList();
 

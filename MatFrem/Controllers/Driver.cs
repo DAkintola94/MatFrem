@@ -82,7 +82,8 @@ namespace MatFrem.Controllers
 					ProductName = getOrders.ProductName ?? string.Empty,
 					TotalAmount = getOrders.TotalPrice,
 					OrderQuantitySize = getOrders.OrderItem,
-					OrderStatusDescription = getOrders.OrderStatus?.StatusDescription ?? string.Empty,
+					OrderStatusID = getOrders.OrderStatusID,
+					OrderStatusDescription = getOrders.OrderStatus?.StatusDescription ?? string.Empty, //this works because of eager loading in repository
 					PickUpAddress = getOrders.PickUpAddress ?? string.Empty,
 					ItemCategory = getOrders.ProductCategory ?? string.Empty,
 					DateOrderCreate = getOrders.OrderCreatedDate,
@@ -109,7 +110,7 @@ namespace MatFrem.Controllers
             }
             //after getting order by id from database, we change specific values then update the order
 
-            getOrders.OrderStatusID = 2; //we are changing the status of the order to 2, which is "On the way"
+            getOrders.OrderStatusID = 3; //we are changing the status of the order to 2, which is "On the way"
             getOrders.DriverId = currentUser.Id; //we attaching the "currentuser, aka driver" to the order, only driver can use this method anyway
             getOrders.Driver = currentUser; 
 
@@ -128,7 +129,7 @@ namespace MatFrem.Controllers
 				return View();
 			}
 
-			getOrders.OrderStatusID = 3;
+			getOrders.OrderStatusID = 4;
             getOrders.DriverId = currentUser.Id;
             getOrders.Driver = currentUser;
 
@@ -191,6 +192,27 @@ namespace MatFrem.Controllers
             await _orderRepository.DeleteOrder(id);
             return RedirectToAction("OrderOverview");
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> CancelOrder(int id) //The start and finish order method are simply methods, no need to create a view for them
+        {
+            var getOrders = await _orderRepository.GetOrderByID(id);
+            var currentUser = await _userManager.GetUserAsync(User); //we can just use this since its only driver than can use this controller/site
+
+            if (getOrders == null)
+            {
+                return View();
+            }
+
+            getOrders.OrderStatusID = 5;
+            getOrders.DriverId = currentUser.Id;
+            getOrders.Driver = currentUser;
+
+            await _orderRepository.UpdateOrder(getOrders);
+            return RedirectToAction("YourOrder");
+        }
+
 
         public IActionResult DeliveryDetails()
 		{

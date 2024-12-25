@@ -9,7 +9,7 @@ namespace MatFrem.Repository
         Task<OrderModel?> GetOrderByID(int id);
         Task<OrderModel?> UpdateOrder(OrderModel orderModel);
         Task<OrderModel?> DeleteOrder(int id);
-        Task<OrderModel> Save();
+        Task<int> CountPage();
 
     }
 }
