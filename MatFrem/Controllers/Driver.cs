@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace MatFrem.Controllers
 {
@@ -16,14 +17,17 @@ namespace MatFrem.Controllers
 
 		private readonly IOrderRepository _orderRepository;
 		private readonly UserManager<ApplicationUser> _userManager;
+		private readonly HttpClient _httpClient;
 
 		public Driver(IProductRepository productRepo,
-			IOrderRepository orderRepository, UserManager<ApplicationUser> userManager)
+			IOrderRepository orderRepository, UserManager<ApplicationUser> userManager,
+			HttpClient httpClient)
 		{
 			_productRepository = productRepo;
 			_orderRepository = orderRepository;
 			_userManager = userManager;
-		}
+            _httpClient = httpClient;
+        }
 		[HttpGet]
 		public async Task<IActionResult> DriverPage(int pageSize = 8, int pageNumber = 1)
 		{
@@ -73,7 +77,16 @@ namespace MatFrem.Controllers
 
             if (getOrders != null && currentUser!= null)
 			{
-				OrderViewModel orderViewModel = new OrderViewModel //we can simply attach to view because GetORderById is not ienumerable (list) in the repository
+				var response  = await _httpClient.GetAsync($"https://localhost:7156/api/location/GetLocation?address={getOrders.DeliveryAddress}");
+				if(response.IsSuccessStatusCode)
+				{
+					var geoJson = await response.Content.ReadAsStringAsync();
+					var geoData = JsonConvert.DeserializeObject<GeoJson>(geoJson);
+                    var deliveryAddress = geoData?.Properties?.Address ?? string.Empty;
+					Console.WriteLine(deliveryAddress);
+					Console.WriteLine(geoData);
+
+                    OrderViewModel orderViewModel = new OrderViewModel //we can simply attach to view because GetORderById is not ienumerable (list) in the repository
 				{
 					OrderID = getOrders.OrderID, //need to pass and attach the ID from DB to the view model so we can work with the primary key/id
 												 //Since this does not auto connect when dealing with view model							 
@@ -82,16 +95,21 @@ namespace MatFrem.Controllers
 					ProductName = getOrders.ProductName ?? string.Empty,
 					TotalAmount = getOrders.TotalPrice,
 					OrderQuantitySize = getOrders.OrderItem,
-					OrderStatusDescription = getOrders.OrderStatus?.StatusDescription ?? string.Empty,
+					OrderStatusID = getOrders.OrderStatusID,
+					OrderStatusDescription = getOrders.OrderStatus?.StatusDescription ?? string.Empty, //this works because of eager loading in repository
 					PickUpAddress = getOrders.PickUpAddress ?? string.Empty,
 					ItemCategory = getOrders.ProductCategory ?? string.Empty,
 					DateOrderCreate = getOrders.OrderCreatedDate,
 					DeliveryAddress = getOrders.DeliveryAddress ?? string.Empty,
+
+                    GeoJson = deliveryAddress, //attaching the converted address from api to this view model type
+
                     DriverName = currentUser.FirstName + " " + currentUser.LastName //attaching the driver name to the current driver(user) logged in
                 };
 
                 return View(orderViewModel); //pass the model we have attached to values from the DB, and send it to view
             }
+        }
 
             return NotFound(); //if the order is not found, return not found
         }
@@ -109,7 +127,7 @@ namespace MatFrem.Controllers
             }
             //after getting order by id from database, we change specific values then update the order
 
-            getOrders.OrderStatusID = 2; //we are changing the status of the order to 2, which is "On the way"
+            getOrders.OrderStatusID = 3; //we are changing the status of the order to 2, which is "On the way"
             getOrders.DriverId = currentUser.Id; //we attaching the "currentuser, aka driver" to the order, only driver can use this method anyway
             getOrders.Driver = currentUser; 
 
@@ -128,7 +146,7 @@ namespace MatFrem.Controllers
 				return View();
 			}
 
-			getOrders.OrderStatusID = 3;
+			getOrders.OrderStatusID = 4;
             getOrders.DriverId = currentUser.Id;
             getOrders.Driver = currentUser;
 
@@ -191,6 +209,27 @@ namespace MatFrem.Controllers
             await _orderRepository.DeleteOrder(id);
             return RedirectToAction("OrderOverview");
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> CancelOrder(int id) //The start and finish order method are simply methods, no need to create a view for them
+        {
+            var getOrders = await _orderRepository.GetOrderByID(id);
+            var currentUser = await _userManager.GetUserAsync(User); //we can just use this since its only driver than can use this controller/site
+
+            if (getOrders == null)
+            {
+                return View();
+            }
+
+            getOrders.OrderStatusID = 5;
+            getOrders.DriverId = currentUser.Id;
+            getOrders.Driver = currentUser;
+
+            await _orderRepository.UpdateOrder(getOrders);
+            return RedirectToAction("YourOrder");
+        }
+
 
         public IActionResult DeliveryDetails()
 		{

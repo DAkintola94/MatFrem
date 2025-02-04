@@ -14,62 +14,72 @@
                 <div class="card" style="box-sizing: border-box; padding: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
                     <h7 class="card-header border-bottom-0">
                         <div class="container">
-                            <small class="text-muted">
-                                Kjøper
-                            </small>
-                            <span style="float: right;">
                                 <small class="text-muted">
-                                    Sjåfør
+                                    Sjåfør navn
                                 </small>
-                            </span>
                         </div>
-                        <div class="container">
-                            @Model.CustomerName
-                            <span style="float: right;">
+                        <div class="container" style="margin-top: 5px;">
+                            
                                 @if (@Model.DriverName == null)
                                 {
-                                    <text>Ingen tildelt</text>
+                                    <text>Ingen sjåfør tildelt</text>
                                 }
                                 else
                                 {
                                     @Model.DriverName
                                 }
-                            </span>
+                            
                         </div>
-
                     </h7>
                     <div class="mb3">
                         <p class="card-text" style="box-sizing: border-box; padding-left: 10px;">
-                            <small class="text-muted">
-                                Innmelding #@Model.OrderID
+                            <small class="card-title">
+                                Order ID: @Model.OrderID
                                 <span style="float: right;">
-                                    Lagt til @Model.DateOrderCreate
+                                    Order dato: @Model.DateOrderCreate
                                 </span>
                             </small>
                         </p>
                     </div>
                     <div class="card-body">
                         <small class="text-muted">
-                            Tittel:
+                            Antall varer:
                         </small>
                         <br />
                         <h5 class="card-title">
-                            @Model.OrderID
+                            @Model.OrderQuantitySize
                         </h5>
                         <small class="text-muted">
-                            Beskrivelse:
+                            Kjøper:
                         </small>
                         <br />
-                        <p class="card-text overflow-auto" style="height:30vh;">
+                        <p class="card-text overflow-auto" style="margin-bottom: 5px;">
                             @Model.CustomerName
+                        </p>
+                        <small class="text-muted">
+                            Leverings adresse:
+                        </small>
+                        <br />
+                        <p class="card-text overflow-auto" style="margin-bottom: 5px;">
+                            @Model.DeliveryAddress
+                        </p>
+                        <small class="text-muted">
+                            Pris:
+                        </small>
+                        <br />
+                        <p class="card-text overflow-auto" style="margin-bottom: 0;">
+                            @Model.TotalAmount?.ToString("F2") kr
                         </p>
                     </div>
 
+
                     <div class="card-footer border-top-0">
                         <div class="container" style="text-align: center;">
+                            <h3 style="font-size: 1.2em; color: gray; margin-bottom: 10px;">Order Status</h3>
                             <h1>@Model.OrderStatusDescription</h1>
                         </div>
                     </div>
+
                     <div class="container">
                         <form method="post">
                             @Html.AntiForgeryToken()
@@ -79,7 +89,7 @@
 
                             <!--Displays case handling tools based on User role-->
                             <div class="d-flex gap-2" style="align-items: center; padding-top: 8px;">
-                                @if (User.IsInRole("Driver"))
+                                @if (User.IsInRole("Driver") || (User.IsInRole("System Administrator")))
                                 {
                                     @if (Model.OrderStatusID == 1)
                                     {
@@ -88,7 +98,7 @@
                                             Start behandling
                                         </button>
                                     }
-                                    else if (Model.OrderStatusID == 2 && Model.DriverId == currentUserId)
+                                    else if (Model.OrderStatusID == 3 && Model.DriverId == currentUserId)
                                     {
                                         <button type="submit" formaction="@Url.Action("FinishOrder", "Driver", new { id = Model.OrderID })"
                                         class="btn btn-success flex-fill"
@@ -106,10 +116,10 @@
 
                                     @if (signInManager.IsSignedIn(User) && User.IsInRole("System Administrator"))
                                     {
-                                        <button type="submit" formaction="@Url.Action("DeleteOrder", "Driver", new { id = Model.OrderID })"
+                                        <button type="submit" formaction="@Url.Action("CancelOrder", "Driver", new { id = Model.OrderID })"
                                                 class="btn btn-danger flex-fill"
-                                                onclick="return confirm ('Er du sikker på at du vil slette orderen?');">
-                                            Slett order
+                                                onclick="return confirm ('Er du sikker på at du vil kansellere orderen?');">
+                                            Kanseller ordre
                                         </button>
                                     }
                                 }

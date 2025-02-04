@@ -16,7 +16,6 @@ namespace MatFrem.DataContext
         {
 
         }
-
         public DbSet<CustomerModel> Customers { get; set; }
         public DbSet<ShopModel> Shop_detail { get; set; }
         public DbSet<ProductModel> Product_detail { get; set; }
@@ -232,14 +231,13 @@ namespace MatFrem.DataContext
                 .OnDelete(DeleteBehavior.Cascade);
 
 
-
-
             //Seeding data into OrderStatus table in the database
             modelBuilder.Entity<OrderStatus>().HasData(
                new OrderStatus { OrderStatusID = 1, StatusDescription = "Motatt" },
                new OrderStatus { OrderStatusID = 2, StatusDescription = "Under behandling" },
                new OrderStatus { OrderStatusID = 3, StatusDescription = "På vei" },
-               new OrderStatus { OrderStatusID = 4, StatusDescription = "Order avvist" }
+                new OrderStatus { OrderStatusID = 4, StatusDescription = "Levert" },
+               new OrderStatus { OrderStatusID = 5, StatusDescription = "Order kansellert" }
            );
 
         }

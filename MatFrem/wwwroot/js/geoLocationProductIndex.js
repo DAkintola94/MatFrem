@@ -37,19 +37,30 @@ map.on(L.Draw.Event.CREATED, function (e) {
     var lat = geoJsonData.geometry.coordinates[1]; //Extracts the lat of the location from the GeoJSON data (not the JSON.Stringy!)
     var lon = geoJsonData.geometry.coordinates[0]; //--
 
+    var centroid = turf.centroid(JSON.parse(geoJsonString))
+
+    var cenGeoLon = centroid.geometry.coordinates[0];
+    var cenGeoLat = centroid.geometry.coordinates[1];
+    
+
+
+    console.log(centroid + "testing");
     console.log("Latitude: " + lat);
     console.log("Longitude: " + lon);
 
+    
+
     var nominatimUrl = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`;
 
-    fetch(nominatimUrl)
-        .then(response => response.json()) //Parse the JSON data from the response object to a JavaScript object
-        .then(data => {                    //Gets the data from the response object
-            var address = data.display_name || "Ingen addresse funnet"; //display_name is a string that contains addresses in the Nominatim json
-            //we are binding the data response to display_name, then to the address variable
+    var kartverkUrl = 'https://api.kartverket.no/kommuneinfo/v1/punkt?nord=' + cenGeoLat + '&ost=' + cenGeoLon + '&koordsys=4258';
 
-            
-            document.getElementById('geoJsonInput').value = address; // Set value of input field in the html to the address (the variable)
+    fetch(nominatimUrl)
+        .then(response => response.json()) //Parse the JSON data from the response into a JavaScript object
+        .then(data => {                    //Gets the data from the response object
+
+            document.getElementById('geoJsonInput').value = data.display_name; // Set value of input field in the html to the address (the variable)
+                                                        //data is the value we get back, and the string after that is the key that is in the JSON object from the api we fetch  
+            console.log(data.display_name);
 
         })
 
@@ -57,8 +68,24 @@ map.on(L.Draw.Event.CREATED, function (e) {
             console.error("Error during reverse geocoding:", error);
             document.getElementById('geoConvert').value = "Error fetching address";
         });
+
+    fetch(kartverkUrl)
+        .then(response => response.json()) //Parse the JSON data from the response into a JavaScript object
+        .then(data => {                    //Gets the data from the response object
+
+            //document.getElementById('location').value = data.kommunenavn || "Ingen kommune funnet";
+            document.getElementById('fylkenr').value = data.fylkesnummer || "Ingen fylke funnet";
+
+        })
+
+        .catch(error => {
+            console.error("Error");
+            document.getElementById('geoConvert').value = "Error fetching address";
+        });
+
+
+
     
-  
 
    
 

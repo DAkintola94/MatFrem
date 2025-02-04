@@ -1596,8 +1596,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>y6uu9fu1du</Fingerprint>
-      <Integrity>Wlljj01sCEp4peg6Jbq0W2hHqupZgG5NCz1a0QHLMsk=</Integrity>
+      <Fingerprint>atwivgyql8</Fingerprint>
+      <Integrity>YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\geoLocationProductIndex.js'))</OriginalItemSpec>
@@ -1632,8 +1632,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>sgj9xw26kk</Fingerprint>
-      <Integrity>zKuQu+F5nTJfqCZCc7nOyfDsmSWp0H9JTf92fHRgg0c=</Integrity>
+      <Fingerprint>n7hqjkygfx</Fingerprint>
+      <Integrity>XUOaUvkzEF2mZy9iH4qg+AZh+50N5hZGbZFC+vVJM3k=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shopcart.js'))</OriginalItemSpec>

@@ -23,6 +23,7 @@ namespace MatFrem.Models.ViewModel
 		public decimal? TotalAmount { get; set; }
 		public string? DriverName { get; set; }
 
+        public string? GeoJson { get; set; }
         public string? CustomerId { get; set; } 
         public string? CustomerName { get; set; }
 		public string? CustomerPhoneNr { get; set;}
