@@ -43,9 +43,17 @@
 
 			<div class="mb-3">
 				<label class="form-label">Hentes ved</label>
-				<input type="text" class="form-control" asp-for="ProductLocation" id="geoJsonInput" />
+				<input type="text" class="form-control" asp-for="ProductLocation" id="geoJsonInput" readonly/>
 				<!-- the id in this input stores GeoJSON data generated from drawn map shapes (set by JavaScript) -->
 			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Fylkenr</label>
+				<input type="text" class="form-control" asp-for="ProductLocation" id="fylkenr" readonly />
+				<!-- the id in this input stores GeoJSON data generated from drawn map shapes (set by JavaScript) -->
+			</div>
+
+
 			
 			<div class="mb-3">
 				<label class="form-label">Bilde</label>
@@ -71,5 +79,8 @@
 <!-- Scripts -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/6.5.0/turf.min.js"></script>
+
+
 
 <script src="~/js/geoLocationProductIndex.js"> </script>

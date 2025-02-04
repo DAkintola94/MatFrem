@@ -1056,17 +1056,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ufribxvpec"},{"Name":"integrity","Value":"sha256-aprbFF4xM8RoaJj8HTeG5tCfz/2fWvEyPo1xeBjNDSQ="},{"Name":"label","Value":"_content/MatFrem/js/geoLocation.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1239"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022aprbFF4xM8RoaJj8HTeG5tCfz/2fWvEyPo1xeBjNDSQ=\u0022"},{"Name":"Last-Modified","Value":"Sat, 30 Nov 2024 00:16:25 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MatFrem/js/geoLocationProductIndex.atwivgyql8.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\geoLocationProductIndex.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"atwivgyql8"},{"Name":"integrity","Value":"sha256-YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0="},{"Name":"label","Value":"_content/MatFrem/js/geoLocationProductIndex.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3294"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0=\u0022"},{"Name":"Last-Modified","Value":"Tue, 04 Feb 2025 17:17:12 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MatFrem/js/geoLocationProductIndex.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\geoLocationProductIndex.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Wlljj01sCEp4peg6Jbq0W2hHqupZgG5NCz1a0QHLMsk="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2351"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Wlljj01sCEp4peg6Jbq0W2hHqupZgG5NCz1a0QHLMsk=\u0022"},{"Name":"Last-Modified","Value":"Sat, 30 Nov 2024 00:16:25 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/MatFrem/js/geoLocationProductIndex.y6uu9fu1du.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\geoLocationProductIndex.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"y6uu9fu1du"},{"Name":"integrity","Value":"sha256-Wlljj01sCEp4peg6Jbq0W2hHqupZgG5NCz1a0QHLMsk="},{"Name":"label","Value":"_content/MatFrem/js/geoLocationProductIndex.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2351"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Wlljj01sCEp4peg6Jbq0W2hHqupZgG5NCz1a0QHLMsk=\u0022"},{"Name":"Last-Modified","Value":"Sat, 30 Nov 2024 00:16:25 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3294"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0=\u0022"},{"Name":"Last-Modified","Value":"Tue, 04 Feb 2025 17:17:12 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MatFrem/js/geostringConvert.ev5vror3fs.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\geostringConvert.js'))</AssetFile>

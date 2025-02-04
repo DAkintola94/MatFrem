@@ -7301,6 +7301,51 @@
       ]
     },
     {
+      "Route": "js/geoLocationProductIndex.atwivgyql8.js",
+      "AssetFile": "js/geoLocationProductIndex.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3294"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Feb 2025 17:17:12 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "atwivgyql8"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0="
+        },
+        {
+          "Name": "label",
+          "Value": "js/geoLocationProductIndex.js"
+        }
+      ]
+    },
+    {
       "Route": "js/geoLocationProductIndex.js",
       "AssetFile": "js/geoLocationProductIndex.js",
       "Selectors": [],
@@ -7315,7 +7360,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2351"
+          "Value": "3294"
         },
         {
           "Name": "Content-Type",
@@ -7323,62 +7368,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Wlljj01sCEp4peg6Jbq0W2hHqupZgG5NCz1a0QHLMsk=\""
+          "Value": "\"YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 00:16:25 GMT"
+          "Value": "Tue, 04 Feb 2025 17:17:12 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Wlljj01sCEp4peg6Jbq0W2hHqupZgG5NCz1a0QHLMsk="
-        }
-      ]
-    },
-    {
-      "Route": "js/geoLocationProductIndex.y6uu9fu1du.js",
-      "AssetFile": "js/geoLocationProductIndex.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2351"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Wlljj01sCEp4peg6Jbq0W2hHqupZgG5NCz1a0QHLMsk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 00:16:25 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "y6uu9fu1du"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Wlljj01sCEp4peg6Jbq0W2hHqupZgG5NCz1a0QHLMsk="
-        },
-        {
-          "Name": "label",
-          "Value": "js/geoLocationProductIndex.js"
+          "Value": "sha256-YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0="
         }
       ]
     },
