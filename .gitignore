@@ -1,55 +1,77 @@
-﻿# Ignore Visual Studio files
-/.vs/
-/.vs/
-
-# Ignore build directories
-/bin/
-/obj/
-
-# Ignore user-specific files
+﻿# ====== Visual Studio Files ======
+.vs/
+.vscode/
+*.suo
 *.user
 *.userosscache
-*.suo
+*.sln.docstates
 
-# Ignore Visual Studio temporary files
-*.vsidx
+# ====== Build Output ======
+/bin/
+/obj/
+/[Oo]ut/
+/[Bb]uild/
+/[Ll]ogs/
+/AppPackages/
+/PublishProfiles/
+/TestResults/
+/node_modules/
 
-# Ignore Visual Studio cache and other auto-generated files
-*.backup.json
-*.json
-*.v2
-*.bin
-
-# Ignore Copilot auto-generated files
+# ====== Copilot Auto-Generated Files ======
 /.vs/*/CopilotIndices/
 /.vs/*/copilot-chat/
 /.vs/*/FileContentIndex/
 
-# Ignore specific Copilot files
-/.vs/*/CopilotIndices/*/CodeChunks.db
-/.vs/*/CopilotIndices/*/CodeChunks.db-shm
-/.vs/*/CopilotIndices/*/CodeChunks.db-wal
-/.vs/*/CopilotIndices/*/SemanticSymbols.db
-/.vs/*/CopilotIndices/*/SemanticSymbols.db-shm
-/.vs/*/CopilotIndices/*/SemanticSymbols.db-wal
+# Specific Copilot Cache Files
+/.vs/*/CopilotIndices/*/CodeChunks.db*
+/.vs/*/CopilotIndices/*/SemanticSymbols.db*
 
-# Ignore Visual Studio Document Layout backups
+# ====== Temporary and Cache Files ======
 /.vs/*/v*/DocumentLayout.backup.json
 /.vs/*/v*/DocumentLayout.json
+/.vs/*/v*/.futdcache.v2
+/.vs/*/v*/.suo
+/.vs/*/ProjectEvaluation/
 
-# Ignore MatFrem-specific generated files
-/MatFrem/obj/
-/MatFrem/bin/
-*.metadata.v9.bin
-*.projects.v9.bin
-*.strings.v9.bin
-/.vs/MatFrem/
+# Docker cache (if applicable)
+obj/Docker/
 
-# Catch-all for Visual Studio and Copilot auto-generated files
-/.vs/**/*
-/.vs/MatFrem/v17/.futdcache.v2
-/.vs/MatFrem/v17/.suo
-/.vs/MatFrem/v17/DocumentLayout.backup.json
-/.vs/MatFrem/v17/DocumentLayout.json
-/.vs/MatFrem/CopilotIndices/0.2.1657.32929/CodeChunks.db
-/.vs/MatFrem/copilot-chat/7601ba85/sessions/318b1f89-d5ec-41c9-875f-00330766b8b7
+# NuGet and Package Restore
+project.lock.json
+project.assets.json
+*.nuget.cache
+*.nuget.dgspec.json
+*.csproj.nuget.g.props
+*.csproj.nuget.g.targets
+
+# Entity Framework Migrations (optional)
+/Migrations/*Snapshot.cs
+/secrets/
+
+# ====== Resharper and Rider (if used) ======
+*.DotSettings.user
+.idea/
+*/_ReSharper.Caches/
+
+# ====== IIS Express ======
+iisexpress/
+*.vspscc
+*.vspcc
+*.dbmdl
+
+# ====== Local Config and Misc ======
+*.bak
+*.backup
+*.log
+*.cache
+*.swp
+*.tmp
+Thumbs.db
+Desktop.ini
+*.session.vsp
+/.vs/ProjectEvaluation/matfrem.metadata.v9.bin
+/.vs/ProjectEvaluation/matfrem.projects.v9.bin
+/.vs/ProjectEvaluation/matfrem.strings.v9.bin
+/.vs/ProjectEvaluation/matfrem.strings.v9.bin
+/.vs/ProjectEvaluation/matfrem.projects.v9.bin
+/.vs/ProjectEvaluation/matfrem.metadata.v9.bin
