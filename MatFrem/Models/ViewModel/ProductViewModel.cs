@@ -21,7 +21,6 @@ namespace MatFrem.Models.ViewModel
         public int ViewMCategoryId { get; set; } //You need to add property whenever you to design a foreign key in the database
         public int ViewMShopId { get; set; }
         public string? ViewCategoryName { get; set; }
-
         public string? ViewShopName { get; set; }
     }
 }

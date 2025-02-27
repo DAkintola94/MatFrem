@@ -22,14 +22,11 @@ namespace MatFrem.Controllers
 			wwwRootPath = _webHostEnviroment.WebRootPath;
 		}
 
-
         [HttpGet]
         public async Task<IActionResult> Index()
         {
 			return View();
         }
-
-
 
         [HttpPost]
         public async Task<IActionResult> Index(ProductViewModel pModel, IFormFile? file) //file need to have a name ="" in the html, so it can be passed as a parameter									 // when you are not using model in the controller parameter, you need to use the name of the input field in the html
@@ -68,9 +65,7 @@ namespace MatFrem.Controllers
                     await _productRepository.InsertProduct(productModel);
 					return RedirectToAction("ShowProduct");
 			}
-
              return View(pModel);
-
         }
 
 		
@@ -108,7 +103,6 @@ namespace MatFrem.Controllers
             }
 			return View();
         }
-
 
         [HttpGet]
         public async Task<IActionResult> EditProduct(int id)
