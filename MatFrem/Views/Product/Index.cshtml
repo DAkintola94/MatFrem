@@ -14,47 +14,64 @@
 
 			<div class="mb-3">
 				<label class="form-label">Produkt navn</label>
-				<input type="text" class="form-control" asp-for="ProductName" />
+				<input type="text" class="form-control" asp-for="ProductViewName" />
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label">Pris</label>
-				<input type="number" class="form-control" asp-for="ProductPrice" />
+				<input type="number" class="form-control" asp-for="ProductViewPrice" />
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label">Kategori</label>
-				<select class="form-control" asp-for="Category">
-					<option value="Meleri & Egg">Meleri & Egg</option>
-					<option value="Frukt & Grønt">Frukt & Grønt</option>
-					<option value="Vegetar">Vegetar</option>
-					<option value="Sjømat">Sjømat</option>
-					<option value="Tørrvare">Tørrvare</option>
-					<option value="Frokostblanding">Frokostblanding</option>
-					<option value="Frosne varer">Frosne varer</option>
-					<option value="Bakeri">Bakeri</option>
+				<select class="form-control" asp-for="ViewMCategoryId">
+					<option value="1">Meleri & Egg</option>
+					<option value="2">Frukt & Grønt</option>
+					<option value="3">Kjøtt & Fisk</option>
+					<option value="4">Brød & Bakervarer</option>
+					<option value="5">Drikkevarer</option>
+					<option value="6">Søtsaker</option>
+					<option value="7">Tørrvarer</option>
+					<option value="8">Husholdning</option>
+					<option value="9">Personlig pleie</option>
+					<option value="10">Annet</option>
+
 				</select>
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label">Kalori innhold per 100g</label>
-				<input type="number" class="form-control" asp-for="ProductCalories" />
+				<input type="number" class="form-control" asp-for="ProductViewCalories" />
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label">Hentes ved</label>
-				<input type="text" class="form-control" asp-for="ProductLocation" id="geoJsonInput" readonly/>
+				<input type="text" class="form-control" asp-for="ProductViewLocation" id="geoJsonInput" readonly/>
 				<!-- the id in this input stores GeoJSON data generated from drawn map shapes (set by JavaScript) -->
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label">Fylkenr</label>
-				<input type="text" class="form-control" asp-for="ProductLocation" id="fylkenr" readonly />
+				<input type="text" class="form-control" asp-for="ProductViewLocation" id="fylkenr" readonly />
 				<!-- the id in this input stores GeoJSON data generated from drawn map shapes (set by JavaScript) -->
 			</div>
 
+			<div class="mb-3">
+				<label class="form-label">Butikk navn</label>
+				<select class="form-control" asp-for="ViewMShopId">
+					<option value="1">Kiwi</option>
+					<option value="2">Rema 1000</option>
+					<option value="3">Coop Mega</option>
+					<option value="4">Coop Extra</option>
+					<option value="5">Meny</option>
+					<option value="6">Bunnpris</option>
+					<option value="7">Spar</option>
+					<option value="8">Joker</option>
+					<option value="9">Obs!</option>
+					<option value="10">Coop Prix</option>
+				</select>
+			</div>
 
-			
 			<div class="mb-3">
 				<label class="form-label">Bilde</label>
 				<input type="file" name="file" class="form-control" asp-for="ImageUrl" />

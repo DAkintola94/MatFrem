@@ -77,15 +77,6 @@ namespace MatFrem.Controllers
 
             if (getOrders != null && currentUser!= null)
 			{
-				var response  = await _httpClient.GetAsync($"https://localhost:7156/api/location/GetLocation?address={getOrders.DeliveryAddress}");
-				if(response.IsSuccessStatusCode)
-				{
-					var geoJson = await response.Content.ReadAsStringAsync();
-					var geoData = JsonConvert.DeserializeObject<GeoJson>(geoJson);
-                    var deliveryAddress = geoData?.Properties?.Address ?? string.Empty;
-					Console.WriteLine(deliveryAddress);
-					Console.WriteLine(geoData);
-
                     OrderViewModel orderViewModel = new OrderViewModel //we can simply attach to view because GetORderById is not ienumerable (list) in the repository
 				{
 					OrderID = getOrders.OrderID, //need to pass and attach the ID from DB to the view model so we can work with the primary key/id
@@ -102,13 +93,12 @@ namespace MatFrem.Controllers
 					DateOrderCreate = getOrders.OrderCreatedDate,
 					DeliveryAddress = getOrders.DeliveryAddress ?? string.Empty,
 
-                    GeoJson = deliveryAddress, //attaching the converted address from api to this view model type
 
                     DriverName = currentUser.FirstName + " " + currentUser.LastName //attaching the driver name to the current driver(user) logged in
                 };
 
                 return View(orderViewModel); //pass the model we have attached to values from the DB, and send it to view
-            }
+            
         }
 
             return NotFound(); //if the order is not found, return not found
@@ -119,20 +109,21 @@ namespace MatFrem.Controllers
         {
             var getOrders = await _orderRepository.GetOrderByID(id);  
 
-            var currentUser = await _userManager.GetUserAsync(User); //we can just use this since its only driver than can use this controller/site
+            var currentUser = await _userManager.GetUserAsync(User); 
 
-            if (getOrders == null)
+            if (getOrders != null && currentUser != null)
             {
-                return View();
+                getOrders.OrderStatusID = 3; //we are changing the status of the order to 2, which is "On the way"
+                getOrders.DriverId = currentUser.FirstName + currentUser.LastName;
+
+
+
+                await _orderRepository.UpdateOrder(getOrders);
+                return RedirectToAction("OrderOverview", new { id }); //redirect to the OrderOverview page, with the id of the order
             }
-            //after getting order by id from database, we change specific values then update the order
 
-            getOrders.OrderStatusID = 3; //we are changing the status of the order to 2, which is "On the way"
-            getOrders.DriverId = currentUser.Id; //we attaching the "currentuser, aka driver" to the order, only driver can use this method anyway
-            getOrders.Driver = currentUser; 
 
-            await _orderRepository.UpdateOrder(getOrders);
-            return RedirectToAction("OrderOverview", new {id}); //redirect to the OrderOverview page, with the id of the order
+			return BadRequest("No order or user found");
         }
 
 		[HttpPost]
@@ -148,7 +139,7 @@ namespace MatFrem.Controllers
 
 			getOrders.OrderStatusID = 4;
             getOrders.DriverId = currentUser.Id;
-            getOrders.Driver = currentUser;
+            getOrders.DriverId = currentUser.FirstName + currentUser.LastName;
 
             await _orderRepository.UpdateOrder(getOrders);
             return RedirectToAction("YourOrder");
@@ -217,17 +208,16 @@ namespace MatFrem.Controllers
             var getOrders = await _orderRepository.GetOrderByID(id);
             var currentUser = await _userManager.GetUserAsync(User); //we can just use this since its only driver than can use this controller/site
 
-            if (getOrders == null)
+            if (getOrders != null && currentUser != null)
             {
-                return View();
+                getOrders.OrderStatusID = 5;
+                getOrders.DriverId = currentUser.FirstName + currentUser.LastName;
+
+                await _orderRepository.UpdateOrder(getOrders);
+                return RedirectToAction("YourOrder");
             }
 
-            getOrders.OrderStatusID = 5;
-            getOrders.DriverId = currentUser.Id;
-            getOrders.Driver = currentUser;
-
-            await _orderRepository.UpdateOrder(getOrders);
-            return RedirectToAction("YourOrder");
+			return BadRequest("No user or order found");
         }
 
 

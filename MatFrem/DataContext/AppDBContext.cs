@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MatFrem.Models.ViewModel;
+using System.Diagnostics;
 
 namespace MatFrem.DataContext
 {
@@ -16,7 +17,6 @@ namespace MatFrem.DataContext
         {
 
         }
-        public DbSet<CustomerModel> Customers { get; set; }
         public DbSet<ShopModel> Shop_detail { get; set; }
         public DbSet<ProductModel> Product_detail { get; set; }
         public DbSet<OrderModel> Orders { get; set; }
@@ -24,6 +24,7 @@ namespace MatFrem.DataContext
         public DbSet<ShoppingCartModel> ShoppingCart { get; set; }
         public DbSet<OrderStatus> OrderState { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<CategoryModel> Category { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -177,9 +178,6 @@ namespace MatFrem.DataContext
             modelBuilder.Entity<DriverModel>()
                 .HasKey(d => d.DriverID); //Primary key for DriverModel
 
-            modelBuilder.Entity<CustomerModel>()
-                .HasKey(c => c.CustomerID); //Primary key for CustomerModel
-
             modelBuilder.Entity<ProductModel>()
                 .HasKey(p => p.ProductID); //Primary key for ProductModel
 
@@ -201,19 +199,12 @@ namespace MatFrem.DataContext
             modelBuilder.Entity<OrderItem>()
                .HasKey(oi => oi.Id);
 
+            modelBuilder.Entity<CategoryModel>()
+             .HasKey(oi => oi.CategoryId);
+
 
             //Relationships, remember to think of .Entity as THIS => table in the database
             //we are defining the relationships between the tables here, by foreign keys
-
-            modelBuilder.Entity<OrderModel>()
-                .HasOne(o => o.Customer) //Table OrderModel has one Customer
-                .WithMany() //This line means with many OrderModel
-                .HasForeignKey(o => o.CustomerId); //Foreign key for CustomerID in OrderModel, primary key for CustomerModel
-
-            modelBuilder.Entity<OrderModel>()
-                .HasOne(o => o.Driver) //Table OrderModel has one Driver
-                .WithMany() //This line means with many OrderModel
-                .HasForeignKey(o => o.DriverId); //Foreign key for DriverID in OrderModel 
 
             modelBuilder.Entity<OrderModel>()
                 .HasMany(o => o.OrderItems)
@@ -230,6 +221,18 @@ namespace MatFrem.DataContext
                 .HasForeignKey(o => o.OrderStatusID)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<OrderModel>()
+                .HasOne(o => o.CategoryModel)
+                .WithMany()
+                .HasForeignKey(o => o.CategoryM_Id)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<ProductModel>()
+                .HasOne(c => c.CategoryModel)
+                .WithMany()
+                .HasForeignKey(ci => ci.CategoryId)
+                .OnDelete(DeleteBehavior.Cascade);
+
 
             //Seeding data into OrderStatus table in the database
             modelBuilder.Entity<OrderStatus>().HasData(
@@ -239,6 +242,32 @@ namespace MatFrem.DataContext
                 new OrderStatus { OrderStatusID = 4, StatusDescription = "Levert" },
                new OrderStatus { OrderStatusID = 5, StatusDescription = "Order kansellert" }
            );
+
+            modelBuilder.Entity<CategoryModel>().HasData(
+                new CategoryModel { CategoryId = 1, CategoryName = "Meleri & Egg" },
+                new CategoryModel { CategoryId = 2, CategoryName = "Frukt & Grønt" },
+                new CategoryModel { CategoryId = 3, CategoryName = "Kjøtt & Fisk" },
+                new CategoryModel { CategoryId = 4, CategoryName = "Brød & Bakervarer" },
+                new CategoryModel { CategoryId = 5, CategoryName = "Drikkevarer" },
+                new CategoryModel { CategoryId = 6, CategoryName = "Søtsaker" },
+                new CategoryModel { CategoryId = 7, CategoryName = "Tørrvarer" },
+                new CategoryModel { CategoryId = 8, CategoryName = "Husholdning" },
+                new CategoryModel { CategoryId = 9, CategoryName = "Personlig pleie" },
+                new CategoryModel { CategoryId = 10, CategoryName = "Annet" }
+                );
+
+            modelBuilder.Entity<ShopModel>().HasData(
+                new ShopModel { ShopID = 1, ShopName = "Kiwi" },
+                new ShopModel { ShopID = 2, ShopName = "Rema 1000" },
+                new ShopModel { ShopID = 3, ShopName = "Coop Mega" },
+                new ShopModel { ShopID = 4, ShopName = "Coop Extra"},
+                new ShopModel { ShopID = 5, ShopName = "Meny" },
+                new ShopModel { ShopID = 6, ShopName = "Bunnpris" },
+                new ShopModel { ShopID = 7, ShopName = "Spar"},
+                new ShopModel { ShopID = 8, ShopName = "Joker" },
+                new ShopModel { ShopID = 9, ShopName = "Obs!" },
+                new ShopModel { ShopID = 10, ShopName = "Coop Prix" }
+                 );
 
         }
     }

@@ -83,12 +83,6 @@ map.on(L.Draw.Event.CREATED, function (e) {
             document.getElementById('geoConvert').value = "Error fetching address";
         });
 
-
-
-    
-
-   
-
     // Set value of hidden input field to GeoJSON string variable created
 });
 

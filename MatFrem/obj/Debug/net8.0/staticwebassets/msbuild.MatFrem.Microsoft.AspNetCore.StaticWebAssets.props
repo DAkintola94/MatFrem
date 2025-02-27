@@ -1596,8 +1596,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>atwivgyql8</Fingerprint>
-      <Integrity>YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0=</Integrity>
+      <Fingerprint>bvq4xjtmio</Fingerprint>
+      <Integrity>B56rlDkiSvwlm1yMJ2WR3N8fH9DwEL2v4iE/LczQPl0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\geoLocationProductIndex.js'))</OriginalItemSpec>
@@ -1668,8 +1668,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>sb0uzxyy9x</Fingerprint>
-      <Integrity>2Nsor9rGrezlHjTbs3wN5UIFbpJSujqBoaTVRmpt+QU=</Integrity>
+      <Fingerprint>eyt6c69v3x</Fingerprint>
+      <Integrity>JpEAA7vlJuciZ0h6dJ/quFwXpAz7k5c1rhONeGNcp18=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\sortSearch.js'))</OriginalItemSpec>

@@ -69,7 +69,6 @@ namespace MatFrem.Controllers
                                                                               //If it does, we will return the order details that belongs to the customer
                     .Select(o => new OrderViewModel //getOrders is already taking from db OrderModel, now we simply map it to OrderViewModel
                     {
-                        CustomerId = o.CustomerId,
                         CustomerPhoneNr = o.CustomerPhoneNr,
                         ItemCategory = o.ProductCategory,
                         CustomerName = o.CustomerName, //should be from the order!

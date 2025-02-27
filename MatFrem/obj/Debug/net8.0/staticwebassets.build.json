@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "maJEevrN99WVVr9KqRDq/GAeHilsE4p0PdYx4nusR3U=",
+  "Hash": "hOTA+MO5SN6Gz2Oh4jx//pZgIuO0haZOpqZkmI1Qz30=",
   "Source": "MatFrem",
   "BasePath": "_content/MatFrem",
   "Mode": "Default",
@@ -1921,8 +1921,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "atwivgyql8",
-      "Integrity": "YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0=",
+      "Fingerprint": "bvq4xjtmio",
+      "Integrity": "B56rlDkiSvwlm1yMJ2WR3N8fH9DwEL2v4iE/LczQPl0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\geoLocationProductIndex.js"
@@ -2005,8 +2005,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "sb0uzxyy9x",
-      "Integrity": "2Nsor9rGrezlHjTbs3wN5UIFbpJSujqBoaTVRmpt+QU=",
+      "Fingerprint": "eyt6c69v3x",
+      "Integrity": "JpEAA7vlJuciZ0h6dJ/quFwXpAz7k5c1rhONeGNcp18=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\sortSearch.js"
@@ -9240,7 +9240,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 24 Dec 2024 19:08:21 GMT"
+          "Value": "Thu, 27 Feb 2025 17:55:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9285,7 +9285,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 24 Dec 2024 19:08:21 GMT"
+          "Value": "Thu, 27 Feb 2025 17:55:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10448,7 +10448,7 @@
       ]
     },
     {
-      "Route": "js/geoLocationProductIndex.atwivgyql8.js",
+      "Route": "js/geoLocationProductIndex.bvq4xjtmio.js",
       "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geoLocationProductIndex.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -10458,7 +10458,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3294"
+          "Value": "3275"
         },
         {
           "Name": "Content-Type",
@@ -10466,11 +10466,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0=\""
+          "Value": "\"B56rlDkiSvwlm1yMJ2WR3N8fH9DwEL2v4iE/LczQPl0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 04 Feb 2025 17:17:12 GMT"
+          "Value": "Thu, 27 Feb 2025 19:10:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10480,7 +10480,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "atwivgyql8"
+          "Value": "bvq4xjtmio"
         },
         {
           "Name": "label",
@@ -10488,7 +10488,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0="
+          "Value": "sha256-B56rlDkiSvwlm1yMJ2WR3N8fH9DwEL2v4iE/LczQPl0="
         }
       ]
     },
@@ -10503,7 +10503,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3294"
+          "Value": "3275"
         },
         {
           "Name": "Content-Type",
@@ -10511,11 +10511,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0=\""
+          "Value": "\"B56rlDkiSvwlm1yMJ2WR3N8fH9DwEL2v4iE/LczQPl0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 04 Feb 2025 17:17:12 GMT"
+          "Value": "Thu, 27 Feb 2025 19:10:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10525,7 +10525,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-YioGjQF3R/DsB6be6ExYpBjwFmwMB1EC5t7NMRO0Jw0="
+          "Value": "sha256-B56rlDkiSvwlm1yMJ2WR3N8fH9DwEL2v4iE/LczQPl0="
         }
       ]
     },
@@ -10634,7 +10634,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 22:47:24 GMT"
+          "Value": "Thu, 27 Feb 2025 17:55:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10671,7 +10671,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 22:47:24 GMT"
+          "Value": "Thu, 27 Feb 2025 17:55:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10776,6 +10776,51 @@
       ]
     },
     {
+      "Route": "js/sortSearch.eyt6c69v3x.js",
+      "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\sortSearch.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4854"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JpEAA7vlJuciZ0h6dJ/quFwXpAz7k5c1rhONeGNcp18=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 19:10:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "eyt6c69v3x"
+        },
+        {
+          "Name": "label",
+          "Value": "js/sortSearch.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JpEAA7vlJuciZ0h6dJ/quFwXpAz7k5c1rhONeGNcp18="
+        }
+      ]
+    },
+    {
       "Route": "js/sortSearch.js",
       "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\sortSearch.js",
       "Selectors": [],
@@ -10786,7 +10831,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4827"
+          "Value": "4854"
         },
         {
           "Name": "Content-Type",
@@ -10794,11 +10839,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"2Nsor9rGrezlHjTbs3wN5UIFbpJSujqBoaTVRmpt+QU=\""
+          "Value": "\"JpEAA7vlJuciZ0h6dJ/quFwXpAz7k5c1rhONeGNcp18=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 00:16:25 GMT"
+          "Value": "Thu, 27 Feb 2025 19:10:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10808,52 +10853,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-2Nsor9rGrezlHjTbs3wN5UIFbpJSujqBoaTVRmpt+QU="
-        }
-      ]
-    },
-    {
-      "Route": "js/sortSearch.sb0uzxyy9x.js",
-      "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\sortSearch.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4827"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"2Nsor9rGrezlHjTbs3wN5UIFbpJSujqBoaTVRmpt+QU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 00:16:25 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "sb0uzxyy9x"
-        },
-        {
-          "Name": "label",
-          "Value": "js/sortSearch.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-2Nsor9rGrezlHjTbs3wN5UIFbpJSujqBoaTVRmpt+QU="
+          "Value": "sha256-JpEAA7vlJuciZ0h6dJ/quFwXpAz7k5c1rhONeGNcp18="
         }
       ]
     },

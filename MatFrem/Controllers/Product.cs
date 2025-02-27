@@ -41,13 +41,13 @@ namespace MatFrem.Controllers
 				{
 
 					ProductID = pModel.ProductID,
-					ProductName = pModel.ProductName,
-					ProductPrice = pModel.ProductPrice,
-					ProductCalories = pModel.ProductCalories,
-					ProductLocation = pModel.ProductLocation,
-					Category = pModel.Category
-
-				};
+					ProductName = pModel.ProductViewName,
+					ProductPrice = pModel.ProductViewPrice,
+					ProductCalories = pModel.ProductViewCalories,
+					ProductLocation = pModel.ProductViewLocation,
+					CategoryId = pModel.ViewMCategoryId,
+                    ShopId = pModel.ViewMShopId //getting the value from the option selector in html, then inserting it into the db and to the designed foreign key
+                };
 
                     if (file != null)
                     {
@@ -95,11 +95,13 @@ namespace MatFrem.Controllers
                 var productViewModels = getAllProducts.Select(product => new ProductViewModel
                 {
                     ProductID = product.ProductID,
-                    ProductName = product.ProductName,
-                    ProductPrice = product.ProductPrice,
-                    ProductCalories = product.ProductCalories,
-                    ProductLocation = product.ProductLocation,
-                    Category = product.Category,
+                    ProductViewName = product.ProductName,
+                    ProductViewPrice = product.ProductPrice,
+                    ProductViewCalories = product.ProductCalories,
+                    ProductViewLocation = product.ProductLocation,
+                    ViewCategoryName = product.CategoryModel.CategoryName ?? "Null",
+                    ViewShopName = product.ShopModelO.ShopName ?? "Null", //getting the value from the shop model property, which semi act as a foreign key
+                    ViewMShopId = product.ShopId,
                     ImageUrl = product.ImageUrl
                 }).ToList();
                 return View(productViewModels);
@@ -117,12 +119,13 @@ namespace MatFrem.Controllers
                 ProductViewModel editProduct = new ProductViewModel
                 {
                     ProductID = editItem.ProductID,
-                    ProductName = editItem.ProductName,
-                    ProductPrice = editItem.ProductPrice,
-                    ProductCalories = editItem.ProductCalories,
-                    ProductLocation = editItem.ProductLocation,
-					Category = editItem.Category
-
+                    ProductViewName = editItem.ProductName,
+                    ProductViewPrice = editItem.ProductPrice,
+                    ProductViewCalories = editItem.ProductCalories,
+                    ProductViewLocation = editItem.ProductLocation,
+					ViewCategoryName = editItem.CategoryModel.CategoryName,
+                    ViewShopName = editItem.ShopModelO.ShopName,
+                    ViewMCategoryId = editItem.CategoryId
 				};
 				return View(editProduct); //its this "new" model we want to return, editItem is attached to another type of model that is not seeded here
             }
@@ -160,12 +163,13 @@ namespace MatFrem.Controllers
 			}
 
 			// Update the existing item with new values
-			existingItem.ProductName = editProduct.ProductName;
-			existingItem.ProductPrice = editProduct.ProductPrice;
-			existingItem.ProductCalories = editProduct.ProductCalories;
-			existingItem.ProductLocation = editProduct.ProductLocation;
-			existingItem.Description = editProduct.Description;
-			existingItem.Category = editProduct.Category;
+			existingItem.ProductName = editProduct.ProductViewName;
+			existingItem.ProductPrice = editProduct.ProductViewPrice;
+			existingItem.ProductCalories = editProduct.ProductViewCalories;
+			existingItem.ProductLocation = editProduct.ProductViewLocation;
+			existingItem.Description = editProduct.ProductViewDescription;
+			existingItem.CategoryId = editProduct.ViewMCategoryId;
+            existingItem.ShopId = editProduct.ViewMShopId;
 
 			// Save the changes to the repository
 			await _productRepository.UpdateItems(existingItem);
@@ -201,11 +205,11 @@ namespace MatFrem.Controllers
             {
 				ProductViewModel viewModel = new ProductViewModel
 				{
-                    ProductPrice = getById.ProductPrice,
-                    ProductName = getById.ProductName,
-					ProductCalories = getById.ProductCalories,
-					ProductLocation = getById.ProductLocation,
-					Description = getById.Description
+                    ProductViewPrice = getById.ProductPrice,
+                    ProductViewName = getById.ProductName,
+					ProductViewCalories = getById.ProductCalories,
+					ProductViewLocation = getById.ProductLocation,
+					ProductViewDescription = getById.Description
 				};
 
                 return View(viewModel);

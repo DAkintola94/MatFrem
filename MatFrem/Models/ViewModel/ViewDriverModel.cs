@@ -18,10 +18,5 @@ namespace MatFrem.Models.ViewModel
         public string CurrentLocation { get; set; }
         public string LicenseNumber { get; set; }
 
-        public OrderModel Order { get; set; } //all the properties is so the driver page model can be used to retreive those info
-        public CustomerModel Customer { get; set; } //all the properties is so the driver page model can be used to retreive those info
-        public ShopModel ShopModel { get; set; } //all the properties is so the driver page model can be used to retreive those info
-        public OrderStatus OrderStatus { get; set; } 
-
     }
 }

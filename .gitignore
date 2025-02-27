@@ -75,3 +75,14 @@ Desktop.ini
 /.vs/ProjectEvaluation/matfrem.strings.v9.bin
 /.vs/ProjectEvaluation/matfrem.projects.v9.bin
 /.vs/ProjectEvaluation/matfrem.metadata.v9.bin
+/MatFrem/Migrations/20241203234124_NullableMigrateTable.cs
+/MatFrem/Migrations/20241203234124_NullableMigrateTable.Designer.cs
+/MatFrem/Migrations/20241209174621_InitialCreationLaptop.cs
+/MatFrem/Migrations/20241209174621_InitialCreationLaptop.Designer.cs
+/MatFrem/Migrations/AppDBContextModelSnapshot.cs
+/MatFrem/Models/DomainModel/CustomerModel.cs
+/MatFrem/Migrations/AppDBContextModelSnapshot.cs
+/MatFrem/Migrations/20241209174621_InitialCreationLaptop.Designer.cs
+/MatFrem/Migrations/20241209174621_InitialCreationLaptop.cs
+/MatFrem/Migrations/20241203234124_NullableMigrateTable.Designer.cs
+/MatFrem/Migrations/20241203234124_NullableMigrateTable.cs

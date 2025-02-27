@@ -54,7 +54,7 @@ namespace MatFrem.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Index(string deliveryAddress, string paymentMethod, ShoppingCartViewModel scViewModel)
+        public IActionResult Index(string deliveryAddress, string paymentMethod, ShoppingCartViewModel scViewModel) //values that will be sent to ConfirmPurchase method
         {
             List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
             decimal subtotal = CartHelper.GetSubTotal(cartItems);
@@ -62,7 +62,7 @@ namespace MatFrem.Controllers
 
             int cartSize = CartHelper.GetCartSize(Request, Response);
 
-            var appUser = _userManager.GetUserAsync(User).Result;
+            var currentUser = _userManager.GetUserAsync(User).Result;
 
             foreach (var items in cartItems) //this is to get product values that is already inside our shoppingcart, since its a collection, we need to get values inside like this.
             {
@@ -71,7 +71,6 @@ namespace MatFrem.Controllers
                 scViewModel.ProductName = productsElement.ProductName;
                 scViewModel.PickUpAddress = productsElement.ProductLocation;
                 scViewModel.ProductDescription = productsElement.Description;
-                scViewModel.ProductCategories = productsElement.Category;
             }
             scViewModel.CartSize = cartSize; //this is to get and attach the values from the cartitems foreach loop above
 			scViewModel.CartItems = cartItems; //this is to get the objects in the cartItems service, in line 59
@@ -80,8 +79,8 @@ namespace MatFrem.Controllers
             scViewModel.Total = subtotal + deliveryFee;
             scViewModel.DeliveryAddress = deliveryAddress; //attaching it to the name="" defined in html, getting data through the parameter here
             scViewModel.PaymentMethod = paymentMethod; //attaching it to the name="" defined in html, getting data through the parameter here
-            scViewModel.CustomerName = appUser.FirstName + " " + appUser.LastName;
-            scViewModel.CustomerPhoneNr = appUser.PhoneNumber;
+            scViewModel.CustomerName = currentUser.FirstName + " " + currentUser.LastName;
+            scViewModel.CustomerPhoneNr = currentUser.PhoneNumber;
 
 
             //scViewModel html already have a form that takes in productname, id, details etc, its being sent to confirmpurchase
@@ -115,6 +114,22 @@ namespace MatFrem.Controllers
             ViewBag.PageSize = pageSize;
 
             var listAllProducts = await _productRepository.GetAllItems(pageNumber, pageSize);
+
+            if(listAllProducts != null)
+            {
+
+
+                var productViewModels = listAllProducts.Select(p => new ProductViewModel
+                {
+                    ProductID = p.ProductID,
+                    ProductViewName = p.ProductName,
+                    ProductViewPrice = p.ProductPrice,
+                    ProductViewCalories = p.ProductCalories,
+                    ProductViewLocation = p.ProductLocation,
+                    ViewCategoryName = p.CategoryModel.CategoryName ?? "Null"
+                });
+
+            }
             
 			return View(listAllProducts);
         }
@@ -141,7 +156,7 @@ namespace MatFrem.Controllers
 
 
         [HttpPost]
-		public async Task<ActionResult> Cart(ProductViewModel request)
+		public async Task<ActionResult> Cart(ProductViewModel productViewModel)
 		{
 			if(!ModelState.IsValid)
             {
@@ -154,11 +169,11 @@ namespace MatFrem.Controllers
             {
                 ProductModel convertPModel = new ProductModel
                 {
-                    ProductID = request.ProductID,
-                    ProductName = request.ProductName,
-                    ProductPrice = request.ProductPrice,
-                    ProductLocation = request.ProductLocation,
-                    CustomerId = currentSubmitter.Id,
+                    ProductID = productViewModel.ProductID,
+                    ProductName = productViewModel.ProductViewName,
+                    ProductPrice = productViewModel.ProductViewPrice,
+                    ProductLocation = productViewModel.ProductViewLocation,
+                    CustomerName = currentSubmitter.FirstName + currentSubmitter.LastName,
                 };
 
                 await _productRepository.InsertProduct(convertPModel);
@@ -169,7 +184,7 @@ namespace MatFrem.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> ConfirmPurchase(ShoppingCartViewModel scViewModel)
+        public async Task<ActionResult> ConfirmPurchase(ShoppingCartViewModel scViewModel) //values we are retrieving from index method above
         {
             List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
             decimal total = CartHelper.GetSubTotal(cartItems) + deliveryFee;

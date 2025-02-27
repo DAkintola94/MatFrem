@@ -17,6 +17,7 @@ namespace MatFrem.Repository
 			var query = _context.Orders
                 .Include(o => o.OrderStatus) //eager load, think of this like a JOIN operation in sql
                 .Include(p => p.ProductM)
+                .Include(c => c.CategoryModel)
                 .AsQueryable();
 			//pagination - a formula of skipping a certain number of items and taking a certain number of items
 			var skipResult = (pageNumber - 1) * pageSize;
@@ -62,6 +63,7 @@ namespace MatFrem.Repository
             return await _context.Orders
                 .Include(o => o.OrderStatus) //eager load, think of this like a JOIN operation in sql
                 .Include(p => p.ProductM)
+                .Include(c => c.CategoryModel)
                 .Where(x => x.OrderID == id).FirstOrDefaultAsync();
         }
 

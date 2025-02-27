@@ -43,11 +43,11 @@
                     {
                         <tr>
                             <td>@productModel.ProductID</td>
-                            <td>@productModel.ProductLocation</td>
-                            <td>@productModel.ProductName</td>
-                            <td>@(productModel.ProductPrice)kr</td>
-                            <td>@productModel.ProductCalories</td>
-                            <td>@productModel.Category</td>
+                            <td>@productModel.ProductViewLocation</td>
+                            <td>@productModel.ProductViewName</td>
+                            <td>@(productModel.ProductViewPrice)kr</td>
+                            <td>@productModel.ProductViewCalories</td>
+                            <td>@productModel.ViewCategoryName</td>
                             <td>
                                 <a class="btn btn-danger btn-sm" asp-controller="Product" asp-action="DeleteProduct"
                                    asp-route-id="@productModel.ProductID" onclick="return confirm('Er du sikkert?')">Slett</a>
