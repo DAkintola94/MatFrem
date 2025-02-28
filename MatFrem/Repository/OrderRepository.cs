@@ -1,5 +1,6 @@
 ﻿using MatFrem.DataContext;
 using MatFrem.Models.DomainModel;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace MatFrem.Repository
@@ -16,8 +17,10 @@ namespace MatFrem.Repository
         {
 			var query = _context.Orders
                 .Include(o => o.OrderStatus) //eager load, think of this like a JOIN operation in sql
-                .Include(p => p.ProductM)
-                .Include(c => c.CategoryModel)
+
+                .Include(oP => oP.OrderProduct) //Eager load OrderProducts, this is a list property in OrderModel
+
+                .ThenInclude(p => p.ProductM) // THEN!....Eager load Product through OrderProducts. 
                 .AsQueryable();
 			//pagination - a formula of skipping a certain number of items and taking a certain number of items
 			var skipResult = (pageNumber - 1) * pageSize;
@@ -62,8 +65,10 @@ namespace MatFrem.Repository
         {
             return await _context.Orders
                 .Include(o => o.OrderStatus) //eager load, think of this like a JOIN operation in sql
-                .Include(p => p.ProductM)
-                .Include(c => c.CategoryModel)
+
+                .Include(oP => oP.OrderProduct) //Eager load OrderProducts
+
+                .ThenInclude(p => p.ProductM) // THEN!....Eager load Product through OrderProducts.
                 .Where(x => x.OrderID == id).FirstOrDefaultAsync();
         }
 

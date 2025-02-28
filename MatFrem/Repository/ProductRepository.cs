@@ -30,7 +30,8 @@ namespace MatFrem.Repository
 
         public async Task<IEnumerable<ProductModel>> GetAllItems(int pageNumber = 1, int pageSize = 100)
         {
-            var query = _context.Product_detail.AsQueryable(); 
+            var query = _context.Product_detail.Include(sM => sM.ShopModelO)
+                .AsQueryable(); 
             //pagination - a formula of skipping a certain number of items and taking a certain number of items
             var skipResult = (pageNumber - 1) * pageSize;
             query = query.Skip(skipResult).Take(pageSize);
@@ -68,11 +69,13 @@ namespace MatFrem.Repository
         /// The <see cref="ProductModel"/> object corresponding to the specified ID, 
         /// or <c>null</c> if no product with the given ID exists in the database.
         /// </returns>
-        public async Task<ProductModel> GetItemById(int Id)
+        public async Task<ProductModel?> GetItemById(int Id)
         {
 
-           return await _context.Product_detail.Where(p => p.ProductID == Id).FirstOrDefaultAsync();
-
+           return await _context.Product_detail
+                .Include(sM => sM.ShopModelO)
+                .Where(p => p.ProductID == Id)
+                .FirstOrDefaultAsync();
         }
 
         /// <summary>

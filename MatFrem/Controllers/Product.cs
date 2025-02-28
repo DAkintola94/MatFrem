@@ -42,7 +42,7 @@ namespace MatFrem.Controllers
 					ProductPrice = pModel.ProductViewPrice,
 					ProductCalories = pModel.ProductViewCalories,
 					ProductLocation = pModel.ProductViewLocation,
-					CategoryId = pModel.ViewMCategoryId,
+					ProductCategory = pModel.ViewCategoryName,
                     ShopId = pModel.ViewMShopId //getting the value from the option selector in html, then inserting it into the db and to the designed foreign key
                 };
 
@@ -94,8 +94,8 @@ namespace MatFrem.Controllers
                     ProductViewPrice = product.ProductPrice,
                     ProductViewCalories = product.ProductCalories,
                     ProductViewLocation = product.ProductLocation,
-                    ViewCategoryName = product.CategoryModel.CategoryName ?? "Null",
-                    ViewShopName = product.ShopModelO.ShopName ?? "Null", //getting the value from the shop model property, which semi act as a foreign key
+                    ViewCategoryName = product.ProductCategory ?? string.Empty,
+                    ViewShopName = product.ShopModelO.ShopName ?? string.Empty, //getting the value from the shop model property, which semi act as a foreign key
                     ViewMShopId = product.ShopId,
                     ImageUrl = product.ImageUrl
                 }).ToList();
@@ -117,9 +117,8 @@ namespace MatFrem.Controllers
                     ProductViewPrice = editItem.ProductPrice,
                     ProductViewCalories = editItem.ProductCalories,
                     ProductViewLocation = editItem.ProductLocation,
-					ViewCategoryName = editItem.CategoryModel.CategoryName,
-                    ViewShopName = editItem.ShopModelO.ShopName,
-                    ViewMCategoryId = editItem.CategoryId
+					ViewCategoryName = editItem.ProductCategory,
+                    ViewShopName = editItem.ShopModelO.ShopName
 				};
 				return View(editProduct); //its this "new" model we want to return, editItem is attached to another type of model that is not seeded here
             }
@@ -162,7 +161,7 @@ namespace MatFrem.Controllers
 			existingItem.ProductCalories = editProduct.ProductViewCalories;
 			existingItem.ProductLocation = editProduct.ProductViewLocation;
 			existingItem.Description = editProduct.ProductViewDescription;
-			existingItem.CategoryId = editProduct.ViewMCategoryId;
+            existingItem.ProductCategory = editProduct.ViewCategoryName;
             existingItem.ShopId = editProduct.ViewMShopId;
 
 			// Save the changes to the repository
@@ -203,7 +202,8 @@ namespace MatFrem.Controllers
                     ProductViewName = getById.ProductName,
 					ProductViewCalories = getById.ProductCalories,
 					ProductViewLocation = getById.ProductLocation,
-					ProductViewDescription = getById.Description
+					ProductViewDescription = getById.Description,
+                    ViewCategoryName = getById.ProductCategory ?? string.Empty
 				};
 
                 return View(viewModel);

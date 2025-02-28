@@ -87,3 +87,4 @@ Desktop.ini
 /MatFrem/Migrations/20241203234124_NullableMigrateTable.Designer.cs
 /MatFrem/Migrations/20241203234124_NullableMigrateTable.cs
 /MatFrem/Controllers/Customer.cs
+/MatFrem/Models/DomainModel/CategoryModel.cs

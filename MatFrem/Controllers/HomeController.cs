@@ -34,7 +34,7 @@ namespace MatFrem.Controllers
                     ProductViewPrice = product.ProductPrice,
                     ProductViewCalories = product.ProductCalories,
                     ProductViewLocation = product.ProductLocation,
-                    ViewCategoryName = product.CategoryModel.CategoryName,
+                    ViewCategoryName = product.ProductCategory,
                     ImageUrl = product.ImageUrl
                 }).ToList();
                 return View(productViewModels);

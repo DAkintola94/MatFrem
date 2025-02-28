@@ -10,7 +10,7 @@ namespace MatFrem.Models.ViewModel
     {
         public int ProductID { get; set; }
         public string? ProductViewDescription { get; set; }
-        public string ProductViewName { get; set; }
+        public string? ProductViewName { get; set; }
         public string? ProductViewCalories { get; set; }
         public double ProductViewPrice { get; set; }
         public string? ProductViewLocation { get; set; }

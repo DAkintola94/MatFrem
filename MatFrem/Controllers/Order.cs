@@ -26,7 +26,10 @@ namespace MatFrem.Controllers
             {
                 OrderViewModel orderViewModel = new OrderViewModel
                 {
-                   
+                    CustomerName = getOrderById.CustomerName,
+                    CustomerPhoneNr = getOrderById.CustomerPhoneNr,
+                    OrderID = getOrderById.OrderID,
+                    ProductNames = getOrderById.OrderProduct.Select(op => op.ProductM.ProductName).ToList()
                 };
 
                 return View(orderViewModel);
@@ -70,10 +73,10 @@ namespace MatFrem.Controllers
                     .Select(o => new OrderViewModel //getOrders is already taking from db OrderModel, now we simply map it to OrderViewModel
                     {
                         CustomerPhoneNr = o.CustomerPhoneNr,
-                        ItemCategory = o.ProductCategory,
+                        ItemCategory = o.OrderProduct.Select(op => op.ProductM.ProductCategory).ToList(),
                         CustomerName = o.CustomerName, //should be from the order!
                         OrderID = o.OrderID,
-                        ProductName = o.ProductName,
+                        ProductNames = o.OrderProduct.Select(op => op.ProductM.ProductName).ToList(), //eagerloading, to list because we are getting a list and sending to view 
                         TotalAmount = o.TotalPrice,
                         OrderQuantitySize = o.OrderItem,
                         OrderStatusDescription = o.OrderStatus?.StatusDescription, //this works due to eager loading in the repository

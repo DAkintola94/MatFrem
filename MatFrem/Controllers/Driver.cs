@@ -53,13 +53,13 @@ namespace MatFrem.Controllers
 					OrderID = o.OrderID, //need to pass and attach the ID from DB to the view model, remember that when working with view model
 					CustomerName = o.CustomerName ?? string.Empty,
 					CustomerPhoneNr = o.CustomerPhoneNr ?? string.Empty,
-                    ProductName = o.ProductName ?? string.Empty,
+                    ProductNames = o.OrderProduct.Select(op => op.ProductM.ProductName).ToList(),
 					TotalAmount = o.TotalPrice,
 					OrderQuantitySize = o.OrderItem,
 					OrderStatusDescription = o.OrderStatus?.StatusDescription ?? string.Empty, //We are attaching the outcoming data (CHAR), status description, to OrderStatus.StatusDescription
                                                                                                //That is the foreign key in the OrderModel, that is connected to the OrderStatusModel
                     PickUpAddress = o.PickUpAddress ?? string.Empty,
-                    ItemCategory = o.ProductCategory ?? string.Empty,
+                    ItemCategory = o.OrderProduct.Select(op => op.ProductM.ProductCategory).ToList(),
 					DateOrderCreate = o.OrderCreatedDate,
 					DeliveryAddress = o.DeliveryAddress ?? string.Empty
                 }).ToList();
@@ -83,17 +83,15 @@ namespace MatFrem.Controllers
 												 //Since this does not auto connect when dealing with view model							 
 					CustomerName = getOrders.CustomerName ?? string.Empty,
 					CustomerPhoneNr = getOrders.CustomerPhoneNr ?? string.Empty,
-					ProductName = getOrders.ProductName ?? string.Empty,
+					ProductNames = getOrders.OrderProduct.Select(op => op.ProductM.ProductName).ToList(),
 					TotalAmount = getOrders.TotalPrice,
 					OrderQuantitySize = getOrders.OrderItem,
 					OrderStatusID = getOrders.OrderStatusID,
 					OrderStatusDescription = getOrders.OrderStatus?.StatusDescription ?? string.Empty, //this works because of eager loading in repository
 					PickUpAddress = getOrders.PickUpAddress ?? string.Empty,
-					ItemCategory = getOrders.ProductCategory ?? string.Empty,
+					ItemCategory = getOrders.OrderProduct.Select(op => op.ProductM.ProductCategory).ToList(),
 					DateOrderCreate = getOrders.OrderCreatedDate,
 					DeliveryAddress = getOrders.DeliveryAddress ?? string.Empty,
-
-
                     DriverName = currentUser.FirstName + " " + currentUser.LastName //attaching the driver name to the current driver(user) logged in
                 };
 
@@ -174,11 +172,11 @@ namespace MatFrem.Controllers
                     CustomerName = o.CustomerName ?? string.Empty,
 					DriverId = o.DriverId ?? string.Empty,
                     CustomerPhoneNr = o.CustomerPhoneNr ?? string.Empty,
-                    ProductName = o.ProductName ?? string.Empty,
+                    ProductNames = o.OrderProduct.Select(op => op.ProductM.ProductName).ToList(),
                     TotalAmount = o.TotalPrice,
                     OrderStatusDescription = o.OrderStatus?.StatusDescription ?? string.Empty,
                     PickUpAddress = o.PickUpAddress ?? string.Empty,
-                    ItemCategory = o.ProductCategory ?? string.Empty,
+                    ItemCategory = o.OrderProduct.Select(op => op.ProductM.ProductCategory).ToList(),
                     DateOrderCreate = o.OrderCreatedDate,
                     DeliveryAddress = o.DeliveryAddress ?? string.Empty
 

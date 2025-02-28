@@ -21,16 +21,16 @@
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Produkt navn</label>
-                        <input type="text" asp-for="ProductName" class="form-control" readonly>
+                        <input type="text" asp-for="ProductViewName" class="form-control" readonly>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Pris</label>
-                        <input type="text" asp-for="ProductPrice" class="form-control" readonly>
+                        <input type="text" asp-for="ProductViewPrice" class="form-control" readonly>
                     </div>
 
                     <div class="col-md-6">
                         <label class="form-label">Kalori innhold per 100g</label>
-                        <input type="text" asp-for="ProductCalories" class="form-control" readonly>
+                        <input type="text" asp-for="ProductViewCalories" class="form-control" readonly>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Produkt lokasjon</label>
@@ -47,6 +47,6 @@
 </body>
 </html>
 
-<script>var modelValues = @Html.Raw(Json.Serialize(Model.ProductLocation));</script>
+<script>var modelValues = @Html.Raw(Json.Serialize(Model.ProductViewLocation));</script>
 <script src="~/js/cartGeo.js"></script>
 <script src="~/js/shopcart.js"></script>

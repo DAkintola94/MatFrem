@@ -117,8 +117,6 @@ namespace MatFrem.Controllers
 
             if(listAllProducts != null)
             {
-
-
                 var productViewModels = listAllProducts.Select(p => new ProductViewModel
                 {
                     ProductID = p.ProductID,
@@ -126,9 +124,8 @@ namespace MatFrem.Controllers
                     ProductViewPrice = p.ProductPrice,
                     ProductViewCalories = p.ProductCalories,
                     ProductViewLocation = p.ProductLocation,
-                    ViewCategoryName = p.CategoryModel.CategoryName ?? "Null"
+                    ViewCategoryName = p.ProductCategory
                 });
-
             }
             
 			return View(listAllProducts);

@@ -20,9 +20,9 @@ namespace MatFrem.Models.DomainModel
 		[MaxLength(100)]
 		public string? CustomerName { get; set; }
 		[MaxLength(100)]
-		public CategoryModel? CategoryModel { get; set; }
 		public ShopModel? ShopModelO { get; set; }
-		public int ShopId { get; set; }
-		public int CategoryId { get; set; }
+		public string? ProductCategory { get; set; }
+		public ICollection<OrderProducts> OrderProduct { get; set; } = new List<OrderProducts>(); //indicates many to many relationship
+        public int ShopId { get; set; }
     }
 }
