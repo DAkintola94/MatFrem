@@ -33,30 +33,32 @@
                         <th>Pris</th>
                         <th>Kalori Innhold</th>
                         <th>Kategori</th>
+                        <th>Butikk</th>
                         <th>Fjern</th>
                         <th>Rediger</th>
                         
                     </tr>
                 </thead>
                 <tbody id="myTable">
-                    @foreach (var productModel in Model)
+                    @foreach (var productViewModel in Model)
                     {
                         <tr>
-                            <td>@productModel.ProductID</td>
-                            <td>@productModel.ProductViewLocation</td>
-                            <td>@productModel.ProductViewName</td>
-                            <td>@(productModel.ProductViewPrice)kr</td>
-                            <td>@productModel.ProductViewCalories</td>
-                            <td>@productModel.ViewCategoryName</td>
+                            <td>@productViewModel.ProductID</td>
+                            <td>@productViewModel.ProductViewLocation</td>
+                            <td>@productViewModel.ProductViewName</td>
+                            <td>@(productViewModel.ProductViewPrice)kr</td>
+                            <td>@productViewModel.ProductViewCalories</td>
+                            <td>@productViewModel.ViewShopName</td>
+                            <td>@productViewModel.ViewCategoryName</td>
                             <td>
                                 <a class="btn btn-danger btn-sm" asp-controller="Product" asp-action="DeleteProduct"
-                                   asp-route-id="@productModel.ProductID" onclick="return confirm('Er du sikkert?')">Slett</a>
+                                   asp-route-id="@productViewModel.ProductID" onclick="return confirm('Er du sikkert?')">Slett</a>
                             </td>
 
                             <td>
                                 <a asp-controller="Product"
                                    asp-action="EditProduct"
-                                   asp-route-id="@productModel.ProductID">
+                                   asp-route-id="@productViewModel.ProductID">
                                     <img src="~/images/edit.svg" alt="Gå til" style="height: 40px;" />
                                 </a>
                             </td>

@@ -13,21 +13,21 @@
 			<div class="row mb-3">
 				<label class="col-sm-4 col-form-label">Produkt navn</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" asp-for="ProductName" />
+					<input type="text" class="form-control" asp-for="ProductViewName" />
 				</div>
 			</div>
 
 			<div class="row mb-3">
 				<label class="col-sm-4 col-form-label">Produkt pris</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" asp-for="ProductPrice" />
+					<input type="text" class="form-control" asp-for="ProductViewPrice" />
 				</div>
 			</div>
 
 			<div class="row mb-3">
 				<label class="col-sm-4 col-form-label">Produkt Kategori</label>
 				<div class="col-sm-8">
-					<select class="form-control" asp-for="Category">
+					<select class="form-control" asp-for="ViewCategoryName">
 						<option value="Meleri & Egg">Meleri & Egg</option>
 						<option value="Frukt & Grønt">Frukt & Grønt</option>
 						<option value="Vegetar">Vegetar</option>
@@ -41,23 +41,46 @@
 			</div>
 
 			<div class="row mb-3">
+				<label class="col-sm-4 col-form-label">Butikk navn</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" asp-for="ViewShopName" readonly/>
+				</div>
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Butikk navn</label>
+				<select class="form-control" asp-for="ViewMShopId">
+					<option value="1">Kiwi</option>
+					<option value="2">Rema 1000</option>
+					<option value="3">Coop Mega</option>
+					<option value="4">Coop Extra</option>
+					<option value="5">Meny</option>
+					<option value="6">Bunnpris</option>
+					<option value="7">Spar</option>
+					<option value="8">Joker</option>
+					<option value="9">Obs!</option>
+					<option value="10">Coop Prix</option>
+				</select>
+			</div>
+
+			<div class="row mb-3">
 				<label class="col-sm-4 col-form-label">Kalori per 100g</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" asp-for="ProductCalories" />
+					<input type="text" class="form-control" asp-for="ProductViewCalories" />
 				</div>
 			</div>
 
 			<div class="row mb-3">
 				<label class="col-sm-4 col-form-label">Beskrivelse</label>
 				<div class="col-sm-8">
-					<textarea type="text" class="form-control" asp-for="Description"> </textarea>
+					<textarea type="text" class="form-control" asp-for="ProductViewDescription"> </textarea>
 				</div>
 			</div>
 
 			<div class="row mb-3">
 				<label class="col-sm-4 col-form-label"> Lokasjon </label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" asp-for="ProductLocation" />
+					<input type="text" class="form-control" asp-for="ProductViewLocation" />
 				</div>
 			</div>
 
@@ -76,7 +99,7 @@
 
 
 			<div class="mb-3">
-				<input type="hidden" class="form-control" asp-for="ProductLocation" id="geoJsonInput" />
+				<input type="hidden" class="form-control" asp-for="ProductViewLocation" id="geoJsonInput" />
 				<!-- the id in this input stores GeoJSON data generated from drawn map shapes (set by JavaScript) -->
 			</div>
 

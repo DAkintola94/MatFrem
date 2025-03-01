@@ -16,13 +16,12 @@ namespace MatFrem.Models.ViewModel
         public string? OrderStatusDescription { get; set; }
         public string? PickUpAddress { get; set; }
         public int ProductID { get; set; }
-        public string? ProductName { get; set; }
         public double? ProductPrice { get; set; }
+        public List<string> ProductCategories { get; set; } = new List<string>();
 
 		[DisplayFormat(DataFormatString = "{0:F2}")]
 		public decimal? TotalAmount { get; set; }
 		public string? DriverName { get; set; }
-
         public string? GeoJson { get; set; }
         public string? CustomerId { get; set; } 
         public string? CustomerName { get; set; }

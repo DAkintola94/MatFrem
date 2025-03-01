@@ -29,7 +29,8 @@ namespace MatFrem.Controllers
                     CustomerName = getOrderById.CustomerName,
                     CustomerPhoneNr = getOrderById.CustomerPhoneNr,
                     OrderID = getOrderById.OrderID,
-                    ProductNames = getOrderById.OrderProduct.Select(op => op.ProductM.ProductName).ToList()
+                    ProductNames = getOrderById.OrderProduct.Select(op => op.ProductM.ProductName).ToList(),
+                    ProductCategories = getOrderById.OrderProduct.Select(op => op.ProductM.ProductCalories).ToList()
                 };
 
                 return View(orderViewModel);

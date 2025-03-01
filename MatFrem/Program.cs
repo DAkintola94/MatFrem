@@ -21,13 +21,16 @@ namespace MatFrem
 			builder.Services.AddScoped<IAdviceRepository, AdviceRepository>(); // this line adds the AdviceRepository to the services collection
             builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
 
+            builder.Services.AddDbContext<AuthDbContext>(options =>
+            options.UseMySql(builder.Configuration.GetConnectionString("IdentityConnection"),
+            new MySqlServerVersion(new Version(11, 5, 2))));
 
             builder.Services.AddDbContext<AppDBContext>(options =>
                 options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
                 new MySqlServerVersion(new Version(11, 5, 2))));
 
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>() //AddIdentity is a method that adds the Identity framework to the services collection
-                .AddEntityFrameworkStores<AppDBContext>();
+                .AddEntityFrameworkStores<AuthDbContext>();
 
             builder.Services.Configure<IdentityOptions>(options =>
             {
@@ -40,12 +43,9 @@ namespace MatFrem
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
             });
 
-
             builder.Services.AddRazorPages();
 
             var app = builder.Build();
-
-         
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

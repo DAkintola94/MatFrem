@@ -23,7 +23,7 @@ namespace MatFrem.Controllers
 		}
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
 			return View();
         }
@@ -43,7 +43,7 @@ namespace MatFrem.Controllers
 					ProductCalories = pModel.ProductViewCalories,
 					ProductLocation = pModel.ProductViewLocation,
 					ProductCategory = pModel.ViewCategoryName,
-                    ShopId = pModel.ViewMShopId //getting the value from the option selector in html, then inserting it into the db and to the designed foreign key
+                    ShopId = pModel.ViewMShopId //getting the value from the option selector in html, then inserting the int id into the db and to the designed foreign key
                 };
 
                     if (file != null)
@@ -95,9 +95,7 @@ namespace MatFrem.Controllers
                     ProductViewCalories = product.ProductCalories,
                     ProductViewLocation = product.ProductLocation,
                     ViewCategoryName = product.ProductCategory ?? string.Empty,
-                    ViewShopName = product.ShopModelO.ShopName ?? string.Empty, //getting the value from the shop model property, which semi act as a foreign key
-                    ViewMShopId = product.ShopId,
-                    ImageUrl = product.ImageUrl
+                    ViewShopName = product.ShopModelO.ShopName ?? string.Empty //getting the value from the shop model property, which semi act as a foreign key
                 }).ToList();
                 return View(productViewModels);
             }
@@ -107,7 +105,7 @@ namespace MatFrem.Controllers
         [HttpGet]
         public async Task<IActionResult> EditProduct(int id)
         {
-            var editItem = await _productRepository.GetItemById(id); //this repository have not saved anything, only found the id
+            var editItem = await _productRepository.GetItemById(id); //Finding the item by its id, then later sending to view
             if (editItem != null)
             {
                 ProductViewModel editProduct = new ProductViewModel
@@ -118,7 +116,8 @@ namespace MatFrem.Controllers
                     ProductViewCalories = editItem.ProductCalories,
                     ProductViewLocation = editItem.ProductLocation,
 					ViewCategoryName = editItem.ProductCategory,
-                    ViewShopName = editItem.ShopModelO.ShopName
+                    ViewShopName = editItem.ShopModelO.ShopName,
+                    ViewMShopId = editItem.ShopId
 				};
 				return View(editProduct); //its this "new" model we want to return, editItem is attached to another type of model that is not seeded here
             }
@@ -127,7 +126,7 @@ namespace MatFrem.Controllers
 
 
 		[HttpPost]
-		public async Task<IActionResult> EditProduct(ProductViewModel editProduct, IFormFile? file, int id)
+		public async Task<IActionResult> EditProduct(ProductViewModel editProductValue, IFormFile? file, int id)
 		{
 			var existingItem = await _productRepository.GetItemById(id);
 			if (existingItem == null)
@@ -156,18 +155,18 @@ namespace MatFrem.Controllers
 			}
 
 			// Update the existing item with new values
-			existingItem.ProductName = editProduct.ProductViewName;
-			existingItem.ProductPrice = editProduct.ProductViewPrice;
-			existingItem.ProductCalories = editProduct.ProductViewCalories;
-			existingItem.ProductLocation = editProduct.ProductViewLocation;
-			existingItem.Description = editProduct.ProductViewDescription;
-            existingItem.ProductCategory = editProduct.ViewCategoryName;
-            existingItem.ShopId = editProduct.ViewMShopId;
+			existingItem.ProductName = editProductValue.ProductViewName;
+			existingItem.ProductPrice = editProductValue.ProductViewPrice;
+			existingItem.ProductCalories = editProductValue.ProductViewCalories;
+			existingItem.ProductLocation = editProductValue.ProductViewLocation;
+			existingItem.Description = editProductValue.ProductViewDescription;
+            existingItem.ProductCategory = editProductValue.ViewCategoryName;
+            existingItem.ShopId = editProductValue.ViewMShopId;
 
 			// Save the changes to the repository
 			await _productRepository.UpdateItems(existingItem);
 
-			return RedirectToAction("ShowProduct", new { id = editProduct.ProductID });
+			return RedirectToAction("ShowProduct", new { id = editProductValue.ProductID });
 		}
         
         public async Task<IActionResult> DeleteProduct(int id)
@@ -199,11 +198,12 @@ namespace MatFrem.Controllers
 				ProductViewModel viewModel = new ProductViewModel
 				{
                     ProductViewPrice = getById.ProductPrice,
-                    ProductViewName = getById.ProductName,
-					ProductViewCalories = getById.ProductCalories,
-					ProductViewLocation = getById.ProductLocation,
-					ProductViewDescription = getById.Description,
-                    ViewCategoryName = getById.ProductCategory ?? string.Empty
+                    ProductViewName = getById.ProductName ?? string.Empty,
+					ProductViewCalories = getById.ProductCalories ?? string.Empty,
+					ProductViewLocation = getById.ProductLocation ?? string.Empty,
+					ProductViewDescription = getById.Description ?? string.Empty,
+                    ViewCategoryName = getById.ProductCategory ?? string.Empty,
+                    ViewShopName = getById.ShopModelO.ShopName ?? string.Empty
 				};
 
                 return View(viewModel);
