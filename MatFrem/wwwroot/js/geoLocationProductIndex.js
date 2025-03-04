@@ -27,9 +27,11 @@ map.on(L.Draw.Event.CREATED, function (e) {
 
     drawItems.addLayer(layer); // Add layer to map
 
-    var geoJsonData = layer.toGeoJSON(); // Convert layer to GeoJSON
+    var geoJsonData = layer.toGeoJSON(); // Convert layer to GeoJSON, this is the geojson
     var geoJsonString = JSON.stringify(geoJsonData); // Convert GeoJSON to string!! since we sending it to server
 
+    console.log(geoJsonData); // Print GeoJSON data to console
+    document.getElementById('geoJsonField').value = geoJsonData; // Set value of hidden input field to GeoJSON string variable created
 
 
     // Fetches and displays the address of a location based on GeoJSON data.
@@ -43,11 +45,9 @@ map.on(L.Draw.Event.CREATED, function (e) {
     var cenGeoLat = centroid.geometry.coordinates[1];
     
 
-
     console.log(centroid + "testing");
     console.log("Latitude: " + lat);
     console.log("Longitude: " + lon);
-
     
 
     var nominatimUrl = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`;
@@ -58,7 +58,7 @@ map.on(L.Draw.Event.CREATED, function (e) {
         .then(response => response.json()) //Parse the JSON data from the response into a JavaScript object
         .then(data => {                    //Gets the data from the response object
 
-            document.getElementById('geoJsonInput').value = data.display_name; // Set value of input field in the html to the address (the variable)
+            //document.getElementById('geoJsonInput').value = data.display_name; // Set value of input field in the html to the address (the variable)
                                                         //data is the value we get back, and the string after that is the key that is in the JSON object from the api we fetch  
             console.log(data.display_name);
 
@@ -85,5 +85,6 @@ map.on(L.Draw.Event.CREATED, function (e) {
 
     // Set value of hidden input field to GeoJSON string variable created
 });
+
 
 

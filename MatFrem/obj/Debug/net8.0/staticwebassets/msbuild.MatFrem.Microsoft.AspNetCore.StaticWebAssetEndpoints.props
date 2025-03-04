@@ -1056,17 +1056,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ufribxvpec"},{"Name":"integrity","Value":"sha256-aprbFF4xM8RoaJj8HTeG5tCfz/2fWvEyPo1xeBjNDSQ="},{"Name":"label","Value":"_content/MatFrem/js/geoLocation.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1239"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022aprbFF4xM8RoaJj8HTeG5tCfz/2fWvEyPo1xeBjNDSQ=\u0022"},{"Name":"Last-Modified","Value":"Sat, 30 Nov 2024 00:16:25 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/MatFrem/js/geoLocationProductIndex.bvq4xjtmio.js">
+    <StaticWebAssetEndpoint Include="_content/MatFrem/js/geoLocationProductIndex.1yzw2g2337.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\geoLocationProductIndex.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bvq4xjtmio"},{"Name":"integrity","Value":"sha256-B56rlDkiSvwlm1yMJ2WR3N8fH9DwEL2v4iE/LczQPl0="},{"Name":"label","Value":"_content/MatFrem/js/geoLocationProductIndex.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3275"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022B56rlDkiSvwlm1yMJ2WR3N8fH9DwEL2v4iE/LczQPl0=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 19:10:40 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"1yzw2g2337"},{"Name":"integrity","Value":"sha256-\u002Bd/sby9VPWUc\u002B/w59LbD3hofqWdYRN9qh4ahUtwfC3w="},{"Name":"label","Value":"_content/MatFrem/js/geoLocationProductIndex.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3518"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022\u002Bd/sby9VPWUc\u002B/w59LbD3hofqWdYRN9qh4ahUtwfC3w=\u0022"},{"Name":"Last-Modified","Value":"Tue, 04 Mar 2025 13:42:06 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MatFrem/js/geoLocationProductIndex.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\geoLocationProductIndex.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-B56rlDkiSvwlm1yMJ2WR3N8fH9DwEL2v4iE/LczQPl0="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3275"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022B56rlDkiSvwlm1yMJ2WR3N8fH9DwEL2v4iE/LczQPl0=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 19:10:40 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-\u002Bd/sby9VPWUc\u002B/w59LbD3hofqWdYRN9qh4ahUtwfC3w="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3518"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022\u002Bd/sby9VPWUc\u002B/w59LbD3hofqWdYRN9qh4ahUtwfC3w=\u0022"},{"Name":"Last-Modified","Value":"Tue, 04 Mar 2025 13:42:06 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MatFrem/js/geostringConvert.ev5vror3fs.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\geostringConvert.js'))</AssetFile>

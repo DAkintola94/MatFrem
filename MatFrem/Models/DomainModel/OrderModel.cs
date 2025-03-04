@@ -22,11 +22,14 @@ namespace MatFrem.Models.DomainModel
         [ValidateNever]
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>(); //indicates many to many relationship
         [ValidateNever]
-        public ICollection<ProductModel> Product { get; set; } = new List<ProductModel>(); //indicates many to many relationship
-        public ICollection<OrderProducts> OrderProduct { get; set; } = new List<OrderProducts>(); //indicates many to many relationship
+
+        //public ICollection<ProductModel> Product { get; set; } = new List<ProductModel>(); //indicates many to many relationship
+        //public ICollection<OrderProducts> OrderProduct { get; set; } = new List<OrderProducts>(); //indicates many to many relationship
         public OrderItem? OrderItemModel { get; set; } //navigation property for OrderItem, namely, OrderModel has a OrderItem
         [NotMapped]
         public ICollection<OrderItem> CartItems { get; set; } = new List<OrderItem>();
+
+        public ICollection<string?> ProductNames { get; set; } = new List<string?>();
         public OrderStatus? OrderStatus { get; set; }
         public decimal? DeliveryFee { get; set; }
         public decimal? TotalPrice { get; set; }

@@ -14,6 +14,7 @@ namespace MatFrem.Models.ViewModel
         public string? ProductViewCalories { get; set; }
         public double ProductViewPrice { get; set; }
         public string? ProductViewLocation { get; set; }
+        public string? ProductViewGeoJson { get; set; }
         public string? CustomerId { get; set; }
         public string? ImageUrl { get; set; }
 		public string? DriverId { get; set; }

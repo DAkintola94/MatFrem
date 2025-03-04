@@ -1596,8 +1596,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>bvq4xjtmio</Fingerprint>
-      <Integrity>B56rlDkiSvwlm1yMJ2WR3N8fH9DwEL2v4iE/LczQPl0=</Integrity>
+      <Fingerprint>1yzw2g2337</Fingerprint>
+      <Integrity>+d/sby9VPWUc+/w59LbD3hofqWdYRN9qh4ahUtwfC3w=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\geoLocationProductIndex.js'))</OriginalItemSpec>

@@ -26,11 +26,14 @@ namespace MatFrem.Controllers
             {
                 OrderViewModel orderViewModel = new OrderViewModel
                 {
-                    CustomerName = getOrderById.CustomerName,
-                    CustomerPhoneNr = getOrderById.CustomerPhoneNr,
-                    OrderID = getOrderById.OrderID,
-                    ProductNames = getOrderById.OrderProduct.Select(op => op.ProductM.ProductName).ToList(),
-                    ProductCategories = getOrderById.OrderProduct.Select(op => op.ProductM.ProductCalories).ToList()
+                    //CustomerName = getOrderById.CustomerName,
+                    //CustomerPhoneNr = getOrderById.CustomerPhoneNr,
+                    //OrderID = getOrderById.OrderID,
+                    //ProductNames = getOrderById.ProductName,
+
+
+                    //ProductNames = getOrderById.OrderProduct.Select(op => op.ProductM.ProductName).ToList(),
+                    //ProductCategories = getOrderById.OrderProduct.Select(op => op.ProductM.ProductCalories).ToList()
                 };
 
                 return View(orderViewModel);
@@ -73,11 +76,11 @@ namespace MatFrem.Controllers
                                                                               //If it does, we will return the order details that belongs to the customer
                     .Select(o => new OrderViewModel //getOrders is already taking from db OrderModel, now we simply map it to OrderViewModel
                     {
-                        CustomerPhoneNr = o.CustomerPhoneNr,
-                        ItemCategory = o.OrderProduct.Select(op => op.ProductM.ProductCategory).ToList(),
-                        CustomerName = o.CustomerName, //should be from the order!
-                        OrderID = o.OrderID,
-                        ProductNames = o.OrderProduct.Select(op => op.ProductM.ProductName).ToList(), //eagerloading, to list because we are getting a list and sending to view 
+                        //CustomerPhoneNr = o.CustomerPhoneNr,
+                        //ItemCategory = o.OrderProduct.Select(op => op.ProductM.ProductCategory).ToList(),
+                        //CustomerName = o.CustomerName, //should be from the order!
+                        //OrderID = o.OrderID,
+                        //ProductNames = o.OrderProduct.Select(op => op.ProductM.ProductName).ToList(), //eagerloading, to list because we are getting a list and sending to view 
                         TotalAmount = o.TotalPrice,
                         OrderQuantitySize = o.OrderItem,
                         OrderStatusDescription = o.OrderStatus?.StatusDescription, //this works due to eager loading in the repository

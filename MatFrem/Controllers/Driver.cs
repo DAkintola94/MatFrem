@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 
 namespace MatFrem.Controllers
@@ -61,7 +62,8 @@ namespace MatFrem.Controllers
                     PickUpAddress = o.PickUpAddress ?? string.Empty,
                     ItemCategory = o.OrderProduct.Select(op => op.ProductM.ProductCategory).ToList(),
 					DateOrderCreate = o.OrderCreatedDate,
-					DeliveryAddress = o.DeliveryAddress ?? string.Empty
+					DeliveryAddress = o.DeliveryAddress ?? string.Empty,
+					ViewGeoJson = o.OrderProduct.Select(op => op.ProductM.GeoJson).FirstOrDefault() //this is because the geojson is not a list, use firstordefault to get the first value
                 }).ToList();
                 return View(orderViewModels);
             }
@@ -91,6 +93,7 @@ namespace MatFrem.Controllers
 					PickUpAddress = getOrders.PickUpAddress ?? string.Empty,
 					ItemCategory = getOrders.OrderProduct.Select(op => op.ProductM.ProductCategory).ToList(),
 					DateOrderCreate = getOrders.OrderCreatedDate,
+					ViewGeoJson = getOrders.OrderProduct.Select(op => op.ProductM.GeoJson).FirstOrDefault(), //geojson is stored as single element 
 					DeliveryAddress = getOrders.DeliveryAddress ?? string.Empty,
                     DriverName = currentUser.FirstName + " " + currentUser.LastName //attaching the driver name to the current driver(user) logged in
                 };

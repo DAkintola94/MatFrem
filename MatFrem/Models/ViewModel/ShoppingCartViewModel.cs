@@ -23,16 +23,15 @@ namespace MatFrem.Models.ViewModel
         public string? CustomerId { get; set; }
         public string? CustomerName { get; set; }
         public string? CustomerPhoneNr { get; set; }
-       
-        public int? ProductID { get; set; } //foreign key for ProductModel
+        public int ProductID { get; set; } 
 
-        public string? ProductName { get; set; }
+        public List<string?> PickUpAddress { get; set; } = new List<string?>();
 
-        public string? PickUpAddress { get; set; }
+        public List<string?> ProductNames { get; set; } = new List<string?>();
 
-        public string? ProductDescription { get; set; }
+        public List<string?> ProductDescription { get; set; }  = new List<string?>();
 
-        public string? ProductCategories { get; set; }
+        public List<string?> ProductCategories { get; set; } = new List<string?>();
 
         public string? DriverId { get; set; }
 

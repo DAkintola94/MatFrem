@@ -12,6 +12,7 @@ namespace MatFrem.Models.DomainModel
 		public string? ProductName { get; set; }
 		[MaxLength(100)]
 		public string? ProductCalories { get; set; }
+		public string? GeoJson { get; set; }
 		public double ProductPrice { get; set; }
 		[MaxLength(100)]
 		public string? ProductLocation { get; set; }
@@ -22,7 +23,8 @@ namespace MatFrem.Models.DomainModel
 		[MaxLength(100)]
 		public ShopModel? ShopModelO { get; set; }
 		public string? ProductCategory { get; set; }
-		public ICollection<OrderProducts> OrderProduct { get; set; } = new List<OrderProducts>(); //indicates many to many relationship
+
+		//public ICollection<OrderProducts> OrderProduct { get; set; } = new List<OrderProducts>(); //indicates many to many relationship
         public int ShopId { get; set; }
     }
 }

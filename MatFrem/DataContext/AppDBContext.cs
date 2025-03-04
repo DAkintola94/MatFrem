@@ -53,8 +53,7 @@ namespace MatFrem.DataContext
                .HasKey(oi => oi.Id);
 
             modelBuilder.Entity<OrderProducts>()
-                .HasKey(op => new { op.OrderID, op.ProductID }); //Primary key for OrderProducts
-
+                .HasKey(op => new { op.OrderID, op.ProductID }); //Primary key for OrderProducts, NB! not in use right now
 
             //Relationships, remember to think of .Entity as THIS => table in the database
             //we are defining the relationships between the tables here, by foreign keys
@@ -64,21 +63,27 @@ namespace MatFrem.DataContext
                 .WithOne() //When nothing is specified like this, the line means with many OrderModel(the class attached above)
 				.HasForeignKey(oi => oi.OrderModelId);
 
-            modelBuilder.Entity<OrderProducts>() //a somewhat middleman table, that connects OrderModel and ProductModel
-                .HasOne(o => o.OrderM)
-                .WithMany(p => p.OrderProduct) //OrderProduct is in OrderM 
-                .HasForeignKey(op => op.OrderID);
-
-            modelBuilder.Entity<OrderProducts>() //a somewhat middleman table, that connects OrderModel and ProductModel
-                .HasOne(p => p.ProductM) 
-                .WithMany(p => p.OrderProduct) //OrderProduct is in ProductM
-                .HasForeignKey(pFR => pFR.ProductID);
-
             modelBuilder.Entity<OrderModel>()
                 .HasOne(o => o.OrderStatus)
                 .WithMany()
                 .HasForeignKey(o => o.OrderStatusID)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<ProductModel>()
+                .HasOne(sm => sm.ShopModelO)
+                .WithMany()
+                .HasForeignKey(smFR => smFR.ShopId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            //modelBuilder.Entity<OrderProducts>() //a somewhat middleman table, that connects OrderModel and ProductModel
+            //.HasOne(o => o.OrderM)
+            //.WithMany(p => p.OrderProduct) //OrderProduct is in OrderM 
+            //.HasForeignKey(op => op.OrderID);
+
+            //modelBuilder.Entity<OrderProducts>() //a somewhat middleman table, that connects OrderModel and ProductModel
+            //.HasOne(p => p.ProductM) 
+            //.WithMany(p => p.OrderProduct) //OrderProduct is in ProductM
+            //.HasForeignKey(pFR => pFR.ProductID);
 
 
             //Seeding data into OrderStatus table in the database
