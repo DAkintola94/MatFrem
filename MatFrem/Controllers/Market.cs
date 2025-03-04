@@ -72,6 +72,7 @@ namespace MatFrem.Controllers
                 scViewModel.PickUpAddress.Add(productsElement.ProductLocation);
                 scViewModel.ProductDescription.Add(productsElement.Description);
                 scViewModel.ProductCategories.Add(productsElement.ProductCategory);
+                scViewModel.GeoJsonView.Add(productsElement.GeoJson);
             }
 
             scViewModel.CartSize = cartSize; //this is to get and attach the values from the cartitems foreach loop above
@@ -197,53 +198,35 @@ namespace MatFrem.Controllers
             
             if(cartSize == 0 || string.IsNullOrEmpty(scViewModel.DeliveryAddress) || string.IsNullOrEmpty(scViewModel.PaymentMethod))
             {
-                return RedirectToAction("Index", "Home");
+                return BadRequest("There is nothing in the cart");
             }
 
             //since we have already gotten our model sent from another method (index), we can just attach the values to the order and add to the database. 
+            //NB! you can swap from different models, as long as the properties and data types are the same!!
+
             
-            if(scViewModel.ProductNames.Count >= 2)
-            {
                 OrderModel orderMultiModel = new OrderModel
                 {
                     ProductNames = scViewModel.ProductNames.ToList(),
-
-
-
+                    ProductCategories = scViewModel.ProductCategories.ToList(),
+                    ProductDescription = scViewModel.ProductDescription.ToList(),
+                    ProductGeoJson = scViewModel.GeoJsonView.ToList(),
+                    CustomerPhoneNr = scViewModel.CustomerPhoneNr,
+                    CustomerName = scViewModel.CustomerName,
+                    OrderCreatedDate = DateOnly.FromDateTime(DateTime.Now),
+                    ProductAddress = scViewModel.PickUpAddress.ToList(),
+                    OrderStatusID = 1, //Setting the order status to 1 (default, when the order is purchased), which is "Order received"
+                    OrderItem = scViewModel.CartSize,
+                    TotalPrice = scViewModel.Total,
+                    PaymentMethod = scViewModel.PaymentMethod,
+                    DeliveryAddress = scViewModel.DeliveryAddress,
                 };
 
                  await _orderRepository.AddOrder(orderMultiModel);
                 Response.Cookies.Delete("shopping_cart"); //delete the cookie after the order is placed
 
                 return View(scViewModel); //returning the viewmodel to the view, which is sent from the index method
-            }
-
-            else
-            {
-                OrderModel orderSingelModel = new OrderModel
-                {
-                    ProductName = scViewModel.ProductNames.FirstOrDefault(),
-                    CustomerPhoneNr = scViewModel.CustomerPhoneNr,
-                    CustomerName = scViewModel.CustomerName,
-                    OrderCreatedDate = DateOnly.FromDateTime(DateTime.Now),
-                    PickUpAddress = scViewModel.PickUpAddress,
-                    OrderStatusID = 1, //Setting the order status to 1 (default, when the order is purchased), which is "Order received"
-                    OrderItem = scViewModel.CartSize,
-                    TotalPrice = scViewModel.Total,
-                    PaymentMethod = scViewModel.PaymentMethod,
-                    ProductCategory = scViewModel.ProductCategories,
-                    DeliveryAddress = scViewModel.DeliveryAddress
-                };
-
-                await _orderRepository.AddOrder(orderSingelModel);
-                Response.Cookies.Delete("shopping_cart"); //delete the cookie after the order is placed
-
-                return View(scViewModel); //returning the viewmodel to the view, which is sent from the index method
-
-
-            }
-
-            return BadRequest("Something went wrong");
+      
         }
 
         [HttpPost]

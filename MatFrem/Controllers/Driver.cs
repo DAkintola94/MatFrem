@@ -54,16 +54,18 @@ namespace MatFrem.Controllers
 					OrderID = o.OrderID, //need to pass and attach the ID from DB to the view model, remember that when working with view model
 					CustomerName = o.CustomerName ?? string.Empty,
 					CustomerPhoneNr = o.CustomerPhoneNr ?? string.Empty,
-                    ProductNames = o.OrderProduct.Select(op => op.ProductM.ProductName).ToList(),
 					TotalAmount = o.TotalPrice,
 					OrderQuantitySize = o.OrderItem,
 					OrderStatusDescription = o.OrderStatus?.StatusDescription ?? string.Empty, //We are attaching the outcoming data (CHAR), status description, to OrderStatus.StatusDescription
                                                                                                //That is the foreign key in the OrderModel, that is connected to the OrderStatusModel
                     PickUpAddress = o.PickUpAddress ?? string.Empty,
-                    ItemCategory = o.OrderProduct.Select(op => op.ProductM.ProductCategory).ToList(),
 					DateOrderCreate = o.OrderCreatedDate,
 					DeliveryAddress = o.DeliveryAddress ?? string.Empty,
-					ViewGeoJson = o.OrderProduct.Select(op => op.ProductM.GeoJson).FirstOrDefault() //this is because the geojson is not a list, use firstordefault to get the first value
+                    OrderViewProductNames = o.ProductNames.ToList(),
+					OrderviewProductDescription = o.ProductDescription.ToList(),
+                    ItemCategory = o.ProductCategories.ToList(),
+                    ViewGeoJson = o.ProductGeoJson.ToList(),
+					
                 }).ToList();
                 return View(orderViewModels);
             }
@@ -85,15 +87,16 @@ namespace MatFrem.Controllers
 												 //Since this does not auto connect when dealing with view model							 
 					CustomerName = getOrders.CustomerName ?? string.Empty,
 					CustomerPhoneNr = getOrders.CustomerPhoneNr ?? string.Empty,
-					ProductNames = getOrders.OrderProduct.Select(op => op.ProductM.ProductName).ToList(),
+					OrderViewProductNames = getOrders.ProductNames.ToList(),
 					TotalAmount = getOrders.TotalPrice,
 					OrderQuantitySize = getOrders.OrderItem,
 					OrderStatusID = getOrders.OrderStatusID,
 					OrderStatusDescription = getOrders.OrderStatus?.StatusDescription ?? string.Empty, //this works because of eager loading in repository
 					PickUpAddress = getOrders.PickUpAddress ?? string.Empty,
-					ItemCategory = getOrders.OrderProduct.Select(op => op.ProductM.ProductCategory).ToList(),
+					ItemCategory = getOrders.ProductCategories.ToList(),
 					DateOrderCreate = getOrders.OrderCreatedDate,
-					ViewGeoJson = getOrders.OrderProduct.Select(op => op.ProductM.GeoJson).FirstOrDefault(), //geojson is stored as single element 
+					ViewGeoJson = getOrders.ProductGeoJson.ToList(), //geojson is stored as single element 
+					OrderviewProductDescription = getOrders.ProductDescription.ToList(),
 					DeliveryAddress = getOrders.DeliveryAddress ?? string.Empty,
                     DriverName = currentUser.FirstName + " " + currentUser.LastName //attaching the driver name to the current driver(user) logged in
                 };
@@ -175,11 +178,11 @@ namespace MatFrem.Controllers
                     CustomerName = o.CustomerName ?? string.Empty,
 					DriverId = o.DriverId ?? string.Empty,
                     CustomerPhoneNr = o.CustomerPhoneNr ?? string.Empty,
-                    ProductNames = o.OrderProduct.Select(op => op.ProductM.ProductName).ToList(),
+                    OrderViewProductNames = o.ProductNames.ToList(),
                     TotalAmount = o.TotalPrice,
                     OrderStatusDescription = o.OrderStatus?.StatusDescription ?? string.Empty,
                     PickUpAddress = o.PickUpAddress ?? string.Empty,
-                    ItemCategory = o.OrderProduct.Select(op => op.ProductM.ProductCategory).ToList(),
+                    ItemCategory = o.ProductCategories.ToList(),
                     DateOrderCreate = o.OrderCreatedDate,
                     DeliveryAddress = o.DeliveryAddress ?? string.Empty
 

@@ -43,7 +43,7 @@ namespace MatFrem.Controllers
 					ProductCalories = pModel.ProductViewCalories,
 					ProductLocation = pModel.ProductViewLocation,
 					ProductCategory = pModel.ViewCategoryName,
-                    GeoJson = pModel.ProductViewAreaJson,
+                    GeoJson = pModel.ProductViewGeoJson,
                     ShopId = pModel.ViewMShopId //getting the value from the option selector in html, then inserting the int id into the db and to the designed foreign key
                 };
 
@@ -163,7 +163,7 @@ namespace MatFrem.Controllers
 			existingItem.Description = editProductValue.ProductViewDescription;
             existingItem.ProductCategory = editProductValue.ViewCategoryName;
             existingItem.ShopId = editProductValue.ViewMShopId;
-            existingItem.GeoJson = editProductValue.ProductViewAreaJson;
+            existingItem.GeoJson = editProductValue.ProductViewGeoJson;
 
             // Save the changes to the repository
             await _productRepository.UpdateItems(existingItem);
@@ -205,8 +205,10 @@ namespace MatFrem.Controllers
 					ProductViewLocation = getById.ProductLocation ?? string.Empty,
 					ProductViewDescription = getById.Description ?? string.Empty,
                     ViewCategoryName = getById.ProductCategory ?? string.Empty,
-                    ViewShopName = getById.ShopModelO.ShopName ?? string.Empty
-				};
+                    ViewShopName = getById.ShopModelO.ShopName ?? string.Empty,
+                    ProductViewGeoJson = getById.GeoJson ?? string.Empty,
+
+                };
 
                 return View(viewModel);
             }
