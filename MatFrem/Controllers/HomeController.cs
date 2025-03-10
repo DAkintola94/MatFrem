@@ -30,11 +30,11 @@ namespace MatFrem.Controllers
                 var productViewModels = getAllProducts.Select(product => new ProductViewModel
                 {
                     ProductID = product.ProductID,
-                    ProductName = product.ProductName,
-                    ProductPrice = product.ProductPrice,
-                    ProductCalories = product.ProductCalories,
-                    ProductLocation = product.ProductLocation,
-                    Category = product.Category,
+                    ProductViewName = product.ProductName,
+                    ProductViewPrice = product.ProductPrice,
+                    ProductViewCalories = product.ProductCalories,
+                    ProductViewLocation = product.ProductLocation,
+                    ViewCategoryName = product.ProductCategory,
                     ImageUrl = product.ImageUrl
                 }).ToList();
                 return View(productViewModels);

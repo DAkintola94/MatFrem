@@ -16,25 +16,28 @@ namespace MatFrem.Models.ViewModel
         public string? OrderStatusDescription { get; set; }
         public string? PickUpAddress { get; set; }
         public int ProductID { get; set; }
-        public string? ProductName { get; set; }
         public double? ProductPrice { get; set; }
 
 		[DisplayFormat(DataFormatString = "{0:F2}")]
 		public decimal? TotalAmount { get; set; }
 		public string? DriverName { get; set; }
-
-        public string? GeoJson { get; set; }
         public string? CustomerId { get; set; } 
         public string? CustomerName { get; set; }
 		public string? CustomerPhoneNr { get; set;}
         public string? DeliveryAddress { get; set; } = "";
-        public string? ItemCategory { get; set; }
         [ValidateNever]
         public List<SelectListItem> AvailableDrivers { get; set; } = new List<SelectListItem>();
         public ApplicationUser? Customer { get; set; } //navigation property for CustomerModel, namely, OrderModel has a Customer
         public ApplicationUser? Driver { get; set; } //navigation property for DriverModel, namely, OrderModel has a Driver. To get all of Driver properties/inf
         public ProductModel? ProductM { get; set; } //navigation property for ProductModel, namely, OrderModel has a ProductModel
         public OrderItem? OrderItem { get; set; } //navigation property for OrderItem, namely, OrderModel has a OrderItem
+
+        public List<string> ItemCategory { get; set; } = new List<string>();
+        public List<string> OrderViewProductNames { get; set; } = new List<string>();
+
+        public List<string> OrderviewProductDescription { get; set; } = new List<string>();
+
+        public List<string> ViewGeoJson { get; set; } = new List<string>();
 
     }
 }

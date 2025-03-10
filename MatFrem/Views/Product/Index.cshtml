@@ -14,47 +14,64 @@
 
 			<div class="mb-3">
 				<label class="form-label">Produkt navn</label>
-				<input type="text" class="form-control" asp-for="ProductName" />
+				<input type="text" class="form-control" asp-for="ProductViewName" />
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label">Pris</label>
-				<input type="number" class="form-control" asp-for="ProductPrice" />
+				<input type="number" class="form-control" asp-for="ProductViewPrice" />
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label">Kategori</label>
-				<select class="form-control" asp-for="Category">
+				<select class="form-control" asp-for="ViewCategoryName">
 					<option value="Meleri & Egg">Meleri & Egg</option>
 					<option value="Frukt & Grønt">Frukt & Grønt</option>
-					<option value="Vegetar">Vegetar</option>
-					<option value="Sjømat">Sjømat</option>
-					<option value="Tørrvare">Tørrvare</option>
-					<option value="Frokostblanding">Frokostblanding</option>
-					<option value="Frosne varer">Frosne varer</option>
-					<option value="Bakeri">Bakeri</option>
+					<option value="Kjøtt & Fisk">Kjøtt & Fisk</option>
+					<option value="Brød & Bakervarer">Brød & Bakervarer</option>
+					<option value="Drikkevarer">Drikkevarer</option>
+					<option value="Søtsaker">Søtsaker</option>
+					<option value="Tørrvarer">Tørrvarer</option>
+					<option value="Husholdning">Husholdning</option>
+					<option value="Personlig pleie">Personlig pleie</option>
+					<option value="Annet">Annet</option>
+
 				</select>
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label">Kalori innhold per 100g</label>
-				<input type="number" class="form-control" asp-for="ProductCalories" />
+				<input type="number" class="form-control" asp-for="ProductViewCalories" />
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label">Hentes ved</label>
-				<input type="text" class="form-control" asp-for="ProductLocation" id="geoJsonInput" readonly/>
+				<input type="text" class="form-control" asp-for="ProductViewLocation" id="geoJsonInput" readonly/>
 				<!-- the id in this input stores GeoJSON data generated from drawn map shapes (set by JavaScript) -->
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label">Fylkenr</label>
-				<input type="text" class="form-control" asp-for="ProductLocation" id="fylkenr" readonly />
-				<!-- the id in this input stores GeoJSON data generated from drawn map shapes (set by JavaScript) -->
+				<input type="text" class="form-control" asp-for="ProductViewLocation" id="fylkenr" readonly />
+				
 			</div>
 
+			<div class="mb-3">
+				<label class="form-label">Butikk navn</label>
+				<select class="form-control" asp-for="ViewMShopId">
+					<option value="1">Kiwi</option>
+					<option value="2">Rema 1000</option>
+					<option value="3">Coop Mega</option>
+					<option value="4">Coop Extra</option>
+					<option value="5">Meny</option>
+					<option value="6">Bunnpris</option>
+					<option value="7">Spar</option>
+					<option value="8">Joker</option>
+					<option value="9">Obs!</option>
+					<option value="10">Coop Prix</option>
+				</select>
+			</div>
 
-			
 			<div class="mb-3">
 				<label class="form-label">Bilde</label>
 				<input type="file" name="file" class="form-control" asp-for="ImageUrl" />
@@ -64,6 +81,12 @@
 				<button type="submit" class="btn btn-dark" onclick="return confirm('Er du sikkert?')">
 					Opprett Produkt
 				</button>
+			</div>
+
+			<div class="mb-3">
+				<!-- Hidden, read comment below -->
+				<input type="text" class="form-control" asp-for="ProductViewGeoJson" id="geoJsonField" hidden />
+				<!-- gets the geojson coordination from javascript, the field is hidden but data is sent to server -->
 			</div>
 
 		</form>
@@ -80,7 +103,4 @@
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/6.5.0/turf.min.js"></script>
-
-
-
 <script src="~/js/geoLocationProductIndex.js"> </script>

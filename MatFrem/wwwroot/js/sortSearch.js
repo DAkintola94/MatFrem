@@ -1,4 +1,6 @@
-﻿const tableData = () => {
+﻿console.log("Hei");
+
+const tableData = () => {
     const searchData = [];
     const tableEl = document.getElementById('firstTableId');
     Array.from(tableEl.children[1].children).forEach(_bodyRowEl => {
@@ -143,3 +145,4 @@ function filterTableByCategory(selectedCategory) {
         }
     });
 }
+

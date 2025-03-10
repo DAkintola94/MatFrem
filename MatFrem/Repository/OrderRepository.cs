@@ -1,5 +1,6 @@
 ﻿using MatFrem.DataContext;
 using MatFrem.Models.DomainModel;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace MatFrem.Repository
@@ -16,14 +17,16 @@ namespace MatFrem.Repository
         {
 			var query = _context.Orders
                 .Include(o => o.OrderStatus) //eager load, think of this like a JOIN operation in sql
-                .Include(p => p.ProductM)
                 .AsQueryable();
-			//pagination - a formula of skipping a certain number of items and taking a certain number of items
+            //pagination
 			var skipResult = (pageNumber - 1) * pageSize;
 			query = query.Skip(skipResult).Take(pageSize);
 
 			return await query.ToListAsync();
-		}
+
+            //.Include(oP => oP.OrderProduct) //Eager load OrderProducts, for many to many relationship
+            //.ThenInclude(p => p.ProductM) // THEN!....Eager load Product through OrderProducts.
+        }
 
         public async Task<OrderModel?> AddOrder(OrderModel orderModel)
         {
@@ -61,8 +64,10 @@ namespace MatFrem.Repository
         {
             return await _context.Orders
                 .Include(o => o.OrderStatus) //eager load, think of this like a JOIN operation in sql
-                .Include(p => p.ProductM)
                 .Where(x => x.OrderID == id).FirstOrDefaultAsync();
+
+            //.Include(oP => oP.OrderProduct) //Eager load OrderProducts, for many to many relationship
+            //.ThenInclude(p => p.ProductM) // THEN!....Eager load Product through OrderProducts.
         }
 
         public async Task<int> CountPage()

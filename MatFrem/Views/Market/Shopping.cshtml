@@ -1,6 +1,6 @@
-﻿@using MatFrem.Models.DomainModel
+﻿@using MatFrem.Models.ViewModel
 
-@model IEnumerable<ProductModel>
+@model IEnumerable<ProductViewModel>
 
 @{
     int nextPage = Convert.ToInt32(ViewBag.PageNumber) + 1;
@@ -25,19 +25,21 @@
         <div class="filter-box">
             <label for="FilterCategory" class="me-2 text-dark">Filter by Category:</label>
             <select id="FilterCategory" class="form-select">
-                <option value="Meleri & Egg">Meleri & Egg</option>
-                <option value="Frukt & Grønt">Frukt & Grønt</option>
-                <option value="Vegetar">Vegetar</option>
-                <option value="Sjømat">Sjømat</option>
-                <option value="Tørrvare">Tørrvare</option>
-                <option value="Frokostblanding">Frokostblanding</option>
-                <option value="Frosne varer">Frosne varer</option>
-                <option value="Bakeri">Bakeri</option>
-                <option value="All">All</option>
+                <option value="1">Meleri & Egg</option>
+                <option value="2">Frukt & Grønt</option>
+                <option value="3">Kjøtt & Fisk</option>
+                <option value="4">Brød & Bakervarer</option>
+                <option value="5">Drikkevarer</option>
+                <option value="6">Søtsaker</option>
+                <option value="7">Tørrvarer</option>
+                <option value="8">Husholdning</option>
+                <option value="9">Personlig pleie</option>
+                <option value="10">Annet</option>
             </select>
         </div>
     </div>
 </body>
+
 
 <div id="portexe-search-root">
     <div id="portexe-table-container">
@@ -60,10 +62,10 @@
                     {
                         <tr>
                             <td>@productModel.ProductID</td>
-                            <td>@productModel.ProductName</td>
-                            <td>@productModel.ProductCalories</td>
-                            <td>@productModel.Category</td>
-                            <td>@productModel.ProductPrice</td>
+                            <td>@productModel.ProductViewName</td>
+                            <td>@productModel.ProductViewCalories</td>
+                            <td>@productModel.ViewCategoryName</td>
+                            <td>@productModel.ProductViewPrice</td>
                             <td>
                                 <button type="button" class="btn btn-warning btn-sm mb2" onclick="addToCart(this, @productModel.ProductID)">
                                     Legg til kurv <i class="bi bi-cart4"></i>

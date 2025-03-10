@@ -23,26 +23,24 @@ namespace MatFrem.Models.ViewModel
         public string? CustomerId { get; set; }
         public string? CustomerName { get; set; }
         public string? CustomerPhoneNr { get; set; }
-       
-        public int? ProductID { get; set; } //foreign key for ProductModel
+        public int ProductID { get; set; } 
 
-        public string? ProductName { get; set; }
+        public List<string?> PickUpAddress { get; set; } = new List<string?>();
 
-        public string? PickUpAddress { get; set; }
+        public List<string?> ProductNames { get; set; } = new List<string?>();
 
-        public string? ProductDescription { get; set; }
+        public List<string?> ProductDescription { get; set; }  = new List<string?>();
 
-        public string? ProductCategories { get; set; }
+        public List<string?> ProductCategories { get; set; } = new List<string?>();
+
+        public List<string?> GeoJsonView { get; set; } = new List<string?>();
 
         public string? DriverId { get; set; }
 
-        [ValidateNever]
         public ApplicationUser? ApplicationUser { get; set; }
-
-        [ValidateNever]
+       
         public ICollection<ProductModel> Product { get; set; } = new List<ProductModel>(); //You can have two propergation of the same type in the same class
-                                                                                           //This one is used to represent the one-to-many relationship
-        [ValidateNever]
+                                                                                           //This one is used to represent the one-to-many relationship        
         public ProductModel? ProductModel { get; set; } //You can have two propergation of the same type in the same class
                                                         //This one is used for easier access in the view
 
