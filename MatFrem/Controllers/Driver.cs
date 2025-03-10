@@ -33,9 +33,9 @@ namespace MatFrem.Controllers
 		public async Task<IActionResult> DriverPage(int pageSize = 8, int pageNumber = 1)
 		{
 				var totalRecords = await _productRepository.CountPage();
-				var totalPages = (int)Math.Ceiling((decimal)totalRecords / pageSize);
+				var totalPages = totalRecords == 0 ? 1 : (int)Math.Ceiling((decimal)totalRecords / pageSize);
 
-				pageNumber = Math.Clamp(pageNumber, 1, totalPages);
+            pageNumber = Math.Clamp(pageNumber, 1, totalPages);
 
 				ViewBag.TotalPages = totalPages;
 				ViewBag.CurrentPage = pageNumber;

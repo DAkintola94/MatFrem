@@ -257,6 +257,10 @@
       "PackagePath": "staticwebassets\\Images\\product\\4ad89ac2-31a5-46cc-92f9-0577878be528.png"
     },
     {
+      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\9f32a766-c86b-446a-bf7c-369dd2a82516.png",
+      "PackagePath": "staticwebassets\\Images\\product\\9f32a766-c86b-446a-bf7c-369dd2a82516.png"
+    },
+    {
       "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\BreakfastCelery.jpg",
       "PackagePath": "staticwebassets\\Images\\product\\BreakfastCelery.jpg"
     },
@@ -275,6 +279,10 @@
     {
       "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\drygood.jpg",
       "PackagePath": "staticwebassets\\Images\\product\\drygood.jpg"
+    },
+    {
+      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\e1b62399-9d5b-4d5c-9bec-140bbcafe764.png",
+      "PackagePath": "staticwebassets\\Images\\product\\e1b62399-9d5b-4d5c-9bec-140bbcafe764.png"
     },
     {
       "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\f834283e-f4c3-4620-8d08-9af41bf43d3b.jpg",
@@ -351,6 +359,10 @@
     {
       "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\cartGeo.js",
       "PackagePath": "staticwebassets\\js\\cartGeo.js"
+    },
+    {
+      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\generateMarker.js",
+      "PackagePath": "staticwebassets\\js\\generateMarker.js"
     },
     {
       "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geoLocation.js",

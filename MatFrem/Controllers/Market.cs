@@ -17,7 +17,7 @@ namespace MatFrem.Controllers
         private readonly IShoppingCartRepository _shoppingCartRepository;
         private readonly IConfiguration _configuration; //IConfiguration is a built-in interface in .NET Core that provides access to the appsettings.json file
         private readonly AppDBContext _context;
-        private readonly UserManager<ApplicationUser> _userManager; //UserManager is a built-in class in .NET Core that provides all the functionality needed to manage users in the system
+        private readonly UserManager<ApplicationUser> _userManager; 
         private readonly decimal deliveryFee; 
 
         public Market(IProductRepository productRepo, 
@@ -38,7 +38,7 @@ namespace MatFrem.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-               List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context);
+               List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
             decimal subtotal = CartHelper.GetSubTotal(cartItems);
 
             ShoppingCartViewModel scViewModel = new ShoppingCartViewModel
@@ -47,14 +47,14 @@ namespace MatFrem.Controllers
                 Subtotal = subtotal,
                 DeliveryFee = deliveryFee,  
                 Total = subtotal + deliveryFee
-            }; //Creating  ShoppingCartViewModel and giving it the values from the cookie, and OrderItem list
+            }; //Creating new ShoppingCartViewModel and giving it the values from the cookie, and OrderItem list
 
             return View(scViewModel);
         }
 
         [Authorize]
         [HttpPost]
-        public IActionResult Index(string deliveryAddress, string paymentMethod, ShoppingCartViewModel scViewModel) //values that will be sent to ConfirmPurchase method, effective since we arent saving the data in the database
+        public IActionResult Index(string deliveryAddress, string paymentMethod, ShoppingCartViewModel scViewModel) //data that will be sent to ConfirmPurchase method, effective since we arent saving the data in the database
         {
             List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
             decimal subtotal = CartHelper.GetSubTotal(cartItems);
@@ -64,11 +64,11 @@ namespace MatFrem.Controllers
 
             var currentUser = _userManager.GetUserAsync(User).Result;
 
-            foreach (var items in cartItems) //this is to get product values that is already inside our shoppingcart, since its a collection, we need to get values inside like this.
+            foreach (var items in cartItems) //This is to get the data from the cookie, then attach it to the viewmodel. The data will also be sent further
             {
                 var productsElement = items.Product;
                 //scViewModel.CartSize += items.Quantity;
-                scViewModel.ProductNames.Add(productsElement.ProductName);
+                scViewModel.ProductNames.Add(productsElement.ProductName); //adding the values as list, so we can see several products in the view
                 scViewModel.PickUpAddress.Add(productsElement.ProductLocation);
                 scViewModel.ProductDescription.Add(productsElement.Description);
                 scViewModel.ProductCategories.Add(productsElement.ProductCategory);
@@ -205,7 +205,7 @@ namespace MatFrem.Controllers
             //NB! you can swap from different models, as long as the properties and data types are the same!!
 
             
-                OrderModel orderMultiModel = new OrderModel
+                OrderModel orderModel = new OrderModel
                 {
                     ProductNames = scViewModel.ProductNames.ToList(),
                     ProductCategories = scViewModel.ProductCategories.ToList(),
@@ -222,7 +222,7 @@ namespace MatFrem.Controllers
                     DeliveryAddress = scViewModel.DeliveryAddress,
                 };
 
-                 await _orderRepository.AddOrder(orderMultiModel);
+                 await _orderRepository.AddOrder(orderModel);
                 Response.Cookies.Delete("shopping_cart"); //delete the cookie after the order is placed
 
                 return View(scViewModel); //returning the viewmodel to the view, which is sent from the index method

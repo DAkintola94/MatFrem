@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="~/css/marketstyle.css" />
     <script src="https://kit.fontawesome.com/5eea027e19.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
 </head>
 
 <div class="box">
@@ -20,16 +28,16 @@
 </div>
 
 <div id="portexe-search-root">
-  
+
     <div id="portexe-table-container">
         @if (Model != null && Model.Any())
         {
             <table class="table table-sortable table-striped table-bordered bg-white" id="firstTableId">
                 <thead>
                     <tr>
+                        <th>Order ID</th>
                         <th>Kunde</th>
                         <th>Kontakt info</th>
-                        <th>Antall varer</th>
                         <th>Dato bestilt</th>
                         <th>Hentested</th>
                         <th>Leverings addresse</th>
@@ -42,14 +50,21 @@
                     @foreach (var orderData in Model)
                     {
                         <tr>
+                            <td>@orderData.OrderID</td>
                             <td>@orderData.CustomerName</td>
                             <td>@orderData.CustomerPhoneNr</td>
-                            <td>@orderData.OrderQuantitySize</td>
                             <td>@orderData.DateOrderCreate</td>
                             <td>@orderData.PickUpAddress</td>
                             <td>@orderData.DeliveryAddress</td>
                             <td>@orderData.TotalAmount?.ToString("F2") kr</td>
                             <td>@orderData.OrderStatusDescription</td>
+                            @* <td>
+                                    @foreach(var productName in orderData.OrderViewProductNames)
+                                        {
+                                            <span>@productName</span>
+                                        } this is for getting the items in the looped list
+                                </td> *@
+
                             <td>
 
                                 <a class="btn btn-warning btn-sm mb2"
@@ -63,7 +78,6 @@
                         </tr>
                     }
                 </tbody>
-                
             </table>
             
             <nav aria-label="Page navigation example">
@@ -102,7 +116,28 @@
 </div>
 
 
-<script>var modelData = @Html.Raw(Json.Serialize(Model)); </script>
+    
+<div class="map-column" style="flex: 1;">
+    <div id="map" style="height: 400px; width: 115%;"></div>
+</div>
 
-<script src="~/js/sortSearch.js"></script>
 
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<script src="@("https://unpkg.com/@turf/turf@7.0.0/turf.min.js")"></script>
+
+
+<script src="~/js/generateMarker.js"></script>
+<script>
+    @foreach (var orderData in Model)
+    {
+            @foreach (var jsonData in orderData.ViewGeoJson)
+            {
+                  @:generateMarkers(@orderData.OrderID, @Html.Raw(Json.Serialize(jsonData)), @orderData.OrderStatusDescription);
+            }
+    }
+
+</script>
+<!-- since the data from is being sent as a list from the server "controller", we can select specific what we want to manipulate like this -->
+<!-- the function takes the parameter inserted here, which is orderData.OrderID, and the serialized geojson string -->

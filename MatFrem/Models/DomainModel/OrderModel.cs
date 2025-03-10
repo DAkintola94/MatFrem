@@ -28,15 +28,15 @@ namespace MatFrem.Models.DomainModel
         [NotMapped]
         public ICollection<OrderItem> CartItems { get; set; } = new List<OrderItem>();
 
-        public ICollection<string?> ProductNames { get; set; } = new List<string?>();
+        public List<string?> ProductNames { get; set; } = new List<string?>();
 
-        public ICollection<string?> ProductAddress { get; set; } = new List<string?>();
+        public List<string?> ProductAddress { get; set; } = new List<string?>();
 
-        public ICollection<string?> ProductCategories { get; set; } = new List<string?>();
+        public List<string?> ProductCategories { get; set; } = new List<string?>();
 
-        public ICollection<string?> ProductDescription { get; set; } = new List<string?>();
+        public List<string?> ProductDescription { get; set; } = new List<string?>();
 
-        public ICollection<string?> ProductGeoJson { get; set; } = new List<string?>();
+        public List<string?> ProductGeoJson { get; set; } = new List<string?>();
 
         public OrderStatus? OrderStatus { get; set; }
         public decimal? DeliveryFee { get; set; }

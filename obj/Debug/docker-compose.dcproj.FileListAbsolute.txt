@@ -53,3 +53,4 @@ C:\Users\Eier\source\repos\MatFrem\bin\Debug\MatFrem.pdb
 C:\Users\Eier\source\repos\MatFrem\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\Users\Eier\source\repos\MatFrem\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\Eier\source\repos\MatFrem\obj\Debug\docker-c.35A3FFBA.Up2Date
+C:\Users\black\source\repos\MatFrem\bin\Debug\Newtonsoft.Json.dll

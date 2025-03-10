@@ -18,8 +18,6 @@ namespace MatFrem.Models.ViewModel
         public string? CustomerId { get; set; }
         public string? ImageUrl { get; set; }
 		public string? DriverId { get; set; }
-		public IEnumerable<SelectListItem> CategoryList { get; set; }
-        public int ViewMCategoryId { get; set; } //You need to add property whenever you to design a foreign key in the database
         public int ViewMShopId { get; set; }
         public string? ViewCategoryName { get; set; }
         public string? ViewShopName { get; set; }

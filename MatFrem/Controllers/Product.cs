@@ -29,22 +29,21 @@ namespace MatFrem.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(ProductViewModel pModel, IFormFile? file) //file need to have a name ="" in the html, so it can be passed as a parameter									 // when you are not using model in the controller parameter, you need to use the name of the input field in the html
+        public async Task<IActionResult> Index(ProductViewModel pViewModel, IFormFile? file) //file need to have a name ="" in the html, so it can be passed as a parameter									 // when you are not using model in the controller parameter, you need to use the name of the input field in the html
 		{
-			if (ModelState.IsValid)
+			if (pViewModel!= null)
 			{
 
 				ProductModel productModel = new ProductModel
 				{
-
-					ProductID = pModel.ProductID,
-					ProductName = pModel.ProductViewName,
-					ProductPrice = pModel.ProductViewPrice,
-					ProductCalories = pModel.ProductViewCalories,
-					ProductLocation = pModel.ProductViewLocation,
-					ProductCategory = pModel.ViewCategoryName,
-                    GeoJson = pModel.ProductViewGeoJson,
-                    ShopId = pModel.ViewMShopId //getting the value from the option selector in html, then inserting the int id into the db and to the designed foreign key
+					ProductID = pViewModel.ProductID,
+					ProductName = pViewModel.ProductViewName,
+					ProductPrice = pViewModel.ProductViewPrice,
+					ProductCalories = pViewModel.ProductViewCalories,
+					ProductLocation = pViewModel.ProductViewLocation,
+					ProductCategory = pViewModel.ViewCategoryName,
+                    GeoJson = pViewModel.ProductViewGeoJson,
+                    ShopId = pViewModel.ViewMShopId //getting the value from the option selector in html, then inserting the int id into the db and to the designed foreign key
                 };
 
                     if (file != null)
@@ -66,7 +65,7 @@ namespace MatFrem.Controllers
                     await _productRepository.InsertProduct(productModel);
 					return RedirectToAction("ShowProduct");
 			}
-             return View(pModel);
+             return View(pViewModel);
         }
 
 		
@@ -95,6 +94,7 @@ namespace MatFrem.Controllers
                     ProductViewPrice = product.ProductPrice,
                     ProductViewCalories = product.ProductCalories,
                     ProductViewLocation = product.ProductLocation,
+                    ProductViewGeoJson = product.GeoJson,
                     ViewCategoryName = product.ProductCategory ?? string.Empty,
                     ViewShopName = product.ShopModelO.ShopName ?? string.Empty //getting the value from the shop model property, which semi act as a foreign key
                 }).ToList();
@@ -118,6 +118,7 @@ namespace MatFrem.Controllers
                     ProductViewLocation = editItem.ProductLocation,
 					ViewCategoryName = editItem.ProductCategory,
                     ViewShopName = editItem.ShopModelO.ShopName,
+                    ProductViewGeoJson = editItem.GeoJson,
                     ViewMShopId = editItem.ShopId
 				};
 				return View(editProduct); //its this "new" model we want to return, editItem is attached to another type of model that is not seeded here
@@ -207,7 +208,6 @@ namespace MatFrem.Controllers
                     ViewCategoryName = getById.ProductCategory ?? string.Empty,
                     ViewShopName = getById.ShopModelO.ShopName ?? string.Empty,
                     ProductViewGeoJson = getById.GeoJson ?? string.Empty,
-
                 };
 
                 return View(viewModel);
