@@ -10,7 +10,8 @@ var parentMarkerGroup = [markerGroup1, markerGroup2, markerGroup3, markerGroup4,
 function generateMarkers(id, geoJsonString, orderStatus) {
 
     //the id, geosrting and orderstatus are being passed from the html, the function names is used to get the data for the parameter
-    
+
+    console.log(id, geoJsonString, orderStatus);
     var geoJson = L.geoJson(geoJsonString,
         {
             onEachFeature: function (feature, layer) {
@@ -19,7 +20,7 @@ function generateMarkers(id, geoJsonString, orderStatus) {
                 var cenLat = centroid.geometry.coordinates[1];
                 var marker = L.marker([cenLat, cenLon]);
                 console.log(marker);
-                var title = `OrderID: <a href="/Driver/OrderOverview/${id}"> ${id}</a>`; //Creates a link to the order overview page, attach the id to the link
+                var title = `<a>OrderID: ${id}</a>`; //Creates a link to the order overview page, attach the id to the link
                 var status = `<a>Status: ${orderStatus}</a>`;
                 var pickInfo = `<a>Hentes her</a>`;
                 marker.bindPopup(title + "<br>" + status + "<br>" + pickInfo);
@@ -27,6 +28,9 @@ function generateMarkers(id, geoJsonString, orderStatus) {
 
                 marker.on('click', function (e) {
                     $('#previewInfo').collapse('show');
+                    $.get(`/Driver/OrderOverview/${id}`, function (data) {
+                        $('#loadPreview').html(data);
+                    });
                 });
 
                 parentMarkerGroup.forEach(function (group) {

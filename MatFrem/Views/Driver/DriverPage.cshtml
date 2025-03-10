@@ -116,33 +116,4 @@
 
     </div>
 </div>
-
-
     
-<div class="map-column" style="flex: 1;">
-    <div id="map" style="height: 400px; width: 115%;"></div>
-</div>
-
-
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
-<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-<script src="@("https://unpkg.com/@turf/turf@7.0.0/turf.min.js")"></script>
-
-
-<script src="~/js/generateMarker.js"></script>
-<script>
-    @foreach (var orderData in Model)
-    {
-            @foreach (var jsonData in orderData.ViewGeoJson)
-            {
-
-                  @:console.log("Order ID: @orderData.OrderID, GeoJson: @Html.Raw(Json.Serialize(jsonData)), Status: @orderData.OrderStatusDescription");
-                  @:generateMarkers(@orderData.OrderID, @Html.Raw(Json.Serialize(jsonData)), @orderData.OrderStatusDescription);
-                  
-            }
-    }
-
-</script>
-<!-- since the data from is being sent as a list from the server "controller", we can select specific what we want to manipulate like this -->
-<!-- the function takes the parameter inserted here, which is orderData.OrderID, and the serialized geojson string -->

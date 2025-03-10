@@ -30,6 +30,42 @@ namespace MatFrem.Controllers
             _httpClient = httpClient;
         }
 		[HttpGet]
+
+		public async Task<IActionResult> OrderMapView()
+		{
+            var getOrders = await _orderRepository.GetAllOrder();
+
+            if (getOrders != null)
+            {
+
+                //Here, we just attach our values in the viewmodel, to what is in the database, then send it to the view. 
+                //We are in the GET method, so we are just getting the data from the database, and sending it to the view. This happens when the page is loaded.
+
+                var orderViewModels = getOrders.Select(o => new OrderViewModel //need to run through the list and select since its ienumerable in the repository
+                {
+                    OrderID = o.OrderID, //need to pass and attach the ID from DB to the view model, remember that when working with view model
+                    CustomerName = o.CustomerName ?? string.Empty,
+                    CustomerPhoneNr = o.CustomerPhoneNr ?? string.Empty,
+                    TotalAmount = o.TotalPrice,
+                    OrderQuantitySize = o.OrderItem,
+                    OrderStatusDescription = o.OrderStatus?.StatusDescription ?? string.Empty, //We are attaching the outcoming data (CHAR), status description, to OrderStatus.StatusDescription
+                                                                                               //That is the foreign key in the OrderModel, that is connected to the OrderStatusModel
+                    PickUpAddress = o.PickUpAddress ?? string.Empty,
+                    DateOrderCreate = o.OrderCreatedDate,
+                    DeliveryAddress = o.DeliveryAddress ?? string.Empty,
+                    OrderViewProductNames = o.ProductNames.ToList(),
+                    OrderviewProductDescription = o.ProductDescription.ToList(),
+                    ItemCategory = o.ProductCategories.ToList(),
+                    ViewGeoJson = o.ProductGeoJson.ToList(),
+
+                }).ToList();
+                return View(orderViewModels);
+            }
+            return View();
+
+        }
+
+
 		public async Task<IActionResult> DriverPage(int pageSize = 8, int pageNumber = 1)
 		{
 				var totalRecords = await _productRepository.CountPage();

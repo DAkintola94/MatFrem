@@ -253,6 +253,10 @@
       "PackagePath": "staticwebassets\\Images\\marketBG.jpg"
     },
     {
+      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\2b982f5c-f9b6-4a7b-828b-6884f6d6fe54.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\2b982f5c-f9b6-4a7b-828b-6884f6d6fe54.jpg"
+    },
+    {
       "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\Images\\product\\4ad89ac2-31a5-46cc-92f9-0577878be528.png",
       "PackagePath": "staticwebassets\\Images\\product\\4ad89ac2-31a5-46cc-92f9-0577878be528.png"
     },
@@ -363,6 +367,10 @@
     {
       "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\generateMarker.js",
       "PackagePath": "staticwebassets\\js\\generateMarker.js"
+    },
+    {
+      "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\generateMarkerOrderView.js",
+      "PackagePath": "staticwebassets\\js\\generateMarkerOrderView.js"
     },
     {
       "Id": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\geoLocation.js",

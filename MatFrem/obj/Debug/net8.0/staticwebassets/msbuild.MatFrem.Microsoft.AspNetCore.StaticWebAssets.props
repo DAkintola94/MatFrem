@@ -1062,6 +1062,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\marketBG.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\product\2b982f5c-f9b6-4a7b-828b-6884f6d6fe54.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MatFrem</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MatFrem</BasePath>
+      <RelativePath>Images/product/2b982f5c-f9b6-4a7b-828b-6884f6d6fe54.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fku06wiey2</Fingerprint>
+      <Integrity>v4CfAduhT18jVg0JgdNPTLXAev8U64fNwrcK3E79bMU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\product\2b982f5c-f9b6-4a7b-828b-6884f6d6fe54.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\product\4ad89ac2-31a5-46cc-92f9-0577878be528.png'))">
       <SourceType>Package</SourceType>
       <SourceId>MatFrem</SourceId>
@@ -1614,11 +1632,29 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>1oikggita5</Fingerprint>
-      <Integrity>f7SyxsySyW/R2pl9OlaGWOwyT4gpfxFna1+GK2tp2gA=</Integrity>
+      <Fingerprint>fchgf79muh</Fingerprint>
+      <Integrity>z7Zp5UXeMakcG9KI/P7djO77VzbUI4b/A9sKLAyIYY8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\generateMarker.js'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\generateMarkerOrderView.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MatFrem</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MatFrem</BasePath>
+      <RelativePath>js/generateMarkerOrderView.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>avz0dsld0o</Fingerprint>
+      <Integrity>ap2ScD3FVyrrPzhznbfkoqtI9jQOnTyOtjpu5ydTEAM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\generateMarkerOrderView.js'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\geoLocation.js'))">
       <SourceType>Package</SourceType>
