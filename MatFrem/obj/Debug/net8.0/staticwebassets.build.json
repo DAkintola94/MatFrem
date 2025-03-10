@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZcZ4eZWDa3G6MWH4vgN9upVh5+70A8Nwjieyixccwlg=",
+  "Hash": "np+Je7YsWHPzoXgRNyuXOpUHN1O/Ppl6BKvaqcttNYQ=",
   "Source": "MatFrem",
   "BasePath": "_content/MatFrem",
   "Mode": "Default",
@@ -1942,8 +1942,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "2yso0zlouz",
-      "Integrity": "imSiBmDdaEp/XkJvhzz0rXPq45h2dh3/2t9sKhge90o=",
+      "Fingerprint": "1oikggita5",
+      "Integrity": "f7SyxsySyW/R2pl9OlaGWOwyT4gpfxFna1+GK2tp2gA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\generateMarker.js"
@@ -10593,7 +10593,7 @@
       ]
     },
     {
-      "Route": "js/generateMarker.2yso0zlouz.js",
+      "Route": "js/generateMarker.1oikggita5.js",
       "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\js\\generateMarker.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -10603,7 +10603,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2039"
+          "Value": "2216"
         },
         {
           "Name": "Content-Type",
@@ -10611,11 +10611,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"imSiBmDdaEp/XkJvhzz0rXPq45h2dh3/2t9sKhge90o=\""
+          "Value": "\"f7SyxsySyW/R2pl9OlaGWOwyT4gpfxFna1+GK2tp2gA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 02:35:20 GMT"
+          "Value": "Mon, 10 Mar 2025 02:56:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10625,7 +10625,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "2yso0zlouz"
+          "Value": "1oikggita5"
         },
         {
           "Name": "label",
@@ -10633,7 +10633,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-imSiBmDdaEp/XkJvhzz0rXPq45h2dh3/2t9sKhge90o="
+          "Value": "sha256-f7SyxsySyW/R2pl9OlaGWOwyT4gpfxFna1+GK2tp2gA="
         }
       ]
     },
@@ -10648,7 +10648,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2039"
+          "Value": "2216"
         },
         {
           "Name": "Content-Type",
@@ -10656,11 +10656,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"imSiBmDdaEp/XkJvhzz0rXPq45h2dh3/2t9sKhge90o=\""
+          "Value": "\"f7SyxsySyW/R2pl9OlaGWOwyT4gpfxFna1+GK2tp2gA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 02:35:20 GMT"
+          "Value": "Mon, 10 Mar 2025 02:56:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10670,7 +10670,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-imSiBmDdaEp/XkJvhzz0rXPq45h2dh3/2t9sKhge90o="
+          "Value": "sha256-f7SyxsySyW/R2pl9OlaGWOwyT4gpfxFna1+GK2tp2gA="
         }
       ]
     },

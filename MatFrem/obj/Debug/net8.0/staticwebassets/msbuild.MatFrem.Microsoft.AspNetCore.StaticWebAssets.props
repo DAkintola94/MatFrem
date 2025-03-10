@@ -1614,8 +1614,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>2yso0zlouz</Fingerprint>
-      <Integrity>imSiBmDdaEp/XkJvhzz0rXPq45h2dh3/2t9sKhge90o=</Integrity>
+      <Fingerprint>1oikggita5</Fingerprint>
+      <Integrity>f7SyxsySyW/R2pl9OlaGWOwyT4gpfxFna1+GK2tp2gA=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\generateMarker.js'))</OriginalItemSpec>

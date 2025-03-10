@@ -65,6 +65,8 @@
                                         } this is for getting the items in the looped list
                                 </td> *@
 
+
+
                             <td>
 
                                 <a class="btn btn-warning btn-sm mb2"
@@ -134,7 +136,10 @@
     {
             @foreach (var jsonData in orderData.ViewGeoJson)
             {
+
+                  @:console.log("Order ID: @orderData.OrderID, GeoJson: @Html.Raw(Json.Serialize(jsonData)), Status: @orderData.OrderStatusDescription");
                   @:generateMarkers(@orderData.OrderID, @Html.Raw(Json.Serialize(jsonData)), @orderData.OrderStatusDescription);
+                  
             }
     }
 
