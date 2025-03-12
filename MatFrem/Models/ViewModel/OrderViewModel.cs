@@ -27,10 +27,7 @@ namespace MatFrem.Models.ViewModel
         public string? DeliveryAddress { get; set; } = "";
         [ValidateNever]
         public List<SelectListItem> AvailableDrivers { get; set; } = new List<SelectListItem>();
-        public ApplicationUser? Customer { get; set; } //navigation property for CustomerModel, namely, OrderModel has a Customer
-        public ApplicationUser? Driver { get; set; } //navigation property for DriverModel, namely, OrderModel has a Driver. To get all of Driver properties/inf
         public ProductModel? ProductM { get; set; } //navigation property for ProductModel, namely, OrderModel has a ProductModel
-        public OrderItem? OrderItem { get; set; } //navigation property for OrderItem, namely, OrderModel has a OrderItem
 
         public List<string> ItemCategory { get; set; } = new List<string>();
         public List<string> OrderViewProductNames { get; set; } = new List<string>();

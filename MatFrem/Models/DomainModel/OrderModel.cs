@@ -9,7 +9,7 @@ namespace MatFrem.Models.DomainModel
     {
         public int OrderID { get; set; }
         public DateOnly OrderCreatedDate { get; set; } = DateOnly.FromDateTime(DateTime.Now);
-        public string? DriverId { get; set; } //foreign key for DriverModel, this is the primary key for DriverMode
+        public string? DriverId { get; set; } //Will be used to identify the driver, either by phone number or name
         public string? CustomerName { get; set; }
         public string? DeliveryAddress { get; set; } = "";
         public int OrderStatusID { get; set; }

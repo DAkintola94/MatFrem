@@ -48,7 +48,7 @@ namespace MatFrem.Controllers
                     CustomerPhoneNr = o.CustomerPhoneNr ?? string.Empty,
                     TotalAmount = o.TotalPrice,
                     OrderQuantitySize = o.OrderItem,
-                    OrderStatusDescription = o.OrderStatus?.StatusDescription ?? string.Empty, //We are attaching the outcoming data (CHAR), status description, to OrderStatus.StatusDescription
+                    OrderStatusDescription = o.OrderStatus?.StatusDescription ?? string.Empty, //We are attaching the value from the database, which is from another table, then sending it to the view
                                                                                                //That is the foreign key in the OrderModel, that is connected to the OrderStatusModel
                     PickUpAddress = o.PickUpAddress ?? string.Empty,
                     DateOrderCreate = o.OrderCreatedDate,
@@ -61,7 +61,7 @@ namespace MatFrem.Controllers
                 }).ToList();
                 return View(orderViewModels);
             }
-            return View();
+            return BadRequest("Error, something went wrong");
 
         }
 
@@ -77,13 +77,11 @@ namespace MatFrem.Controllers
 				ViewBag.CurrentPage = pageNumber;
 				ViewBag.PageSize = pageSize;
 
-				var getOrders = await _orderRepository.GetAllOrder(pageNumber, pageSize);
+				var getOrders = await _orderRepository.GetAllOrder(pageNumber, pageSize); //variable to get the order from database upon loading the page
 
             if (getOrders != null)
             {
-
-				//Here, we just attach our values in the viewmodel, to what is in the database, then send it to the view. 
-				//We are in the GET method, so we are just getting the data from the database, and sending it to the view. This happens when the page is loaded.
+				//Here, we attach the data from the database, to the view model. Then send it to view later. As a list 
 
 				var orderViewModels = getOrders.Select(o => new OrderViewModel //need to run through the list and select since its ienumerable in the repository
                 {
@@ -105,7 +103,7 @@ namespace MatFrem.Controllers
                 }).ToList();
                 return View(orderViewModels);
             }
-            return View();
+            return BadRequest("Error, something went wrong");
         }
 
 		[HttpGet]
@@ -138,52 +136,12 @@ namespace MatFrem.Controllers
                 };
 
                 return View(orderViewModel); //pass the model we have attached to values from the DB, and send it to view
-            
-        }
+            }
 
             return NotFound(); //if the order is not found, return not found
         }
 
-		[HttpPost]
-		public async Task<IActionResult> StartOrder(int id, int? any) //The start and finish order method are simply methods, no need to create a view for them
-        {
-            var getOrders = await _orderRepository.GetOrderByID(id);  
-
-            var currentUser = await _userManager.GetUserAsync(User); 
-
-            if (getOrders != null && currentUser != null)
-            {
-                getOrders.OrderStatusID = 3; //we are changing the status of the order to 2, which is "On the way"
-                getOrders.DriverId = currentUser.FirstName + currentUser.LastName;
-
-
-
-                await _orderRepository.UpdateOrder(getOrders);
-                return RedirectToAction("OrderOverview", new { id }); //redirect to the OrderOverview page, with the id of the order
-            }
-
-
-			return BadRequest("No order or user found");
-        }
-
-		[HttpPost]
-		public async Task<IActionResult> FinishOrder(int id) //The start and finish order method are simply methods, no need to create a view for them
-        {
-			var getOrders = await _orderRepository.GetOrderByID(id);
-			var currentUser = await _userManager.GetUserAsync(User); //we can just use this since its only driver than can use this controller/site
-
-			if (getOrders == null)
-			{
-				return View();
-			}
-
-			getOrders.OrderStatusID = 4;
-            getOrders.DriverId = currentUser.Id;
-            getOrders.DriverId = currentUser.FirstName + currentUser.LastName;
-
-            await _orderRepository.UpdateOrder(getOrders);
-            return RedirectToAction("YourOrder");
-        }
+	
 
 		[HttpGet]
 		public async Task<ActionResult> ActiveDeliveries(int id, OrderViewModel orderViewModel)
@@ -195,7 +153,7 @@ namespace MatFrem.Controllers
 			{
 				OrderModel orderModel = new OrderModel
 				{
-                    
+                    //not completed yet
                 };
 
 				return View(orderModel);
@@ -207,12 +165,14 @@ namespace MatFrem.Controllers
 		public async Task<IActionResult> DeliveryHistory()
 		{
             var getOrders = await _orderRepository.GetAllOrder();
+            var currentUser = await _userManager.GetUserAsync(User);
+
             if (getOrders != null)
             {
-                var orderViewModels = getOrders.Select(o => new OrderViewModel
+                var orderViewModels = getOrders.Where(pNrDTO => pNrDTO.DriverId == currentUser.PhoneNumber) //this is linq to check if the driver phone from database matches the current user logged in phone number
+                    .Select(o => new OrderViewModel
                 {
                     CustomerName = o.CustomerName ?? string.Empty,
-					DriverId = o.DriverId ?? string.Empty,
                     CustomerPhoneNr = o.CustomerPhoneNr ?? string.Empty,
                     OrderViewProductNames = o.ProductNames.ToList(),
                     TotalAmount = o.TotalPrice,
@@ -221,26 +181,50 @@ namespace MatFrem.Controllers
                     ItemCategory = o.ProductCategories.ToList(),
                     DateOrderCreate = o.OrderCreatedDate,
                     DeliveryAddress = o.DeliveryAddress ?? string.Empty
-
                 }).ToList();
-                return View(orderViewModels);
+                return View(orderViewModels); //Pass the model we have attached to values from the DB, to view. Its as a list
+                                               //We need to get the value as a list in view as well.
+                                              //Then loop through it
             }
-            return View();
+            return BadRequest("Invalid request, no order found");
         }
 
-        //[Authorize(Roles = "System Administrator")]
-        public async Task<IActionResult> DeleteOrder(int id)
+        [HttpPost]
+        public async Task<IActionResult> FinishOrder(int id) //The start and finish order method are simply methods, no need to create a view for them
         {
-            var findOrder = await _orderRepository.GetOrderByID(id);
-            if (findOrder == null)
+            var getOrders = await _orderRepository.GetOrderByID(id);
+            var currentUser = await _userManager.GetUserAsync(User); //we can just use this since its only driver than can use this controller/site
+
+            if (getOrders != null && currentUser != null)
             {
-                return NotFound();
+                getOrders.OrderStatusID = 4;
+                getOrders.DriverId = currentUser.PhoneNumber;
+
+                await _orderRepository.UpdateOrder(getOrders);
+                return RedirectToAction("YourOrder");
             }
 
-            await _orderRepository.DeleteOrder(id);
-            return RedirectToAction("OrderOverview");
+            return BadRequest("Invalid request");
         }
 
+        [HttpPost]
+        public async Task<IActionResult> StartOrder(int id, int? any) //The start and finish order method are simply methods, no need to create a view for them
+        {
+            var getOrders = await _orderRepository.GetOrderByID(id);
+
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (getOrders != null && currentUser != null)
+            {
+                getOrders.OrderStatusID = 3; //we are changing the status of the order to 2, which is "On the way"
+                getOrders.DriverId = currentUser.PhoneNumber;
+
+                await _orderRepository.UpdateOrder(getOrders);
+                return RedirectToAction("OrderOverview", new { id }); //redirect to the OrderOverview page, with the id of the order
+            }
+
+            return BadRequest("No order or user found");
+        }
 
         [HttpPost]
         public async Task<IActionResult> CancelOrder(int id) //The start and finish order method are simply methods, no need to create a view for them
@@ -251,13 +235,21 @@ namespace MatFrem.Controllers
             if (getOrders != null && currentUser != null)
             {
                 getOrders.OrderStatusID = 5;
-                getOrders.DriverId = currentUser.FirstName + currentUser.LastName;
+                getOrders.DriverId = currentUser.PhoneNumber;
 
                 await _orderRepository.UpdateOrder(getOrders);
                 return RedirectToAction("YourOrder");
             }
 
 			return BadRequest("No user or order found");
+        }
+
+
+        [Authorize(Roles = "System Administrator")]
+        public async Task<IActionResult> DeleteOrder(int id)
+        {
+            await _orderRepository.DeleteOrder(id);
+            return RedirectToAction("OrderViewMap");
         }
 
 
