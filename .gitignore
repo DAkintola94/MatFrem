@@ -75,3 +75,6 @@ Desktop.ini
 /.vs/ProjectEvaluation/matfrem.strings.v9.bin
 /.vs/ProjectEvaluation/matfrem.projects.v9.bin
 /.vs/ProjectEvaluation/matfrem.metadata.v9.bin
+/MatFrem/obj/Debug/net8.0/MatFrem.AssemblyInfo.cs
+/MatFrem/obj/Debug/net8.0/MatFrem.AssemblyInfoInputs.cache
+/MatFrem/obj/Debug/net8.0/MatFrem.assets.cache
