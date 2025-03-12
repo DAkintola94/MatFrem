@@ -72,20 +72,19 @@ namespace MatFrem.Controllers
             if (getOrders != null && currentUser != null)
             {
                     var orderViewModel = getOrders
-                    .Where(o => o.CustomerPhoneNr == currentUser.PhoneNumber) //this is linq to check if the customer phone nr matches. 
+                    .Where(DtoIdMatch => DtoIdMatch.CustomerPhoneNr == currentUser.PhoneNumber) //this is linq to check if the customer phone nr in the database, matches who is currently logged in. 
                                                                               //If it does, we will return the order details that belongs to the customer
+
                     .Select(o => new OrderViewModel //getOrders is already taking from db OrderModel, now we simply map it to OrderViewModel
                     {
-                        //CustomerPhoneNr = o.CustomerPhoneNr,
-                        //ItemCategory = o.OrderProduct.Select(op => op.ProductM.ProductCategory).ToList(),
-                        //CustomerName = o.CustomerName, //should be from the order!
-                        //OrderID = o.OrderID,
-                        //ProductNames = o.OrderProduct.Select(op => op.ProductM.ProductName).ToList(), //eagerloading, to list because we are getting a list and sending to view 
+                        OrderID = o.OrderID,
+                        OrderViewProductNames = o.ProductNames.ToList(), //eagerloading, to list because we are getting a list and sending to view 
                         TotalAmount = o.TotalPrice,
                         OrderQuantitySize = o.OrderItem,
                         OrderStatusDescription = o.OrderStatus?.StatusDescription, //this works due to eager loading in the repository
                         DateOrderCreate = o.OrderCreatedDate,
-                        DeliveryAddress = o.DeliveryAddress
+                        DeliveryAddress = o.DeliveryAddress,
+                        PaymentType = o.PaymentMethod,
                     }).ToList();
 
                     if(orderViewModel.Any()) //you need to use a loop or LINQ to get properties in a list

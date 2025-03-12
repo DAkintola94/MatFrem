@@ -106,6 +106,7 @@ namespace MatFrem.Controllers
             return BadRequest("Error, something went wrong");
         }
 
+
 		[HttpGet]
 		public async Task<IActionResult> OrderOverview(int id)
 		{
@@ -141,7 +142,6 @@ namespace MatFrem.Controllers
             return NotFound(); //if the order is not found, return not found
         }
 
-	
 
 		[HttpGet]
 		public async Task<ActionResult> ActiveDeliveries(int id, OrderViewModel orderViewModel)
@@ -161,8 +161,8 @@ namespace MatFrem.Controllers
 			return View();
 		}
 
-
-		public async Task<IActionResult> DeliveryHistory()
+        [Authorize(Roles = "Driver")]
+        public async Task<IActionResult> DeliveryHistory()
 		{
             var getOrders = await _orderRepository.GetAllOrder();
             var currentUser = await _userManager.GetUserAsync(User);

@@ -158,14 +158,10 @@ namespace MatFrem.Controllers
         [HttpPost]
 		public async Task<ActionResult> Cart(ProductViewModel productViewModel)
 		{
-			if(!ModelState.IsValid)
-            {
-                return View();
-            }
-
+			
             var currentSubmitter = await _userManager.GetUserAsync(User); //we are getting the current user that is logged in
                                                                           ////getuserasync gets all user details (all properties).
-            if (currentSubmitter != null)
+            if (currentSubmitter != null && productViewModel != null)
             {
                 ProductModel convertPModel = new ProductModel
                 {
@@ -180,7 +176,9 @@ namespace MatFrem.Controllers
 
                 return RedirectToAction("ActiveDeliveries", "Driver", convertPModel);
             }
-            return View();
+
+            return NotFound("Error, invalid request");
+            
         }
 
         [HttpGet]

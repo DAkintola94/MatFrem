@@ -46,24 +46,36 @@
             <table class="table table-sortable table-striped table-bordered bg-white" id="firstTableId">
                 <thead>
                     <tr>
-                        <th>Navn</th>
-                        <th>Kategori</th>
-						<th>Antall varer</th>
-                        <th>Leveringssted</th>
-                        <th>Total pris</th>
+                        <th>Order ID</th>
+                        <th>Varenavn</th>
+                        <th>Dato bestilt</th>
+                        <th>Totalpris</th>
+                        <th>Antall varer</th>
+                        <th>Leveringsadresse</th>
+                        <th>Betalingsform</th>
                         <th>Status</th>
+
                     </tr>
                 </thead>
                 <tbody id="myTable">
                     @foreach (var orders in Model)
                     {
                         <tr>
-                            <td>@orders.CustomerName</td>
-                            <td>@orders.ItemCategory</td>
+                            <td>@orders.OrderID</td>
+                            <td>@if (orders.OrderViewProductNames != null)
+                                {
+                                    foreach(var elements in orders.OrderViewProductNames)
+                                    {
+                                        @elements //since its a list from the server, we need to loop through what is inside, then display it.
+                                    }
+                                }
+                            </td>
+                            <td>@orders.DateOrderCreate</td>
+                            <td>@(orders.TotalAmount.HasValue? Math.Floor(orders.TotalAmount.Value) : 0)</td>
                             <td>@orders.OrderQuantitySize</td>
                             <td>@orders.DeliveryAddress</td>
-                            <td>@orders.ProductPrice</td>
-                            <td>@orders.OrderStatusDescription</td>
+                            <td>@orders.PaymentType</td>
+                            <td>@orders.OrderStatusDescription </td>
                         </tr>
                     }
                 </tbody>
