@@ -7,7 +7,5 @@ namespace MatFrem.Models.DomainModel
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
-
     }
 }

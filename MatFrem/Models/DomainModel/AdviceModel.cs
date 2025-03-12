@@ -7,16 +7,12 @@ namespace MatFrem.Models.DomainModel
 		public int PostId { get; set; }
 		[Required]
 		public string Author { get; set; }
-
 		[Required]
 		[MinLength(5)]
 		[MaxLength(200)]
 		public string AdviceMessage { get; set; }
-
-		[Required, EmailAddress]
-
+		[Required]
 		public string Email { get; set; }
-
 		public DateOnly Date { get; set; } = DateOnly.FromDateTime(DateTime.Now);
 
 	}

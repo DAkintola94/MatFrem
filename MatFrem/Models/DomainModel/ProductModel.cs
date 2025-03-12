@@ -8,27 +8,23 @@ namespace MatFrem.Models.DomainModel
 	{
 		public int ProductID { get; set; }
 		public string? Description { get; set; }
-
-		[MaxLength(100)]
-		public string? Category { get; set; }
 		[MaxLength(100)]
 		public string? ProductName { get; set; }
 		[MaxLength(100)]
 		public string? ProductCalories { get; set; }
+		public string? GeoJson { get; set; }
 		public double ProductPrice { get; set; }
 		[MaxLength(100)]
 		public string? ProductLocation { get; set; }
 		[ValidateNever]
 		public string? ImageUrl { get; set; }
 		[MaxLength(100)]
-		public string? CustomerId { get; set; }
+		public string? CustomerName { get; set; }
 		[MaxLength(100)]
-		public string? DriverId { get; set; }
-		[ValidateNever]
+		public ShopModel? ShopModelO { get; set; }
+		public string? ProductCategory { get; set; }
 
-		//public int? ShoppingCartID { get; set; }
-        public ApplicationUser? Customer { get; set; }
-		public ApplicationUser? Driver { get; set; } //You need to add property whenever you to design a foreign key in the database
-		//public ShoppingCartModel? ShoppingCart { get; set; }
+		//public ICollection<OrderProducts> OrderProduct { get; set; } = new List<OrderProducts>(); //indicates many to many relationship
+        public int ShopId { get; set; }
     }
 }

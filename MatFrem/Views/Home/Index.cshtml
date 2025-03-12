@@ -44,11 +44,11 @@
                     <div class="rounded border shadow p-3 text-center h-100">
                         <img src="@Url.Content(product.ImageUrl)" class="img-fluid" alt="..." style="height: 180px; object-fit: contain" />
                         <hr />
-                        <h5 class="py-2">@product.ProductName</h5>
+                        <h5 class="py-2">@product.ProductViewName</h5>
                         <p>
-                            Kategori: @product.Category
+                            Kategori: @product.ViewCategoryName
                         </p>
-                        <h4 class="mb-3">@(product.ProductPrice)kr</h4>
+                        <h4 class="mb-3">@(product.ProductViewPrice)kr</h4>
                         <a class="btn btn-primary btn-sm mb-2" asp-controller="Product"
                                asp-action="Detail" asp-route-id="@product.ProductID" role="button">Detaljer</a> <!-- asp-route-id="" this part is important to send the actual id to the controller -->
                         <button type="button" class="btn btn-warning btn-sm mb-2" onclick="addToCart(this, @product.ProductID)">

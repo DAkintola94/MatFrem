@@ -75,6 +75,27 @@ Desktop.ini
 /.vs/ProjectEvaluation/matfrem.strings.v9.bin
 /.vs/ProjectEvaluation/matfrem.projects.v9.bin
 /.vs/ProjectEvaluation/matfrem.metadata.v9.bin
+<<<<<<< HEAD
 /MatFrem/obj/Debug/net8.0/MatFrem.AssemblyInfo.cs
 /MatFrem/obj/Debug/net8.0/MatFrem.AssemblyInfoInputs.cache
 /MatFrem/obj/Debug/net8.0/MatFrem.assets.cache
+=======
+/MatFrem/Migrations/20241203234124_NullableMigrateTable.cs
+/MatFrem/Migrations/20241203234124_NullableMigrateTable.Designer.cs
+/MatFrem/Migrations/20241209174621_InitialCreationLaptop.cs
+/MatFrem/Migrations/20241209174621_InitialCreationLaptop.Designer.cs
+/MatFrem/Migrations/AppDBContextModelSnapshot.cs
+/MatFrem/Models/DomainModel/CustomerModel.cs
+/MatFrem/Migrations/AppDBContextModelSnapshot.cs
+/MatFrem/Migrations/20241209174621_InitialCreationLaptop.Designer.cs
+/MatFrem/Migrations/20241209174621_InitialCreationLaptop.cs
+/MatFrem/Migrations/20241203234124_NullableMigrateTable.Designer.cs
+/MatFrem/Migrations/20241203234124_NullableMigrateTable.cs
+/MatFrem/Controllers/Customer.cs
+/MatFrem/Models/DomainModel/CategoryModel.cs
+>>>>>>> e4676e83f33b33fa2fdd2b90ff9775a4381ee65f
+/MatFrem/Controllers/Customer.cs
+/MatFrem/Migrations/20241203234124_NullableMigrateTable.cs
+/MatFrem/Migrations/20241203234124_NullableMigrateTable.Designer.cs
+/MatFrem/Migrations/20241209174621_InitialCreationLaptop.cs
+/MatFrem/Models/DomainModel/CustomerModel.cs

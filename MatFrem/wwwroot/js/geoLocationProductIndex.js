@@ -27,9 +27,11 @@ map.on(L.Draw.Event.CREATED, function (e) {
 
     drawItems.addLayer(layer); // Add layer to map
 
-    var geoJsonData = layer.toGeoJSON(); // Convert layer to GeoJSON
+    var geoJsonData = layer.toGeoJSON(); // Convert layer to GeoJSON, this is the geojson
     var geoJsonString = JSON.stringify(geoJsonData); // Convert GeoJSON to string!! since we sending it to server
 
+    console.log(geoJsonData, geoJsonString); // Print GeoJSON data to console
+    document.getElementById('geoJsonField').value = geoJsonString; // Set value of hidden input field to GeoJSON string variable created
 
 
     // Fetches and displays the address of a location based on GeoJSON data.
@@ -43,11 +45,9 @@ map.on(L.Draw.Event.CREATED, function (e) {
     var cenGeoLat = centroid.geometry.coordinates[1];
     
 
-
     console.log(centroid + "testing");
     console.log("Latitude: " + lat);
     console.log("Longitude: " + lon);
-
     
 
     var nominatimUrl = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`;
@@ -83,13 +83,8 @@ map.on(L.Draw.Event.CREATED, function (e) {
             document.getElementById('geoConvert').value = "Error fetching address";
         });
 
-
-
-    
-
-   
-
     // Set value of hidden input field to GeoJSON string variable created
 });
+
 
 

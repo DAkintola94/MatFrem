@@ -10,7 +10,7 @@ namespace MatFrem.Repository
         //but it doesn not provide methods to modify the collection (add, remove, etc)
         Task<IEnumerable<ProductModel>> GetAllItems(int pageNumber = 1, int pageSize = 100);
         Task<ProductModel> InsertProduct(ProductModel model);
-        Task<ProductModel> GetItemById(int id);
+        Task<ProductModel?> GetItemById(int id);
         Task<ProductModel> DeleteItem(int id);
         Task<ProductModel> UpdateItems(ProductModel productModel);
         Task<int> CountPage();
