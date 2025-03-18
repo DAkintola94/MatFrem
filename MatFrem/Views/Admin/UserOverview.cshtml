@@ -1,8 +1,6 @@
 ﻿@model MatFrem.Models.ViewModel.AdminViewModel
 
 
-
-
 <div class="bg-secondary bg-opacity-10 py-2">
     <div class="container">
         <h1> Admin panel </h1>
@@ -18,7 +16,7 @@
             </button>
         </div>
 
-        @if(Model.Users !=null || !Model.Users.Any())
+        @if(Model.ProfileCreation !=null || !Model.ProfileCreation.Any())
         {
 
             <table class="table">
@@ -31,7 +29,7 @@
                     </tr>
                 </thread>
                 <tbody>
-                    @foreach(var userList in Model.Users)
+                    @foreach(var userList in Model.ProfileCreation)
                     {
                         <tr>
                             <td>@userList.Email</td>
@@ -97,15 +95,19 @@
                 </div>
 
                 <div class="mb-3">
-                    <div class="form-check">
-                        <input type="checkbox" id="chkUserRole" class="form-check-input" value="Driver" checked disable />
-                        <label class="form-check-label" for="chkUserRole"> Kunde </label>
-                    </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="chkUserRole" class="form-check-input" value="Customer" asp-for="IsDriverChecked" name="userRole" onclick="checkboxOnClick(this);" />
+                            <label class="form-check-label" for="chkUserRole"> Kunde </label>
+                        </div>
 
-                    <div class="form-check">
-                        <input type="checkbox" id="chkDriverRole" class="form-check-input" value="Driver" checked disable />
-                        <label class="form-check-label" for="chkDriverRole"> Sjåfør </label>
-                    </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="chkDriverRole" class="form-check-input" value="Driver" asp-for="IsCustomerChecked" name="userRole" onclick="checkboxOnClick(this);" />
+                            <label class="form-check-label" for="chkDriverRole"> Sjåfør </label>
+                        </div>
+
+
+                        <!-- using name="userRole" for both checkbox so we can group them together, and manipulate with javascript -->
+
                 </div>
             </div>
             <div class="modal-footer">
@@ -116,3 +118,20 @@
     </div>
 </div>
 </form>
+
+
+<script>
+    function checkboxOnClick(el) {
+        // Select all checkboxes by name
+        var checkboxesList = document.getElementsByName('userRole');
+        for (var i = 0; i < checkboxesList.length; i++) {
+            // Uncheck all checkboxes except the one clicked
+            if (checkboxesList[i] !== el) {
+                checkboxesList[i].checked = false;
+            }
+        }
+        // Check the clicked checkbox
+        el.checked = true;
+    }
+</script>
+

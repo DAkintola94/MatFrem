@@ -4,7 +4,7 @@ namespace MatFrem.Models.ViewModel
 {
     public class AdminViewModel
     {
-        public List<CreateProfileViewModel>? Users { get; set; }
+        public List<CreateProfileViewModel>? ProfileCreation { get; set; }
 
         [Required]
         public string UserName { get; set; }
@@ -24,5 +24,10 @@ namespace MatFrem.Models.ViewModel
         [Required]
 
         public string Password { get; set; }
+
+        public bool? IsDriver { get; set; }
+        public bool IsDriverChecked => IsDriver ?? false;
+        public bool? IsCustomer { get; set; }
+        public bool IsCustomerChecked => IsCustomer ?? false;
     }
 }
