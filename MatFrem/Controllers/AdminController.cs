@@ -2,6 +2,7 @@
 using MatFrem.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography.Xml;
 
 namespace MatFrem.Controllers
 {
@@ -19,21 +20,28 @@ namespace MatFrem.Controllers
         public async Task<IActionResult> UserOverview()
         {
             //the repository already handle the logic to remove the system admin from the list of users
+            //working with sending list to view this way, so our MODAL can work with asp-for single property post
             
 
             var getAllUsers = await _userRepository.GetAllUsers();
 
+            var adminViewModel = new AdminViewModel();
+            adminViewModel.Users = new List<CreateProfileViewModel>();
+
             if(getAllUsers!= null)
             {
-                var profileViewModel = getAllUsers.Select(userList => new CreateProfileViewModel
+                foreach(var userElement in getAllUsers)
                 {
-                    Email = userList.Email,
-                    PhoneNr = userList.PhoneNumber,
-                    FirstName = userList.FirstName,
-                    LastName = userList.LastName
-                }).ToList();
+                    adminViewModel.Users.Add(new Models.ViewModel.CreateProfileViewModel
+                    {
+                        Email = userElement.Email,
+                        PhoneNr = userElement.PhoneNumber,
+                        FirstName = userElement.FirstName,
+                        LastName = userElement.LastName
+                    });
+                }
 
-                return View(profileViewModel);
+                return View(adminViewModel);
             }
 
             //also, using the same viewmodel as for registering user, because our modal needs the same attributes that are required etc
@@ -41,10 +49,14 @@ namespace MatFrem.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UserOverview(CreateProfileViewModel createProfileViewModel)
+        public async Task<IActionResult> UserOverview(AdminViewModel adminProfileRequest)
         {
-            return null;
+            if(ModelState.IsValid)
+            {
+                return View();
+            }
 
+            return BadRequest("No value issued");
 
         }
 

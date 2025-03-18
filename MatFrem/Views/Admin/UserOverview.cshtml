@@ -1,9 +1,6 @@
-﻿@model List<MatFrem.Models.ViewModel.CreateProfileViewModel> 
+﻿@model MatFrem.Models.ViewModel.AdminViewModel
 
-@{
-    var newUser = new MatFrem.Models.ViewModel.CreateProfileViewModel();
-	//since we are returning list, our MODAL need this empty object to be able to create new user
-}
+
 
 
 <div class="bg-secondary bg-opacity-10 py-2">
@@ -21,7 +18,7 @@
             </button>
         </div>
 
-        @if(Model!=null || !Model.Any())
+        @if(Model.Users !=null || !Model.Users.Any())
         {
 
             <table class="table">
@@ -34,7 +31,7 @@
                     </tr>
                 </thread>
                 <tbody>
-                    @foreach(var userList in Model)
+                    @foreach(var userList in Model.Users)
                     {
                         <tr>
                             <td>@userList.Email</td>
@@ -69,35 +66,34 @@
             </div>
             <div class="modal-body">
 
-
                 <div class="mb-3">
                     <label class="form-label"> Brukernavn </label>
-                        <input type="text" class="form-control" asp-for="@newUser.Email">
+                        <input type="text" class="form-control" asp-for="UserName">
                 </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"> Email </label>
+                        <input type="text" class="form-control" asp-for="UserEmail">
+                    </div>
 
                 <div class="mb-3">
                     <label class="form-label"> Fornavn </label>
-                        <input type="text" class="form-control" asp-for="@newUser.FirstName">
+                        <input type="text" class="form-control" asp-for="UserFirstName">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label"> Etternavn </label>
-                        <input type="text" class="form-control" asp-for="@newUser.LastName">
+                        <input type="text" class="form-control" asp-for="UserLastName">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label"> Telefon nr </label>
-                        <input type="text" class="form-control" asp-for="@newUser.PhoneNr">
+                        <input type="text" class="form-control" asp-for="UserPhoneNr">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label"> Passord </label>
-                        <input type="text" class="form-control" asp-for="@newUser.Password">
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label"> Bekreft passord </label>
-                        <input type="text" class="form-control" asp-for="@newUser.ConfirmPassword">
+                        <input type="text" class="form-control" asp-for="Password">
                 </div>
 
                 <div class="mb-3">
