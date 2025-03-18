@@ -1,0 +1,122 @@
+﻿@model List<MatFrem.Models.ViewModel.CreateProfileViewModel> 
+
+@{
+    var newUser = new MatFrem.Models.ViewModel.CreateProfileViewModel();
+	//since we are returning list, our MODAL need this empty object to be able to create new user
+}
+
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1> Admin panel </h1>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+
+        <div class="mb-3 d-flex justify-content-end">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createUserModal">
+                Lag bruker
+            </button>
+        </div>
+
+        @if(Model!=null || !Model.Any())
+        {
+
+            <table class="table">
+                <thread>
+                    <tr>
+                        <th> Email</th>
+                        <th> Telefon nr </th>
+                        <th> Førstenavn </th>
+                        <th> Etternavn </th>
+                    </tr>
+                </thread>
+                <tbody>
+                    @foreach(var userList in Model)
+                    {
+                        <tr>
+                            <td>@userList.Email</td>
+                            <td>@userList.PhoneNr</td>
+                            <td>@userList.FirstName</td>
+                            <td>@userList.LastName</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+        }
+
+        else
+        {
+              <p> No users found </p>
+        }
+
+    </div>
+
+</div>
+
+<form method="post">
+<div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Dont forget to use the correct model id according to "data-bs-target" -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="mb-3">
+                    <label class="form-label"> Brukernavn </label>
+                        <input type="text" class="form-control" asp-for="@newUser.Email">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"> Fornavn </label>
+                        <input type="text" class="form-control" asp-for="@newUser.FirstName">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"> Etternavn </label>
+                        <input type="text" class="form-control" asp-for="@newUser.LastName">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"> Telefon nr </label>
+                        <input type="text" class="form-control" asp-for="@newUser.PhoneNr">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"> Passord </label>
+                        <input type="text" class="form-control" asp-for="@newUser.Password">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"> Bekreft passord </label>
+                        <input type="text" class="form-control" asp-for="@newUser.ConfirmPassword">
+                </div>
+
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input type="checkbox" id="chkUserRole" class="form-check-input" value="Driver" checked disable />
+                        <label class="form-check-label" for="chkUserRole"> Kunde </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" id="chkDriverRole" class="form-check-input" value="Driver" checked disable />
+                        <label class="form-check-label" for="chkDriverRole"> Sjåfør </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Lukk</button>
+                <button type="submit" class="btn btn-primary">Lagre</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>

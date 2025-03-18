@@ -15,7 +15,6 @@ namespace MatFrem.Models.ViewModel
         public int? OrderQuantitySize { get; set; }
         public string? OrderStatusDescription { get; set; }
         public string? PickUpAddress { get; set; }
-
         public string? PaymentType { get; set; }
         public int ProductID { get; set; }
         public double? ProductPrice { get; set; }

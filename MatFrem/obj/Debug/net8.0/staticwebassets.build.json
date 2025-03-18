@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JVeaR7EgZqbMa5/Rb7DDliG1hfGtwam4sABAYteYrAM=",
+  "Hash": "/scKx567VSJYb36xcYlUXd2gGtfLZZerKx9kPgEpPL0=",
   "Source": "MatFrem",
   "BasePath": "_content/MatFrem",
   "Mode": "Default",
@@ -1123,8 +1123,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gctdlp8b3f",
-      "Integrity": "MLGtFKY0glyih/uHgv3yZPs4yq31BdYWqC/qV7J2gCY=",
+      "Fingerprint": "al5je5nfk8",
+      "Integrity": "DtWNsqzpgilD4oukNLX9Dw5z1COkYUd2KUFW8ZdRRBQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -6453,6 +6453,51 @@
       ]
     },
     {
+      "Route": "css/site.al5je5nfk8.css",
+      "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3197"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DtWNsqzpgilD4oukNLX9Dw5z1COkYUd2KUFW8ZdRRBQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 18 Mar 2025 13:35:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "al5je5nfk8"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DtWNsqzpgilD4oukNLX9Dw5z1COkYUd2KUFW8ZdRRBQ="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -6463,7 +6508,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3261"
+          "Value": "3197"
         },
         {
           "Name": "Content-Type",
@@ -6471,11 +6516,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MLGtFKY0glyih/uHgv3yZPs4yq31BdYWqC/qV7J2gCY=\""
+          "Value": "\"DtWNsqzpgilD4oukNLX9Dw5z1COkYUd2KUFW8ZdRRBQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 00:16:25 GMT"
+          "Value": "Tue, 18 Mar 2025 13:35:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6485,52 +6530,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MLGtFKY0glyih/uHgv3yZPs4yq31BdYWqC/qV7J2gCY="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.gctdlp8b3f.css",
-      "AssetFile": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3261"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"MLGtFKY0glyih/uHgv3yZPs4yq31BdYWqC/qV7J2gCY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 00:16:25 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "gctdlp8b3f"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-MLGtFKY0glyih/uHgv3yZPs4yq31BdYWqC/qV7J2gCY="
+          "Value": "sha256-DtWNsqzpgilD4oukNLX9Dw5z1COkYUd2KUFW8ZdRRBQ="
         }
       ]
     },
