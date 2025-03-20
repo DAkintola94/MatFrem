@@ -34,7 +34,6 @@ namespace MatFrem.Controllers
             deliveryFee = configuration.GetValue<decimal>("CartSettings:DeliveryFee"); //get the delivery fee from the appsettings.json file
         }
 
-
         [HttpGet]
         public IActionResult Index()
         {
@@ -237,9 +236,9 @@ namespace MatFrem.Controllers
         [HttpPost]
         public async Task<ActionResult> RemoveCookieCart()
         {
-            List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //
+            int cartSize = CartHelper.GetCartSize(Request, Response); //get the cart size from the cookie, method from the CartHelper service
 
-            if(cartItems.Count > 1)
+            if (cartSize > 1)
             {
                 Response.Cookies.Delete("shopping_cart");
                 return RedirectToAction("Index");
