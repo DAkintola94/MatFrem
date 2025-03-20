@@ -14,23 +14,19 @@ namespace MatFrem.Controllers
     {
         private readonly IProductRepository _productRepository;
         private readonly IOrderRepository _orderRepository;
-        private readonly IShoppingCartRepository _shoppingCartRepository;
         private readonly IConfiguration _configuration; //IConfiguration is a built-in interface in .NET Core that provides access to the appsettings.json file
         private readonly AppDBContext _context;
         private readonly UserManager<ApplicationUser> _userManager; 
         private readonly decimal deliveryFee; 
 
         public Market(IProductRepository productRepo, 
-            UserManager<ApplicationUser> userManager, IOrderRepository orderRepository,
-            IShoppingCartRepository shoppingCartRepository, IConfiguration configuration 
-            , AppDBContext context)
+            UserManager<ApplicationUser> userManager, IOrderRepository orderRepository,IConfiguration configuration ,AppDBContext context)
         {
             _context = context;
             _configuration = configuration;
             _productRepository = productRepo;
             _userManager = userManager;
             _orderRepository = orderRepository;
-            _shoppingCartRepository = shoppingCartRepository;
             deliveryFee = configuration.GetValue<decimal>("CartSettings:DeliveryFee"); //get the delivery fee from the appsettings.json file
         }
 
@@ -38,10 +34,11 @@ namespace MatFrem.Controllers
         public IActionResult Index()
         {
                List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
-            int cartSize = CartHelper.GetCartSize(Request, Response); //variable to check cart size, method from the CartHelper service
+
+            int cartSize = CartHelper.GetCartSize(Request, Response); //variable to check cart size, GetCartSize method is from the CartHelper service
 
 
-            if (cartSize > 1) //if there is more than 1 item in the cart, we can show the cart
+            if (cartSize >= 1) //if there is more than 1 item in the cart, we can show the cart
             {
                 decimal subtotal = CartHelper.GetSubTotal(cartItems);
 
@@ -144,20 +141,6 @@ namespace MatFrem.Controllers
         [HttpGet]
         public async Task<ActionResult> Cart(int id)
         {
-            var cartById = await _shoppingCartRepository.GetCartById(id); 
-            if (cartById != null)
-            {
-                var cartViewModel = new ShoppingCartViewModel 
-                {
-                    //ShoppingCartID = cartById.ShoppingCartID,
-                    //CustomerId = cartById.CustomerId,
-                    //ProductID = cartById.ProductID,
-                    //ProductModel = cartById.Product.FirstOrDefault(), //set the single ProductModel property
-					//Product = cartById.Product.ToList() ?? new List<ProductModel>() //Ensure product is not null
-                };
-
-                return View(cartViewModel); //we are returning the view model to the view
-            }
             return View();
         }
 
@@ -165,9 +148,8 @@ namespace MatFrem.Controllers
         [HttpPost]
 		public async Task<ActionResult> Cart(ProductViewModel productViewModel)
 		{
-			
             var currentSubmitter = await _userManager.GetUserAsync(User); //we are getting the current user that is logged in
-                                                                          ////getuserasync gets all user details (all properties).
+                                                                          //getuserasync gets all user details (all properties).
             if (currentSubmitter != null && productViewModel != null)
             {
                 ProductModel convertPModel = new ProductModel
@@ -185,20 +167,16 @@ namespace MatFrem.Controllers
             }
 
             return NotFound("Error, invalid request");
-            
         }
 
         [HttpGet]
         public async Task<ActionResult> ConfirmPurchase(ShoppingCartViewModel scViewModel) //values we are retrieving from index method above
         {
             List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
-            decimal total = CartHelper.GetSubTotal(cartItems) + deliveryFee;
-            int cartSize = 0;
 
-            foreach (var item in cartItems)
-            {
-                cartSize += item.Quantity;
-            }
+            decimal total = CartHelper.GetSubTotal(cartItems) + deliveryFee;
+
+            int cartSize = CartHelper.GetCartSize(Request, Response); //variable for method that is in the service, CartHelper. To check cart size
 
             
             if(cartSize == 0 || string.IsNullOrEmpty(scViewModel.DeliveryAddress) || string.IsNullOrEmpty(scViewModel.PaymentMethod))
@@ -246,7 +224,7 @@ namespace MatFrem.Controllers
         {
             int cartSize = CartHelper.GetCartSize(Request, Response); //get the cart size from the cookie, method from the CartHelper service
 
-            if (cartSize > 1)
+            if (cartSize >= 1)
             {
                 Response.Cookies.Delete("shopping_cart");
                 return RedirectToAction("Index");
