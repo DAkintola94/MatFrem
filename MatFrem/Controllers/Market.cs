@@ -38,17 +38,25 @@ namespace MatFrem.Controllers
         public IActionResult Index()
         {
                List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
-            decimal subtotal = CartHelper.GetSubTotal(cartItems); 
+            int cartSize = CartHelper.GetCartSize(Request, Response); //variable to check cart size, method from the CartHelper service
 
-            ShoppingCartViewModel scViewModel = new ShoppingCartViewModel
+
+            if (cartSize > 1) //if there is more than 1 item in the cart, we can show the cart
             {
-                CartItems = cartItems,
-                Subtotal = subtotal,
-                DeliveryFee = deliveryFee,  
-                Total = subtotal + deliveryFee
-            }; //Creating new ShoppingCartViewModel and giving it the values from the cookie, and OrderItem list
+                decimal subtotal = CartHelper.GetSubTotal(cartItems);
 
-            return View(scViewModel);
+                ShoppingCartViewModel scViewModel = new ShoppingCartViewModel
+                {
+                    CartItems = cartItems,
+                    Subtotal = subtotal,
+                    DeliveryFee = deliveryFee,
+                    Total = subtotal + deliveryFee
+                }; //Creating new ShoppingCartViewModel and giving it the values from the cookie, and OrderItem list
+
+                return View(scViewModel);
+            }
+
+            return BadRequest("There is no item in your cart");
         }
 
         [Authorize]
