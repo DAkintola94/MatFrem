@@ -19,7 +19,6 @@ namespace MatFrem
             builder.Services.AddScoped<IProductRepository, ProductRepository>(); // this line adds the ShoppingRepository to the services collection
             builder.Services.AddScoped<IOrderRepository, OrderRepository>(); // this line adds the OrderRepository to the services collection
 			builder.Services.AddScoped<IAdviceRepository, AdviceRepository>(); // this line adds the AdviceRepository to the services collection
-            builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
 
             builder.Services.AddDbContext<AuthDbContext>(options =>

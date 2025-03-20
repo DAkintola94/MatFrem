@@ -99,3 +99,7 @@ Desktop.ini
 /MatFrem/Migrations/20241203234124_NullableMigrateTable.Designer.cs
 /MatFrem/Migrations/20241209174621_InitialCreationLaptop.cs
 /MatFrem/Models/DomainModel/CustomerModel.cs
+/MatFrem/Repository/IShoppingCartRepository.cs
+/MatFrem/Repository/ShoppingCartRepository.cs
+/MatFrem/Repository/IShoppingCartRepository.cs
+/MatFrem/Repository/ShoppingCartRepository.cs
