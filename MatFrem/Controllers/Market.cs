@@ -34,12 +34,11 @@ namespace MatFrem.Controllers
             deliveryFee = configuration.GetValue<decimal>("CartSettings:DeliveryFee"); //get the delivery fee from the appsettings.json file
         }
 
-
         [HttpGet]
         public IActionResult Index()
         {
                List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
-            decimal subtotal = CartHelper.GetSubTotal(cartItems);
+            decimal subtotal = CartHelper.GetSubTotal(cartItems); 
 
             ShoppingCartViewModel scViewModel = new ShoppingCartViewModel
             {
@@ -232,6 +231,21 @@ namespace MatFrem.Controllers
         {
            var deleteItem = await _productRepository.DeleteItem(id);
             return View();
+        }
+       
+        [HttpPost]
+        public async Task<ActionResult> RemoveCookieCart()
+        {
+            int cartSize = CartHelper.GetCartSize(Request, Response); //get the cart size from the cookie, method from the CartHelper service
+
+            if (cartSize > 1)
+            {
+                Response.Cookies.Delete("shopping_cart");
+                return RedirectToAction("Index");
+            }
+
+            return BadRequest("Shopping cart is already empty"); 
+
         }
 
      
