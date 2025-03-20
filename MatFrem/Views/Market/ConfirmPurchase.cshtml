@@ -15,7 +15,7 @@
     }
     else
     {
-        
+
         <div class="row mb-3">
             <div class="col-5">Betalingsmetode:</div>
             <div class="col-7">@Model.PaymentMethod</div>
@@ -41,7 +41,17 @@
 
         <div class="row mb-3">
             <div class="col-5">Produkt beskrivelse:</div>
-            <div class="col-7">@Model.ProductDescription</div>
+            <div class="col-7">
+                @if(Model.ProductDescription != null)
+                {
+                    foreach(var elements in Model.ProductDescription)
+                    {
+                        <div> @elements </div>
+                    }
+                } 
+                
+            </div>
+
         </div>
 
         <div class="row mb-3">
@@ -53,10 +63,10 @@
         <form method="post">
             <div class="row">
                 <div class="col-sm-6 d-grid">
-                    <a class="btn btn-outline-primary" asp-controller="Market" asp-action="Index">Oversikt</a>
+                    <a class="btn btn-outline-primary" asp-controller="Order" asp-action="OrderHistory">Oversikt</a>
                 </div>
                 <div class="col-sm-6 d-grid">
-                    <a class="btn btn-outline-primary" asp-controller="Market" asp-action="Index">Tilbake</a>
+                    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Index">Hjem</a>
                 </div>
             </div>
         </form>

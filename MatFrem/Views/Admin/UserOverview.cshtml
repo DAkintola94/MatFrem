@@ -1,0 +1,137 @@
+﻿@model MatFrem.Models.ViewModel.AdminViewModel
+
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1> Admin panel </h1>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+
+        <div class="mb-3 d-flex justify-content-end">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createUserModal">
+                Lag bruker
+            </button>
+        </div>
+
+        @if(Model.ProfileCreation !=null || !Model.ProfileCreation.Any())
+        {
+
+            <table class="table">
+                <thread>
+                    <tr>
+                        <th> Email</th>
+                        <th> Telefon nr </th>
+                        <th> Førstenavn </th>
+                        <th> Etternavn </th>
+                    </tr>
+                </thread>
+                <tbody>
+                    @foreach(var userList in Model.ProfileCreation)
+                    {
+                        <tr>
+                            <td>@userList.Email</td>
+                            <td>@userList.PhoneNr</td>
+                            <td>@userList.FirstName</td>
+                            <td>@userList.LastName</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+        }
+
+        else
+        {
+              <p> No users found </p>
+        }
+
+    </div>
+
+</div>
+
+<form method="post">
+<div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Dont forget to use the correct model id according to "data-bs-target" -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <label class="form-label"> Brukernavn </label>
+                        <input type="text" class="form-control" asp-for="UserName">
+                </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"> Email </label>
+                        <input type="text" class="form-control" asp-for="UserEmail">
+                    </div>
+
+                <div class="mb-3">
+                    <label class="form-label"> Fornavn </label>
+                        <input type="text" class="form-control" asp-for="UserFirstName">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"> Etternavn </label>
+                        <input type="text" class="form-control" asp-for="UserLastName">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"> Telefon nr </label>
+                        <input type="text" class="form-control" asp-for="UserPhoneNr">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"> Passord </label>
+                        <input type="text" class="form-control" asp-for="Password">
+                </div>
+
+                <div class="mb-3">
+                        <div class="form-check">
+                            <input type="checkbox" id="chkUserRole" class="form-check-input" value="Customer" asp-for="IsDriverChecked" name="userRole" onclick="checkboxOnClick(this);" />
+                            <label class="form-check-label" for="chkUserRole"> Kunde </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="chkDriverRole" class="form-check-input" value="Driver" asp-for="IsCustomerChecked" name="userRole" onclick="checkboxOnClick(this);" />
+                            <label class="form-check-label" for="chkDriverRole"> Sjåfør </label>
+                        </div>
+
+
+                        <!-- using name="userRole" for both checkbox so we can group them together, and manipulate with javascript -->
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Lukk</button>
+                <button type="submit" class="btn btn-primary">Lagre</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+
+<script>
+    function checkboxOnClick(el) {
+        // Select all checkboxes by name
+        var checkboxesList = document.getElementsByName('userRole');
+        for (var i = 0; i < checkboxesList.length; i++) {
+            // Uncheck all checkboxes except the one clicked
+            if (checkboxesList[i] !== el) {
+                checkboxesList[i].checked = false;
+            }
+        }
+        // Check the clicked checkbox
+        el.checked = true;
+    }
+</script>
+
