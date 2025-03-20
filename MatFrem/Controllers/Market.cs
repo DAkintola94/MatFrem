@@ -39,7 +39,7 @@ namespace MatFrem.Controllers
         public IActionResult Index()
         {
                List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //get the cart items from the cookie, through the CartHelper class/service
-            decimal subtotal = CartHelper.GetSubTotal(cartItems);
+            decimal subtotal = CartHelper.GetSubTotal(cartItems); 
 
             ShoppingCartViewModel scViewModel = new ShoppingCartViewModel
             {
@@ -232,6 +232,21 @@ namespace MatFrem.Controllers
         {
            var deleteItem = await _productRepository.DeleteItem(id);
             return View();
+        }
+       
+        [HttpPost]
+        public async Task<ActionResult> RemoveCookieCart()
+        {
+            List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, _context); //
+
+            if(cartItems.Count > 1)
+            {
+                Response.Cookies.Delete("shopping_cart");
+                return RedirectToAction("Index");
+            }
+
+            return BadRequest("Shopping cart is already empty"); 
+
         }
 
      
