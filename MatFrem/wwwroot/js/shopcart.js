@@ -60,3 +60,48 @@ function addToCart(button, id) {
 
     document.getElementById("CartSize").innerHTML = cartSize;
 }
+
+function IncreaseQuantity(id) {
+    let cart = getShoppingCart();
+
+    let quantity = cart[id]
+    if (isNaN(quantity)) { //if its not a number, user havent increased the quantity, cart = 1
+        cart[id] = 1;
+    }
+
+    else {
+        cart[id] = Number(quantity) + 1; //else, if number, increase quantity by 1
+    }
+
+    saveCart(cart);
+    location.reload(); //reload page
+
+}
+
+function DecreaseQuantity(id) {
+
+    let cart = getShoppingCart();
+
+    let quantity = cart[id]
+    if (isNaN(quantity)) { //if its not a number, get out of the function
+        return;
+    }
+
+    quantity = Number(quantity)
+
+    if (quantity > 1) {
+        cart[id] = quantity - 1;
+        saveCart(cart);
+        location.reload();
+    }
+
+}
+
+function removeFromCart(id) {
+    let cart = getShoppingCart();
+    if (cart[id]) {
+        delete cart[id];
+        saveCart(cart);
+        location.reload();
+    }
+}

@@ -30,18 +30,18 @@
                             </td>
                             <td style="white-space:nowrap">
                                 <button type="button" class="btn btn-outline-secondary btn-sm"
-                                        onclick="decrease(@items.Product.ProductID)">
+                                        onclick="DecreaseQuantity(@items.Product.ProductID)">
                                     -
                                 </button>
                                 <span class="border rounded-3 p-2 m-1">@items.Quantity</span>
                                 <button type="button" class="btn btn-outline-secondary btn-sm"
-                                        onclick="increase(@items.Product.ProductID)">
+                                        onclick="IncreaseQuantity(@items.Product.ProductID)">
                                     +
                                 </button>
                             </td>
                             <td>@(items.UnitPrice * items.Quantity)kr</td>
                             <td>
-                                <i class="bi bi-trash text-danger h4" style="cursor: pointer" onclick="remove(@items.Product.ProductID)"></i>
+                                <i class="bi bi-trash text-danger h4" style="cursor: pointer" onclick="removeFromCart(@items.Product.ProductID)"></i>
                             </td>
                         </tr>
                     }
@@ -133,3 +133,4 @@
         </div>
     </div>
 </body>
+<script src="~/js/shopcart.js"></script>

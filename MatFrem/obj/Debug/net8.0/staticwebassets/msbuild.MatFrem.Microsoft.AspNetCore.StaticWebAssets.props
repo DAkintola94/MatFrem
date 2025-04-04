@@ -1722,8 +1722,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>n7hqjkygfx</Fingerprint>
-      <Integrity>XUOaUvkzEF2mZy9iH4qg+AZh+50N5hZGbZFC+vVJM3k=</Integrity>
+      <Fingerprint>vdh2205jll</Fingerprint>
+      <Integrity>gxYYxovVY3t4dGlDpkoIANlxcb/0YvzPsC27fVROmEE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\shopcart.js'))</OriginalItemSpec>
