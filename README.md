@@ -6,10 +6,10 @@ Matfrem is a fullstack application created with MVC .NET.
 
 To run the application
 
-1. install or have Docker running.
-2. Clone the repository and simply run it (this can be done by clicking on the sln file).
-3. Open Visual studio or Rider.
-4. Change the application setting to docker compose, then run. You can also run it without using docker compose.
+1. install Docker, and have it running.
+2. Open a terminal or CLI and navigate to the root folder of the cloned repository. Make sure you are in the same directory as the docker-compose.yml file.
+3. Once you are in the correct directory, run the following command to build and start the containers:
+   **docker-compose up --build**
 
 ### Fuctions in the application
 
