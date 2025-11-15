@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   matfrem:
@@ -10,11 +10,14 @@ services:
       - "8080:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:8080 
+      - ASPNETCORE_URLS=http://+:8080
       - ConnectionStrings__DefaultConnection=Server=mariadb;Database=MatFremBase;User=root;Password=Testingtesting1234
+      - ConnectionStrings__IdentityConnection=Server=mariadb;Database=AuthMatFremBase;User=root;Password=Testingtesting1234
+      #Need to provide two connection if you have two, one if you have one, etc
+      #Conntection string name (DefaultConnection and IdentityConnection in this case) must match the configuration string that is in program.cs
     depends_on:
-        - mariadb
-      
+      - mariadb
+    restart: always
 
   mariadb:
     image: mariadb:latest
