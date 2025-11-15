@@ -8,6 +8,7 @@ To run the application
 
 1. install Docker, and have it running.
 2. Open a terminal or CLI and navigate to the root folder of the cloned repository. Make sure you are in the same directory as the docker-compose.yml file.
+   ![alt text](image.png)
 3. Once you are in the correct directory, run the following command to build and start the containers:
    **docker-compose up --build**
 
