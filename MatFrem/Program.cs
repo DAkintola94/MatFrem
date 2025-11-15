@@ -47,6 +47,27 @@ namespace MatFrem
 
             var app = builder.Build();
 
+            using(var scope = app.Services.CreateScope())
+            {
+           
+                try
+                {
+                    var services = scope.ServiceProvider;
+                    var dbContext = services.GetRequiredService<AppDBContext>();
+                    var authContext = services.GetRequiredService<AuthDbContext>();
+
+                    dbContext.Database.Migrate();
+                    authContext.Database.Migrate();
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine ($"An error occured: {ex}");
+                    Environment.Exit(1);
+                }
+            }
+
+
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {

@@ -3007,23 +3007,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\black\\.nuget\\packages\\": {},
+    "C:\\Users\\de-to\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\MatFrem.csproj",
+      "projectUniqueName": "C:\\Users\\de-to\\Documents\\MatFrem\\MatFrem\\MatFrem.csproj",
       "projectName": "MatFrem",
-      "projectPath": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\MatFrem.csproj",
-      "packagesPath": "C:\\Users\\black\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\black\\source\\repos\\MatFrem\\MatFrem\\obj\\",
+      "projectPath": "C:\\Users\\de-to\\Documents\\MatFrem\\MatFrem\\MatFrem.csproj",
+      "packagesPath": "C:\\Users\\de-to\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\de-to\\Documents\\MatFrem\\MatFrem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\black\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\de-to\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3051,7 +3051,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -3113,7 +3113,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
